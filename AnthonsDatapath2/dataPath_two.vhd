@@ -34,7 +34,19 @@ end dataPathFull;
 architecture structural of dataPathFull is 
 
 
- component mux2t1_N is
+component PCRegister
+    generic (
+        N : integer := 32  
+    );
+  port(i_CLK        : in std_logic;    
+       i_RST        : in std_logic_vector(N-1 downto 0);     
+       i_WE         : in std_logic;     -- Write enable 
+       i_D         : in std_logic_vector(N-1 downto 0);
+       o_Q          : out std_logic_vector(N-1 downto 0)     -- Data 
+       );
+end component;
+
+ component mux2t1_N 
     generic(N : integer := 32);
     port(i_S  : in std_logic;
          i_X0 : in std_logic_vector(N-1 downto 0);
@@ -81,6 +93,17 @@ port (
     );
  end component;
 
+component adder
+      generic map(N : integer := 32);
+      port map(
+        i_D0 : in std_logic; 
+        i_D1 : in std_logic; 
+        i_C : in std_logic; 
+        oC : out std_logic; 
+        o_O : out std_logic 
+      );
+ end component;
+
   component registerFile
   generic (
         N : integer := 32
@@ -107,6 +130,7 @@ port (
   signal wb_ALA : std_logic_vector(31 downto 0);
   signal wb_mem_out : std_logic_vector((DATA_WIDTH -1) downto 0);
   signal write_data_reg : std_logic_vector(31 downto 0);
+  signal pc_mux_out : std_logic_vector(31 downto 0);
 
   
 
@@ -133,6 +157,27 @@ begin
             data_out => extend_out
         );
 
+        
+      fetch_adder_inst: adder
+      generic map(N => N)
+      port map(
+       -- i_D0 => PC line, (NOT MADE)
+        i_D1 => i_Imm,
+        --i_C => carry PC?,
+        -- oC => not too important
+        -- o_O => mux signal
+      );
+
+       PC_add_mux_inst: mux2t1_N
+    generic map(N => N)
+      port map(
+        --i_S => ,
+        --i_X0 => ,
+        --i_X1 => ,
+        --o_X => 
+      );
+
+      
       ALU_inst: mux2t1_N
     generic map(N => N)
       port map(
@@ -142,7 +187,7 @@ begin
         o_X => alu_muxOut
       );
 
-      
+
 
       AddSub_inst: adder_subtractor
       generic map(N => N)

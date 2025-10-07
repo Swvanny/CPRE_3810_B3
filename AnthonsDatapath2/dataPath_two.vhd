@@ -33,7 +33,7 @@ end dataPathFull;
 
 architecture structural of dataPathFull is 
 
-
+--PC
 component PCRegister
     generic (
         N : integer := 32  
@@ -135,6 +135,16 @@ component adder
   
 
 begin
+
+  instr_mem: dmem
+      port map (
+      clk => i_clk,
+      --addr => pc,
+      --data => rs2_out,
+      we => i_memWrite,
+      q => wb_mem_out
+      );
+
   registerFile_inst: registerFile
     generic map(N => N)
       port map(

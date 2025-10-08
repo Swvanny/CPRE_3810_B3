@@ -7,7 +7,7 @@ entity PCRegister is
     );
 
   port(i_CLK        : in std_logic;    
-       i_RST        : in std_logic_vector(N-1 downto 0);     
+       i_RST        : in std_logic_vector;
        i_WE         : in std_logic;     -- Write enable 
        i_D         : in std_logic_vector(N-1 downto 0);
        o_Q          : out std_logic_vector(N-1 downto 0)     -- Data 

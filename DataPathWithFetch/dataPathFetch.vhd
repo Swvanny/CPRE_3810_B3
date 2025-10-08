@@ -28,6 +28,28 @@ end datapathTwo_full_reg_file;
 
 
 architecture structural of datapathTwo_full_reg_file is
+  --PC
+component PCRegister
+    generic (N : integer := 32);
+  port(i_CLK        : in std_logic;    
+       i_RST        : in std_logic_vector;   
+       i_WE         : in std_logic;     -- Write enable 
+       i_D         : in std_logic_vector(N-1 downto 0);
+       o_Q          : out std_logic_vector(N-1 downto 0)     -- Data 
+       );
+end component;
+
+component adder
+      generic map(N : integer := 32);
+      port map(
+        i_D0 : in std_logic; 
+        i_D1 : in std_logic; 
+        i_C : in std_logic; 
+        oC : out std_logic; 
+        o_O : out std_logic 
+      );
+ end component;
+
   component decoder5to32 is
     port(i_sel: in std_logic_vector(4 downto 0);
          i_en : in std_logic;
@@ -47,7 +69,12 @@ architecture structural of datapathTwo_full_reg_file is
          o_DataOut: out std_logic_vector(N-1 downto 0));
   end component;
 
-  
+  component andg2 
+  port(i_A          : in std_logic;
+       i_B          : in std_logic;
+       o_F          : out std_logic);
+  end component;
+
   component mux2t1_N is
     generic(N: integer := 16);
     port(i_S: in std_logic;
@@ -77,13 +104,36 @@ architecture structural of datapathTwo_full_reg_file is
          ctrl: in std_logic;
          dout: out std_logic_vector(31 downto 0));
   end component;
-
+--datapath 2 signals
   signal reg_data            : reg_array;
   signal B_or_imm            : std_logic_vector(31 downto 0);
   signal o_rs1, o_rs2        : std_logic_vector(31 downto 0);
   signal we_decoded, we_masked: std_logic_vector(31 downto 0);
   signal wb_data, wb_ALU, wb_mem: std_logic_vector(31 downto 0);
   signal bit_extended_imm    : std_logic_vector(31 downto 0);
+
+  --fetch logic and pc function signals
+  signal pc4_to_mux_in : std_logic_vector(31 downto 0);
+  signal pc_line : std_logic_vector(31 downto 0);
+  signal pc_adder_to_mux_in : std_logic_vector(31 downto 0);
+  signal pc_to_mux_out : std_logic_vector(31 downto 0);
+  signal pc_mux_sel : std_logic;
+  signal FLAG_ZERO : std_logic;
+  signal FLAG_CARRY : std_logic;
+  signal FLAG_OVERFLOW : std_logic;
+  signal FLAG_NEG : std_logic;
+  signal FLAG_HALT : std_logic;
+  signal flag_comp : std_logic_vector(1 downto 0); --NEED A COMPARATOR TO FIND GET THE RIGHT FLAG, DECODER?
+  signal instr_mem_out : std_logic_vector(31 downto 0);
+
+  
+ 
+  
+  --control logic signals
+  signal OP_BRANCH : std_logic;
+
+
+
 
   constant WRITE_MASK : std_logic_vector(31 downto 0) := (0 => '0', others => '1');
 
@@ -105,6 +155,61 @@ begin
   rs1_mux: mux_32by32 port map(sel => i_rs1, data_in => reg_data, data_out => o_rs1);
   rs2_mux: mux_32by32 port map(sel => i_rs2, data_in => reg_data, data_out => o_rs2);
 
+
+  pc_register_inst: PCRegister
+       port map(
+       i_CLK  => i_clk,
+       i_RST => "0",
+       i_WE => "1",
+       i_D => pc_to_mux_out,
+       o_Q => pc_line
+       );
+
+ inst_mem_inst: dmem
+    port map(
+      clk  => i_clk,
+      addr => pc_line(11 downto 2),   -- word address (ADDR_WIDTH=10)
+      data => "0",                 -- store data comes from rs2
+      we   => "0",
+      q    => instr_mem_out
+    );
+
+ fetch_adder_inst: adder
+      generic map(N => N)
+      port map(
+       i_D0 => PC_line,
+        i_D1 => i_Imm,
+        i_C => "0",
+        oC => "0",
+        o_O => pc_adder_to_mux_in
+      );
+
+  pc_plus_4_adder: adder
+      generic map(N => N)
+      port map(
+       i_D0 => pc_line,
+        i_D1 => "0100",
+        i_C => "0",
+        oC => "0",
+        o_O => pc4_to_mux_in
+      );
+  pc_add_mux_sel: andg2
+  port map(
+       i_A => OP_BRANCH,
+       i_B => FLAG_ZERO,
+       o_F => pc_mux_sel     
+       );
+
+
+  PC_add_mux_inst: mux2t1_N
+    generic map(N => N)
+      port map(
+        i_S => pc_mux_sel,
+        i_X0 => pc4_to_mux_in,
+        i_X1 => pc_adder_to_mux_in,
+        o_X => pc_to_mux_out
+      );
+
   -- 16->32 extender
   bit_extender_inst: Bit_Extender
     port map(
@@ -112,6 +217,7 @@ begin
         ctrl => signed_or_zero_select, 
         dout => bit_extended_imm
         );
+
 
   -- ALU B-input mux (32-bit)
   mux_inst: mux2t1_N

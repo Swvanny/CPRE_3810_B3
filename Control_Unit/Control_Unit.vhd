@@ -28,18 +28,18 @@ end entity;
 
 architecture rtl of control_unit is
 
-  -- === Opcode constants (RV32I) ===
-  constant OP_IMM  : std_logic_vector(6 downto 0) := "0010011"; -- addi, andi, ori...
-  constant OP      : std_logic_vector(6 downto 0) := "0110011"; -- add, sub, etc.
-  constant LUI     : std_logic_vector(6 downto 0) := "0110111";
-  constant AUIPC   : std_logic_vector(6 downto 0) := "0010111";
-  constant LOAD    : std_logic_vector(6 downto 0) := "0000011"; -- lb, lh, lw...
-  constant STORE   : std_logic_vector(6 downto 0) := "0100011"; -- sb, sh, sw
-  constant BRANCH  : std_logic_vector(6 downto 0) := "1100011"; -- beq, bne...
-  constant JAL     : std_logic_vector(6 downto 0) := "1101111";
-  constant JALR    : std_logic_vector(6 downto 0) := "1100111";
+  --Opcode constants (RV32I)
+  constant OP_I_Type  : std_logic_vector(6 downto 0) := "0010011"; -- addi, andi, ori...
+  constant OP_R_Type  : std_logic_vector(6 downto 0) := "0110011"; -- add, sub, etc.
+  constant OP_LUI     : std_logic_vector(6 downto 0) := "0110111";
+  constant OP_AUIPC   : std_logic_vector(6 downto 0) := "0010111";
+  constant OP_LOAD    : std_logic_vector(6 downto 0) := "0000011"; -- lb, lh, lw...
+  constant OP_SW      : std_logic_vector(6 downto 0) := "0100011"; -- sb, sh, sw
+  constant OP_BRANCH  : std_logic_vector(6 downto 0) := "1100011"; -- beq, bne...
+  constant OP_JAL     : std_logic_vector(6 downto 0) := "1101111";
+  constant OP_JALR    : std_logic_vector(6 downto 0) := "1100111";
 
-  -- === ALU operation codes ===
+  -- ALU operation codes
   constant ALU_AND : std_logic_vector(3 downto 0) := "0000";
   constant ALU_OR  : std_logic_vector(3 downto 0) := "0001";
   constant ALU_XOR : std_logic_vector(3 downto 0) := "0010";
@@ -50,46 +50,44 @@ architecture rtl of control_unit is
   constant ALU_SLL : std_logic_vector(3 downto 0) := "0111";
   constant ALU_LUI : std_logic_vector(3 downto 0) := "1000";
 
-  -- === Immediate and mux encodings ===
-  constant IMM_I_SIGNED   : std_logic_vector(1 downto 0) := "01";
-  constant IMM_I_UNSIGNED : std_logic_vector(1 downto 0) := "00";
-  constant IMM_U          : std_logic_vector(1 downto 0) := "11";
+  -- Immediate and mux encodings
+  constant ImmType_12bit_Unsigned : std_logic_vector(1 downto 0) := "00";
+  constant ImmType_12bit_Signed   : std_logic_vector(1 downto 0) := "01";
+  constant ImmType_20bit_Unsigned : std_logic_vector(1 downto 0) := "10";
+  constant ImmType_20bit_Signed   : std_logic_vector(1 downto 0) := "11";
 
-  constant MUX_ALU  : std_logic_vector(1 downto 0) := "00";
-  constant MUX_MEM  : std_logic_vector(1 downto 0) := "01";
-  constant MUX_AUX  : std_logic_vector(1 downto 0) := "10";
-
-  constant FLAG_EQNE : std_logic_vector(1 downto 0) := "11";
-  constant FLAG_SLT  : std_logic_vector(1 downto 0) := "00";
-  constant FLAG_ULT  : std_logic_vector(1 downto 0) := "10";
+  constant FLAG_NEG      : std_logic_vector(1 downto 0) := "00";
+  constant FLAG_OVERFLOW : std_logic_vector(1 downto 0) := 01;
+  constant FLAG_CARRY    : std_logic_vector(1 downto 0) := "10";
+  constant FLAG_ZERO     : std_logic_vector(1 downto 0) := "11";
 
 begin
 
   process(opcode, funct3, funct7)
   begin
-    -- === Default values (NOP) ===
-    ALUSrc          <= '0';
-    ALUControl      <= ALU_ADD;
-    ImmType         <= IMM_I_SIGNED;
-    AndLink         <= "00";
-    MemWrite        <= '0';
-    RegWrite        <= '0';
-    MemToReg        <= MUX_ALU;
-    Branch          <= '0';
-    Jump            <= '0';
-    ALU_Or_Imm_Jump <= '0';
-    Flag_Mux        <= FLAG_SLT;
-    Flag_Or_Nflag   <= '0';
+    -- Default values (NOP)
+    ALUSrc             <= '0';
+    ALUControl         <= ALU_ADD;
+    ImmType            <= ImmType_12bit_Signed;
+    AndLink            <= "00";
+    MemWrite           <= '0';
+    RegWrite           <= '0';
+    MemToReg           <= '0';
+    Branch             <= '0';
+    Jump               <= '0';
+    ALU_Or_Imm_Jump    <= '0';
+    Flag_Mux           <= FLAG_NEG;
+    Flag_Or_Nflag      <= '0';
     Jump_With_Register <= '0';
 
     case opcode is
 
       -------------------------------------------------------------------
       -- R-type (add, sub, and, or, xor, sll, srl, sra, slt)
-      when OP =>
+      when OP_R_Type =>
         RegWrite <= '1';
         ALUSrc   <= '0';
-        MemToReg <= MUX_ALU;
+        MemToReg <= '0';
 
         case funct3 is
           when "000" =>
@@ -110,7 +108,7 @@ begin
             end if;
           when "010" =>
             ALUControl <= ALU_CMP;  -- SLT (signed)
-            Flag_Mux   <= FLAG_SLT;
+            Flag_Mux   <= FLAG_NEG;
           when others => null;
         end case;
 
@@ -119,15 +117,15 @@ begin
       when OP_IMM =>
         RegWrite <= '1';
         ALUSrc   <= '1';
-        MemToReg <= MUX_ALU;
+        MemToReg <= '0';
 
         case funct3 is
-          when "000" => ALUControl <= ALU_ADD; ImmType <= IMM_I_SIGNED; -- addi
+          when "000" => ALUControl <= ALU_ADD; ImmType <= ImmType_12bit_signed; -- addi
           when "111" => ALUControl <= ALU_AND;
           when "110" => ALUControl <= ALU_OR;
           when "100" => ALUControl <= ALU_XOR;
-          when "010" => ALUControl <= ALU_CMP; Flag_Mux <= FLAG_SLT;  -- slti
-          when "011" => ALUControl <= ALU_CMP; Flag_Mux <= FLAG_ULT; ImmType <= IMM_I_UNSIGNED; -- sltiu
+          when "010" => ALUControl <= ALU_CMP; Flag_Mux <= FLAG_NEG;  -- slti
+          when "011" => ALUControl <= ALU_CMP; Flag_Mux <= FLAG_CARRY; ImmType <= ImmType_12bit_unsigned; -- sltiu
           when "001" => ALUControl <= ALU_SLL;                        -- slli
           when "101" =>
             if (funct7 = "0100000") then
@@ -143,35 +141,38 @@ begin
       when LOAD =>
         ALUSrc     <= '1';
         ALUControl <= ALU_ADD;   -- base + offset
-        ImmType    <= IMM_I_SIGNED;
+        ImmType    <= ImmType_12bit_Signed;
         RegWrite   <= '1';
-        MemToReg   <= MUX_MEM;   -- result comes from memory
+        MemToReg   <= '1';   -- result comes from memory
 
+      -----------------------------------------------------------------
       -- STORE (sb, sh, sw)
       when STORE =>
         ALUSrc     <= '1';
         ALUControl <= ALU_ADD;   -- base + offset
-        ImmType    <= IMM_I_SIGNED;
+        ImmType    <= ImmType_12bit_signed;
         MemWrite   <= '1';
         RegWrite   <= '0';
 
+      ------------------------------------------------------------------
       -- BRANCH (beq, bne, blt, bge, bltu, bgeu)
       when BRANCH =>
         Branch     <= '1';
         ALUSrc     <= '0';
         ALUControl <= ALU_CMP;
-        ImmType    <= IMM_I_SIGNED;
+        ImmType    <= ImmType_12bit_signed;
 
         case funct3 is
-          when "000" => Flag_Mux <= FLAG_EQNE; Flag_Or_Nflag <= '0'; -- beq
-          when "001" => Flag_Mux <= FLAG_EQNE; Flag_Or_Nflag <= '1'; -- bne
-          when "100" => Flag_Mux <= FLAG_SLT;  Flag_Or_Nflag <= '0'; -- blt
-          when "101" => Flag_Mux <= FLAG_SLT;  Flag_Or_Nflag <= '1'; -- bge
-          when "110" => Flag_Mux <= FLAG_ULT;  Flag_Or_Nflag <= '0'; -- bltu
-          when "111" => Flag_Mux <= FLAG_ULT;  Flag_Or_Nflag <= '1'; -- bgeu
+          when "000" => Flag_Mux <= FLAG_ZERO;   Flag_Or_Nflag <= '0'; -- beq
+          when "001" => Flag_Mux <= FLAG_ZERO;   Flag_Or_Nflag <= '1'; -- bne
+          when "100" => Flag_Mux <= FLAG_NEG;    Flag_Or_Nflag <= '0'; -- blt
+          when "101" => Flag_Mux <= FLAG_NEG;    Flag_Or_Nflag <= '1'; -- bge
+          when "110" => Flag_Mux <= FLAG_CARRY;  Flag_Or_Nflag <= '0'; -- bltu
+          when "111" => Flag_Mux <= FLAG_CARRY;  Flag_Or_Nflag <= '1'; -- bgeu
           when others => null;
         end case;
 
+      ------------------------------------------------------------------
       -- JAL / JALR
       when JAL =>
         Jump             <= '1';
@@ -179,7 +180,7 @@ begin
         AndLink          <= "01";
         ALU_Or_Imm_Jump  <= '1';
         ALUControl       <= ALU_ADD;
-        ImmType          <= IMM_U;
+        ImmType          <= ImmType_20bit_signed;
 
       when JALR =>
         Jump             <= '1';
@@ -188,21 +189,22 @@ begin
         ALU_Or_Imm_Jump  <= '0';
         ALUSrc           <= '1';
         ALUControl       <= ALU_ADD;
-        ImmType          <= IMM_I_SIGNED;
+        ImmType          <= ImmType_12bit_signed;
         Jump_With_Register <= '1';
 
+      ----------------------------------------------------------------------
       -- LUI / AUIPC
       when LUI =>
         RegWrite   <= '1';
         ALUSrc     <= '1';
         ALUControl <= ALU_LUI;
-        ImmType    <= IMM_U;
-        MemToReg   <= MUX_MEM;   -- your table lists 01 for LUI
+        ImmType    <= ImmType_20bit_signed;
+        MemToReg   <= '1';   -- your table lists 01 for LUI
 
       when AUIPC =>
         RegWrite         <= '1';
-        ImmType          <= IMM_U;
-        MemToReg         <= MUX_AUX;
+        ImmType          <= ImmType_20bit_signed;
+        MemToReg         <= '0';
         ALU_Or_Imm_Jump  <= '1';
         ALUControl       <= ALU_ADD;
 

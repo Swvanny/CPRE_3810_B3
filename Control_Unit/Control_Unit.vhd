@@ -16,12 +16,13 @@ entity control_unit is
     AndLink           : out std_logic_vector(1 downto 0);
     MemWrite          : out std_logic;
     RegWrite          : out std_logic;
-    MemToReg          : out std_logic_vector(1 downto 0);
+    MemToReg          : out std_logic;
     Branch            : out std_logic;
     Jump              : out std_logic;
     ALU_Or_Imm_Jump   : out std_logic;
     Flag_Mux          : out std_logic_vector(1 downto 0);
-    Flag_Or_Nflag     : out std_logic
+    Flag_Or_Nflag     : out std_logic;
+    Jump_With_Register : out std_logic
   );
 end entity;
 
@@ -79,12 +80,12 @@ begin
     ALU_Or_Imm_Jump <= '0';
     Flag_Mux        <= FLAG_SLT;
     Flag_Or_Nflag   <= '0';
+    Jump_With_Register <= '0';
 
     case opcode is
 
       -------------------------------------------------------------------
       -- R-type (add, sub, and, or, xor, sll, srl, sra, slt)
-      -------------------------------------------------------------------
       when OP =>
         RegWrite <= '1';
         ALUSrc   <= '0';
@@ -113,9 +114,8 @@ begin
           when others => null;
         end case;
 
-      -------------------------------------------------------------------
+      ----------------------------------------------------------------------
       -- I-type immediate ALU (addi, andi, ori, xori, slti, sltiu, shifts)
-      -------------------------------------------------------------------
       when OP_IMM =>
         RegWrite <= '1';
         ALUSrc   <= '1';
@@ -138,9 +138,8 @@ begin
           when others => null;
         end case;
 
-      -------------------------------------------------------------------
+      -----------------------------------------------------------------
       -- LOAD (lb, lh, lw, lbu, lhu)
-      -------------------------------------------------------------------
       when LOAD =>
         ALUSrc     <= '1';
         ALUControl <= ALU_ADD;   -- base + offset
@@ -148,9 +147,7 @@ begin
         RegWrite   <= '1';
         MemToReg   <= MUX_MEM;   -- result comes from memory
 
-      -------------------------------------------------------------------
       -- STORE (sb, sh, sw)
-      -------------------------------------------------------------------
       when STORE =>
         ALUSrc     <= '1';
         ALUControl <= ALU_ADD;   -- base + offset
@@ -158,9 +155,7 @@ begin
         MemWrite   <= '1';
         RegWrite   <= '0';
 
-      -------------------------------------------------------------------
       -- BRANCH (beq, bne, blt, bge, bltu, bgeu)
-      -------------------------------------------------------------------
       when BRANCH =>
         Branch     <= '1';
         ALUSrc     <= '0';
@@ -177,9 +172,7 @@ begin
           when others => null;
         end case;
 
-      -------------------------------------------------------------------
       -- JAL / JALR
-      -------------------------------------------------------------------
       when JAL =>
         Jump             <= '1';
         RegWrite         <= '1';
@@ -196,10 +189,9 @@ begin
         ALUSrc           <= '1';
         ALUControl       <= ALU_ADD;
         ImmType          <= IMM_I_SIGNED;
+        Jump_With_Register <= '1';
 
-      -------------------------------------------------------------------
       -- LUI / AUIPC
-      -------------------------------------------------------------------
       when LUI =>
         RegWrite   <= '1';
         ALUSrc     <= '1';

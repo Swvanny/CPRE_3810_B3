@@ -7685,3 +7685,117 @@ vcom -reportprogress 300 -work work /home/dswanny/cpre381/CPRE_3810_B3/Control_U
 # -- Loading entity control_unit
 # End time: 20:35:45 on Oct 14,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 20:55:58 on Oct 14,2025
+# vcom -reportprogress 300 -work work /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package RISCV_types
+# -- Compiling entity barrel_shifter
+# ** Error: /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd(9): near "port": (vcom-1576) expecting ';'.
+# ** Note: /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd(9): VHDL Compiler exiting
+# End time: 20:55:58 on Oct 14,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 20:56:28 on Oct 14,2025
+# vcom -reportprogress 300 -work work /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package RISCV_types
+# -- Compiling entity barrel_shifter
+# -- Compiling architecture dataflow of barrel_shifter
+# ** Error: /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd(21): near "controlSlicer": (vcom-1576) expecting BEGIN.
+# ** Note: /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd(21): VHDL Compiler exiting
+# End time: 20:56:28 on Oct 14,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 20:58:31 on Oct 14,2025
+# vcom -reportprogress 300 -work work /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package RISCV_types
+# -- Compiling entity barrel_shifter
+# -- Compiling architecture dataflow of barrel_shifter
+# ** Error: /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd(21): near "controlSlicer": (vcom-1576) expecting BEGIN.
+# ** Note: /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd(21): VHDL Compiler exiting
+# End time: 20:58:31 on Oct 14,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 20:58:44 on Oct 14,2025
+# vcom -reportprogress 300 -work work /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package RISCV_types
+# -- Compiling entity barrel_shifter
+# -- Compiling architecture dataflow of barrel_shifter
+# End time: 20:58:44 on Oct 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/tb_barrel_shifter.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 21:03:37 on Oct 14,2025
+# vcom -reportprogress 300 -work work /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/tb_barrel_shifter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_barrel_shifter_simple
+# -- Compiling architecture sim of tb_barrel_shifter_simple
+# -- Loading package RISCV_types
+# -- Loading entity barrel_shifter
+# End time: 21:03:37 on Oct 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -voptargs=+acc work.tb_barrel_shifter_simple
+# vsim -voptargs="+acc" work.tb_barrel_shifter_simple 
+# Start time: 21:04:12 on Oct 14,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.riscv_types(body)
+# Loading work.tb_barrel_shifter_simple(sim)#1
+# Loading work.barrel_shifter(dataflow)#1
+add wave  \
+sim:/tb_barrel_shifter_simple/din \
+sim:/tb_barrel_shifter_simple/shamt_vec \
+sim:/tb_barrel_shifter_simple/alu_ctl \
+sim:/tb_barrel_shifter_simple/dout \
+sim:/tb_barrel_shifter_simple/WIDTH \
+sim:/tb_barrel_shifter_simple/ALU_SLL \
+sim:/tb_barrel_shifter_simple/ALU_SRL \
+sim:/tb_barrel_shifter_simple/ALU_SRA \
+sim:/tb_barrel_shifter_simple/ALU_NOP
+run 200
+# ** Note: tb_barrel_shifter_simple: start
+#    Time: 0 ns  Iteration: 0  Instance: /tb_barrel_shifter_simple
+quit -sim
+# End time: 21:05:03 on Oct 14,2025, Elapsed time: 0:00:51
+# Errors: 0, Warnings: 1
+vcom -reportprogress 300 -work work /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/tb_barrel_shifter.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 21:05:07 on Oct 14,2025
+# vcom -reportprogress 300 -work work /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/tb_barrel_shifter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_barrel_shifter
+# -- Compiling architecture sim of tb_barrel_shifter
+# -- Loading package RISCV_types
+# -- Loading entity barrel_shifter
+# End time: 21:05:07 on Oct 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

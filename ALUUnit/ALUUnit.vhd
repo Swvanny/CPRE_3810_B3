@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use RISCV_types.all;
 
-entity ALUUnit
+entity ALUUnit is
  generic (WIDTH : integer := DATA_WIDTH);
  port(
     Alucontrol    : in std_logic_vector(3 downto 0);
@@ -22,7 +22,7 @@ entity ALUUnit
             input_A 		: in std_logic_vector(WIDTH-1 downto 0);
             input_B 		: in std_logic_vector(WIDTH-1 downto 0);
             output_Sum	    : out std_logic_vector(WIDTH-1 downto 0);
-            output_Carry    : out std_logic
+            output_Carry    : out std_logic;
             output_Overflow : out std_logic
             );
     end component;

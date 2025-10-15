@@ -201,7 +201,7 @@ Z41 DPx4 work 9 reg_array 0 22 G=28lgzGVZBP>H_INoCHI3
 R15
 R14
 R13
-!i122 35
+!i122 52
 R3
 8/home/dswanny/cpre381/CPRE_3810_B3/DataPathWithFetch/dataPathFetch.vhd
 F/home/dswanny/cpre381/CPRE_3810_B3/DataPathWithFetch/dataPathFetch.vhd
@@ -211,9 +211,9 @@ VQc<kG^Wa4^dFRXZke9hVM1
 !s100 >EX1ROiZhRJY`ah_3VYZ92
 R18
 32
-!s110 1760490192
+!s110 1760494232
 !i10b 1
-!s108 1760490192.000000
+!s108 1760494232.000000
 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/DataPathWithFetch/dataPathFetch.vhd|
 !s107 /home/dswanny/cpre381/CPRE_3810_B3/DataPathWithFetch/dataPathFetch.vhd|
 !i113 0

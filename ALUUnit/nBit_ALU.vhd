@@ -10,7 +10,7 @@ entity nBit_ALU is
        input_A 		: in std_logic_vector(WIDTH-1 downto 0);
        input_B 		: in std_logic_vector(WIDTH-1 downto 0);
        output_Sum	: out std_logic_vector(WIDTH-1 downto 0);
-       output_Carry     : out std_logic
+       output_Carry     : out std_logic;
        output_Overflow : out std_logic
        );
 

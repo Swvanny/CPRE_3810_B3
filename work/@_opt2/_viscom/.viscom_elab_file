@@ -1,1 +1,0 @@
-/usr/local/mentor/questasim/linux_x86_64/VisualizerRls/bin/viscom -nolock -quiet -jmem_size 16417056 work.tb_evo_goblin_barrel -quiet -auto_acc_if_foreign -work work +acc -allow_unnamed -o _opt2 -id 1-000ae431a4f1-68eef4d3-7c268-4ae0 +__betafsm

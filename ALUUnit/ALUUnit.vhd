@@ -19,6 +19,9 @@ architecture structural of ALUUnit is
   ------------------------------------------------------------------
   -- Components 
 
+-- This is the 4×32 bus feeding the result mux (AND, OR, XOR, ADD/SUB)
+  signal bus_in : t_bus_4x32;
+
   component nBit_ALU
     port(
       nAdd_Sub        : in  std_logic;
@@ -90,8 +93,7 @@ architecture structural of ALUUnit is
   signal finalResult                    : std_logic_vector(WIDTH-1 downto 0);
   signal neg, ovf, carry, zero         : std_logic;
 
-  -- This is the 4×32 bus feeding the result mux (AND, OR, XOR, ADD/SUB)
-  signal bus_in : t_bus_4x32;
+
 
 begin
   ------------------------------------------------------------------

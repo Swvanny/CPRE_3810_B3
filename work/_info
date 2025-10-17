@@ -1,15 +1,9 @@
 m255
 K4
 z2
-Z0 !s12c _opt1
+Z0 !s12c _opt
 Z1 !s99 nomlopt
-Z2 !s12c _opt
-R1
-!s12c _opt2
-R1
 R0
-R1
-R2
 R1
 !s11e vcom 2025.1_2 2025.04, Apr  7 2025
 13
@@ -18,282 +12,303 @@ R1
 !i10e 25
 !i10f 100
 cModel Technology
-Z3 d/home/dswanny/cpre381/CPRE_3810_B3
+Z2 d/home/anthonw/Desktop/CPRE_3810_B3
 T_opt
-!s110 1760491275
-VYZ9daB3aNT68]8iN;7>bU2
-04 18 3 work tb_minimal_shifter sim 1
-=1-000ae431a4f1-68eef70a-cd6b1-5089
+!s110 1760720421
+VVUZ4UXP]8]Vd^5VejiTY01
+04 10 8 work tb_aluunit behavior 1
+=1-000ae431a4f1-68f27625-3c6c6-56f3
 R1
-Z4 !s12f OEM100
-Z5 !s12b OEM100
-Z6 !s124 OEM100
-Z7 !s135 nogc
-Z8 o-quiet -auto_acc_if_foreign -work work +acc
-Z9 tCvgOpt 0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
 n@_opt
-Z10 OL;O;2025.1_2;82
-R3
-T_opt1
-!s110 1760493852
-VWn0ZTMb9E08O<2g9JS3G]0
-04 24 3 work tb_barrel_shifter_simple sim 1
-=1-000ae431a4f1-68ef011c-49471-6cfd
-R1
-R4
-R5
-R6
-R7
-R8
-R9
-n@_opt1
-R10
-R3
-T_opt2
-!s110 1760490707
-VkAG9eiJ2d239N_zolc^NZ2
-04 20 3 work tb_evo_goblin_barrel sim 1
-=1-000ae431a4f1-68eef4d3-7c268-4ae0
-R1
-R4
-R5
-R6
-R7
-R8
-R9
-n@_opt2
-R10
-R3
-Ebarrel_shifter
-Z11 w1760493522
-Z12 DPx4 work 11 riscv_types 0 22 @EBj`TV9k32W4`Wnab6nL1
-Z13 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
-Z14 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z15 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 49
-R3
-Z16 8/home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd
-Z17 F/home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd
+OL;O;2025.1_2;82
+Eadder
+Z3 w1760715562
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 25
+R2
+Z6 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/adder.vhd
+Z7 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/adder.vhd
 l0
-L6 1
-V1]RI:?K8aYYZG`CU@38n=1
-!s100 `DFmgia:4@cVHW<7dEGA12
-Z18 OL;C;2025.1_2;82
+L22 1
+VIiZKPaIX5Ll7EB^m8SLlc3
+!s100 KFZI:>O;hn`U`>0a7m`B13
+Z8 OL;C;2025.1_2;82
 32
-Z19 !s110 1760493524
+Z9 !s110 1760719822
 !i10b 1
-Z20 !s108 1760493524.000000
-Z21 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd|
-Z22 !s107 /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/barrel_shifter.vhd|
+Z10 !s108 1760719822.000000
+Z11 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/adder.vhd|
+Z12 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/adder.vhd|
 !i113 0
-Z23 o-work work
-Z24 tExplicit 1 CvgOpt 0
-Adataflow
+Z13 o-work work
+Z14 tExplicit 1 CvgOpt 0
+Astructural
+R4
+R5
+DEx4 work 5 adder 0 22 IiZKPaIX5Ll7EB^m8SLlc3
+!i122 25
+l66
+L32 68
+Vb3Wbk<Yk:MMaLCUA[gYg30
+!s100 1AS@IngTUn1E:ncTL<A`n2
+R8
+32
+R9
+!i10b 1
+R10
+R11
 R12
+!i113 0
 R13
 R14
-R15
-Z25 DEx4 work 14 barrel_shifter 0 22 1]RI:?K8aYYZG`CU@38n=1
-!i122 49
-l23
-L17 18
-V=0L@V1@z[ejVIBIWNa>lQ0
-!s100 j:70N^jT4P]QecikKT[BF3
-R18
+Ealuunit
+Z15 w1760719876
+Z16 DPx4 work 11 riscv_types 0 22 @EBj`TV9k32W4`Wnab6nL1
+Z17 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R4
+R5
+!i122 33
+R2
+Z18 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/ALUUnit.vhd
+Z19 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/ALUUnit.vhd
+l0
+L6 1
+V_BNnD7MYhS4fC5d>6=fMK3
+!s100 5>JQ?dXUdC;AODPMHlIf?0
+R8
 32
-R19
+Z20 !s110 1760719878
 !i10b 1
+Z21 !s108 1760719878.000000
+Z22 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/ALUUnit.vhd|
+Z23 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/ALUUnit.vhd|
+!i113 0
+R13
+R14
+Astructural
+R16
+R17
+R4
+R5
+DEx4 work 7 aluunit 0 22 _BNnD7MYhS4fC5d>6=fMK3
+!i122 33
+l98
+L18 164
+V]zj0lHLOaFVS[MG4=23eg0
+!s100 JcekmVV1fCYBP<UMV^SdK3
+R8
+32
 R20
+!i10b 1
 R21
 R22
-!i113 0
 R23
-R24
-Ebitextender
-Z26 w1759764570
+!i113 0
 R13
 R14
-R15
-!i122 11
-R3
-Z27 8/home/dswanny/cpre381/CPRE_3810_B3/Extenders/bitExtender.vhd
-Z28 F/home/dswanny/cpre381/CPRE_3810_B3/Extenders/bitExtender.vhd
+Eand_32bit
+Z24 w1760540345
+R4
+R5
+!i122 24
+R2
+Z25 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/and_32bit.vhd
+Z26 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/and_32bit.vhd
 l0
-L5 1
-V[UKm0V_lV_DRIkZKi71E91
-!s100 1MMJBVGDh0H7Mo0D8bm]_0
-R18
+L4 1
+VmXR^lB9Gld=8kmRob]nF`2
+!s100 4;RVRdO5UM9[mAAzVNKU51
+R8
 32
-Z29 !s110 1760487657
+R9
 !i10b 1
-Z30 !s108 1760487657.000000
-Z31 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/Extenders/bitExtender.vhd|
-Z32 !s107 /home/dswanny/cpre381/CPRE_3810_B3/Extenders/bitExtender.vhd|
+Z27 !s108 1760719821.000000
+Z28 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/and_32bit.vhd|
+Z29 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/and_32bit.vhd|
 !i113 0
-R23
-R24
-Abehavioral
 R13
 R14
-R15
-DEx4 work 11 bitextender 0 22 [UKm0V_lV_DRIkZKi71E91
-!i122 11
-l14
-L13 6
-V=]OHo@no:8Rh5ND;z:5?P3
-!s100 RaZo^V?NljKK`?1klh^1F2
-R18
+Astructural
+R4
+R5
+DEx4 work 9 and_32bit 0 22 mXR^lB9Gld=8kmRob]nF`2
+!i122 24
+l21
+Z30 L14 17
+VeZmP0<DS0b;T:[5]>eX4Y1
+!s100 _:l;K6J038GmdEc:c4ajk2
+R8
 32
+R9
+!i10b 1
+R27
+R28
 R29
-!i10b 1
-R30
-R31
-R32
 !i113 0
-R23
-R24
-Econtrol_unit
-Z33 w1760489858
 R13
 R14
-R15
-!i122 33
-R3
-Z34 8/home/dswanny/cpre381/CPRE_3810_B3/Control_Unit/Control_Unit.vhd
-Z35 F/home/dswanny/cpre381/CPRE_3810_B3/Control_Unit/Control_Unit.vhd
-l0
-L5 1
-V_V15B9@i]B@G>iITGGEQA0
-!s100 6JF2?^jbL7QT5c2e2?ER;3
-R18
-32
-Z36 !s110 1760489863
-!i10b 1
-Z37 !s108 1760489863.000000
-Z38 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/Control_Unit/Control_Unit.vhd|
-Z39 !s107 /home/dswanny/cpre381/CPRE_3810_B3/Control_Unit/Control_Unit.vhd|
-!i113 0
-R23
+Eandg2
 R24
+R4
+R5
+!i122 4
+R2
+Z31 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/andg2.vhd
+Z32 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/andg2.vhd
+l0
+Z33 L23 1
+VQ@<<<@nlJ=eiIl4BJDFzW2
+!s100 YT?bGzEmcFo:DlnoC^B4_0
+R8
+32
+Z34 !s110 1760719797
+!i10b 1
+Z35 !s108 1760719797.000000
+Z36 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/andg2.vhd|
+Z37 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/andg2.vhd|
+!i113 0
+R13
+R14
 Adataflow
-R13
-R14
-R15
-Z40 DEx4 work 12 control_unit 0 22 _V15B9@i]B@G>iITGGEQA0
-!i122 33
-l81
-L29 225
-VAZ?ndPDCH^FiaYBcH;0CH1
-!s100 8AdEOLJIF7=WL`Ae106U;2
-R18
+R4
+R5
+DEx4 work 5 andg2 0 22 Q@<<<@nlJ=eiIl4BJDFzW2
+!i122 4
+l32
+Z38 L31 6
+VJVOzCk?IH:iJ5bCRU`CK13
+!s100 I`@Z@UBObS]<7m8bPgKUS1
+R8
 32
+R34
+!i10b 1
+R35
 R36
-!i10b 1
 R37
-R38
-R39
 !i113 0
-R23
-R24
-Edatapathtwo_full_reg_file
-w1760489248
-Z41 DPx4 work 9 reg_array 0 22 G=28lgzGVZBP>H_INoCHI3
-R15
-R14
 R13
-!i122 52
-R3
-8/home/dswanny/cpre381/CPRE_3810_B3/DataPathWithFetch/dataPathFetch.vhd
-F/home/dswanny/cpre381/CPRE_3810_B3/DataPathWithFetch/dataPathFetch.vhd
-l0
-L6 1
-VQc<kG^Wa4^dFRXZke9hVM1
-!s100 >EX1ROiZhRJY`ah_3VYZ92
-R18
-32
-!s110 1760494232
-!i10b 1
-!s108 1760494232.000000
-!s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/DataPathWithFetch/dataPathFetch.vhd|
-!s107 /home/dswanny/cpre381/CPRE_3810_B3/DataPathWithFetch/dataPathFetch.vhd|
-!i113 0
-R23
-R24
-Edffg
-R26
 R14
-R15
-!i122 12
-R3
-Z42 8/home/dswanny/cpre381/CPRE_3810_B3/RegFile/dffg.vhd
-Z43 F/home/dswanny/cpre381/CPRE_3810_B3/RegFile/dffg.vhd
+Einvg
+Z39 w1760718905
+R4
+R5
+!i122 3
+R2
+Z40 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/invg.vhd
+Z41 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/invg.vhd
 l0
-Z44 L23 1
-V<]b9Vm3e`GAN;Cnj:57L>2
-!s100 T4gcXQGMCgKJbn8XhBM;b0
-R18
+R33
+VQ?6hb9ePk@>kZZ9k]hNSO3
+!s100 _XK?_^5z0Rm1<k12?;5R?2
+R8
 32
-Z45 !s110 1760487669
+R34
 !i10b 1
-Z46 !s108 1760487669.000000
-Z47 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/RegFile/dffg.vhd|
-Z48 !s107 /home/dswanny/cpre381/CPRE_3810_B3/RegFile/dffg.vhd|
+R35
+Z42 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/invg.vhd|
+Z43 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/invg.vhd|
 !i113 0
-R23
-R24
-Amixed
+R13
 R14
-R15
-DEx4 work 4 dffg 0 22 <]b9Vm3e`GAN;Cnj:57L>2
-!i122 12
-l37
-L33 29
-V`CHXPZKVEek`3gFWL_zFm2
-!s100 iOdlTUid@@]UimFK_53^C1
-R18
+Adataflow
+R4
+R5
+DEx4 work 4 invg 0 22 Q?6hb9ePk@>kZZ9k]hNSO3
+!i122 3
+l31
+L30 6
+Vch>li:oKYZkCO5]GamViK1
+!s100 bk7I76o8e1LURdoZEQb8H0
+R8
 32
-R45
+R34
 !i10b 1
+R35
+R42
+R43
+!i113 0
+R13
+R14
+Emux2t1_dataflow
+R3
+R4
+R5
+!i122 22
+R2
+Z44 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux2t1_dataflow.vhd
+Z45 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux2t1_dataflow.vhd
+l0
+L7 1
+VEe8KMU7Ld<m[nE5F_aahg0
+!s100 kM1QMKFgKKG5XXPNQ5A3T3
+R8
+32
+Z46 !s110 1760719820
+!i10b 1
+Z47 !s108 1760719820.000000
+Z48 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux2t1_dataflow.vhd|
+Z49 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux2t1_dataflow.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R4
+R5
+DEx4 work 15 mux2t1_dataflow 0 22 Ee8KMU7Ld<m[nE5F_aahg0
+!i122 22
+l15
+L14 7
+V^Kegl4IIg;nH]<YPY6kJU3
+!s100 mfDk9k50i81azL_oU_0;V1
+R8
+32
 R46
+!i10b 1
 R47
 R48
+R49
 !i113 0
-R23
-R24
-Eevo_goblin_barrel
-Z49 w1760491255
 R13
 R14
-R15
-!i122 44
-R3
-Z50 8/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/evo_goblin_barrel.vhd
-Z51 F/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/evo_goblin_barrel.vhd
+Emux2t1_n
+R24
+R4
+R5
+!i122 21
+R2
+Z50 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux2t1_N.vhd
+Z51 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux2t1_N.vhd
 l0
-L5 1
-V6_VFlHBLjMG0KMVbikm]`3
-!s100 =fh9fgGc>ER:e3VMVXLJV1
-R18
+L21 1
+VFY=Tc@WO1TP4Z42>dBMei3
+!s100 BKZeKCAB2i6lge3>7TA3d3
+R8
 32
-Z52 !s110 1760491262
+Z52 !s110 1760719819
 !i10b 1
-Z53 !s108 1760491262.000000
-Z54 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/evo_goblin_barrel.vhd|
-Z55 !s107 /home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/evo_goblin_barrel.vhd|
+Z53 !s108 1760719819.000000
+Z54 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux2t1_N.vhd|
+Z55 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux2t1_N.vhd|
 !i113 0
-R23
-R24
-Abehavioral
 R13
 R14
-R15
-Z56 DEx4 work 17 evo_goblin_barrel 0 22 6_VFlHBLjMG0KMVbikm]`3
-!i122 44
-l30
-Z57 L14 127
-Vdn??5>9>6WiH[2PG9;4F?0
-!s100 4dEna=YA78TIX11n1lb[O0
-R18
+Astructural
+R4
+R5
+DEx4 work 8 mux2t1_n 0 22 FY=Tc@WO1TP4Z42>dBMei3
+!i122 21
+l39
+L30 21
+Vfa@I1n5zQ83oPc4W?BSIG3
+!s100 ;FfMW7ZlfN[z_1MlTbAaD0
+R8
 32
 R52
 !i10b 1
@@ -301,509 +316,501 @@ R53
 R54
 R55
 !i113 0
-R23
-R24
-Eevo_goblinbarrel
-Z58 w1760490382
 R13
 R14
-R15
-!i122 40
-R3
-Z59 8/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/evo_goblin_barrel?.vhd
-Z60 F/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/evo_goblin_barrel?.vhd
-l0
-L5 1
-VBCTEFK3:j_DJI3TN>9j4e3
-!s100 KMP`l7^bk3[2IR6G36PS52
-R18
-32
-Z61 !s110 1760490698
-!i10b 1
-Z62 !s108 1760490698.000000
-Z63 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/evo_goblin_barrel?.vhd|
-Z64 !s107 /home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/evo_goblin_barrel?.vhd|
-!i113 0
-R23
-R24
-Abehavioral
-R13
-R14
-R15
-Z65 DEx4 work 16 evo_goblinbarrel 0 22 BCTEFK3:j_DJI3TN>9j4e3
-!i122 40
-l30
-R57
-V_>YWU5TT06`J;@D6?04cM2
-!s100 h?jgFDMeTM^6>m85IXiNW1
-R18
-32
-R61
-!i10b 1
-R62
-R63
-R64
-!i113 0
-R23
-R24
-Efull_reg_file
-Z66 w1760487584
-R41
-R15
-R14
-R13
-!i122 17
-R3
-Z67 8/home/dswanny/cpre381/CPRE_3810_B3/full_reg_file/full_reg_file.vhd
-Z68 F/home/dswanny/cpre381/CPRE_3810_B3/full_reg_file/full_reg_file.vhd
-l0
-L7 1
-VzmP:H5d[W48VP6kRMgBZ>0
-!s100 bCQUfh_6=deXnf4aEGR:h1
-R18
-32
-Z69 !s110 1760487831
-!i10b 1
-Z70 !s108 1760487831.000000
-Z71 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/full_reg_file/full_reg_file.vhd|
-Z72 !s107 /home/dswanny/cpre381/CPRE_3810_B3/full_reg_file/full_reg_file.vhd|
-!i113 0
-R23
-R24
-Astructural
-R41
-R15
-R14
-R13
-DEx4 work 13 full_reg_file 0 22 zmP:H5d[W48VP6kRMgBZ>0
-!i122 17
-l53
-L21 68
-V2lgZdH`LeM1UJ>eCRk]MF1
-!s100 VKP>[a8fl=^i:Rd;gCgZA0
-R18
-32
-R69
-!i10b 1
-R70
-R71
-R72
-!i113 0
-R23
-R24
-Egoblinbarrel
-Z73 w1759888348
-R13
-R14
-R15
-!i122 14
-R3
-R59
-R60
-l0
-L5 1
-V6S@=de7N41?bR<md[5e6V3
-!s100 _nLEN:8dFb:R8Tjl?EP=@3
-R18
-32
-Z74 !s110 1760487682
-!i10b 1
-Z75 !s108 1760487682.000000
-R63
-R64
-!i113 0
-R23
-R24
-Abehavioral
-R13
-R14
-R15
-Z76 DEx4 work 12 goblinbarrel 0 22 6S@=de7N41?bR<md[5e6V3
-!i122 14
-l30
-R57
-VF>d3Ud1hPFd?iTPB<PPD<0
-!s100 KUUgUEj=;bW4b:bW0kK2P3
-R18
-32
-R74
-!i10b 1
-R75
-R63
-R64
-!i113 0
-R23
-R24
-Emux2t1_n
-Z77 w1760490688
-R14
-R15
-!i122 39
-R3
-Z78 8/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/mux2t1_N.vhd
-Z79 F/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/mux2t1_N.vhd
-l0
-L21 1
-Vm2TKY62Z?Lc4XUfT@idHk0
-!s100 Mc>8WUZOhCGV<zK42hTXl1
-R18
-32
-Z80 !s110 1760490694
-!i10b 1
-Z81 !s108 1760490694.000000
-Z82 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/mux2t1_N.vhd|
-Z83 !s107 /home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/mux2t1_N.vhd|
-!i113 0
-R23
-R24
-Astructural
-R14
-R15
-DEx4 work 8 mux2t1_n 0 22 m2TKY62Z?Lc4XUfT@idHk0
-!i122 39
-l39
-L30 21
-Vka;>@_8aWglknXj8XN_<I3
-!s100 H=2;HajBd18F6SnmmojTm1
-R18
-32
-R80
-!i10b 1
-R81
-R82
-R83
-!i113 0
-R23
-R24
-Emux_32by32
-Z84 w1760487626
-R41
-R15
-R14
-R13
-!i122 10
-R3
-Z85 8/home/dswanny/cpre381/CPRE_3810_B3/mux32by32/mux_32by32.vhd
-Z86 F/home/dswanny/cpre381/CPRE_3810_B3/mux32by32/mux_32by32.vhd
-l0
-L7 1
-V78gOKQSLEAI]Q0S9i>Q110
-!s100 NmlQg?f9`1d`zT5N]GnAm2
-R18
-32
-Z87 !s110 1760487650
-!i10b 1
-Z88 !s108 1760487650.000000
-Z89 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/mux32by32/mux_32by32.vhd|
-Z90 !s107 /home/dswanny/cpre381/CPRE_3810_B3/mux32by32/mux_32by32.vhd|
-!i113 0
-R23
-R24
-Adataflow
-R41
-R15
-R14
-R13
-DEx4 work 10 mux_32by32 0 22 78gOKQSLEAI]Q0S9i>Q110
-!i122 10
-l16
-L15 4
-VbfdTRaLJ<KkdbPMYQ;?5S3
-!s100 W[=5VH0[lA`C_<^>3[QO^3
-R18
-32
-R87
-!i10b 1
-R88
-R89
-R90
-!i113 0
-R23
-R24
-Enbitregister
-R26
-R14
-R15
-!i122 13
-R3
-8/home/dswanny/cpre381/CPRE_3810_B3/RegFile/nbit-register.vhd
-F/home/dswanny/cpre381/CPRE_3810_B3/RegFile/nbit-register.vhd
+Emux4t1
+Z56 w1760716198
+R4
+R5
+!i122 23
+R2
+Z57 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux4t1 .vhd
+Z58 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux4t1 .vhd
 l0
 L4 1
-VGM73ie90lnm?`bLZCQo0m3
-!s100 7VYS:_`Aof>?JL:@D>Zf[1
-R18
+VcbY<4dP:O;P3K1O[RcBnm2
+!s100 GoRU;DFdSNgPBQNkV:gI;2
+R8
 32
-!s110 1760487671
+R46
 !i10b 1
-!s108 1760487671.000000
-!s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/RegFile/nbit-register.vhd|
-!s107 /home/dswanny/cpre381/CPRE_3810_B3/RegFile/nbit-register.vhd|
+R47
+Z59 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux4t1 .vhd|
+Z60 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux4t1 .vhd|
 !i113 0
-R23
-R24
+R13
+R14
 Astructural
-Z91 w1760462952
-R14
-R15
-DEx4 work 12 nbitregister 0 22 GM73ie90lnm?`bLZCQo0m3
-!i122 19
-Z92 8/home/dswanny/cpre381/CPRE_3810_B3/PC-register.vhd
-Z93 F/home/dswanny/cpre381/CPRE_3810_B3/PC-register.vhd
-l27
-L18 22
-VeL@c@945LjeL<JIj9GF8a1
-!s100 H:jHC`S4d0a1OmK5KknSJ1
-R18
+R4
+R5
+DEx4 work 6 mux4t1 0 22 cbY<4dP:O;P3K1O[RcBnm2
+!i122 23
+l43
+L15 52
+VaW@7`gQ^VHWZ:SUMoBV4L0
+!s100 @VA2l2zbHg_Egj;Gb9>hT2
+R8
 32
-Z94 !s110 1760487864
+R46
 !i10b 1
-Z95 !s108 1760487864.000000
-Z96 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/PC-register.vhd|
-Z97 !s107 /home/dswanny/cpre381/CPRE_3810_B3/PC-register.vhd|
+R47
+R59
+R60
 !i113 0
-R23
-R24
-Enor_32t1bit
-Z98 w1760317987
+R13
 R14
-R15
-!i122 8
-R3
-Z99 8/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/nor_32t1bit.vhd
-Z100 F/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/nor_32t1bit.vhd
+Emux4x32t1
+R24
+R16
+R17
+R4
+R5
+!i122 20
+R2
+Z61 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux32x4t1.vhd
+Z62 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux32x4t1.vhd
+l0
+L7 1
+VngGT@EWj<4KP?<7SgXdoE3
+!s100 kOO6@?0]ATDJGLgAPAFQ00
+R8
+32
+Z63 !s110 1760719818
+!i10b 1
+Z64 !s108 1760719818.000000
+Z65 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux32x4t1.vhd|
+Z66 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/mux32x4t1.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R16
+R17
+R4
+R5
+DEx4 work 9 mux4x32t1 0 22 ngGT@EWj<4KP?<7SgXdoE3
+!i122 20
+l17
+L15 6
+VaUiFj=K842e60KkjclUKP3
+!s100 ^GGUMmc1bP?nH>LFWhNjK0
+R8
+32
+R63
+!i10b 1
+R64
+R65
+R66
+!i113 0
+R13
+R14
+Enbit_adder
+Z67 w1760717771
+R4
+R5
+!i122 29
+R2
+Z68 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/n-bit_adder.vhd
+Z69 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/n-bit_adder.vhd
+l0
+L24 1
+V@4JD81IfBFZH19nWYl^HF3
+!s100 aEZ3E`L[AQH<nz1RZg08;2
+R8
+32
+Z70 !s110 1760719826
+!i10b 1
+Z71 !s108 1760719826.000000
+Z72 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/n-bit_adder.vhd|
+Z73 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/n-bit_adder.vhd|
+!i113 0
+R13
+R14
+Astructural
+R4
+R5
+DEx4 work 10 nbit_adder 0 22 @4JD81IfBFZH19nWYl^HF3
+!i122 29
+l51
+L35 37
+VMd@lTl6dWD;>RII[?MkK=1
+!s100 d=YW`K;F^0^OOODa8NECT3
+R8
+32
+R70
+!i10b 1
+R71
+R72
+R73
+!i113 0
+R13
+R14
+Enbit_alu
+Z74 w1760720387
+R17
+R4
+R5
+!i122 37
+R2
+Z75 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/nBit_ALU.vhd
+Z76 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/nBit_ALU.vhd
+l0
+L5 1
+VX;oh^n[b^0Z3^k19`HcQM2
+!s100 2zfi7Nk6VWM83418Ui38A0
+R8
+32
+Z77 !s110 1760720402
+!i10b 1
+Z78 !s108 1760720402.000000
+Z79 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/nBit_ALU.vhd|
+Z80 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/nBit_ALU.vhd|
+!i113 0
+R13
+R14
+Astructure
+R17
+R4
+R5
+DEx4 work 8 nbit_alu 0 22 X;oh^n[b^0Z3^k19`HcQM2
+!i122 37
+l58
+L19 79
+Vm:6E;<N=Wa85k85Ibh<7T3
+!s100 Fl<NNJOiB5f[<8]=U`jiY3
+R8
+32
+R77
+!i10b 1
+R78
+R79
+R80
+!i113 0
+R13
+R14
+Enor_32t1bit
+R24
+R4
+R5
+!i122 12
+R2
+Z81 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/nor_32t1bit.vhd
+Z82 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/nor_32t1bit.vhd
 l0
 L4 1
 VG8:U?SIC`fK[F=bQ8IXSi2
 !s100 LFNooHZ54=d9BhCXR1^cI1
-R18
+R8
 32
-Z101 !s110 1760487499
+Z83 !s110 1760719806
 !i10b 1
-Z102 !s108 1760487498.000000
-Z103 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/nor_32t1bit.vhd|
-Z104 !s107 /home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/nor_32t1bit.vhd|
+Z84 !s108 1760719806.000000
+Z85 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/nor_32t1bit.vhd|
+Z86 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/nor_32t1bit.vhd|
 !i113 0
-R23
-R24
-Abehavioral
+R13
 R14
-R15
+Abehavioral
+R4
+R5
 DEx4 work 11 nor_32t1bit 0 22 G8:U?SIC`fK[F=bQ8IXSi2
-!i122 8
+!i122 12
 l13
 L12 14
 V5CQKgO6lffJ`389TWeG=i1
 !s100 L`>4<SRk0N=CJO^nXh2;91
-R18
+R8
 32
-R101
+R83
 !i10b 1
-R102
-R103
-R104
+R84
+R85
+R86
 !i113 0
-R23
-R24
-Enorg2
-R98
+R13
 R14
-R15
-!i122 7
-R3
-Z105 8/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/norg2.vhd
-Z106 F/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/norg2.vhd
+Enorg2
+R24
+R4
+R5
+!i122 27
+R2
+Z87 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/norg2.vhd
+Z88 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/norg2.vhd
 l0
 L4 1
 VEgnOn<lZRY6FeKTSkE]4k1
 !s100 S[LHAcjc5Ro_C?>F]eTLU3
-R18
+R8
 32
-Z107 !s110 1760487497
+Z89 !s110 1760719825
 !i10b 1
-Z108 !s108 1760487497.000000
-Z109 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/norg2.vhd|
-Z110 !s107 /home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/norg2.vhd|
+Z90 !s108 1760719825.000000
+Z91 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/norg2.vhd|
+Z92 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/norg2.vhd|
 !i113 0
-R23
-R24
-Adataflow
+R13
 R14
-R15
+Adataflow
+R4
+R5
 DEx4 work 5 norg2 0 22 EgnOn<lZRY6FeKTSkE]4k1
-!i122 7
+!i122 27
 l13
 L12 6
 V7gG1TV23Y6JeT`E3@=ag>2
 !s100 XdWzo:goeGHS8:>jgS05H3
-R18
+R8
 32
-R107
+R89
 !i10b 1
-R108
-R109
-R110
+R90
+R91
+R92
 !i113 0
-R23
-R24
-Eor_32bit
-R98
+R13
 R14
-R15
-!i122 6
-R3
-Z111 8/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/or_32bit.vhd
-Z112 F/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/or_32bit.vhd
+Eones_complementor
+Z93 w1760719205
+R4
+R5
+!i122 26
+R2
+Z94 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/ones_complementor.vhd
+Z95 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/ones_complementor.vhd
+l0
+L9 1
+VI@bbYOk?]T9Xfn``bk[232
+!s100 K281lnL3XQ_dzNKoMed?b2
+R8
+32
+Z96 !s110 1760719824
+!i10b 1
+Z97 !s108 1760719824.000000
+Z98 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/ones_complementor.vhd|
+Z99 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/ones_complementor.vhd|
+!i113 0
+R13
+R14
+Astructural
+R4
+R5
+DEx4 work 17 ones_complementor 0 22 I@bbYOk?]T9Xfn``bk[232
+!i122 26
+l27
+L19 18
+VO6cOVjV^dCTCoA8Lh0b[32
+!s100 [8aHQ0ab3o:2=0Z^VBG:?0
+R8
+32
+R96
+!i10b 1
+R97
+R98
+R99
+!i113 0
+R13
+R14
+Eor_32bit
+R24
+R4
+R5
+!i122 9
+R2
+Z100 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/or_32bit.vhd
+Z101 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/or_32bit.vhd
 l0
 L4 1
 V`jT<=k93;fkB@<5f4;Bmm0
 !s100 9ae8EDI4m^[AhgLVKj[>j2
-R18
+R8
 32
-Z113 !s110 1760487495
+Z102 !s110 1760719803
 !i10b 1
-Z114 !s108 1760487495.000000
-Z115 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/or_32bit.vhd|
-Z116 !s107 /home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/or_32bit.vhd|
+Z103 !s108 1760719803.000000
+Z104 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/or_32bit.vhd|
+Z105 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/or_32bit.vhd|
 !i113 0
-R23
-R24
-Astructural
+R13
 R14
-R15
+Astructural
+R4
+R5
 DEx4 work 8 or_32bit 0 22 `jT<=k93;fkB@<5f4;Bmm0
-!i122 6
+!i122 9
 l21
-Z117 L14 17
+R30
 VO6FZ1[:fgc0Pk7T=8I=Pz0
 !s100 n_J=@e6iS7okMIz0NzH>M2
-R18
+R8
 32
-R113
+R102
 !i10b 1
-R114
-R115
-R116
+R103
+R104
+R105
 !i113 0
-R23
-R24
-Eorg2
-R98
+R13
 R14
-R15
-!i122 5
-R3
-Z118 8/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/org2.vhd
-Z119 F/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/org2.vhd
+Eorg2
+R24
+R4
+R5
+!i122 1
+R2
+Z106 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/org2.vhd
+Z107 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/org2.vhd
 l0
-R44
+R33
 V[C`FCj=kL0CTBYLlbjJzD3
 !s100 bGQ1F9eW^Q17OoL9h4g7z2
-R18
+R8
 32
-Z120 !s110 1760487494
+Z108 !s110 1760719793
 !i10b 1
-Z121 !s108 1760487494.000000
-Z122 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/org2.vhd|
-Z123 !s107 /home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/org2.vhd|
+Z109 !s108 1760719793.000000
+Z110 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/org2.vhd|
+Z111 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/org2.vhd|
 !i113 0
-R23
-R24
-Adataflow
+R13
 R14
-R15
+Adataflow
+R4
+R5
 DEx4 work 4 org2 0 22 [C`FCj=kL0CTBYLlbjJzD3
-!i122 5
+!i122 1
 l32
-Z124 L31 6
+R38
 VNHGn>Kh:]BEh4o]ImiG<d3
 !s100 h5_AzR3TdRA0a_K=dQ>mI2
-R18
+R8
 32
-R120
+R108
 !i10b 1
-R121
-R122
-R123
+R109
+R110
+R111
 !i113 0
-R23
-R24
-Epcregister
-R91
+R13
 R14
-R15
-!i122 19
-R3
-R92
-R93
-l0
-L4 1
-V@lVX2=05Uo::NDf934:5k2
-!s100 ;7e]6NW0mh5JSLHHLe?T>3
-R18
-32
-R94
-!i10b 1
-R95
-R96
-R97
-!i113 0
-R23
-R24
-Preg_array
-R14
-R15
-!i122 18
-R66
-R3
-8/home/dswanny/cpre381/CPRE_3810_B3/full_reg_file/reg_array.vhd
-F/home/dswanny/cpre381/CPRE_3810_B3/full_reg_file/reg_array.vhd
-l0
-L4 3
-VG=28lgzGVZBP>H_INoCHI3
-!s100 oNj0gCMnd9DUa@i9:Zm2S2
-R18
-32
-!s110 1760487833
-!i10b 1
-!s108 1760487833.000000
-!s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/full_reg_file/reg_array.vhd|
-!s107 /home/dswanny/cpre381/CPRE_3810_B3/full_reg_file/reg_array.vhd|
-!i113 0
-R23
-R24
 Priscv_types
-R14
-R15
-!i122 4
-R98
-R3
-Z125 8/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/RISCV_types.vhd
-Z126 F/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/RISCV_types.vhd
+R4
+R5
+!i122 15
+R24
+R2
+Z112 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/RISCV_types.vhd
+Z113 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/RISCV_types.vhd
 l0
 L15 17
 V@EBj`TV9k32W4`Wnab6nL1
 !s100 [3MOgHOHc;]eZiA6d[DKS0
-R18
+R8
 32
-Z127 !s110 1760487491
+Z114 !s110 1760719812
 !i10b 1
-Z128 !s108 1760487491.000000
-Z129 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/RISCV_types.vhd|
-Z130 !s107 /home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/RISCV_types.vhd|
+Z115 !s108 1760719811.000000
+Z116 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/RISCV_types.vhd|
+Z117 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/RISCV_types.vhd|
 !i113 0
-R23
-R24
-Bbody
-R12
+R13
 R14
-R15
-!i122 4
+Bbody
+R16
+R4
+R5
+!i122 15
 l0
 L33 3
 Vd1lAT84iznT:En5T7G@8?3
 !s100 bfKmhDbjG[5]5MF?^ZcBB3
-R18
+R8
+32
+R114
+!i10b 1
+R115
+R116
+R117
+!i113 0
+R13
+R14
+Etb_aluunit
+Z118 w1760719993
+R16
+R17
+R4
+R5
+!i122 36
+R2
+Z119 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/tb_ALUUnit.vhd
+Z120 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/tb_ALUUnit.vhd
+l0
+L7 1
+VJMM]<<2UIkM]o:RUAQITC3
+!s100 dU?ggCnif`L;d1XSe^91N1
+R8
+32
+Z121 !s110 1760719999
+!i10b 1
+Z122 !s108 1760719999.000000
+Z123 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/tb_ALUUnit.vhd|
+Z124 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/tb_ALUUnit.vhd|
+!i113 0
+R13
+R14
+Abehavior
+R16
+R17
+R4
+R5
+DEx4 work 10 tb_aluunit 0 22 JMM]<<2UIkM]o:RUAQITC3
+!i122 36
+l32
+L10 81
+Vb58k<@<<b_@Hb3?OlEd?[3
+!s100 i9aQIcblzN9?Pl_XYkLFl3
+R8
+32
+R121
+!i10b 1
+R122
+R123
+R124
+!i113 0
+R13
+R14
+Exor_32bit
+R24
+R4
+R5
+!i122 19
+R2
+Z125 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/xor_32bit.vhd
+Z126 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/xor_32bit.vhd
+l0
+L4 1
+VENcYHjXbnCG4NUn]8W3?a0
+!s100 42S<T5ZKaCYE[;e:EU6052
+R8
+32
+Z127 !s110 1760719817
+!i10b 1
+Z128 !s108 1760719817.000000
+Z129 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/xor_32bit.vhd|
+Z130 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/xor_32bit.vhd|
+!i113 0
+R13
+R14
+Astructural
+R4
+R5
+DEx4 work 9 xor_32bit 0 22 ENcYHjXbnCG4NUn]8W3?a0
+!i122 19
+l21
+R30
+V;BX7SdcMF]Ho>Dc:ZhcWZ0
+!s100 [OcLN=L_;X@8c1nGWC:CQ1
+R8
 32
 R127
 !i10b 1
@@ -811,354 +818,46 @@ R128
 R129
 R130
 !i113 0
-R23
-R24
-Etb_barrel_shifter
-Z131 w1760493897
 R13
 R14
-R15
-!i122 51
-R3
-Z132 8/home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/tb_barrel_shifter.vhd
-Z133 F/home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/tb_barrel_shifter.vhd
-l0
-L6 1
-VkaOCa]RC4GVkNaBG4BgIa3
-!s100 nXTdHI?_fSXG[m;oYJ7?52
-R18
-32
-Z134 !s110 1760493907
-!i10b 1
-Z135 !s108 1760493907.000000
-Z136 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/tb_barrel_shifter.vhd|
-Z137 !s107 /home/dswanny/cpre381/CPRE_3810_B3/barrel_shifter/tb_barrel_shifter.vhd|
-!i113 0
-R23
-R24
-Asim
-R12
-R25
-R13
-R14
-R15
-DEx4 work 17 tb_barrel_shifter 0 22 kaOCa]RC4GVkNaBG4BgIa3
-!i122 51
-l39
-Z138 L9 124
-V9jRHSl2MdT=B=0gm4HI[b3
-!s100 eQH8P3kS1`l:9=PIcf[i?0
-R18
-32
-R134
-!i10b 1
-R135
-R136
-R137
-!i113 0
-R23
-R24
-Etb_barrel_shifter_simple
-Z139 w1760493809
-R13
-R14
-R15
-!i122 50
-R3
-R132
-R133
-l0
-L6 1
-VmS:1D0m6EoWRU16himSaW2
-!s100 Zhn<Tg1E8Q`>AVMZHdXJ?1
-R18
-32
-Z140 !s110 1760493817
-!i10b 1
-Z141 !s108 1760493817.000000
-R136
-R137
-!i113 0
-R23
-R24
-Asim
-R12
-R25
-R13
-R14
-R15
-DEx4 work 24 tb_barrel_shifter_simple 0 22 mS:1D0m6EoWRU16himSaW2
-!i122 50
-l39
-R138
-VW>8>iaF@IoUDM66lnV_Ll0
-!s100 Yle0Te=MR9gEhdfiQl5>R3
-R18
-32
-R140
-!i10b 1
-R141
-R136
-R137
-!i113 0
-R23
-R24
-Etb_control_unit_simple
-Z142 w1760492143
-R14
-R15
-!i122 46
-R3
-Z143 8/home/dswanny/cpre381/CPRE_3810_B3/Control_Unit/tb_Control_Unit.vhd
-Z144 F/home/dswanny/cpre381/CPRE_3810_B3/Control_Unit/tb_Control_Unit.vhd
-l0
-L5 1
-V?K_MiLPm=]i=?QboI7`gn3
-!s100 Z5f47DNbzCX4hdK2;74H;0
-R18
-32
-Z145 !s110 1760492145
-!i10b 1
-Z146 !s108 1760492145.000000
-Z147 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/Control_Unit/tb_Control_Unit.vhd|
-Z148 !s107 /home/dswanny/cpre381/CPRE_3810_B3/Control_Unit/tb_Control_Unit.vhd|
-!i113 0
-R23
-R24
-Asim
-R13
-R40
-R14
-R15
-DEx4 work 22 tb_control_unit_simple 0 22 ?K_MiLPm=]i=?QboI7`gn3
-!i122 46
-l54
-L8 196
-V>zZRzkJ;?8TnVFjPSQL513
-!s100 HV7:Fkc]_Z2F^<L<`1bF;0
-R18
-32
-R145
-!i10b 1
-R146
-R147
-R148
-!i113 0
-R23
-R24
-Etb_evo_goblin_barrel
-Z149 w1760490618
-R13
-R14
-R15
-!i122 41
-R3
-Z150 8/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/tb_evo_goblin_barrel.vhd
-Z151 F/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/tb_evo_goblin_barrel.vhd
-l0
-L6 1
-Vk74Cz2k3Vi`7?SEzCS`5X1
-!s100 3i^PBch<RA:QEiJ7iU;C61
-R18
-32
-Z152 !s110 1760490699
-!i10b 1
-Z153 !s108 1760490699.000000
-Z154 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/tb_evo_goblin_barrel.vhd|
-Z155 !s107 /home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/tb_evo_goblin_barrel.vhd|
-!i113 0
-R23
-R24
-Asim
-R65
-R13
-R14
-R15
-DEx4 work 20 tb_evo_goblin_barrel 0 22 k74Cz2k3Vi`7?SEzCS`5X1
-!i122 41
-l46
-L9 98
-VO`B@]9ObmPgbc04Q8Lz803
-!s100 XTLG0@HoH9VFOOK70maH41
-R18
-32
-R152
-!i10b 1
-R153
-R154
-R155
-!i113 0
-R23
-R24
-Etb_goblinbarrel
-Z156 w1760487878
-Z157 DPx3 std 3 env 0 22 g[fj8WJKOa<0Y`zWY3UD70
-R13
-R14
-R15
-!i122 20
-R3
-R150
-R151
-l0
-L7 1
-VCT_<Y]6eOUVoQ??eDJ:D<0
-!s100 ;Fd_TM^eC5^PH_[F0CEPj0
-R18
-32
-Z158 !s110 1760487885
-!i10b 1
-Z159 !s108 1760487885.000000
-R154
-R155
-!i113 0
-R23
-R24
-Asim
-R76
-R157
-R13
-R14
-R15
-DEx4 work 15 tb_goblinbarrel 0 22 CT_<Y]6eOUVoQ??eDJ:D<0
-!i122 20
-l74
-L10 135
-VeTl_l6EP1B:BhoCUGF?Eb2
-!s100 FBU9jYPN?:WX_hJQ7EPYC1
-R18
-32
-R158
-!i10b 1
-R159
-R154
-R155
-!i113 0
-R23
-R24
-Etb_minimal_shifter
-Z160 w1760491234
-R13
-R14
-R15
-!i122 45
-R3
-Z161 8/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/tb_minimal_shifter.vhd
-Z162 F/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/tb_minimal_shifter.vhd
-l0
-L6 1
-V^hfjOYLGIWLN8BF7>UEjj2
-!s100 aN=ea=XNOjabnbi:7l;ND0
-R18
-32
-Z163 !s110 1760491265
-!i10b 1
-Z164 !s108 1760491265.000000
-Z165 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/tb_minimal_shifter.vhd|
-Z166 !s107 /home/dswanny/cpre381/CPRE_3810_B3/goblinBarrel/tb_minimal_shifter.vhd|
-!i113 0
-R23
-R24
-Asim
-R56
-R13
-R14
-R15
-DEx4 work 18 tb_minimal_shifter 0 22 ^hfjOYLGIWLN8BF7>UEjj2
-!i122 45
-l17
-L8 47
-V]gc1TG4P@iEkEKX@XYe^F0
-!s100 ;9mLz]6W[UR@RGU2A_GV=0
-R18
-32
-R163
-!i10b 1
-R164
-R165
-R166
-!i113 0
-R23
-R24
-Exor_32bit
-R98
-R14
-R15
-!i122 3
-R3
-Z167 8/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/xor_32bit.vhd
-Z168 F/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/xor_32bit.vhd
-l0
-L4 1
-VENcYHjXbnCG4NUn]8W3?a0
-!s100 42S<T5ZKaCYE[;e:EU6052
-R18
-32
-Z169 !s110 1760487488
-!i10b 1
-Z170 !s108 1760487488.000000
-Z171 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/xor_32bit.vhd|
-Z172 !s107 /home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/xor_32bit.vhd|
-!i113 0
-R23
-R24
-Astructural
-R14
-R15
-DEx4 work 9 xor_32bit 0 22 ENcYHjXbnCG4NUn]8W3?a0
-!i122 3
-l21
-R117
-V;BX7SdcMF]Ho>Dc:ZhcWZ0
-!s100 [OcLN=L_;X@8c1nGWC:CQ1
-R18
-32
-R169
-!i10b 1
-R170
-R171
-R172
-!i113 0
-R23
-R24
 Exorg2
-R98
-R14
-R15
+R24
+R4
+R5
 !i122 2
-R3
-Z173 8/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/xorg2.vhd
-Z174 F/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/xorg2.vhd
+R2
+Z131 8/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/xorg2.vhd
+Z132 F/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/xorg2.vhd
 l0
-R44
+R33
 V;hb`C0MKik;h36`3`SzM60
 !s100 [hI[mXFH4_j16U;>U1Lfn2
-R18
+R8
 32
-Z175 !s110 1760487486
+Z133 !s110 1760719795
 !i10b 1
-Z176 !s108 1760487486.000000
-Z177 !s90 -reportprogress|300|-work|work|/home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/xorg2.vhd|
-Z178 !s107 /home/dswanny/cpre381/CPRE_3810_B3/ALUUnit/xorg2.vhd|
+Z134 !s108 1760719795.000000
+Z135 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/xorg2.vhd|
+Z136 !s107 /home/anthonw/Desktop/CPRE_3810_B3/ALUUnit/xorg2.vhd|
 !i113 0
-R23
-R24
-Adataflow
+R13
 R14
-R15
+Adataflow
+R4
+R5
 DEx4 work 5 xorg2 0 22 ;hb`C0MKik;h36`3`SzM60
 !i122 2
 l32
-R124
+R38
 VbmLohbkYjJQ`?EHUY>LoL1
 !s100 Z6[FAPS4fBLB`F?OO<AY72
-R18
+R8
 32
-R175
+R133
 !i10b 1
-R176
-R177
-R178
+R134
+R135
+R136
 !i113 0
-R23
-R24
+R13
+R14

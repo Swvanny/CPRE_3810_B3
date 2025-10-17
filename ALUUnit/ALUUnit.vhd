@@ -16,7 +16,7 @@ entity ALUUnit is
 end ALUUnit;
 
 architecture structural of ALUUnit is
-  ------------------------------------------------------------------
+
   -- Components 
 
   component nBit_ALU
@@ -83,7 +83,7 @@ architecture structural of ALUUnit is
     );
   end component;
 
-  ------------------------------------------------------------------
+
   -- Signals
 
   signal mux_control4t1, mux_control2t1 : std_logic_vector(1 downto 0);
@@ -94,14 +94,14 @@ architecture structural of ALUUnit is
   signal bus_in : t_bus_4x32;
 
 begin
-  ------------------------------------------------------------------
+
   -- Controls and flags
 
   mux_control2t1 <= Alucontrol(1 downto 0);      -- selects AND/OR/XOR when add/sub not chosen
   neg            <= finalResult(WIDTH-1);
   zero <= '1' when finalResult = (finalResult'range => '0') else '0';
 
-  ------------------------------------------------------------------
+
   -- Logical units populate bus_in(0..2)
 
   andUnit : and_32bit
@@ -125,7 +125,7 @@ begin
       o_O  => bus_in(2)
     );
 
-  ------------------------------------------------------------------
+
   -- Adder/Subtractor goes to bus_in(3)
 
   addsub : nBit_ALU
@@ -138,7 +138,7 @@ begin
       output_Overflow => ovf
     );
 
-  ------------------------------------------------------------------
+
   -- If Alucontrol(2)=1 → force select "11" (ADD/SUB); else lower 2 bits select logic ops
 
   muxBeforeResult : mux2t1_N
@@ -150,7 +150,7 @@ begin
       o_O  => mux_control4t1
     );
 
-  ------------------------------------------------------------------
+
   -- Select final result among AND/OR/XOR/ADD(SUB)
 
   muxResult : mux4x32t1
@@ -163,7 +163,7 @@ begin
   -- Drive output
   output_result <= finalResult;
 
-  ------------------------------------------------------------------
+
   -- Flag mux: 00=NEG, 01=OVF, 10=CARRY, 11=ZERO
 
   u_Flag_mux : mux4t1

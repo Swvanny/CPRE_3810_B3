@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;
 entity goblinBarrel is
     port (
         data_in           : in  std_logic_vector(31 downto 0);
-        shift_left_right  : in  std_logic_vector(3 downto 0); -- 00 = SLL, 01 = SRL, 10 = SRA
+        shift_left_right  : in  std_logic_vector(3 downto 0); -- 0111 = SLL, 0101 = SRL, 0110 = SRA
         shift_amount      : in  std_logic_vector(4 downto 0);
         data_out          : out std_logic_vector(31 downto 0)
     );

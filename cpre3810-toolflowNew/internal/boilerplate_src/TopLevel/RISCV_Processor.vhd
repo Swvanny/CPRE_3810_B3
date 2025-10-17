@@ -72,6 +72,13 @@ architecture structure of RISCV_Processor is
   -- TODO: You may add any additional signals or components your implementation 
   --       requires below this comment
 
+  signal s_pc_data : std_logic_vector(31 downto 0);
+  signal s_read_address : std_logic_vector(31 downto 0);
+  signal s_pc_write : std_logic;
+  signal s_pc_reset : std_logic;
+
+
+
 --REGISTER IMPLEMENTATION    
 
   component Nbit_reg is
@@ -213,6 +220,19 @@ begin
   -- TODO: Ensure that s_Ovfl is connected to the overflow output of your ALU
 
   -- TODO: Implement the rest of your processor below this comment! 
+
+PCCounter_inst: Nbit_reg
+generic( N => 32)
+port map (
+     i_CLK => i_CLK,
+     i_RST => s_pc_reset,
+     i_WE => 
+     i_DataIn => 
+     o_DataOut =>
+  
+
+
+);
 
   decoder_inst: decoder5to32
     port map(i_sel => i_write_addr, i_en => i_write_en, o_out => we_decoded);

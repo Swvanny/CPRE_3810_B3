@@ -1,13 +1,13 @@
 [N
 4
 2
-8 mux2t1_n
+8 nbit_alu
 4
-1 N
-1
-39 /home/dswanny/cpre381/CPRE_3810_B3/work
+5 WIDTH
 3
-10 structural
+9 structure
+1
+39 /home/anthonw/Desktop/CPRE_3810_B3/work
 ]
 [G
 1

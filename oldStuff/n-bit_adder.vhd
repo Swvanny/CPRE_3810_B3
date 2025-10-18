@@ -21,7 +21,7 @@ use IEEE.std_logic_1164.all;
 
 
 entity Nbit_adder is
-  generic(N : integer := 4);  
+  generic(N : integer := 32);  
   port(
     i_A  : in std_logic_vector(N-1 downto 0);
     i_B  : in std_logic_vector(N-1 downto 0);

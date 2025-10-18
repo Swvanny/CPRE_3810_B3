@@ -72,6 +72,15 @@ architecture structure of RISCV_Processor is
   -- TODO: You may add any additional signals or components your implementation 
   --       requires below this comment
 
+  signal s_pc_data : std_logic_vector(31 downto 0);
+  signal s_read_address : std_logic_vector(31 downto 0);
+  signal s_pc_write : std_logic;
+  signal s_pc_reset : std_logic;
+  signal s_pc_data_in : std_logic_vector(31 downto 0);
+  signal s_pc4_out : std_logic_vector(31 downto 0);
+
+
+
 --REGISTER IMPLEMENTATION    
 
   component Nbit_reg is
@@ -147,7 +156,7 @@ end component;
 --ADDERS FOR FETCH
 
 component adder
-      generic map(N : integer := 32);
+      generic(N : integer := 32);
       port map(
         i_D0 : in std_logic; 
         i_D1 : in std_logic; 
@@ -156,6 +165,17 @@ component adder
         o_O : out std_logic 
       );
  end component;
+
+ component Nbit_adder 
+  generic (N : integer := 32);  
+  port(
+    i_A  : in std_logic_vector(N-1 downto 0);
+    i_B  : in std_logic_vector(N-1 downto 0);
+    i_C  : in std_logic;  
+    o_S  : out std_logic_vector(N-1 downto 0);
+    o_C  : out std_logic  
+  );
+end component;
 
 --DECODER FOR REGISTER
 
@@ -213,6 +233,27 @@ begin
   -- TODO: Ensure that s_Ovfl is connected to the overflow output of your ALU
 
   -- TODO: Implement the rest of your processor below this comment! 
+
+PCCounter_inst: Nbit_reg
+generic map( N => 32)
+port map (
+     i_CLK => i_CLK,
+     i_RST => s_pc_reset,
+     i_WE => s_pc_write,
+     i_DataIn => s_pc_data_in,
+     o_DataOut => s_NextInstAddr
+  
+);
+
+pc4adder : Nbit_adder
+generic(N =>32)
+port(
+    i_A  => s_NextInstAddr,
+    i_B  => x"00000004",
+    i_C  => '0',
+    o_S  => s_pc4_out,
+    o_C  => open
+  );
 
   decoder_inst: decoder5to32
     port map(i_sel => i_write_addr, i_en => i_write_en, o_out => we_decoded);

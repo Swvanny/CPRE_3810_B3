@@ -136,7 +136,7 @@ architecture structure of RISCV_Processor is
          o_DataOut: out std_logic_vector(N-1 downto 0));
   end component;
 
---THREE MUX IMPLEMENTATIONS
+-- MUX'S IMPLEMENTATIONS
 
   component mux_32by32 is
     port(sel: in std_logic_vector(4 downto 0);
@@ -148,7 +148,7 @@ architecture structure of RISCV_Processor is
     generic(N: integer := 32);
     port(i_S: in std_logic;
          i_D0, i_D1: in std_logic_vector(N-1 downto 0);
-         o_O: out std_logic_vector(N-1 downto 0));
+         o_X: out std_logic_vector(N-1 downto 0));
   end component;
 
   component mux4t1_32 is
@@ -162,6 +162,26 @@ architecture structure of RISCV_Processor is
   );
 end component;
 
+component mux4t1 is
+    port(
+        i_D0 : in std_logic;
+        i_D1 : in std_logic;
+        i_D2 : in std_logic;
+        i_D3 : in std_logic;
+        i_S  : in std_logic_vector(1 downto 0);
+        o_Y  : out std_logic
+    );
+end component;
+
+component mux2t1 is 
+      port (
+        i_X0 : in std_logic;
+        i_X1 : in std_logic;
+        i_S : in std_logic;
+        o_X : out std_logic
+      );
+      end component;
+
   
 
   --SIGNED BIT EXTENDER IMPLEMENTATION
@@ -169,7 +189,7 @@ end component;
   component bitExtender
 port (
         data_in  : in  std_logic_vector(19 downto 0);
-        ctrl : in  std_logic(1 downto 0); 
+        ctrl : in  std_logic_vector(1 downto 0); 
         data_out : out std_logic_vector(31 downto 0)
     );
  end component;
@@ -194,7 +214,8 @@ component Control_Unit_2
     ALU_Or_Imm_Jump    : out std_logic;
     Flag_Mux           : out std_logic_vector(1 downto 0);
     Flag_Or_Nflag      : out std_logic;
-    Jump_With_Register : out std_logic
+    Jump_With_Register : out std_logic;
+    Shift              : out std_logic
   );
 end component;
 
@@ -213,7 +234,7 @@ end component;
 
 component adder
       generic(N : integer := 32);
-      port map(
+      port(
         i_D0 : in std_logic; 
         i_D1 : in std_logic; 
         i_C : in std_logic; 
@@ -310,7 +331,7 @@ begin
 PCCounter_inst: Nbit_reg
 generic map( N => 32)
 port map (
-     i_CLK => i_CLK,
+     i_CLK => iCLK,
      i_RST => s_pc_reset,
      i_WE => s_pc_write,
      i_DataIn => s_pc_data_in,
@@ -319,8 +340,8 @@ port map (
 );
 
 pc4adder : Nbit_adder
-generic(N =>32)
-port(
+generic map(N =>32)
+port map(
     i_A  => s_NextInstAddr,
     i_B  => x"00000004",
     i_C  => '0',
@@ -359,7 +380,7 @@ Control_Unit_inst: Control_Unit_2
   gen_regs: for i in 1 to 31 generate
     reg_inst: Nbit_reg
       generic map(N => 32)
-      port map(i_CLK => iCLK, iRST => '0', i_WE => s_we_masked(i),
+      port map(i_CLK => iCLK, i_RST => iRST, i_WE => s_we_masked(i),
                i_DataIn => s_RegWrData, o_DataOut => reg_data(i));
   end generate;
 
@@ -378,10 +399,10 @@ Control_Unit_inst: Control_Unit_2
     rs2_or_imm_mux : mux2t1_N
     generic map(N =>32)
     port map(
-        i_S => ALUSrc,
+        i_S => s_ALUSrc,
         i_D0 => s_out_rs2,
         i_D1 => s_extended_imm,
-        o_MuxOut => s_rs2_or_imm_mux_out
+        o_X => s_rs2_or_imm_mux_out
     );
 
     ALU_inst : ALUUnit
@@ -400,14 +421,14 @@ Control_Unit_inst: Control_Unit_2
 
     );
 
-    alu_flag_mux_flag_out : mux4t1_32
+    alu_flag_mux_flag_out : mux4t1
     port map(
         i_S  => s_Flag_Mux,
-        i_X0 => s_negative_flag & (others => '0'),
-        i_X1 => s_Ovfl & (others => '0'),
-        i_X2 => s_carry_flag & (others => '0'),
-        i_X3 => s_zero_flag & (others => '0'),
-        o_X  => s_flag_mux_out
+        i_D0 => s_negative_flag ,
+        i_D1 => s_Ovfl ,
+        i_D2 => s_carry_flag ,
+        i_D3 => s_zero_flag ,
+        o_Y  => s_flag_mux_out
     );
 
     flag_negation_gate : invg
@@ -416,13 +437,12 @@ Control_Unit_inst: Control_Unit_2
         o_F => s_negation_flag_out
     );
 
-    negation_mux : mux2t1_N
-    generic map(N => 1)
+    negation_mux : mux2t1
     port map(
         i_S => s_Flag_Or_Nflag,
-        i_D0 => s_flag_mux_out(0),
-        i_D1 => s_negation_flag_out(0),
-        o_MuxOut => s_final_flag_out
+        i_X0 => s_flag_mux_out,
+        i_X1 => s_negation_flag_out,
+        o_X => s_final_flag_out
     );
 
     branch_and_flag_gate : andg2
@@ -445,7 +465,7 @@ Control_Unit_inst: Control_Unit_2
         i_S => s_ALU_Or_Imm_Jump,
         i_D0 => oALUOut,
         i_D1 => s_extended_imm,
-        o_MuxOut => s_ALU_or_imm_shift_in
+        o_X => s_ALU_or_imm_shift_in
     );
     goblinBarrel_inst : goblinBarrel
     port map(
@@ -461,7 +481,7 @@ Control_Unit_inst: Control_Unit_2
         i_S => s_Shift,
         i_D0 => oALUOut,
         i_D1 => s_out_shifted_data,
-        o_MuxOut => s_DMemAddr
+        o_X => s_DMemAddr
     );
 
     pc_or_zero_mux : mux2t1_N
@@ -470,7 +490,7 @@ Control_Unit_inst: Control_Unit_2
         i_S => s_Jump_With_Register,
         i_D0 => s_NextInstAddr,
         i_D1 => X"00000000",
-        o_MuxOut => s_pc_or_zero_out
+        o_X => s_pc_or_zero_out
     );
 
     shift_jump_barrel : goblinBarrel
@@ -497,7 +517,7 @@ Control_Unit_inst: Control_Unit_2
         i_S => s_or_jump_out,
         i_D0 => s_pc4_out,
         i_D1 => s_pc_or_word_adder_out,
-        o_MuxOut => s_pc_data_in
+        o_X => s_pc_data_in
     );
 
 --TO DO: LINK MUX AND MEM TO REG MUX
@@ -507,7 +527,7 @@ Control_Unit_inst: Control_Unit_2
         i_S  => s_AndLink,
         i_X0 => oALUOut,
         i_X1 => s_pc_or_word_adder_out,
-        i_X2 => s_flag_mux_out,
+        i_X2 => s_flag_mux_out, --WHATS THIS SUPPOSED TO BE DREW? I CHOSE INCORRECTLY
         i_X3 => s_pc4_out,
         o_X  => s_4t1_and_link_out
     );
@@ -518,7 +538,7 @@ Control_Unit_inst: Control_Unit_2
         i_S => s_MemToReg,
         i_D0 => s_4t1_and_link_out,
         i_D1 => s_DMemOut,
-        o_MuxOut => s_RegWrData
+        o_X => s_RegWrData
     );
 
     

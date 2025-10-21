@@ -33,3 +33,4 @@ end package RISCV_types;
 package body RISCV_types is
   -- Probably won't need anything here... function bodies, etc.
 end package body RISCV_types;
+

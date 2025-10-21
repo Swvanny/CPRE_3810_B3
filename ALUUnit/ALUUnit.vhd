@@ -11,25 +11,29 @@ entity ALUUnit is
     input_A       : in  std_logic_vector (WIDTH-1 downto 0);
     input_B       : in  std_logic_vector (WIDTH-1 downto 0);
     output_result : out std_logic_vector (WIDTH-1 downto 0);
-    flag          : out std_logic
+    flag          : out std_logic;        -- muxed flag output (00=N, 01=V, 10=C, 11=Z)
+    flag_zero     : out std_logic;
+    flag_carry    : out std_logic;
+    flag_negative : out std_logic;
+    flag_overflow : out std_logic
   );
 end ALUUnit;
 
 architecture structural of ALUUnit is
 
-  -- Components 
-
--- This is the 4×32 bus feeding the result mux (AND, OR, XOR, ADD/SUB)
+  -- This is the 4×32 bus feeding the result mux (AND, OR, XOR, ADD/SUB)
   signal bus_in : t_bus_4x32;
 
-  component nBit_ALU
+  component nBit_ALU is
     port(
-      nAdd_Sub        : in  std_logic;
-      input_A         : in  std_logic_vector(WIDTH-1 downto 0);
-      input_B         : in  std_logic_vector(WIDTH-1 downto 0);
-      output_Sum      : out std_logic_vector(WIDTH-1 downto 0);
-      output_Carry    : out std_logic;
-      output_Overflow : out std_logic
+      nAdd_Sub   : in  std_logic;                        -- 0: ADD, 1: SUB
+      input_A    : in  std_logic_vector(31 downto 0);
+      input_B    : in  std_logic_vector(31 downto 0);
+      output_Sum : out std_logic_vector(31 downto 0);
+      flag_Z     : out std_logic;
+      flag_N     : out std_logic;
+      flag_C     : out std_logic;                        -- SUB: 1 = no-borrow
+      flag_V     : out std_logic
     );
   end component;
 
@@ -86,26 +90,24 @@ architecture structural of ALUUnit is
     );
   end component;
 
-
-  -- Signals
-
   signal mux_control4t1, mux_control2t1 : std_logic_vector(1 downto 0);
-  signal finalResult                    : std_logic_vector(WIDTH-1 downto 0);
-  signal neg, ovf, carry, zero         : std_logic;
+  signal finalResult : std_logic_vector(WIDTH-1 downto 0);
+  signal neg, zero : std_logic;
+  signal adderZ, adderN, adderC, adderV : std_logic;
 
-
+  -- Separate bit to select the adder result into the final mux
+  -- Alucontrol(3) = 1 selects the adder path; 0 selects logic via Alucontrol(1 downto 0)
+  signal adder_sel : std_logic;
 
 begin
 
-  -- Controls and flags
-
-  mux_control2t1 <= Alucontrol(1 downto 0);      -- selects AND/OR/XOR when add/sub not chosen
-  neg            <= finalResult(WIDTH-1);
-  zero <= '1' when finalResult = (finalResult'range => '0') else '0';
-
+  -- Control signals
+  mux_control2t1 <= Alucontrol(1 downto 0);  -- 00=AND, 01=OR, 10=XOR
+  adder_sel      <= Alucontrol(3);
+  neg  <= finalResult(WIDTH-1);
+  zero <= '1' when unsigned(finalResult) = 0 else '0';
 
   -- Logical units populate bus_in(0..2)
-
   andUnit : and_32bit
     port map(
       i_D0 => input_A,
@@ -127,55 +129,57 @@ begin
       o_O  => bus_in(2)
     );
 
-
-  -- Adder/Subtractor goes to bus_in(3)
-
+  -- Adder/Subtractor populates bus_in(3); Alucontrol(2) selects ADD(0)/SUB(1)
   addsub : nBit_ALU
     port map(
-      nAdd_Sub        => Alucontrol(2),  -- 0:add, 1:sub (per your ALU)
-      input_A         => input_A,
-      input_B         => input_B,
-      output_Sum      => bus_in(3),
-      output_Carry    => carry,
-      output_Overflow => ovf
+      nAdd_Sub   => Alucontrol(2),
+      input_A    => input_A,
+      input_B    => input_B,
+      output_Sum => bus_in(3),
+      flag_Z     => adderZ,
+      flag_N     => adderN,
+      flag_C     => adderC,
+      flag_V     => adderV
     );
 
-
-  -- If Alucontrol(2)=1 → force select "11" (ADD/SUB); else lower 2 bits select logic ops
-
+  -- If adder_sel=1 → force select "11" (ADD/SUB); else lower 2 bits select logic ops
   muxBeforeResult : mux2t1_N
-    generic MAP(N => 2)
+    generic map(N => 2)
     port map(
-      i_S  => Alucontrol(2),
+      i_S  => adder_sel,
       i_D0 => mux_control2t1,  -- 00=AND, 01=OR, 10=XOR
       i_D1 => "11",            -- 11=ADD/SUB
       o_O  => mux_control4t1
     );
 
-
   -- Select final result among AND/OR/XOR/ADD(SUB)
-
   muxResult : mux4x32t1
     port map(
       sel      => mux_control4t1,
       bus_in   => bus_in,
-      o_output => finalResult  -- WIDTH must be 32 for a direct connect
+      o_output => finalResult
     );
 
-  -- Drive output
+  -- Drive output results
   output_result <= finalResult;
 
+  -- Dedicated flag outputs
+  -- Negative/Zero reflect the final selected result (valid for all ops)
+  -- Carry/Overflow are only meaningful when the adder path is selected
+  flag_negative <= neg;
+  flag_zero     <= zero;
+  flag_carry    <= adderC when mux_control4t1 = "11" else '0';
+  flag_overflow <= adderV when mux_control4t1 = "11" else '0';
 
-  -- Flag mux: 00=NEG, 01=OVF, 10=CARRY, 11=ZERO
-
+  -- Mux flag output (00=NEG, 01=OVF, 10=CARRY, 11=ZERO)
   u_Flag_mux : mux4t1
     port map(
-      i_D0 => neg,
-      i_D1 => ovf,
-      i_D2 => carry,
-      i_D3 => zero,
+      i_D0 => flag_negative,
+      i_D1 => flag_overflow,
+      i_D2 => flag_carry,
+      i_D3 => flag_zero,
       i_S  => flag_mux,
       o_Y  => flag
     );
 
-end architecture;
+end architecture structural;

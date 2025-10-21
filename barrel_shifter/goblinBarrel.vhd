@@ -108,7 +108,7 @@ begin
 
     
     shift8 <=
-        in3(23 downto 0) & x"00" when shift_left_right = "0110" else
+        in3(23 downto 0) & x"00" when shift_left_right = "0111" else
         x"00" & in3(31 downto 8) when shift_left_right = "0101" else
         sign_extend_8 & in3(31 downto 8) when shift_left_right = "0110" else;
 
@@ -125,7 +125,7 @@ begin
 
    
     shift16 <=
-        in4(15 downto 0) & x"0000" when shift_left_right = "0110" else
+        in4(15 downto 0) & x"0000" when shift_left_right = "0111" else
         x"0000" & in4(31 downto 16) when shift_left_right = "0101" else
         sign_extend_16 & in4(31 downto 16) when shift_left_right = "0110" else;
 

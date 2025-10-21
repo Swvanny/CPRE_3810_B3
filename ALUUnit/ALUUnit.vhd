@@ -11,7 +11,6 @@ entity ALUUnit is
     input_A       : in  std_logic_vector (WIDTH-1 downto 0);
     input_B       : in  std_logic_vector (WIDTH-1 downto 0);
     output_result : out std_logic_vector (WIDTH-1 downto 0);
-    flag          : out std_logic;        -- muxed flag output (00=N, 01=V, 10=C, 11=Z)
     flag_zero     : out std_logic;
     flag_carry    : out std_logic;
     flag_negative : out std_logic;
@@ -171,15 +170,5 @@ begin
   flag_carry    <= adderC when mux_control4t1 = "11" else '0';
   flag_overflow <= adderV when mux_control4t1 = "11" else '0';
 
-  -- Mux flag output (00=NEG, 01=OVF, 10=CARRY, 11=ZERO)
-  u_Flag_mux : mux4t1
-    port map(
-      i_D0 => flag_negative,
-      i_D1 => flag_overflow,
-      i_D2 => flag_carry,
-      i_D3 => flag_zero,
-      i_S  => flag_mux,
-      o_Y  => flag
-    );
 
 end architecture structural;

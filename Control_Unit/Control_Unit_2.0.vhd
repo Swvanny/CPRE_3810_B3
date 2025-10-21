@@ -20,6 +20,7 @@ entity Control_Unit_2 is
     ALU_Or_Imm_Jump    : out std_logic;
     Flag_Mux           : out std_logic_vector(1 downto 0);
     Flag_Or_Nflag      : out std_logic;
+    Shift              : out std_logic;
     Jump_With_Register : out std_logic
   );
 end entity;
@@ -62,7 +63,7 @@ architecture dataflow of control_unit is
 
   -- Opcode class signals
   signal is_Rtype, is_Itype, is_load, is_store,
-         is_branch, is_jal, is_jalr, is_lui, is_auipc : std_logic;
+         is_branch, is_jal, is_jalr, is_lui, is_auipc, is_shift : std_logic;
 
   signal aluctl_Rtype, aluctl_Itype, aluctl_main : std_logic_vector(3 downto 0);
 
@@ -168,5 +169,11 @@ begin
   
   -- Jump_With_Register
   Jump_With_Register <= is_jalr;
+
+   -- Shift
+  Shift <= '1' when
+             (is_Rtype = '1' and (funct3 = "001" or funct3 = "101")) or
+             (is_Itype = '1' and (funct3 = "001" or funct3 = "101"))
+           else '0';
 
 end architecture;

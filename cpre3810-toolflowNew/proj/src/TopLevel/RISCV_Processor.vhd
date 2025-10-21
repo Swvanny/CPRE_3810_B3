@@ -72,14 +72,51 @@ architecture structure of RISCV_Processor is
   -- TODO: You may add any additional signals or components your implementation 
   --       requires below this comment
 
+
+  --PC SIGNALS
   signal s_pc_data : std_logic_vector(31 downto 0);
   signal s_read_address : std_logic_vector(31 downto 0);
   signal s_pc_write : std_logic;
   signal s_pc_reset : std_logic;
   signal s_pc_data_in : std_logic_vector(31 downto 0);
   signal s_pc4_out : std_logic_vector(31 downto 0);
+  signal s_pc_or_zero_out : std_logic_vector(31 downto 0);
+  signal s_pc_word_shift_out : std_logic_vector(31 downto 0);
+  signal s_pc_or_word_adder_out : std_logic_vector(31 downto 0);
 
 
+--Control Unit SIGNALS
+  signal s_ALUSrc             : std_logic;
+  signal s_ALUControl         : std_logic_vector(3 downto 0);
+  signal s_ImmType            : std_logic_vector(1 downto 0);
+  signal s_AndLink            : std_logic_vector(1 downto 0);
+  signal s_MemToReg           : std_logic;
+  signal s_Branch             : std_logic;
+  signal s_Jump               : std_logic;
+  signal s_ALU_Or_Imm_Jump    : std_logic;
+  signal s_Flag_Mux           : std_logic_vector(1 downto 0);
+  signal s_Flag_Or_Nflag      : std_logic;
+  signal s_Jump_With_Register : std_logic;
+
+  signal s_neg_flag : std_logic;
+
+  --Register File SIGNALS
+  signal reg_data : reg_array;
+  constant WRITE_MASK : std_logic_vector(31 downto 0) := (0 => '0', others => '1');
+  signal s_decoder_out : std_logic_vector(31 downto 0);
+  signal s_we_masked : std_logic_vector(31 downto 0);
+  signal s_out_rs1, s_out_rs2 : std_logic_vector(31 downto 0);
+
+  --Extended Immediate SIGNALS
+  signal s_extended_imm : std_logic_vector(31 downto 0);
+  signal s_ALU_or_imm_shift_in : std_logic_vector(31 downto 0);
+
+--ALU SIGNALS
+ signal s_rs2_or_imm_mux_out : std_logic_vector(31 downto 0);
+ signal s_4t1_and_link_out : std_logic_vector(31 downto 0);
+
+--BARREL SHIFTER SIGNALS
+ signal s_out_shifted_data : std_logic_vector(31 downto 0);
 
 --REGISTER IMPLEMENTATION    
 
@@ -90,7 +127,7 @@ architecture structure of RISCV_Processor is
          o_DataOut: out std_logic_vector(N-1 downto 0));
   end component;
 
---TWO MUX IMPLEMENTATIONS
+--THREE MUX IMPLEMENTATIONS
 
   component mux_32by32 is
     port(sel: in std_logic_vector(4 downto 0);
@@ -104,28 +141,38 @@ architecture structure of RISCV_Processor is
          i_D0, i_D1: in std_logic_vector(N-1 downto 0);
          o_O: out std_logic_vector(N-1 downto 0));
   end component;
+
+  component mux4t1_32 is
+  port(
+    i_S  : in  std_logic_vector(1 downto 0);  
+    i_X0 : in  std_logic_vector(31 downto 0); 
+    i_X1 : in  std_logic_vector(31 downto 0); 
+    i_X2 : in  std_logic_vector(31 downto 0); 
+    i_X3 : in  std_logic_vector(31 downto 0); 
+    o_X  : out std_logic_vector(31 downto 0)  
+  );
+end component;
+
   
 
   --SIGNED BIT EXTENDER IMPLEMENTATION
 
   component bitExtender
 port (
-        data_in  : in  std_logic_vector(11 downto 0);
-        ctrl : in  std_logic; -- '0' for zero-extend, '1' for sign-extend
+        data_in  : in  std_logic_vector(19 downto 0);
+        ctrl : in  std_logic(1 downto 0); 
         data_out : out std_logic_vector(31 downto 0)
     );
  end component;
 
 --CONTROL IMPLEMENTATION
 
-component control_unit 
+component Control_Unit_2 
   port (
-    -- Instruction fields
     opcode   : in  std_logic_vector(6 downto 0);
     funct3   : in  std_logic_vector(2 downto 0);
     funct7   : in  std_logic_vector(6 downto 0);
 
-    -- Control outputs
     ALUSrc             : out std_logic;
     ALUControl         : out std_logic_vector(3 downto 0);
     ImmType            : out std_logic_vector(1 downto 0);
@@ -184,6 +231,20 @@ component decoder5to32 is
          i_en : in std_logic;
          o_out: out std_logic_vector(31 downto 0));
   end component;
+
+-- ALU
+component ALUUnit 
+  generic (WIDTH : integer := DATA_WIDTH);
+  port(
+    Alucontrol    : in  std_logic_vector(3 downto 0);
+    flag_mux      : in  std_logic_vector(1 downto 0);
+    input_A       : in  std_logic_vector (WIDTH-1 downto 0);
+    input_B       : in  std_logic_vector (WIDTH-1 downto 0);
+    output_result : out std_logic_vector (WIDTH-1 downto 0);
+    flag          : out std_logic
+  );
+end component;
+
 
 --GATES
 
@@ -255,23 +316,155 @@ port(
     o_C  => open
   );
 
-  decoder_inst: decoder5to32
-    port map(i_sel => i_write_addr, i_en => i_write_en, o_out => we_decoded);
+Control_Unit_inst: Control_Unit_2
+  port map(
+    opcode   => s_Inst(6 downto 0),
+    funct3   => s_Inst(14 downto 12),
+    funct7   => s_Inst(31 downto 25),
 
-  we_masked <= we_decoded and WRITE_MASK;
+    ALUSrc             => s_ALUSrc,
+    ALUControl         => s_ALUControl,
+    ImmType            => s_ImmType,
+    AndLink            => s_AndLink,
+    MemWrite           => s_DMemWr,
+    RegWrite           => s_RegWr,
+    MemToReg           => s_MemToReg,
+    Branch             => s_Branch,
+    Jump               => s_Jump,
+    ALU_Or_Imm_Jump    => s_ALU_Or_Imm_Jump,
+    Flag_Mux           => s_Flag_Mux,
+    Flag_Or_Nflag      => s_Flag_Or_Nflag,
+    Jump_With_Register => s_Jump_With_Register
+  );
+
+  decoder_inst: decoder5to32
+    port map(i_sel => s_RegWrAddr, i_en => s_RegWr, o_out => s_decoder_out);
+
+  s_we_masked <= s_decoder_out and WRITE_MASK;
   reg_data(0) <= (others => '0');
 
   gen_regs: for i in 1 to 31 generate
     reg_inst: Nbit_reg
       generic map(N => 32)
-      port map(i_CLK => i_clk, i_RST => '0', i_WE => we_masked(i),
-               i_DataIn => wb_data, o_DataOut => reg_data(i));
+      port map(i_CLK => iCLK, iRST => '0', i_WE => s_we_masked(i),
+               i_DataIn => s_RegWrData, o_DataOut => reg_data(i));
   end generate;
 
-  rs1_mux: mux_32by32 port map(sel => i_rs1, data_in => reg_data, data_out => o_rs1);
-  rs2_mux: mux_32by32 port map(sel => i_rs2, data_in => reg_data, data_out => o_rs2);
+  rs1_mux: mux_32by32 port map(sel => s_inst(19 downto 15), data_in => reg_data, data_out => s_out_rs1);
+  rs2_mux: mux_32by32 port map(sel => s_inst(24 downto 20), data_in => reg_data, data_out => s_out_rs2);
 
+  bitExtender_inst: bitExtender
+    port map(
+        data_in  => s_Inst(31 downto 12),
+        ctrl => s_ImmType,
+        data_out => s_extended_imm
+    );
 
+    
 
+    rs2_or_imm_mux : mux2t1_N
+    generic map(N =>32)
+    port map(
+        i_S => ALUSrc,
+        i_D0 => s_out_rs2,
+        i_D1 => s_extended_imm,
+        o_MuxOut => s_rs2_or_imm_mux_out
+    );
+
+    ALU_inst : ALUUnit
+    generic map(WIDTH => 32)
+    port map(
+        Alucontrol    => s_ALUControl,
+        flag_mux      => s_Flag_Mux,
+        input_A       => s_out_rs1,
+        input_B       => s_rs2_or_imm_mux_out,
+        output_result => oALUOut,
+        flag          => open
+
+    );
+
+    bitExtend_or_ALU_mux : mux2t1_N
+    generic map(N =>32)
+    port map(
+        i_S => s_ALU_Or_Imm_Jump,
+        i_D0 => oALUOut,
+        i_D1 => s_extended_imm,
+        o_MuxOut => s_ALU_or_imm_shift_in
+    );
+    goblinBarrel_inst : goblinBarrel
+    port map(
+        data_in => s_out_rs1,
+        shift_left_right => s_ALUControl,
+        shift_amount => s_rs2_or_imm_mux_out(4 downto 0),
+        data_out => s_out_shifted_data
+    );
+
+    ALU_BS_mux : mux2t1_N
+    generic map(N =>32)
+    port map(
+       -- i_S => , NEED A SHIFT SIGNAL
+        i_D0 => oALUOut,
+        i_D1 => s_out_shifted_data,
+        o_MuxOut => s_DMemAddr
+    );
+
+    pc_or_zero_mux : mux2t1_N
+    generic map(N =>32)
+    port map(
+        i_S => s_Jump_With_Register,
+        i_D0 => s_NextInstAddr,
+        i_D1 => X"00000000",
+        o_MuxOut => s_pc_or_zero_out
+    );
+
+    shift_jump_barrel : goblinBarrel
+    port map(
+        data_in => s_ALU_or_imm_shift_in,
+        shift_left_right => "0111", 
+        shift_amount => "00010",
+        data_out => s_pc_word_shift_out
+    );
+
+    pc_or_branch_adder : Nbit_adder
+    generic map(N =>32)
+    port map(
+        i_A  => s_pc_or_zero_out,
+        i_B  => s_pc_word_shift_out,
+        i_C  => '0',
+        o_S  => s_pc_or_word_adder_out,
+        o_C  => open
+    );
+
+    pc4_or_branch_mux : mux2t1_N
+    generic map(N =>32)
+    port map(
+        i_S => ,
+        i_D0 => s_pc4_out,
+        i_D1 => s_pc_or_word_adder_out,
+        o_MuxOut => s_pc_data_in
+    );
+
+--TO DO: LINK MUX AND MEM TO REG MUX
+
+    mux4t1_and_link_mux : mux4t1_32
+    port map(
+        i_S  => s_AndLink,
+        i_X0 => oALUOut,
+        i_X1 => s_pc4_out,
+        i_X2 => ,
+        i_X3 => ,
+        o_X  => s_4t1_and_link_out
+    );
+
+    mem_to_reg_mux : mux2t1_N
+    generic map(N =>32)
+    port map(
+        i_S => s_MemToReg,
+    --    i_D0 => s_4t1_and_link_out, NEED LINK MUX
+        i_D1 => s_DMemOut,
+        o_MuxOut => s_RegWrData
+    );
+
+    
 end structure;
 

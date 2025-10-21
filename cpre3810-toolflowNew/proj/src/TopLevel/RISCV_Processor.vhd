@@ -233,7 +233,7 @@ component decoder5to32 is
   end component;
 
 -- ALU
-component ALUUnit 
+component ALUUnit is
   generic (WIDTH : integer := DATA_WIDTH);
   port(
     Alucontrol    : in  std_logic_vector(3 downto 0);
@@ -241,7 +241,11 @@ component ALUUnit
     input_A       : in  std_logic_vector (WIDTH-1 downto 0);
     input_B       : in  std_logic_vector (WIDTH-1 downto 0);
     output_result : out std_logic_vector (WIDTH-1 downto 0);
-    flag          : out std_logic
+    flag          : out std_logic;        -- muxed flag output (00=N, 01=V, 10=C, 11=Z)
+    flag_zero     : out std_logic;
+    flag_carry    : out std_logic;
+    flag_negative : out std_logic;
+    flag_overflow : out std_logic
   );
 end component;
 

@@ -127,6 +127,7 @@ architecture structure of RISCV_Processor is
 signal s_slt_mux_out : std_logic_vector(31 downto 0);
 signal s_sltiu_mux_out : std_logic_vector(31 downto 0);
 signal s_slt_sltiu_mux_out : std_logic_vector(31 downto 0);
+signal s_alu_out : std_logic_vector(31 downto 0);
 
 --BARREL SHIFTER SIGNALS
  signal s_out_shifted_data : std_logic_vector(31 downto 0);
@@ -151,7 +152,7 @@ signal s_slt_sltiu_mux_out : std_logic_vector(31 downto 0);
     component mux2t1_N is
     generic(N: integer := 32);
     port(i_S: in std_logic;
-         i_D0, i_D1: in std_logic_vector(N-1 downto 0);
+         i_X0, i_X1: in std_logic_vector(N-1 downto 0);
          o_X: out std_logic_vector(N-1 downto 0));
   end component;
 
@@ -406,8 +407,8 @@ Control_Unit_inst: Control_Unit_2
     generic map(N =>32)
     port map(
         i_S => s_ALUSrc,
-        i_D0 => s_out_rs2,
-        i_D1 => s_extended_imm,
+        i_X0 => s_out_rs2,
+        i_X1 => s_extended_imm,
         o_X => s_rs2_or_imm_mux_out
     );
 
@@ -418,7 +419,7 @@ Control_Unit_inst: Control_Unit_2
         flag_mux      => s_Flag_Mux,
         input_A       => s_out_rs1,
         input_B       => s_rs2_or_imm_mux_out,
-        output_result => oALUOut,
+        output_result => s_alu_out,
         flag_zero     => s_zero_flag,
         flag_carry    => s_carry_flag,
         flag_negative => s_negative_flag,
@@ -426,6 +427,7 @@ Control_Unit_inst: Control_Unit_2
         
 
     );
+    oALUOut <= s_alu_out;
 
     alu_flag_mux_flag_out : mux4t1
     port map(
@@ -441,8 +443,8 @@ Control_Unit_inst: Control_Unit_2
     generic map(N => 32)
     port map(
         i_S => s_negative_flag,
-        i_D0 => X"00000000",
-        i_D1 => X"00000001",
+        i_X0 => X"00000000",
+        i_X1 => X"00000001",
         o_X => s_slt_mux_out
     );
 
@@ -450,8 +452,8 @@ Control_Unit_inst: Control_Unit_2
     generic map(N => 32)
     port map(
         i_S => s_carry_flag,
-        i_D0 => X"00000000",
-        i_D1 => X"00000001",
+        i_X0 => X"00000000",
+        i_X1 => X"00000001",
         o_X => s_sltiu_mux_out
     );
 
@@ -459,8 +461,8 @@ Control_Unit_inst: Control_Unit_2
     generic map(N =>32)
     port map(
         i_S => s_negative_flag,
-        i_D0 => s_sltiu_mux_out,
-        i_D1 => s_slt_mux_out,
+        i_X0 => s_sltiu_mux_out,
+        i_X1 => s_slt_mux_out,
         o_X => s_slt_sltiu_mux_out
     );
 
@@ -496,8 +498,8 @@ Control_Unit_inst: Control_Unit_2
     generic map(N =>32)
     port map(
         i_S => s_ALU_Or_Imm_Jump,
-        i_D0 => oALUOut,
-        i_D1 => s_extended_imm,
+        i_X0 => s_alu_out,
+        i_X1 => s_extended_imm,
         o_X => s_ALU_or_imm_shift_in
     );
     goblinBarrel_inst : goblinBarrel
@@ -512,8 +514,8 @@ Control_Unit_inst: Control_Unit_2
     generic map(N =>32)
     port map(
         i_S => s_Shift,
-        i_D0 => oALUOut,
-        i_D1 => s_out_shifted_data,
+        i_X0 => s_alu_out,
+        i_X1 => s_out_shifted_data,
         o_X => s_DMemAddr
     );
 
@@ -521,8 +523,8 @@ Control_Unit_inst: Control_Unit_2
     generic map(N =>32)
     port map(
         i_S => s_Jump_With_Register,
-        i_D0 => s_NextInstAddr,
-        i_D1 => X"00000000",
+        i_X0 => s_NextInstAddr,
+        i_X1 => X"00000000",
         o_X => s_pc_or_zero_out
     );
 
@@ -548,8 +550,8 @@ Control_Unit_inst: Control_Unit_2
     generic map(N =>32)
     port map(
         i_S => s_or_jump_out,
-        i_D0 => s_pc4_out,
-        i_D1 => s_pc_or_word_adder_out,
+        i_X0 => s_pc4_out,
+        i_X1 => s_pc_or_word_adder_out,
         o_X => s_pc_data_in
     );
 
@@ -558,7 +560,7 @@ Control_Unit_inst: Control_Unit_2
     mux4t1_and_link_mux : mux4t1_32
     port map(
         i_S  => s_AndLink,
-        i_X0 => oALUOut,
+        i_X0 => s_alu_out,
         i_X1 => s_pc_or_word_adder_out,
         i_X2 => s_slt_sltiu_mux_out, 
         i_X3 => s_pc4_out,
@@ -569,8 +571,8 @@ Control_Unit_inst: Control_Unit_2
     generic map(N =>32)
     port map(
         i_S => s_MemToReg,
-        i_D0 => s_4t1_and_link_out,
-        i_D1 => s_DMemOut,
+        i_X0 => s_4t1_and_link_out,
+        i_X1 => s_DMemOut,
         o_X => s_RegWrData
     );
 

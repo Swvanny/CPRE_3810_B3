@@ -72,9 +72,9 @@ architecture structural of ALUUnit is
     generic (N : integer := 2);
     port(
       i_S  : in  std_logic;
-      i_D0 : in  std_logic_vector(N-1 downto 0);
-      i_D1 : in  std_logic_vector(N-1 downto 0);
-      o_O  : out std_logic_vector(N-1 downto 0)
+      i_X0 : in  std_logic_vector(N-1 downto 0);
+      i_X1 : in  std_logic_vector(N-1 downto 0);
+      o_X  : out std_logic_vector(N-1 downto 0)
     );
   end component;
 
@@ -146,9 +146,9 @@ begin
     generic map(N => 2)
     port map(
       i_S  => adder_sel,
-      i_D0 => mux_control2t1,  -- 00=AND, 01=OR, 10=XOR
-      i_D1 => "11",            -- 11=ADD/SUB
-      o_O  => mux_control4t1
+      i_X0 => mux_control2t1,  -- 00=AND, 01=OR, 10=XOR
+      i_X1 => "11",            -- 11=ADD/SUB
+      o_X  => mux_control4t1
     );
 
   -- Select final result among AND/OR/XOR/ADD(SUB)

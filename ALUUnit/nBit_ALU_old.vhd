@@ -17,8 +17,7 @@ end entity nBit_ALU;
 
 architecture rtl of nBit_ALU is
   -- Effective B for add/sub: B_eff = B xor (nAdd_Sub replicated)
-  signal B_eff         : std_logic_vector(31 downto 0);
-  signal nAdd_Sub_vec  : std_logic_vector(31 downto 0);
+  signal B_eff   : std_logic_vector(31 downto 0);
 
   -- 33-bit addition for carry-out
   signal A_ext, B_ext, Sum_ext : unsigned(32 downto 0);
@@ -26,38 +25,45 @@ architecture rtl of nBit_ALU is
 
   -- Sign bits for overflow detection
   signal sA, sB_eff, sR : std_logic;
-
-  -- Pre-made constants to avoid aggregate-in-operator issues
-  constant ZERO32 : std_logic_vector(31 downto 0) := (others => '0');
-  constant ZERO33 : unsigned(32 downto 0)         := (others => '0');
-  constant ONE33C0: unsigned(32 downto 0)         := (0 => '1', others => '0'); -- add +1 on LSB
 begin
-  -- Replicate control bit into a vector first (avoids vcom-1389 on xor)
-  nAdd_Sub_vec <= (others => nAdd_Sub);
-  B_eff        <= input_B xor nAdd_Sub_vec;
+  
+  -- Form effective operands
+  
+  B_eff <= input_B xor (31 downto 0 => nAdd_Sub);
 
   A_ext <= '0' & unsigned(input_A);
   B_ext <= '0' & unsigned(B_eff);
 
-  -- Avoid aggregate literal directly in a conditional operator context
-  Cin_ext <= ZERO33  when nAdd_Sub = '0' else
-             ONE33C0;
+  with nAdd_Sub select
+    Cin_ext <= (others => '0')           when '0',
+               (0 => '1', others => '0') when others;
 
+  
   -- Perform addition/subtraction
+  
   Sum_ext     <= A_ext + B_ext + Cin_ext;
   output_Sum  <= std_logic_vector(Sum_ext(31 downto 0));
 
-  -- Carry / Borrow logic (for SUB: carry=1 means no borrow)
+  
+  -- Carry / Borrow logic
+  -- For subtraction: carry=1 means no borrow (standard convention)
+  
   flag_C <= Sum_ext(32);
 
-  -- Overflow detection
+  
+  -- Overflow detection (same formula works for ADD and SUB)
+  
   sA     <= input_A(31);
-  sB_eff <= input_B(31) xor nAdd_Sub;  -- effective sign of B after optional inversion
+  sB_eff <= input_B(31) xor nAdd_Sub;  -- flips for subtraction
   sR     <= output_Sum(31);
+
   flag_V <= ( sA and  sB_eff and (not sR)) or
             ((not sA) and (not sB_eff) and sR);
 
-  -- Zero / Negative flags (avoid aggregate literal in '=')
-  flag_Z <= '1' when output_Sum = ZERO32 else '0';
+  
+  -- Zero and Negative flags
+  
+  flag_Z <= '1' when output_Sum = (others => '0') else '0';
   flag_N <= output_Sum(31);
+
 end architecture rtl;

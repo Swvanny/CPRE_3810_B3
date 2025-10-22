@@ -25,7 +25,7 @@ entity Control_Unit_2 is
   );
 end entity;
 
-architecture dataflow of control_unit is
+architecture dataflow of control_Unit_2 is
 
   -- Opcode constants
   constant OP_I_Type  : std_logic_vector(6 downto 0) := "0010011";

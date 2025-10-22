@@ -1,0 +1,45 @@
+Reading pref.tcl
+
+# 2025.1_2
+
+# vsim -postsimdataflow -debugdb -c -voptargs=""+acc"" tb -do "modelsim_framework.do" -gOUTPUT_TRACE=ms.trace 
+# Start time: 11:01:39 on Oct 22,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Error (suppressible): ../../proj/src/TopLevel/RISCV_Processor.vhd(405): (vopt-1270) Bad default binding for component instance "rs2_or_imm_mux: mux2t1_N".
+#  (Component port "i_D1" is not on the entity "work.mux2t1_N".)
+#  (Entity is selected because it is in the same library as the design unit that contains the component.)
+# ** Error (suppressible): ../../proj/src/Components/ALUUnit.vhd(145): (vopt-1270) Bad default binding for component instance "muxBeforeResult: mux2t1_N".
+#  (Component port "o_O" is not on the entity "work.mux2t1_N".)
+#  (Entity is selected because it is in the same library as the design unit that contains the component.)
+# ** Error (suppressible): ../../proj/src/TopLevel/RISCV_Processor.vhd(440): (vopt-1270) Bad default binding for component instance "slt_or_slti_mux: mux2t1_N".
+#  (Component port "i_D1" is not on the entity "work.mux2t1_N".)
+#  (Entity is selected because it is in the same library as the design unit that contains the component.)
+# ** Error (suppressible): ../../proj/src/TopLevel/RISCV_Processor.vhd(449): (vopt-1270) Bad default binding for component instance "sltiu_mux: mux2t1_N".
+#  (Component port "i_D1" is not on the entity "work.mux2t1_N".)
+#  (Entity is selected because it is in the same library as the design unit that contains the component.)
+# ** Error (suppressible): ../../proj/src/TopLevel/RISCV_Processor.vhd(458): (vopt-1270) Bad default binding for component instance "slt_sltiu_mux: mux2t1_N".
+#  (Component port "i_D1" is not on the entity "work.mux2t1_N".)
+#  (Entity is selected because it is in the same library as the design unit that contains the component.)
+# ** Error (suppressible): ../../proj/src/TopLevel/RISCV_Processor.vhd(495): (vopt-1270) Bad default binding for component instance "bitExtend_or_ALU_mux: mux2t1_N".
+#  (Component port "i_D1" is not on the entity "work.mux2t1_N".)
+#  (Entity is selected because it is in the same library as the design unit that contains the component.)
+# ** Error (suppressible): ../../proj/src/TopLevel/RISCV_Processor.vhd(511): (vopt-1270) Bad default binding for component instance "ALU_BS_mux: mux2t1_N".
+#  (Component port "i_D1" is not on the entity "work.mux2t1_N".)
+#  (Entity is selected because it is in the same library as the design unit that contains the component.)
+# ** Error (suppressible): ../../proj/src/TopLevel/RISCV_Processor.vhd(520): (vopt-1270) Bad default binding for component instance "pc_or_zero_mux: mux2t1_N".
+#  (Component port "i_D1" is not on the entity "work.mux2t1_N".)
+#  (Entity is selected because it is in the same library as the design unit that contains the component.)
+# ** Error (suppressible): ../../proj/src/TopLevel/RISCV_Processor.vhd(547): (vopt-1270) Bad default binding for component instance "pc4_or_branch_mux: mux2t1_N".
+#  (Component port "i_D1" is not on the entity "work.mux2t1_N".)
+#  (Entity is selected because it is in the same library as the design unit that contains the component.)
+# ** Error (suppressible): ../../proj/src/TopLevel/RISCV_Processor.vhd(568): (vopt-1270) Bad default binding for component instance "mem_to_reg_mux: mux2t1_N".
+#  (Component port "i_D1" is not on the entity "work.mux2t1_N".)
+#  (Entity is selected because it is in the same library as the design unit that contains the component.)
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=10, Warnings=1.
+# Error loading design
+Error loading design
+# End time: 11:01:40 on Oct 22,2025, Elapsed time: 0:00:01
+# Errors: 10, Warnings: 1

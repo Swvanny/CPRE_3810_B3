@@ -134,11 +134,11 @@ signal s_alu_out : std_logic_vector(31 downto 0);
 
 --REGISTER IMPLEMENTATION    
 
-  component Nbit_reg is
+  component nbitRegister is
     generic ( N: integer := 32 );
     port(i_CLK: in std_logic; i_RST: in std_logic; i_WE: in std_logic;
-         i_DataIn: in std_logic_vector(N-1 downto 0);
-         o_DataOut: out std_logic_vector(N-1 downto 0));
+         i_D: in std_logic_vector(N-1 downto 0);
+         o_Q: out std_logic_vector(N-1 downto 0));
   end component;
 
 -- MUX'S IMPLEMENTATIONS
@@ -334,7 +334,7 @@ begin
 
   -- TODO: Implement the rest of your processor below this comment! 
 
-PCCounter_inst: Nbit_reg
+PCCounter_inst: nbitRegister
 generic map( N => 32)
 port map (
      i_CLK => iCLK,
@@ -385,10 +385,10 @@ Control_Unit_inst: Control_Unit_2
   reg_data(0) <= (others => '0');
 
   gen_regs: for i in 1 to 31 generate
-    reg_inst: Nbit_reg
+    reg_inst: nbitRegister
       generic map(N => 32)
       port map(i_CLK => iCLK, i_RST => iRST, i_WE => s_we_masked(i),
-               i_DataIn => s_RegWrData, o_DataOut => reg_data(i));
+               i_D => s_RegWrData, o_Q => reg_data(i));
   end generate;
 
   rs1_mux: mux_32by32 port map(sel => s_inst(19 downto 15), data_in => reg_data, data_out => s_out_rs1);

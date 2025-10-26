@@ -1,0 +1,51 @@
+
+#
+# CprE 381 Generated Quartus Settings File
+#
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.1.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:07:08  JANUARY 28, 2019"
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.1 Standard Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name TOP_LEVEL_ENTITY RISCV_Processor
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ALUUnit.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/Control_Unit_2.0.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PC-register.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder-subtractor.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/and_32bit.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/andg2.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/bitExtender.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/decoder5to32.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/dffg.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/full_reg_file.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/goblinBarrel.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/invg.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_N.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_dataflow.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux32x4t1.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4by32.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4t1 .vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux_32by32.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/n-bit_adder.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nBit_ALU.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nbit-register.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nor_32t1bit.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/norg2.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ones_complementor.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/onescomp.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/or_32bit.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/org2.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xor_32bit.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xorg2.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/RISCV_types.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/mem.vhd"
+set_global_assignment -name VHDL_FILE "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/reg_array.vhd"

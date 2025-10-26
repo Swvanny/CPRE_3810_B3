@@ -74,8 +74,6 @@ architecture structure of RISCV_Processor is
 
 
   --PC SIGNALS
-  signal s_pc_data : std_logic_vector(31 downto 0);
-  signal s_read_address : std_logic_vector(31 downto 0);
   signal s_pc_write : std_logic;
   signal s_pc_reset : std_logic;
   signal s_pc_data_in : std_logic_vector(31 downto 0);
@@ -111,7 +109,10 @@ architecture structure of RISCV_Processor is
   signal s_we_masked : std_logic_vector(31 downto 0);
   signal s_out_rs1, s_out_rs2 : std_logic_vector(31 downto 0);
 
+
   --Extended Immediate SIGNALS
+
+signal s_bitext_in : std_logic_vector(19 downto 0);
   signal s_extended_imm : std_logic_vector(31 downto 0);
   signal s_ALU_or_imm_shift_in : std_logic_vector(31 downto 0);
 
@@ -131,6 +132,8 @@ signal s_alu_out : std_logic_vector(31 downto 0);
 
 --BARREL SHIFTER SIGNALS
  signal s_out_shifted_data : std_logic_vector(31 downto 0);
+
+
 
 --REGISTER IMPLEMENTATION    
 
@@ -333,15 +336,14 @@ begin
   -- TODO: Ensure that s_Ovfl is connected to the overflow output of your ALU
 
   -- TODO: Implement the rest of your processor below this comment! 
-
 PCCounter_inst: nbitRegister
 generic map( N => 32)
 port map (
      i_CLK => iCLK,
-     i_RST => s_pc_reset,
-     i_WE => s_pc_write,
-     i_DataIn => s_pc_data_in,
-     o_DataOut => s_NextInstAddr
+     i_RST => iRST,
+     i_WE => '1',
+     i_D => s_pc_data_in,
+     o_Q => s_NextInstAddr
   
 );
 
@@ -378,6 +380,10 @@ Control_Unit_inst: Control_Unit_2
     Shift              => s_Shift
   );
 
+  s_RegWrAddr <= s_Inst(11 downto 7);
+  s_bitext_in <= (19 downto 12 => '0') & s_Inst(31 downto 20);
+  
+
   decoder_inst: decoder5to32
     port map(i_sel => s_RegWrAddr, i_en => s_RegWr, o_out => s_decoder_out);
 
@@ -396,7 +402,7 @@ Control_Unit_inst: Control_Unit_2
 
   bitExtender_inst: bitExtender
     port map(
-        data_in  => s_Inst(31 downto 12),
+        data_in  => s_bitext_in,
         ctrl => s_ImmType,
         data_out => s_extended_imm
     );
@@ -411,6 +417,8 @@ Control_Unit_inst: Control_Unit_2
         i_X1 => s_extended_imm,
         o_X => s_rs2_or_imm_mux_out
     );
+
+s_DMemData <= s_out_rs2;
 
     ALU_inst : ALUUnit
     generic map(WIDTH => 32)
@@ -475,8 +483,8 @@ Control_Unit_inst: Control_Unit_2
     negation_mux : mux2t1
     port map(
         i_S => s_Flag_Or_Nflag,
-        i_X0 => s_flag_mux_out,
-        i_X1 => s_negation_flag_out,
+        i_X0 => s_negation_flag_out,
+        i_X1 => s_flag_mux_out,
         o_X => s_final_flag_out
     );
 

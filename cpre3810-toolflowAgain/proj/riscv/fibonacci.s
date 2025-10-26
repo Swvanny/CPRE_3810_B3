@@ -39,15 +39,15 @@ print:add  t0, zero, a0  # starting address of array of data to be printed
       add  t1, zero, a1  # initialize loop counter to array size
       la   a0, head        # load address of the print heading string
       ori  a7, zero , 4           # specify Print String service
-      ecall               # print the heading string
+                    # print the heading string
       
 out:  lw   a0, 0(t0)      # load the integer to be printed (the current Fib. number)
       ori  a7, zero , 1           # specify Print Integer service
-      ecall               # print fibonacci number
+                     # print fibonacci number
       
       la   a0, space       # load address of spacer for syscall
       ori  a7, zero , 4           # specify Print String service
-      ecall               # print the spacer string
+                     # print the spacer string
       
       addi t0, t0, 4      # increment address of data to be printed
       addi t1, t1, -1     # decrement loop counter

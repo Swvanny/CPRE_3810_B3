@@ -86,7 +86,7 @@ architecture structure of RISCV_Processor is
 --Control Unit SIGNALS
   signal s_ALUSrc             : std_logic;
   signal s_ALUControl         : std_logic_vector(3 downto 0);
-  signal s_ImmType            : std_logic_vector(1 downto 0);
+  signal s_ImmType            : std_logic_vector(6 downto 0);
   signal s_AndLink            : std_logic_vector(1 downto 0);
   signal s_MemToReg           : std_logic;
   signal s_Branch             : std_logic;
@@ -209,7 +209,7 @@ component mux2t1 is
   component bitExtender
 port (
         data_in  : in  std_logic_vector(19 downto 0);
-        ctrl : in  std_logic_vector(1 downto 0); 
+        ctrl : in  std_logic_vector(6 downto 0); 
         data_out : out std_logic_vector(31 downto 0)
     );
  end component;
@@ -224,7 +224,7 @@ component Control_Unit_2
 
     ALUSrc             : out std_logic;
     ALUControl         : out std_logic_vector(3 downto 0);
-    ImmType            : out std_logic_vector(1 downto 0);
+    ImmType            : out std_logic_vector(6 downto 0);
     AndLink            : out std_logic_vector(1 downto 0);
     MemWrite           : out std_logic;
     RegWrite           : out std_logic;

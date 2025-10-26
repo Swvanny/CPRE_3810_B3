@@ -137,6 +137,18 @@ signal s_alu_out : std_logic_vector(31 downto 0);
 
 --REGISTER IMPLEMENTATION    
 
+component PCRegister is
+    generic (
+        N : integer := 32  
+    );
+  port(i_CLK        : in std_logic;    
+       i_RST        : in std_logic;
+       i_WE         : in std_logic;     -- Write enable 
+       i_D         : in std_logic_vector(N-1 downto 0);
+       o_Q          : out std_logic_vector(N-1 downto 0)     -- Data 
+       );
+end component;
+
   component nbitRegister is
     generic ( N: integer := 32 );
     port(i_CLK: in std_logic; i_RST: in std_logic; i_WE: in std_logic;
@@ -336,7 +348,7 @@ begin
   -- TODO: Ensure that s_Ovfl is connected to the overflow output of your ALU
 
   -- TODO: Implement the rest of your processor below this comment! 
-PCCounter_inst: nbitRegister
+PCCounter_inst: PCRegister
 generic map( N => 32)
 port map (
      i_CLK => iCLK,

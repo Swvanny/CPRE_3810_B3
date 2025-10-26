@@ -20,7 +20,7 @@ architecture Structural of PCRegister is
   port(i_CLK        : in std_logic;     -- Clock
        i_RST        : in std_logic;     -- Reset
        i_WE         : in std_logic;     -- Write 
-       i_INIT       : in std_logic_vector(31 downto 0);
+       i_INIT       : in std_logic;
        i_D          : in std_logic;     -- Data 
        o_Q          : out std_logic);   -- Data 
 end component;
@@ -39,7 +39,7 @@ begin
               o_Q      => q_internal(i)
               );  
   end generate G_nbit_reg;
-  
+
   o_Q <= q_internal;
 
 

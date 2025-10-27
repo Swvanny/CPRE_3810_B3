@@ -151,7 +151,7 @@ begin
   RegWrite <= '1' when (is_Rtype = '1' or is_Itype = '1' or is_load = '1' or
                         is_jal = '1' or is_jalr = '1' or is_lui = '1' or
                         is_auipc = '1') else '0';
-  MemToReg <= '1' when (is_load = '1' or is_lui = '1') else '0';
+  MemToReg <= '1' when is_load = '1'  else '0';
 
   
   -- Branch / Jump
@@ -160,7 +160,7 @@ begin
 
   
   -- ALU_Or_Imm_Jump
-  ALU_Or_Imm_Jump <= '1' when (is_jal = '1' or is_auipc = '1') else '0';
+  ALU_Or_Imm_Jump <= '1' when (is_branch = '1' or is_jal = '1' or is_auipc = '1') else '0';
 
   
   -- Flag_Mux

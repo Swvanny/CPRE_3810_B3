@@ -1,6 +1,6 @@
 QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
-Start time: 13:45:15 on Oct 26,2025
-vcom -2008 -work internal/ModelSimContainer/work proj/src/RISCV_types.vhd internal/testpy/tb.vhd proj/src/RISCV_types.vhd proj/src/reg_array.vhd proj/src/TopLevel/mem.vhd proj/src/TopLevel/RISCV_Processor.vhd proj/src/Components/xor_32bit.vhd proj/src/Components/Control_Unit_2.0.vhd proj/src/Components/mux2t1.vhd proj/src/Components/xorg2.vhd proj/src/Components/bitExtender.vhd proj/src/Components/pc_dffg.vhd proj/src/Components/mux4by32.vhd proj/src/Components/PC-register.vhd proj/src/Components/dffg.vhd proj/src/Components/org2.vhd proj/src/Components/adder-subtractor.vhd proj/src/Components/nBit_ALU.vhd proj/src/Components/mux4t1 .vhd proj/src/Components/decoder5to32.vhd proj/src/Components/mux_32by32.vhd proj/src/Components/goblinBarrel.vhd proj/src/Components/mux32x4t1.vhd proj/src/Components/invg.vhd proj/src/Components/n-bit_adder.vhd proj/src/Components/mux2t1_N.vhd proj/src/Components/adder.vhd proj/src/Components/full_reg_file.vhd proj/src/Components/nor_32t1bit.vhd proj/src/Components/andg2.vhd proj/src/Components/ones_complementor.vhd proj/src/Components/mux2t1_dataflow.vhd proj/src/Components/or_32bit.vhd proj/src/Components/and_32bit.vhd proj/src/Components/norg2.vhd proj/src/Components/nbit-register.vhd proj/src/Components/ALUUnit.vhd proj/src/Components/onescomp.vhd 
+Start time: 14:47:21 on Oct 27,2025
+vcom -2008 -work internal/ModelSimContainer/work proj/src/RISCV_types.vhd internal/testpy/tb.vhd proj/src/reg_array.vhd proj/src/RISCV_types.vhd proj/src/Components/invg.vhd proj/src/Components/PC-register.vhd proj/src/Components/xor_32bit.vhd proj/src/Components/mux2t1.vhd proj/src/Components/andg2.vhd proj/src/Components/ALUUnit.vhd proj/src/Components/mux2t1_N.vhd proj/src/Components/decoder5to32.vhd proj/src/Components/norg2.vhd proj/src/Components/goblinBarrel.vhd proj/src/Components/onescomp.vhd proj/src/Components/or_32bit.vhd proj/src/Components/ones_complementor.vhd proj/src/Components/adder.vhd proj/src/Components/mux2t1_dataflow.vhd proj/src/Components/mux32x4t1.vhd proj/src/Components/bitExtender.vhd proj/src/Components/mux4t1 .vhd proj/src/Components/pc_dffg.vhd proj/src/Components/adder-subtractor.vhd proj/src/Components/nbit-register.vhd proj/src/Components/Control_Unit_2.0.vhd proj/src/Components/nBit_ALU.vhd proj/src/Components/n-bit_adder.vhd proj/src/Components/RISCV_types.vhd proj/src/Components/org2.vhd proj/src/Components/dffg.vhd proj/src/Components/full_reg_file.vhd proj/src/Components/mux_32by32.vhd proj/src/Components/mux4by32.vhd proj/src/Components/and_32bit.vhd proj/src/Components/nor_32t1bit.vhd proj/src/Components/xorg2.vhd proj/src/TopLevel/mem.vhd proj/src/TopLevel/RISCV_Processor.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
@@ -11,21 +11,49 @@ vcom -2008 -work internal/ModelSimContainer/work proj/src/RISCV_types.vhd intern
 -- Loading package ENV
 -- Compiling entity tb
 -- Compiling architecture mixed of tb
+-- Compiling package reg_array
 ** Warning: proj/src/RISCV_types.vhd(15): (vcom-1615) Existing package 'RISCV_types' at line 18 will be overwritten.
 -- Compiling package RISCV_types
 ** Warning: proj/src/RISCV_types.vhd(33): (vcom-1615) Existing package body 'RISCV_types(body)' at line 33 will be overwritten.
 -- Compiling package body RISCV_types
 -- Loading package RISCV_types
--- Compiling package reg_array
+-- Compiling entity invg
+-- Compiling architecture dataflow of invg
+-- Compiling entity PCRegister
+-- Compiling architecture Structural of PCRegister
+-- Compiling entity xor_32bit
+-- Compiling architecture structural of xor_32bit
+-- Compiling entity mux2t1
+-- Compiling architecture Structural of mux2t1
+-- Compiling entity andg2
+-- Compiling architecture dataflow of andg2
 -- Loading package NUMERIC_STD
--- Compiling entity mem
--- Compiling architecture rtl of mem
 -- Loading package RISCV_types
--- Loading package reg_array
--- Compiling entity RISCV_Processor
--- Compiling architecture structure of RISCV_Processor
-** Error (suppressible): proj/src/TopLevel/RISCV_Processor.vhd(380): (vcom-1272) Length of formal "ImmType" is 7; length of actual is 2.
-** Error (suppressible): proj/src/TopLevel/RISCV_Processor.vhd(418): (vcom-1272) Length of formal "ctrl" is 7; length of actual is 2.
-** Note: proj/src/TopLevel/RISCV_Processor.vhd(600): VHDL Compiler exiting
-End time: 13:45:15 on Oct 26,2025, Elapsed time: 0:00:00
-Errors: 2, Warnings: 2
+-- Compiling entity ALUUnit
+-- Compiling architecture structural of ALUUnit
+-- Compiling entity mux2t1_N
+-- Compiling architecture structural of mux2t1_N
+-- Compiling entity decoder5to32
+-- Compiling architecture behavioral of decoder5to32
+-- Compiling entity norg2
+-- Compiling architecture dataflow of norg2
+-- Compiling entity goblinBarrel
+-- Compiling architecture Behavioral of goblinBarrel
+-- Compiling entity onescomp
+-- Compiling architecture structural of onescomp
+-- Compiling entity or_32bit
+-- Compiling architecture structural of or_32bit
+-- Compiling entity ones_complementor
+-- Compiling architecture structural of ones_complementor
+-- Compiling entity adder
+-- Compiling architecture Structural of adder
+-- Compiling entity mux2t1_dataflow
+-- Compiling architecture dataflow of mux2t1_dataflow
+-- Compiling entity mux4x32t1
+-- Compiling architecture dataflow of mux4x32t1
+-- Compiling entity bitExtender
+-- Compiling architecture Behavioral of bitExtender
+** Error (suppressible): proj/src/Components/bitExtender.vhd(41): (vcom-1272) Length of expected is 12; length of actual is 14.
+** Note: proj/src/Components/bitExtender.vhd(67): VHDL Compiler exiting
+End time: 14:47:21 on Oct 27,2025, Elapsed time: 0:00:00
+Errors: 1, Warnings: 2

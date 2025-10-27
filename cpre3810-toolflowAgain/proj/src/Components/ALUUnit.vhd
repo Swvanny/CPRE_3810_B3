@@ -174,7 +174,7 @@ adder_sel      <= is_add or is_sub;
   flag_negative <= neg;
   flag_zero     <= zero;
   flag_carry    <= adderC when mux_control4t1 = "11" else '0';
-  flag_overflow <= adderV when mux_control4t1 = "11" else '0';
+  flag_overflow <= '0';
 
 
 end architecture structural;

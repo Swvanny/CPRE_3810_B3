@@ -166,7 +166,7 @@ adder_sel      <= is_add or is_sub;
     );
 
   -- Drive output results
-  output_result <= finalResult;
+  output_result <= input_B when Alucontrol = "1000" else finalResult;
 
   -- Dedicated flag outputs
   -- Negative/Zero reflect the final selected result (valid for all ops)

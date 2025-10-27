@@ -211,7 +211,7 @@ component mux2t1 is
 
   component bitExtender
 port (
-        data_in  : in  std_logic_vector(19 downto 0);
+        data_in  : in  std_logic_vector(31 downto 0);
         ctrl : in  std_logic_vector(6 downto 0); 
         data_out : out std_logic_vector(31 downto 0)
     );
@@ -397,44 +397,16 @@ Control_Unit_inst: Control_Unit_2
 
   s_RegWrAddr <= s_Inst(11 downto 7);
 
-  with s_Inst(6 downto 0) select
-  s_bitext_in <=
-    -- I-type / LOAD / JALR: instr[31:20] (12 bits)
-    (19 downto 12 => '0') & s_Inst(31 downto 20)
-      when "0010011" |  -- OP_I_Type
-           "0000011" |  -- OP_LOAD
-           "1100111",   -- OP_JALR
-
-    -- S-type (STORE): {31:25,11:7}
-    (19 downto 12 => '0') & (s_Inst(31 downto 25) & s_Inst(11 downto 7))
-      when "0100011",   -- OP_STORE
-
-    -- B-type (BRANCH): {31,30:25,11:8,0}
-    (19 downto 12 => '0') & (s_Inst(31) & s_Inst(30 downto 25) & s_Inst(11 downto 8) & '0')
-      when "1100011",   -- OP_BRANCH
-
-    -- U-type (LUI/AUIPC): instr[31:12] (20 bits)
-    s_Inst(31 downto 12)
-      when "0110111" |  -- OP_LUI
-           "0010111",   -- OP_AUIPC
-
-    -- UJ-type (JAL): {31,19:12,20,30:21}
-    (s_Inst(31) & s_Inst(19 downto 12) & s_Inst(20) & s_Inst(30 downto 21))
-      when "1101111",   -- OP_JAL
-
-    -- Default
-    (others => '0') when others;
 
   s_ImmType <= s_Inst(6 downto 0);
 
-  is_jalr <= '1' when s_Inst(6 downto 0) = "1100111" else '0';
 
 -- Unmasked PC target from the adder:
 -- s_pc_or_word_adder_out already computed
 
 -- Mask bit 0 for JALR only:
 s_pc_target_masked <= (s_pc_or_word_adder_out and x"FFFFFFFE") when is_jalr = '1'
-                      else s_pc_or_word_adder_out;
+                     else s_pc_or_word_adder_out;
   
 
   decoder_inst: decoder5to32
@@ -589,13 +561,13 @@ s_DMemData <= s_out_rs2;
         o_X => s_pc_or_zero_out
     );
 
-    --shift_jump_barrel : goblinBarrel
-    --port map(
-        --data_in => s_ALU_or_imm_shift_in,
-        --shift_left_right => "0111", 
-        --shift_amount => "00010",
-        --data_out => s_pc_word_shift_out
-    --);
+    shift_jump_barrel : goblinBarrel
+    port map(
+        data_in => s_ALU_or_imm_shift_in,
+        shift_left_right => "0111", 
+        shift_amount => "00010",
+        data_out => s_pc_word_shift_out
+    );
 
     pc_or_branch_adder : Nbit_adder
     generic map(N =>32)

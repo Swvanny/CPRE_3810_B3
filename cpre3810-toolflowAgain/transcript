@@ -12,9 +12,461 @@
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
-# Load canceled
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/reg_array.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:04:55 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/reg_array.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package reg_array
+# End time: 15:04:55 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/RISCV_types.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:04:55 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/RISCV_types.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package RISCV_types
+# -- Compiling package body RISCV_types
+# -- Loading package RISCV_types
+# End time: 15:04:56 on Oct 27,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder-subtractor.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:04:58 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder-subtractor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_subtractor
+# -- Compiling architecture structural of adder_subtractor
+# End time: 15:04:58 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder-subtractor.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:03 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder-subtractor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_subtractor
+# -- Compiling architecture structural of adder_subtractor
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder
+# -- Compiling architecture Structural of adder
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ALUUnit.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ALUUnit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package RISCV_types
+# -- Compiling entity ALUUnit
+# -- Compiling architecture structural of ALUUnit
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/and_32bit.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/and_32bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity and_32bit
+# -- Compiling architecture structural of and_32bit
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/andg2.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/bitExtender.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/bitExtender.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package RISCV_types
+# -- Compiling entity bitExtender
+# -- Compiling architecture Behavioral of bitExtender
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/Control_Unit_2.0.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/Control_Unit_2.0.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Control_Unit_2
+# -- Compiling architecture dataflow of control_Unit_2
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/decoder5to32.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/decoder5to32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoder5to32
+# -- Compiling architecture behavioral of decoder5to32
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/dffg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg
+# -- Compiling architecture mixed of dffg
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/full_reg_file.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/full_reg_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package reg_array
+# -- Compiling entity full_reg_file
+# -- Compiling architecture structural of full_reg_file
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/goblinBarrel.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/goblinBarrel.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity goblinBarrel
+# -- Compiling architecture Behavioral of goblinBarrel
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/invg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/invg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity invg
+# -- Compiling architecture dataflow of invg
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1
+# -- Compiling architecture Structural of mux2t1
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_dataflow.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_dataflow.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1_dataflow
+# -- Compiling architecture dataflow of mux2t1_dataflow
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_N.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1_N
+# -- Compiling architecture structural of mux2t1_N
+# End time: 15:05:04 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4by32.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:04 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4by32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux4t1_32
+# -- Compiling architecture structural of mux4t1_32
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4t1 .vhd}
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4t1 .vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux4t1
+# -- Compiling architecture structural of mux4t1
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux32x4t1.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux32x4t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package RISCV_types
+# -- Compiling entity mux4x32t1
+# -- Compiling architecture dataflow of mux4x32t1
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux_32by32.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux_32by32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package reg_array
+# -- Compiling entity mux_32by32
+# -- Compiling architecture dataflow of mux_32by32
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/n-bit_adder.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/n-bit_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Nbit_adder
+# -- Compiling architecture structural of Nbit_adder
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nbit-register.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nbit-register.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitRegister
+# -- Compiling architecture Structural of nbitRegister
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nBit_ALU.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nBit_ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity nBit_ALU
+# -- Compiling architecture rtl of nBit_ALU
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nor_32t1bit.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nor_32t1bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nor_32t1bit
+# -- Compiling architecture behavioral of nor_32t1bit
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/norg2.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/norg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity norg2
+# -- Compiling architecture dataflow of norg2
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ones_complementor.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ones_complementor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ones_complementor
+# -- Compiling architecture structural of ones_complementor
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/onescomp.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/onescomp.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity onescomp
+# -- Compiling architecture structural of onescomp
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/or_32bit.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/or_32bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity or_32bit
+# -- Compiling architecture structural of or_32bit
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/org2.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/org2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity org2
+# -- Compiling architecture dataflow of org2
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PC-register.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PC-register.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PCRegister
+# -- Compiling architecture Structural of PCRegister
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/pc_dffg.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/pc_dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity pc_dffg
+# -- Compiling architecture mixed of pc_dffg
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/RISCV_types.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/RISCV_types.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/RISCV_types.vhd(15): (vcom-1615) Existing package 'RISCV_types' at /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/RISCV_types.vhd(15) will be overwritten.
+# -- Compiling package RISCV_types
+# -- Compiling package body RISCV_types
+# -- Loading package RISCV_types
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xor_32bit.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:05:05 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xor_32bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity xor_32bit
+# -- Compiling architecture structural of xor_32bit
+# End time: 15:05:05 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.riscv_processor -voptargs=+acc
+# vsim work.riscv_processor -voptargs="+acc" 
+# Start time: 15:05:48 on Oct 27,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Error (suppressible): /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd(358): (vopt-1272) Length of ImmType is 7; length of component port is 2.
+# ** Error (suppressible): /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd(397): (vopt-1272) Length of data_in is 32; length of component port is 20.
+# ** Error (suppressible): /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd(397): (vopt-1272) Length of ctrl is 7; length of component port is 2.
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=3, Warnings=1.
+# Error loading design
+# End time: 15:05:48 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 1
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/mem.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:07:50 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/mem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mem
+# -- Compiling architecture rtl of mem
+# End time: 15:07:50 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd
+# QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
+# Start time: 15:07:51 on Oct 27,2025
+# vcom -reportprogress 300 -work work /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package RISCV_types
+# -- Loading package reg_array
+# -- Compiling entity RISCV_Processor
+# -- Compiling architecture structure of RISCV_Processor
+# End time: 15:07:51 on Oct 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Optimization canceled
+vsim -voptargs=+acc work.riscv_processor
+# vsim -voptargs="+acc" work.riscv_processor 
+# Start time: 15:08:04 on Oct 27,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Error (suppressible): /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd(428): (vopt-1272) Length of data_in is 32; length of component port is 20.
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Error loading design
+# End time: 15:08:05 on Oct 27,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 1
 add wave vsim:/tb/MyRiscv/*
 quit -sim
-quit -sim
 add wave vsim1:/tb/MyRiscv/*
+find drivers -source -time {240 ns} -cause vsim1:/tb/MyRiscv/iCLK
+# Break key hit
+# ** Error: (vish-7) Failed to open info file "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/containers/sim_container_0/work/_info" in read mode.
+# No such file or directory. (errno = ENOENT)
 add wave vsim2:/tb/MyRiscv/*

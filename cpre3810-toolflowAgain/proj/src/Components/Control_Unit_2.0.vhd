@@ -113,6 +113,7 @@ begin
   -- Main ALUControl selection
   aluctl_main <=
     ALU_LUI   when is_lui  = '1' else
+    ALU_CMP   when is_branch = '1' else
     ALU_ADD   when (is_load = '1' or is_store = '1' or is_jal = '1' or is_jalr = '1' or is_auipc = '1') else
     aluctl_Rtype when is_Rtype = '1' else
     aluctl_Itype when is_Itype = '1' else
@@ -143,7 +144,7 @@ begin
 
 
   -- AndLink
-  AndLink <= "01" when (is_jal = '1' or is_jalr = '1') else "00";
+  AndLink <= "01" when (is_jal = '1' or is_jalr = '1' or is_auipc = '1') else "00";
 
   
   -- Memory and register control
@@ -151,6 +152,7 @@ begin
   RegWrite <= '1' when (is_Rtype = '1' or is_Itype = '1' or is_load = '1' or
                         is_jal = '1' or is_jalr = '1' or is_lui = '1' or
                         is_auipc = '1') else '0';
+                        
   MemToReg <= '1' when is_load = '1'  else '0';
 
   

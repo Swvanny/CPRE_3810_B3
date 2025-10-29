@@ -136,6 +136,8 @@ signal s_alu_out : std_logic_vector(31 downto 0);
 --BARREL SHIFTER SIGNALS
  signal s_out_shifted_data : std_logic_vector(31 downto 0);
 
+ signal s_exec_result : std_logic_vector(31 downto 0);
+
 
 
 --REGISTER IMPLEMENTATION    
@@ -322,6 +324,13 @@ component org2 is
        o_F          : out std_logic);
 end component;
 
+component zeroExtender_1to32 is
+  port (
+    data_in  : in  std_logic;                     -- single input bit
+    data_out : out std_logic_vector(31 downto 0)  -- 32-bit zero-extended output
+  );
+end component;
+
 begin
   -- TODO: This is required to be your final input to your instruction memory. This provides a feasible method to externally load the memory module which means that the synthesis tool must assume it knows nothing about the values stored in the instruction memory. If this is not included, much, if not all of the design is optimized out because the synthesis tool will believe the memory to be all zeros.
   with iInstLd select
@@ -461,6 +470,7 @@ s_DMemData <= s_out_rs2;
 
     );
     oALUOut <= s_alu_out;
+    s_DMemAddr <= s_exec_result;
 
     alu_flag_mux_flag_out : mux4t1
     port map(
@@ -472,32 +482,32 @@ s_DMemData <= s_out_rs2;
         o_Y  => s_flag_mux_out
     );
 
-    slt_or_slti_mux : mux2t1_N
-    generic map(N => 32)
-    port map(
-        i_S => s_negative_flag,
-        i_X0 => X"00000000",
-        i_X1 => X"00000001",
-        o_X => s_slt_mux_out
-    );
+    --slt_or_slti_mux : mux2t1_N
+    --generic map(N => 32)
+    --port map(
+       -- i_S => s_negative_flag,
+        --i_X0 => X"00000000",
+        --i_X1 => X"00000001",
+        --o_X => s_slt_mux_out
+   -- );
 
-    sltiu_mux : mux2t1_N
-    generic map(N => 32)
-    port map(
-        i_S => s_carry_flag,
-        i_X0 => X"00000000",
-        i_X1 => X"00000001",
-        o_X => s_sltiu_mux_out
-    );
+    --sltiu_mux : mux2t1_N
+    --generic map(N => 32)
+   -- port map(
+       -- i_S => s_carry_flag,
+        --i_X0 => X"00000000",
+        --i_X1 => X"00000001",
+        --o_X => s_sltiu_mux_out
+    --);
 
-    slt_sltiu_mux : mux2t1_N
-    generic map(N =>32)
-    port map(
-        i_S => s_negative_flag,
-        i_X0 => s_sltiu_mux_out,
-        i_X1 => s_slt_mux_out,
-        o_X => s_slt_sltiu_mux_out
-    );
+    --slt_sltiu_mux : mux2t1_N
+    --generic map(N =>32)
+    --port map(
+        --i_S => s_negative_flag,
+        --i_X0 => s_sltiu_mux_out,
+        --i_X1 => s_slt_mux_out,
+        --o_X => s_slt_sltiu_mux_out
+    --);
 
     flag_negation_gate : invg
     port map(
@@ -543,14 +553,16 @@ s_DMemData <= s_out_rs2;
         data_out => s_out_shifted_data
     );
 
-    ALU_BS_mux : mux2t1_N
-    generic map(N =>32)
-    port map(
-        i_S => s_Shift,
-        i_X0 => s_alu_out,
-        i_X1 => s_out_shifted_data,
-        o_X => s_DMemAddr
-    );
+    --ALU_BS_mux : mux2t1_N
+    --generic map(N =>32)
+    --port map(
+        --i_S => s_Shift,
+        --i_X0 => s_alu_out,
+        --i_X1 => s_out_shifted_data,
+        --o_X => s_DMemAddr
+    --);
+    s_exec_result <= s_out_shifted_data when s_Shift = '1' else s_alu_out;
+    oALUOut <= s_exec_result;
 
     pc_or_zero_mux : mux2t1_N
     generic map(N =>32)
@@ -593,9 +605,9 @@ s_DMemData <= s_out_rs2;
     mux4t1_and_link_mux : mux4t1_32
     port map(
         i_S  => s_AndLink,
-        i_X0 => s_alu_out,
+        i_X0 => s_exec_result,
         i_X1 => s_pc_or_word_adder_out,
-        i_X2 => s_slt_sltiu_mux_out, 
+        i_X2 => s_slt_sltiu_mux_out, --should be output of flag mux, needs extension to 32 bits
         i_X3 => s_pc4_out,
         o_X  => s_4t1_and_link_out
     );
@@ -609,6 +621,12 @@ s_DMemData <= s_out_rs2;
         o_X => s_RegWrData
     );
 
+  zeroExtension_Flags : zeroExtender_1to32
+  port map(
+    data_in  => s_flag_mux_out,                  -- single input bit
+    data_out => s_slt_sltiu_mux_out
+  );
     
 end structure;
+
 

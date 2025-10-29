@@ -3,7 +3,7 @@ Reading pref.tcl
 # 2025.1_2
 
 # vsim -postsimdataflow -debugdb -c -voptargs=""+acc"" tb -do "modelsim_framework.do" -gOUTPUT_TRACE=ms.trace 
-# Start time: 16:34:18 on Oct 27,2025
+# Start time: 22:23:36 on Oct 28,2025
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 2025.1_2 linux_x86_64 Apr  7 2025
@@ -56,6 +56,7 @@ Reading pref.tcl
 # Loading work.mux4t1(structural)#1
 # Loading work.goblinbarrel(behavioral)#1
 # Loading work.mux4t1_32(structural)#1
+# Loading work.zeroextender_1to32(behavioral)#1
 # ** Note: (vsim-8716) Reusing existing debug database vsim.dbg.
 # do modelsim_framework.do
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -74,11 +75,11 @@ Reading pref.tcl
 #    Time: 0 ns  Iteration: 3  Instance: /tb/MyRiscv/ALU_inst/muxResult
 # ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
 #    Time: 0 ns  Iteration: 8  Instance: /tb/MyRiscv/ALU_inst
-# ** Note: Data structure takes 62528312 bytes of memory
-#          Process time 0.08 seconds
+# ** Note: Data structure takes 60299272 bytes of memory
+#          Process time 0.07 seconds
 #          stop
 #    Time: 80 ns  Iteration: 1  Instance: /tb
 # Break in Process P_DUMP_STATE at /home/dswanny/cpre381/CPRE_3810_B3/cpre3810-toolflowAgain/internal/testpy/tb.vhd line 150
 # Stopped at /home/dswanny/cpre381/CPRE_3810_B3/cpre3810-toolflowAgain/internal/testpy/tb.vhd line 150
-# End time: 16:34:18 on Oct 27,2025, Elapsed time: 0:00:00
+# End time: 22:23:36 on Oct 28,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 8

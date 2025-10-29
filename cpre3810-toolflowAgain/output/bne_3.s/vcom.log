@@ -1,6 +1,6 @@
 QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
-Start time: 16:30:26 on Oct 27,2025
-vcom -2008 -work internal/ModelSimContainer/work proj/src/RISCV_types.vhd internal/testpy/tb.vhd proj/src/reg_array.vhd proj/src/RISCV_types.vhd proj/src/Components/invg.vhd proj/src/Components/PC-register.vhd proj/src/Components/xor_32bit.vhd proj/src/Components/mux2t1.vhd proj/src/Components/andg2.vhd proj/src/Components/ALUUnit.vhd proj/src/Components/mux2t1_N.vhd proj/src/Components/decoder5to32.vhd proj/src/Components/norg2.vhd proj/src/Components/goblinBarrel.vhd proj/src/Components/onescomp.vhd proj/src/Components/or_32bit.vhd proj/src/Components/ones_complementor.vhd proj/src/Components/adder.vhd proj/src/Components/mux2t1_dataflow.vhd proj/src/Components/mux32x4t1.vhd proj/src/Components/bitExtender.vhd proj/src/Components/mux4t1 .vhd proj/src/Components/pc_dffg.vhd proj/src/Components/adder-subtractor.vhd proj/src/Components/nbit-register.vhd proj/src/Components/Control_Unit_2.0.vhd proj/src/Components/nBit_ALU.vhd proj/src/Components/n-bit_adder.vhd proj/src/Components/RISCV_types.vhd proj/src/Components/org2.vhd proj/src/Components/dffg.vhd proj/src/Components/full_reg_file.vhd proj/src/Components/mux_32by32.vhd proj/src/Components/mux4by32.vhd proj/src/Components/and_32bit.vhd proj/src/Components/nor_32t1bit.vhd proj/src/Components/xorg2.vhd proj/src/TopLevel/mem.vhd proj/src/TopLevel/RISCV_Processor.vhd 
+Start time: 22:19:49 on Oct 28,2025
+vcom -2008 -work internal/ModelSimContainer/work proj/src/RISCV_types.vhd internal/testpy/tb.vhd proj/src/reg_array.vhd proj/src/RISCV_types.vhd proj/src/Components/invg.vhd proj/src/Components/PC-register.vhd proj/src/Components/xor_32bit.vhd proj/src/Components/mux2t1.vhd proj/src/Components/andg2.vhd proj/src/Components/ALUUnit.vhd proj/src/Components/mux2t1_N.vhd proj/src/Components/decoder5to32.vhd proj/src/Components/norg2.vhd proj/src/Components/goblinBarrel.vhd proj/src/Components/onescomp.vhd proj/src/Components/or_32bit.vhd proj/src/Components/ones_complementor.vhd proj/src/Components/adder.vhd proj/src/Components/mux2t1_dataflow.vhd proj/src/Components/mux32x4t1.vhd proj/src/Components/bitExtender.vhd proj/src/Components/mux4t1 .vhd proj/src/Components/pc_dffg.vhd proj/src/Components/adder-subtractor.vhd proj/src/Components/zeroExtender_1to32.vhd proj/src/Components/nbit-register.vhd proj/src/Components/Control_Unit_2.0.vhd proj/src/Components/nBit_ALU.vhd proj/src/Components/n-bit_adder.vhd proj/src/Components/RISCV_types.vhd proj/src/Components/org2.vhd proj/src/Components/dffg.vhd proj/src/Components/full_reg_file.vhd proj/src/Components/mux_32by32.vhd proj/src/Components/mux4by32.vhd proj/src/Components/and_32bit.vhd proj/src/Components/nor_32t1bit.vhd proj/src/Components/xorg2.vhd proj/src/TopLevel/mem.vhd proj/src/TopLevel/RISCV_Processor.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
@@ -60,6 +60,8 @@ vcom -2008 -work internal/ModelSimContainer/work proj/src/RISCV_types.vhd intern
 -- Compiling architecture mixed of pc_dffg
 -- Compiling entity adder_subtractor
 -- Compiling architecture structural of adder_subtractor
+-- Compiling entity zeroExtender_1to32
+-- Compiling architecture Behavioral of zeroExtender_1to32
 -- Compiling entity nbitRegister
 -- Compiling architecture Structural of nbitRegister
 -- Compiling entity Control_Unit_2
@@ -95,5 +97,5 @@ vcom -2008 -work internal/ModelSimContainer/work proj/src/RISCV_types.vhd intern
 -- Loading package RISCV_types
 -- Compiling entity RISCV_Processor
 -- Compiling architecture structure of RISCV_Processor
-End time: 16:30:26 on Oct 27,2025, Elapsed time: 0:00:00
+End time: 22:19:50 on Oct 28,2025, Elapsed time: 0:00:01
 Errors: 0, Warnings: 5

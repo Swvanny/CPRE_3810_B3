@@ -144,8 +144,12 @@ begin
 
 
   -- AndLink
-  AndLink <= "01" when (is_jal = '1' or is_jalr = '1' or is_auipc = '1') else "00";
-
+  AndLink <= 
+    "11" when (is_jal  = '1' or is_jalr = '1') else                                -- PC+4
+    "01" when (is_auipc = '1') else                                                 -- PC + imm (AUIPC)
+    "10" when ( (is_Rtype = '1' and (funct3 = "010" or funct3 = "011")) or          -- SLT/SLTU
+              (is_Itype = '1' and (funct3 = "010" or funct3 = "011")) ) else      -- SLTI/SLTIU
+    "00";       
   
   -- Memory and register control
   MemWrite <= '1' when is_store = '1' else '0';

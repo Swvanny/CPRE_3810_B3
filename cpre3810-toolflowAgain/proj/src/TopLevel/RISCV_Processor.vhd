@@ -118,6 +118,8 @@ architecture structure of RISCV_Processor is
 signal s_bitext_in : std_logic_vector(19 downto 0);
   signal s_extended_imm : std_logic_vector(31 downto 0);
   signal s_ALU_or_imm_shift_in : std_logic_vector(31 downto 0);
+  
+  signal sMemSlice : std_logic_vector(31 downto 0);
 
 --ALU SIGNALS
  signal s_rs2_or_imm_mux_out : std_logic_vector(31 downto 0);
@@ -329,6 +331,15 @@ component zeroExtender_1to32 is
     data_in  : in  std_logic;                     -- single input bit
     data_out : out std_logic_vector(31 downto 0)  -- 32-bit zero-extended output
   );
+end component;
+
+component memSlicer is
+  port (
+    funct3 : in std_logic_vector(2 downto 0);
+    addr   : in std_logic_vector(1 downto 0);
+    input  : in std_logic_vector(31 downto 0);
+    output : out std_logic_vector(31 downto 0));
+
 end component;
 
 begin
@@ -606,12 +617,20 @@ s_DMemData <= s_out_rs2;
         o_X  => s_4t1_and_link_out
     );
 
+    memorySlicer : memSlicer
+    port map(
+      funct3 => s_Inst(14 downto 12),
+      addr => s_DMemAddr(1 downto 0),
+      input => s_DMemOut,
+      output => sMemSlice
+    );
+
     mem_to_reg_mux : mux2t1_N
     generic map(N =>32)
     port map(
         i_S => s_MemToReg,
         i_X0 => s_4t1_and_link_out,
-        i_X1 => s_DMemOut,
+        i_X1 => sMemSlice,
         o_X => s_RegWrData
     );
 

@@ -81,7 +81,6 @@ architecture structure of RISCV_Processor is
   signal s_pc_or_zero_out : std_logic_vector(31 downto 0);
   signal s_pc_word_shift_out : std_logic_vector(31 downto 0);
   signal s_pc_or_word_adder_out : std_logic_vector(31 downto 0);
-  signal s_pc_target : std_logic_vector(31 downto 0);   --added to try and fix JALR
   signal s_pc_target_masked : std_logic_vector(31 downto 0); -- also for jalr
 
 
@@ -101,9 +100,10 @@ architecture structure of RISCV_Processor is
   signal is_jalr              : std_logic;
 
 
-  signal s_zero_flag : std_logic;
+  signal s_zero_flag     : std_logic;
   signal s_negative_flag : std_logic;
-  signal s_carry_flag : std_logic;
+  signal s_carry_flag    : std_logic;
+  signal s_slt_flag      : std_logic;
 
   --Register File SIGNALS
   signal reg_data : reg_array;
@@ -300,7 +300,7 @@ component ALUUnit is
     flag_zero     : out std_logic;
     flag_carry    : out std_logic;
     flag_negative : out std_logic;
-    flag_overflow : out std_logic
+    flag_slt : out std_logic
   );
 end component;
 
@@ -405,7 +405,7 @@ Control_Unit_inst: Control_Unit_2
   );
 
   s_RegWrAddr <= s_Inst(11 downto 7);
-
+  s_Ovfl <= '0';
 
   s_ImmType <= s_Inst(6 downto 0);
 
@@ -465,18 +465,18 @@ s_DMemData <= s_out_rs2;
         flag_zero     => s_zero_flag,
         flag_carry    => s_carry_flag,
         flag_negative => s_negative_flag,
-        flag_overflow => s_Ovfl
+        flag_slt      => s_slt_flag
         
 
     );
-    oALUOut <= s_alu_out;
+    --oALUOut <= s_alu_out;
     s_DMemAddr <= s_exec_result;
 
     alu_flag_mux_flag_out : mux4t1
     port map(
         i_S  => s_Flag_Mux,
         i_D0 => s_negative_flag ,
-        i_D1 => s_Ovfl ,
+        i_D1 => s_slt_flag ,
         i_D2 => s_carry_flag ,
         i_D3 => s_zero_flag ,
         o_Y  => s_flag_mux_out
@@ -518,8 +518,8 @@ s_DMemData <= s_out_rs2;
     negation_mux : mux2t1
     port map(
         i_S => s_Flag_Or_Nflag,
-        i_X0 => s_negation_flag_out,
-        i_X1 => s_flag_mux_out,
+        i_X0 => s_flag_mux_out,
+        i_X1 => s_negation_flag_out,
         o_X => s_final_flag_out
     );
 
@@ -573,13 +573,7 @@ s_DMemData <= s_out_rs2;
         o_X => s_pc_or_zero_out
     );
 
-    shift_jump_barrel : goblinBarrel
-    port map(
-        data_in => s_ALU_or_imm_shift_in,
-        shift_left_right => "0111", 
-        shift_amount => "00010",
-        data_out => s_pc_word_shift_out
-    );
+  
 
     pc_or_branch_adder : Nbit_adder
     generic map(N =>32)
@@ -623,7 +617,7 @@ s_DMemData <= s_out_rs2;
 
   zeroExtension_Flags : zeroExtender_1to32
   port map(
-    data_in  => s_flag_mux_out,                  -- single input bit
+    data_in  => s_final_flag_out,                  -- single input bit
     data_out => s_slt_sltiu_mux_out
   );
     

@@ -60,6 +60,7 @@ begin
                              data_in(6 downto 0) = OP_JALR)  else
               outStype when (data_in(6 downto 0) = OP_STORE) else
               outSBtype when (data_in(6 downto 0) = OP_BRANCH) else
+              outJType when (data_in(6 downto 0) = OP_JAL) else
               outUtype when (data_in(6 downto 0) = OP_LUI) else
               shiftedAUIPC when (data_in(6 downto 0) = OP_AUIPC) else
               x"00000000";

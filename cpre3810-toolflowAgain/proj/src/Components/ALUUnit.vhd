@@ -14,7 +14,7 @@ entity ALUUnit is
     flag_zero     : out std_logic;
     flag_carry    : out std_logic;
     flag_negative : out std_logic;
-    flag_overflow : out std_logic
+    flag_slt      : out std_logic
   );
 end ALUUnit;
 
@@ -174,7 +174,7 @@ adder_sel      <= is_add or is_sub;
   flag_negative <= neg;
   flag_zero     <= zero;
   flag_carry    <= adderC when mux_control4t1 = "11" else '0';
-  flag_overflow <= '0';
+  flag_slt      <= neg xor adderV;
 
 
 end architecture structural;

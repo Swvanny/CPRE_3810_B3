@@ -59,7 +59,7 @@ architecture dataflow of control_Unit_2 is
 
   -- Flag encodings
   constant FLAG_NEG      : std_logic_vector(1 downto 0) := "00";
-  constant FLAG_OVERFLOW : std_logic_vector(1 downto 0) := "01";
+  constant FLAG_SLT      : std_logic_vector(1 downto 0) := "01";
   constant FLAG_CARRY    : std_logic_vector(1 downto 0) := "10";
   constant FLAG_ZERO     : std_logic_vector(1 downto 0) := "11";
 
@@ -161,7 +161,7 @@ begin
 
   
   -- Branch / Jump
-  Branch <= is_branch;
+  Branch <= '1' when (is_branch = '1') else '0';
   Jump   <= '1' when (is_jal = '1' or is_jalr = '1') else '0';
 
   
@@ -171,16 +171,19 @@ begin
   
   -- Flag_Mux
   Flag_Mux <=
-    FLAG_ZERO  when (is_branch = '1' and (funct3 = "000" or funct3 = "001")) else
+    FLAG_ZERO  when (is_branch = '1' and (funct3 = "000" or funct3 = "001")) else 
     FLAG_NEG   when (is_branch = '1' and (funct3 = "100" or funct3 = "101")) else
     FLAG_CARRY when (is_branch = '1' and (funct3 = "110" or funct3 = "111")) else
+    FLAG_CARRY when (is_IType = '1' and funct3 = "011") else
+    FLAG_SLT   when (is_RType = '1' and funct3 = "010") else
     FLAG_NEG;
 
   
   -- Flag_Or_Nflag
   Flag_Or_Nflag <=
-    '1' when (is_branch = '1' and (funct3 = "001" or funct3 = "101" or funct3 = "111"))
-    else '0';
+    '1' when (is_branch = '1' and (funct3 = "001" or funct3 = "101" or funct3 = "110"))else
+    '1' when (is_IType = '1' and funct3 = "011") else
+    '0';
 
 
   

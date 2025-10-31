@@ -3,7 +3,7 @@ Reading pref.tcl
 # 2025.1_2
 
 # vsim -postsimdataflow -debugdb -c -voptargs=""+acc"" tb -do "modelsim_framework.do" -gOUTPUT_TRACE=ms.trace 
-# Start time: 15:39:39 on Oct 30,2025
+# Start time: 09:51:14 on Oct 31,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
@@ -67,5 +67,5 @@ Reading pref.tcl
 # Load interrupted
 # Error loading design
 Error loading design
-# End time: 15:39:40 on Oct 30,2025, Elapsed time: 0:00:01
+# End time: 09:51:15 on Oct 31,2025, Elapsed time: 0:00:01
 # Errors: 1, Warnings: 3

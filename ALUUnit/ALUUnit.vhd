@@ -14,7 +14,7 @@ entity ALUUnit is
     flag_zero     : out std_logic;
     flag_carry    : out std_logic;
     flag_negative : out std_logic;
-    flag_overflow : out std_logic
+    flag_slt      : out std_logic
   );
 end ALUUnit;
 
@@ -72,9 +72,9 @@ architecture structural of ALUUnit is
     generic (N : integer := 2);
     port(
       i_S  : in  std_logic;
-      i_D0 : in  std_logic_vector(N-1 downto 0);
-      i_D1 : in  std_logic_vector(N-1 downto 0);
-      o_O  : out std_logic_vector(N-1 downto 0)
+      i_X0 : in  std_logic_vector(N-1 downto 0);
+      i_X1 : in  std_logic_vector(N-1 downto 0);
+      o_X  : out std_logic_vector(N-1 downto 0)
     );
   end component;
 
@@ -93,6 +93,7 @@ architecture structural of ALUUnit is
   signal finalResult : std_logic_vector(WIDTH-1 downto 0);
   signal neg, zero : std_logic;
   signal adderZ, adderN, adderC, adderV : std_logic;
+  signal is_add, is_sub : std_logic;
 
   -- Separate bit to select the adder result into the final mux
   -- Alucontrol(3) = 1 selects the adder path; 0 selects logic via Alucontrol(1 downto 0)
@@ -102,9 +103,14 @@ begin
 
   -- Control signals
   mux_control2t1 <= Alucontrol(1 downto 0);  -- 00=AND, 01=OR, 10=XOR
-  adder_sel      <= Alucontrol(3);
+  
+  
   neg  <= finalResult(WIDTH-1);
   zero <= '1' when unsigned(finalResult) = 0 else '0';
+is_add <= '0' when Alucontrol = "0011" else '0';
+is_sub <= '1' when Alucontrol = "0100" else '0';
+
+adder_sel      <= is_add or is_sub;
 
   -- Logical units populate bus_in(0..2)
   andUnit : and_32bit
@@ -131,7 +137,7 @@ begin
   -- Adder/Subtractor populates bus_in(3); Alucontrol(2) selects ADD(0)/SUB(1)
   addsub : nBit_ALU
     port map(
-      nAdd_Sub   => Alucontrol(2),
+      nAdd_Sub   => adder_sel,
       input_A    => input_A,
       input_B    => input_B,
       output_Sum => bus_in(3),
@@ -146,9 +152,9 @@ begin
     generic map(N => 2)
     port map(
       i_S  => adder_sel,
-      i_D0 => mux_control2t1,  -- 00=AND, 01=OR, 10=XOR
-      i_D1 => "11",            -- 11=ADD/SUB
-      o_O  => mux_control4t1
+      i_X0 => mux_control2t1,  -- 00=AND, 01=OR, 10=XOR
+      i_X1 => "11",            -- 11=ADD/SUB
+      o_X  => mux_control4t1
     );
 
   -- Select final result among AND/OR/XOR/ADD(SUB)
@@ -160,7 +166,7 @@ begin
     );
 
   -- Drive output results
-  output_result <= finalResult;
+  output_result <= input_B when Alucontrol = "1000" else finalResult;
 
   -- Dedicated flag outputs
   -- Negative/Zero reflect the final selected result (valid for all ops)
@@ -168,7 +174,7 @@ begin
   flag_negative <= neg;
   flag_zero     <= zero;
   flag_carry    <= adderC when mux_control4t1 = "11" else '0';
-  flag_overflow <= adderV when mux_control4t1 = "11" else '0';
+  flag_slt      <= neg xor adderV;
 
 
 end architecture structural;

@@ -11,7 +11,7 @@ port (
 
 end memSlicer;
 
-architecture Behavioral of memorySlicer is
+architecture Behavioral of memSlicer is
     signal lb, lbu : std_logic_vector(7 downto 0);
     signal lh, lhu : std_logic_vector(15 downto 0);
     signal extlb, extlbu, extlh, extlhu : std_logic_vector(31 downto 0);

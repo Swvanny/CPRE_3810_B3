@@ -1,0 +1,52 @@
+[inst #1] addi x1,x0,5
+Register Write to Reg: 0x01 Val: 0x00000005
+[inst #2] addi x2,x0,-3
+Register Write to Reg: 0x02 Val: 0xFFFFFFFD
+[inst #3] add x3,x1,x2
+Register Write to Reg: 0x03 Val: 0x00000002
+[inst #4] sub x4,x1,x2
+Register Write to Reg: 0x04 Val: 0x00000008
+[inst #5] and x5,x3,x4
+Register Write to Reg: 0x05 Val: 0x00000000
+[inst #6] or x6,x3,x4
+Register Write to Reg: 0x06 Val: 0x0000000A
+[inst #7] xor x7,x3,x6
+Register Write to Reg: 0x07 Val: 0x00000008
+[inst #8] sll x8,x7,x1
+Register Write to Reg: 0x08 Val: 0x00000100
+[inst #9] srl x9,x7,x1
+Register Write to Reg: 0x09 Val: 0x00000000
+[inst #10] sra x10,x2,x1
+Register Write to Reg: 0x0A Val: 0xFFFFFFFF
+[inst #11] addi x11,x7,3
+Register Write to Reg: 0x0B Val: 0x0000000B
+[inst #12] andi x12,x6,15
+Register Write to Reg: 0x0C Val: 0x0000000A
+[inst #13] ori x13,x5,160
+Register Write to Reg: 0x0D Val: 0x000000A0
+[inst #14] xori x14,x11,-1
+Register Write to Reg: 0x0E Val: 0xFFFFFFF4
+[inst #15] slli x15,x7,3
+Register Write to Reg: 0x0F Val: 0x00000040
+[inst #16] srli x16,x7,2
+Register Write to Reg: 0x10 Val: 0x00000002
+[inst #17] srai x17,x2,1
+Register Write to Reg: 0x11 Val: 0xFFFFFFFE
+[inst #18] slt x18,x2,x1
+Register Write to Reg: 0x12 Val: 0x00000001
+[inst #19] sltu x19,x2,x1
+Register Write to Reg: 0x13 Val: 0x00000000
+[inst #20] slti x20,x2,-1
+Register Write to Reg: 0x14 Val: 0x00000001
+[inst #21] sltiu x21,x2,-1
+Register Write to Reg: 0x15 Val: 0x00000001
+[inst #22] lui x22,74565
+Register Write to Reg: 0x16 Val: 0x12345000
+[inst #23] addi x22,x22,1656
+Register Write to Reg: 0x16 Val: 0x12345678
+[inst #24] auipc x23,0
+Register Write to Reg: 0x17 Val: 0x0040005C
+[inst #25] add x24,x23,x1
+Register Write to Reg: 0x18 Val: 0x00400061
+
+Program terminated by dropping off the bottom.

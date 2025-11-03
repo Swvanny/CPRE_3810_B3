@@ -13,7 +13,7 @@ _start:
     or   x6,  x3, x4          # x6 = (2 | 8)  = 10
     xor  x7,  x3, x6          # x7 = (2 ^ 10) = 8
 
-    # Shifts with register shift amount (uses low 5 bits of rs2)
+    # Shifts with register shift amount
     sll  x8,  x7, x1          # x8  = 8 << 5
     srl  x9,  x7, x1          # x9  = 8 >> 5 (logical)
     sra  x10, x2, x1          # x10 = -3 >> 5 (arithmetic, sign extends)

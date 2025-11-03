@@ -231,7 +231,7 @@ component Control_Unit_2
 
     ALUSrc             : out std_logic;
     ALUControl         : out std_logic_vector(3 downto 0);
-    ImmType            : out std_logic_vector(6 downto 0);
+    --ImmType            : out std_logic_vector(6 downto 0);
     AndLink            : out std_logic_vector(1 downto 0);
     MemWrite           : out std_logic;
     RegWrite           : out std_logic;
@@ -400,7 +400,7 @@ Control_Unit_inst: Control_Unit_2
 
     ALUSrc             => s_ALUSrc,
     ALUControl         => s_ALUControl,
-    ImmType            => s_ImmType,
+    --ImmType            => s_ImmType,
     AndLink            => s_AndLink,
     MemWrite           => s_DMemWr,
     RegWrite           => s_RegWr,

@@ -10,7 +10,7 @@ entity Control_Unit_2 is
 
     ALUSrc             : out std_logic;
     ALUControl         : out std_logic_vector(3 downto 0);
-    ImmType            : out std_logic_vector(6 downto 0);
+    --ImmType            : out std_logic_vector(6 downto 0);
     AndLink            : out std_logic_vector(1 downto 0);
     MemWrite           : out std_logic;
     RegWrite           : out std_logic;
@@ -131,16 +131,16 @@ begin
 
 
   -- ImmType
-  ImmType <= 
-    OP_I_Type  when opcode = OP_I_Type  else  -- arithmetic immediates (ADDI, etc.)
-    OP_LOAD    when opcode = OP_LOAD    else  -- loads
-    OP_STORE   when opcode = OP_STORE   else  -- stores
-    OP_BRANCH  when opcode = OP_BRANCH  else  -- branches
-    OP_JAL     when opcode = OP_JAL     else  -- jump and link
-    OP_JALR    when opcode = OP_JALR    else  -- jump and link register
-    OP_LUI     when opcode = OP_LUI     else  -- load upper immediate
-    OP_AUIPC   when opcode = OP_AUIPC   else  -- add upper immediate to PC
-    (others => '0');
+  --ImmType <= 
+    --OP_I_Type  when opcode = OP_I_Type  else  -- arithmetic immediates (ADDI, etc.)
+    --OP_LOAD    when opcode = OP_LOAD    else  -- loads
+    --OP_STORE   when opcode = OP_STORE   else  -- stores
+    --OP_BRANCH  when opcode = OP_BRANCH  else  -- branches
+    --OP_JAL     when opcode = OP_JAL     else  -- jump and link
+    --OP_JALR    when opcode = OP_JALR    else  -- jump and link register
+    --OP_LUI     when opcode = OP_LUI     else  -- load upper immediate
+    --OP_AUIPC   when opcode = OP_AUIPC   else  -- add upper immediate to PC
+   -- (others => '0');
 
 
   -- AndLink

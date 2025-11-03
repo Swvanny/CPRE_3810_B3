@@ -48,5 +48,6 @@ Register Write to Reg: 0x16 Val: 0x12345678
 Register Write to Reg: 0x17 Val: 0x0040005C
 [inst #25] add x24,x23,x1
 Register Write to Reg: 0x18 Val: 0x00400061
+[inst #26] wfi 
 
 Program terminated by dropping off the bottom.

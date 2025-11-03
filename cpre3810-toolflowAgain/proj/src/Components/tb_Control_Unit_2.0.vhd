@@ -15,7 +15,7 @@ architecture sim of tb_Control_Unit_2_no_asserts is
   -- Outputs
   signal ALUSrc             : std_logic;
   signal ALUControl         : std_logic_vector(3 downto 0);
-  signal ImmType            : std_logic_vector(6 downto 0);
+--  signal ImmType            : std_logic_vector(6 downto 0);
   signal AndLink            : std_logic_vector(1 downto 0);
   signal MemWrite           : std_logic;
   signal RegWrite           : std_logic;
@@ -42,7 +42,7 @@ architecture sim of tb_Control_Unit_2_no_asserts is
       & " f7="   & to_hstring(funct7)
       & " || ALUctl=" & to_hstring(ALUControl)
       & " ALUSrc="    & std_logic'image(ALUSrc)
-      & " ImmType(opcode proxy)=" & to_hstring(ImmType)
+     -- & " ImmType(opcode proxy)=" & to_hstring(ImmType)
       & " AndLink="   & to_hstring(AndLink)
       & " MemWrite="  & std_logic'image(MemWrite)
       & " RegWrite="  & std_logic'image(RegWrite)
@@ -85,7 +85,7 @@ begin
       funct7   => funct7,
       ALUSrc             => ALUSrc,
       ALUControl         => ALUControl,
-      ImmType            => ImmType,
+    --  ImmType            => ImmType,
       AndLink            => AndLink,
       MemWrite           => MemWrite,
       RegWrite           => RegWrite,

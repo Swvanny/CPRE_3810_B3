@@ -1,12 +1,13 @@
 
     .data
-arr: .word 38, 27, 43, 3, 9, 82, 10   
-n:   .word 7
+arr: .word 38, 27, 43, 3, 9   
+n:   .word 5
 
     .text
     .globl main
 
 main:
+li   sp, 0x7FFFEFFC
     la   a0, arr          
     li   a1, 0        
     lw   a2, n           
@@ -14,7 +15,7 @@ main:
     jal  ra, merge_sort
     
     li   a7, 10
-    ecall
+    j end
 
 merge_sort:
     addi sp, sp, -24      
@@ -207,11 +208,12 @@ merge_done:
    
     lw   ra, 28(s0)
     lw   s0, 24(s0)
-    lw   s1, 32(s0)
-    lw   s2, 36(s0)
-    lw   s3, 40(s0)
-    addi sp, sp, 44
+   
+    addi sp, sp, 24
     jr   ra
+  
+end:
+wfi  
 
 #Created with Copilot using ChatGPT-5, prompt "I need this C code
  #in Risc-v 32 code, could you make that for me"

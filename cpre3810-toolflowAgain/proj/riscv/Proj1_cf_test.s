@@ -2,12 +2,13 @@
     .globl main
 
 main:
+li   sp, 0x7FFFEFFC
     li   t0, 0            
     li   t1, 5            
     jal  ra, func1        
    
     li   a7, 10           
-    ecall
+    
 
 func1:
     addi sp, sp, -4

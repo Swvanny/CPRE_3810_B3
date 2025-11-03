@@ -1,10 +1,10 @@
 QuestaSim-64 vcom 2025.1_2 Compiler 2025.04 Apr  7 2025
-Start time: 15:36:44 on Oct 30,2025
-vcom -2008 -work internal/ModelSimContainer/work proj/src/RISCV_types.vhd internal/testpy/tb.vhd proj/src/reg_array.vhd proj/src/RISCV_types.vhd proj/src/Components/invg.vhd proj/src/Components/PC-register.vhd proj/src/Components/xor_32bit.vhd proj/src/Components/mux2t1.vhd proj/src/Components/andg2.vhd proj/src/Components/ALUUnit.vhd proj/src/Components/mux2t1_N.vhd proj/src/Components/decoder5to32.vhd proj/src/Components/norg2.vhd proj/src/Components/goblinBarrel.vhd proj/src/Components/onescomp.vhd proj/src/Components/or_32bit.vhd proj/src/Components/ones_complementor.vhd proj/src/Components/adder.vhd proj/src/Components/mux2t1_dataflow.vhd proj/src/Components/mux32x4t1.vhd proj/src/Components/bitExtender.vhd proj/src/Components/mux4t1 .vhd proj/src/Components/pc_dffg.vhd proj/src/Components/adder-subtractor.vhd proj/src/Components/memSlicer.vhd proj/src/Components/zeroExtender_1to32.vhd proj/src/Components/nbit-register.vhd proj/src/Components/Control_Unit_2.0.vhd proj/src/Components/nBit_ALU.vhd proj/src/Components/n-bit_adder.vhd proj/src/Components/RISCV_types.vhd proj/src/Components/org2.vhd proj/src/Components/dffg.vhd proj/src/Components/full_reg_file.vhd proj/src/Components/mux_32by32.vhd proj/src/Components/mux4by32.vhd proj/src/Components/and_32bit.vhd proj/src/Components/nor_32t1bit.vhd proj/src/Components/xorg2.vhd proj/src/TopLevel/mem.vhd proj/src/TopLevel/RISCV_Processor.vhd 
+Start time: 16:09:08 on Nov 03,2025
+vcom -2008 -work internal/ModelSimContainer/work proj/src/RISCV_types.vhd internal/testpy/tb.vhd proj/src/reg_array.vhd proj/src/RISCV_types.vhd proj/src/TopLevel/RISCV_Processor.vhd proj/src/TopLevel/mem.vhd proj/src/Components/and_32bit.vhd proj/src/Components/Control_Unit_2.0.vhd proj/src/Components/nor_32t1bit.vhd proj/src/Components/n-bit_adder.vhd proj/src/Components/RISCV_types.vhd proj/src/Components/nbit-register.vhd proj/src/Components/mux2t1.vhd proj/src/Components/nBit_ALU.vhd proj/src/Components/memSlicer.vhd proj/src/Components/pc_dffg.vhd proj/src/Components/invg.vhd proj/src/Components/decoder5to32.vhd proj/src/Components/full_reg_file.vhd proj/src/Components/mux4t1 .vhd proj/src/Components/mux2t1_dataflow.vhd proj/src/Components/adder-subtractor.vhd proj/src/Components/goblinBarrel.vhd proj/src/Components/mux4by32.vhd proj/src/Components/xorg2.vhd proj/src/Components/tb_goblinBarrel.vhd proj/src/Components/tb_ALUUnit.vhd proj/src/Components/bitExtender.vhd proj/src/Components/dffg.vhd proj/src/Components/org2.vhd proj/src/Components/mux32x4t1.vhd proj/src/Components/andg2.vhd proj/src/Components/tb_Control_Unit_2.0.vhd proj/src/Components/mux2t1_N.vhd proj/src/Components/norg2.vhd proj/src/Components/zeroExtender_1to32.vhd proj/src/Components/or_32bit.vhd proj/src/Components/onescomp.vhd proj/src/Components/adder.vhd proj/src/Components/ones_complementor.vhd proj/src/Components/xor_32bit.vhd proj/src/Components/PC-register.vhd proj/src/Components/ALUUnit.vhd proj/src/Components/mux_32by32.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
-** Warning: proj/src/RISCV_types.vhd(15): (vcom-1615) Existing package 'RISCV_types' at /home/dswanny/cpre381/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/RISCV_types.vhd(15) will be overwritten.
+** Warning: proj/src/RISCV_types.vhd(15): (vcom-1615) Existing package 'RISCV_types' at /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/RISCV_types.vhd(15) will be overwritten.
 -- Compiling package RISCV_types
 -- Compiling package body RISCV_types
 -- Loading package RISCV_types
@@ -18,59 +18,19 @@ vcom -2008 -work internal/ModelSimContainer/work proj/src/RISCV_types.vhd intern
 ** Warning: proj/src/RISCV_types.vhd(33): (vcom-1615) Existing package body 'RISCV_types(body)' at line 33 will be overwritten.
 -- Compiling package body RISCV_types
 -- Loading package RISCV_types
--- Compiling entity invg
--- Compiling architecture dataflow of invg
--- Compiling entity PCRegister
--- Compiling architecture Structural of PCRegister
--- Compiling entity xor_32bit
--- Compiling architecture structural of xor_32bit
--- Compiling entity mux2t1
--- Compiling architecture Structural of mux2t1
--- Compiling entity andg2
--- Compiling architecture dataflow of andg2
--- Loading package NUMERIC_STD
 -- Loading package RISCV_types
--- Compiling entity ALUUnit
--- Compiling architecture structural of ALUUnit
--- Compiling entity mux2t1_N
--- Compiling architecture structural of mux2t1_N
--- Compiling entity decoder5to32
--- Compiling architecture behavioral of decoder5to32
--- Compiling entity norg2
--- Compiling architecture dataflow of norg2
--- Compiling entity goblinBarrel
--- Compiling architecture Behavioral of goblinBarrel
--- Compiling entity onescomp
--- Compiling architecture structural of onescomp
--- Compiling entity or_32bit
--- Compiling architecture structural of or_32bit
--- Compiling entity ones_complementor
--- Compiling architecture structural of ones_complementor
--- Compiling entity adder
--- Compiling architecture Structural of adder
--- Compiling entity mux2t1_dataflow
--- Compiling architecture dataflow of mux2t1_dataflow
--- Compiling entity mux4x32t1
--- Compiling architecture dataflow of mux4x32t1
--- Compiling entity bitExtender
--- Compiling architecture Behavioral of bitExtender
--- Compiling entity mux4t1
--- Compiling architecture structural of mux4t1
--- Compiling entity pc_dffg
--- Compiling architecture mixed of pc_dffg
--- Compiling entity adder_subtractor
--- Compiling architecture structural of adder_subtractor
--- Compiling entity memSlicer
--- Compiling architecture Behavioral of memorySlicer
--- Loading entity memorySlicer
--- Compiling entity zeroExtender_1to32
--- Compiling architecture Behavioral of zeroExtender_1to32
--- Compiling entity nbitRegister
--- Compiling architecture Structural of nbitRegister
+-- Loading package reg_array
+-- Compiling entity RISCV_Processor
+-- Compiling architecture structure of RISCV_Processor
+-- Loading package NUMERIC_STD
+-- Compiling entity mem
+-- Compiling architecture rtl of mem
+-- Compiling entity and_32bit
+-- Compiling architecture structural of and_32bit
 -- Compiling entity Control_Unit_2
 -- Compiling architecture dataflow of control_Unit_2
--- Compiling entity nBit_ALU
--- Compiling architecture rtl of nBit_ALU
+-- Compiling entity nor_32t1bit
+-- Compiling architecture behavioral of nor_32t1bit
 -- Compiling entity Nbit_adder
 -- Compiling architecture structural of Nbit_adder
 ** Warning: proj/src/Components/RISCV_types.vhd(15): (vcom-1615) Existing package 'RISCV_types' at proj/src/RISCV_types.vhd(18) will be overwritten.
@@ -78,27 +38,75 @@ vcom -2008 -work internal/ModelSimContainer/work proj/src/RISCV_types.vhd intern
 ** Warning: proj/src/Components/RISCV_types.vhd(33): (vcom-1615) Existing package body 'RISCV_types(body)' at proj/src/RISCV_types.vhd(33) will be overwritten.
 -- Compiling package body RISCV_types
 -- Loading package RISCV_types
--- Compiling entity org2
--- Compiling architecture dataflow of org2
--- Compiling entity dffg
--- Compiling architecture mixed of dffg
--- Loading package reg_array
+-- Compiling entity nbitRegister
+-- Compiling architecture Structural of nbitRegister
+-- Compiling entity mux2t1
+-- Compiling architecture Structural of mux2t1
+-- Compiling entity nBit_ALU
+-- Compiling architecture rtl of nBit_ALU
+-- Compiling entity memSlicer
+-- Compiling architecture Behavioral of memSlicer
+-- Compiling entity pc_dffg
+-- Compiling architecture mixed of pc_dffg
+-- Compiling entity invg
+-- Compiling architecture dataflow of invg
+-- Compiling entity decoder5to32
+-- Compiling architecture behavioral of decoder5to32
 -- Compiling entity full_reg_file
 -- Compiling architecture structural of full_reg_file
--- Compiling entity mux_32by32
--- Compiling architecture dataflow of mux_32by32
+-- Compiling entity mux4t1
+-- Compiling architecture structural of mux4t1
+-- Compiling entity mux2t1_dataflow
+-- Compiling architecture dataflow of mux2t1_dataflow
+-- Compiling entity adder_subtractor
+-- Compiling architecture structural of adder_subtractor
+-- Compiling entity goblinBarrel
+-- Compiling architecture Behavioral of goblinBarrel
 -- Compiling entity mux4t1_32
 -- Compiling architecture structural of mux4t1_32
--- Compiling entity and_32bit
--- Compiling architecture structural of and_32bit
--- Compiling entity nor_32t1bit
--- Compiling architecture behavioral of nor_32t1bit
 -- Compiling entity xorg2
 -- Compiling architecture dataflow of xorg2
--- Compiling entity mem
--- Compiling architecture rtl of mem
+-- Compiling entity tb_goblinBarrel
+-- Compiling architecture sim of tb_goblinBarrel
+-- Loading entity goblinBarrel
 -- Loading package RISCV_types
--- Compiling entity RISCV_Processor
--- Compiling architecture structure of RISCV_Processor
-End time: 15:36:44 on Oct 30,2025, Elapsed time: 0:00:00
+-- Compiling entity tb_ALUUnit_no_asserts
+-- Compiling architecture sim of tb_ALUUnit_no_asserts
+-- Loading entity ALUUnit
+-- Compiling entity bitExtender
+-- Compiling architecture Behavioral of bitExtender
+-- Compiling entity dffg
+-- Compiling architecture mixed of dffg
+-- Compiling entity org2
+-- Compiling architecture dataflow of org2
+-- Compiling entity mux4x32t1
+-- Compiling architecture dataflow of mux4x32t1
+-- Compiling entity andg2
+-- Compiling architecture dataflow of andg2
+-- Compiling entity tb_Control_Unit_2_no_asserts
+-- Compiling architecture sim of tb_Control_Unit_2_no_asserts
+-- Loading entity Control_Unit_2
+-- Compiling entity mux2t1_N
+-- Compiling architecture structural of mux2t1_N
+-- Compiling entity norg2
+-- Compiling architecture dataflow of norg2
+-- Compiling entity zeroExtender_1to32
+-- Compiling architecture Behavioral of zeroExtender_1to32
+-- Compiling entity or_32bit
+-- Compiling architecture structural of or_32bit
+-- Compiling entity onescomp
+-- Compiling architecture structural of onescomp
+-- Compiling entity adder
+-- Compiling architecture Structural of adder
+-- Compiling entity ones_complementor
+-- Compiling architecture structural of ones_complementor
+-- Compiling entity xor_32bit
+-- Compiling architecture structural of xor_32bit
+-- Compiling entity PCRegister
+-- Compiling architecture Structural of PCRegister
+-- Compiling entity ALUUnit
+-- Compiling architecture structural of ALUUnit
+-- Compiling entity mux_32by32
+-- Compiling architecture dataflow of mux_32by32
+End time: 16:09:08 on Nov 03,2025, Elapsed time: 0:00:00
 Errors: 0, Warnings: 5

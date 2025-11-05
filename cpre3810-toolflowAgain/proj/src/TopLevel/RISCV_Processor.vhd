@@ -106,7 +106,7 @@ architecture structure of RISCV_Processor is
   signal s_slt_flag      : std_logic;
 
   --Register File SIGNALS
-  signal reg_data : reg_array;
+  --signal reg_data : reg_array;
   constant WRITE_MASK : std_logic_vector(31 downto 0) := (0 => '0', others => '1');
   signal s_decoder_out : std_logic_vector(31 downto 0);
   signal s_we_masked : std_logic_vector(31 downto 0);
@@ -156,12 +156,42 @@ component PCRegister is
        );
 end component;
 
+component PipelineRegister is
+    generic (
+        N : integer := 32  
+    );
+
+  port(i_CLK        : in std_logic;    
+       i_RST        : in std_logic;
+       i_WE         : in std_logic;     -- Write enable 
+       i_D         : in std_logic_vector(N-1 downto 0);
+       o_Q          : out std_logic_vector(N-1 downto 0)     -- Data 
+       );
+
+end component;
+
+
   component nbitRegister is
     generic ( N: integer := 32 );
     port(i_CLK: in std_logic; i_RST: in std_logic; i_WE: in std_logic;
          i_D: in std_logic_vector(N-1 downto 0);
          o_Q: out std_logic_vector(N-1 downto 0));
   end component;
+
+  component full_reg_file is
+    port(
+        i_data_in : in std_logic_vector(31 downto 0);
+        i_write_addr : in std_logic_vector(4 downto 0);
+        i_clk : in std_logic;
+        i_RST : in std_logic;
+        i_write_en : in std_logic;
+        i_rs1 : in std_logic_vector(4 downto 0);
+        i_rs2 : in std_logic_vector(4 downto 0);
+
+        o_rs1 : out std_logic_vector(31 downto 0);
+        o_rs2 : out std_logic_vector(31 downto 0)
+    );
+end component;
 
 -- MUX'S IMPLEMENTATIONS
 
@@ -429,21 +459,36 @@ s_pc_target_masked <= (s_pc_or_word_adder_out and x"FFFFFFFE") when is_jalr = '1
                      else s_pc_or_word_adder_out;
   
 
-  decoder_inst: decoder5to32
-    port map(i_sel => s_RegWrAddr, i_en => s_RegWr, o_out => s_decoder_out);
+ -- decoder_inst: decoder5to32
+  --  port map(i_sel => s_RegWrAddr, i_en => s_RegWr, o_out => s_decoder_out);
 
-  s_we_masked <= s_decoder_out and WRITE_MASK;
-  reg_data(0) <= (others => '0');
+ -- s_we_masked <= s_decoder_out and WRITE_MASK;
+ -- reg_data(0) <= (others => '0');
 
-  gen_regs: for i in 1 to 31 generate
-    reg_inst: nbitRegister
-      generic map(N => 32)
-      port map(i_CLK => iCLK, i_RST => iRST, i_WE => s_we_masked(i),
-               i_D => s_RegWrData, o_Q => reg_data(i));
-  end generate;
+ -- gen_regs: for i in 1 to 31 generate
+  --  reg_inst: nbitRegister
+  --    generic map(N => 32)
+  --    port map(i_CLK => iCLK, i_RST => iRST, i_WE => s_we_masked(i),
+ --              i_D => s_RegWrData, o_Q => reg_data(i));
+ -- end generate;
 
-  rs1_mux: mux_32by32 port map(sel => s_inst(19 downto 15), data_in => reg_data, data_out => s_out_rs1);
-  rs2_mux: mux_32by32 port map(sel => s_inst(24 downto 20), data_in => reg_data, data_out => s_out_rs2);
+ -- rs1_mux: mux_32by32 port map(sel => s_inst(19 downto 15), data_in => reg_data, data_out => s_out_rs1);
+  --rs2_mux: mux_32by32 port map(sel => s_inst(24 downto 20), data_in => reg_data, data_out => s_out_rs2);
+
+Register_inst: full_reg_file
+port map(
+       i_data_in => s_RegWrData,
+        i_write_addr => s_RegWrAddr,
+        i_clk => iCLK,
+        i_RST => iRST,
+        i_write_en => s_RegWr,
+        i_rs1 => s_inst(19 downto 15),
+        i_rs2 => s_inst(24 downto 20),
+
+        o_rs1 => s_out_rs1,
+        o_rs2 => s_out_rs2
+);
+
 
   bitExtender_inst: bitExtender
     port map(

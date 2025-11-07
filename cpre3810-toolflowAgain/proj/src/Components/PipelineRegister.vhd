@@ -24,7 +24,7 @@ architecture Structural of PipelineRegister is
        o_Q          : out std_logic);   -- Data 
 end component;
 
-signal q_internal : std_logic_vector(31 downto 0);
+
 
 begin
   G_nbit_reg: for i in 0 to N-1 generate
@@ -33,11 +33,9 @@ begin
               i_RST     => i_RST,  
               i_WE     => i_WE,  
               i_D      => i_D(i),
-              o_Q      => q_internal(i)
+              o_Q      => o_Q(i)
               );  
   end generate G_nbit_reg;
-
-  o_Q <= q_internal;
 
 
 end Structural ; 

@@ -84,10 +84,52 @@ architecture structure of RISCV_Processor is
   signal s_pc_target_masked : std_logic_vector(31 downto 0); -- also for jalr
 
 
---Control Unit SIGNALS
+ --IFID SIGNALS
+ signal IFID_sInst_out : std_logic_vector(31 downto 0);
+ signal IFID_pc_out : std_logic_vector(31 downto 0);
+
+ --IDEX SIGNALS
+ signal IDEX_immGen_out : std_logic_vector(31 downto 0);
+ signal IDEX_rs1_out : std_logic_vector(31 downto 0);
+ signal IDEX_rs2_out : std_logic_vector(31 downto 0);
+ signal IDEX_Branch_out : std_logic;
+ signal IDEX_Jump_out : std_logic;
+ signal IDEX_FlagNFlag_out : std_logic;
+ signal IDEX_AndLink_out  : std_logic_vector(1 downto 0);
+ signal IDEX_MemWrite_out : std_logic;
+ signal IDEX_FlagMux_out : std_logic_vector(1 downto 0);
+ signal IDEX_MemToReg_out : std_logic;
+ signal IDEX_ALUSrc_out : std_logic;
+ signal IDEX_Shift_out : std_logic;
+ signal IDEX_ALUControl_out : std_logic_vector(3 downto 0);
+ signal IDEX_JumpWithReg_out : std_logic;
+ signal IDEX_PC_out : std_logic_vector(31 downto 0);
+ signal IDEX_PC4_out : std_logic_vector(31 downto 0);
+
+ --EXMEM SIGNALS
+ signal EXMEM_ALU_Flag_out : std_logic;
+ signal EXMEM_ALUOut std_logic_vector(31 downto 0);
+ signal EXMEM_Shift_out : std_logic;
+ signal EXMEM_PC4_out std_logic_vector(31 downto 0);
+ signal EXMEM_barrel_out : std_logic_vector(31 downto 0);
+ signal EXMEM_PC_jump_adder_out : std_logic;
+ signal EXMEM_Branch_out : std_logic;
+ signal EXMEM_Jump_out : std_logic;
+ signal EXMEM_FlagNFlag_out : std_logic;
+ signal EXMEM_AndLink_out  : std_logic_vector(1 downto 0);
+ signal EXMEM_MemWrite_out : std_logic;
+signal EXMEM_MemToReg_out : std_logic;
+
+ --MEMWB
+signal MEMWB_MemToReg_out : std_logic;
+signal MEMWB_DMEM_out : std_logic_vector(31 downto 0);
+signal MEMWB_4t1AndLink_out : std_logic_vector(31 downto 0);
+signal MEMWB_PC4orBranch_out : std_logic_vector(31 downto 0);
+
+ 
+ --Control Unit SIGNALS
   signal s_ALUSrc             : std_logic;
   signal s_ALUControl         : std_logic_vector(3 downto 0);
-  signal s_ImmType            : std_logic_vector(6 downto 0);
   signal s_AndLink            : std_logic_vector(1 downto 0);
   signal s_MemToReg           : std_logic;
   signal s_Branch             : std_logic;
@@ -246,7 +288,6 @@ component mux2t1 is
   component bitExtender
 port (
         data_in  : in  std_logic_vector(31 downto 0);
-        ctrl : in  std_logic_vector(6 downto 0); 
         data_out : out std_logic_vector(31 downto 0)
     );
  end component;
@@ -412,7 +453,30 @@ port map (
   
 );
 
-pc4adder : Nbit_adder
+IFID_S_Inst_Register: PipelineRegister
+generic map(N => 32)
+port map (
+  i_CLK  => iCLK,
+       i_RST  => iRST,
+       i_WE => '1',
+       i_D =>  s_Inst,     
+       o_Q   => IFID_sInst_out
+);
+
+IFID_PC_Register: PipelineRegister
+generic map(N => 32)
+port map (
+  i_CLK  => iCLK,
+       i_RST  => iRST,
+       i_WE => '1',
+       i_D =>  s_NextInstAddr,     
+       o_Q   => IFID_pc_out
+);
+
+
+
+
+pc4adder: Nbit_adder
 generic map(N =>32)
 port map(
     i_A  => s_NextInstAddr,
@@ -430,7 +494,6 @@ Control_Unit_inst: Control_Unit_2
 
     ALUSrc             => s_ALUSrc,
     ALUControl         => s_ALUControl,
-    --ImmType            => s_ImmType,
     AndLink            => s_AndLink,
     MemWrite           => s_DMemWr,
     RegWrite           => s_RegWr,
@@ -448,7 +511,6 @@ Control_Unit_inst: Control_Unit_2
   s_RegWrAddr <= s_Inst(11 downto 7);
   s_Ovfl <= '0';
 
-  s_ImmType <= s_Inst(6 downto 0);
 
 
 -- Unmasked PC target from the adder:
@@ -493,7 +555,6 @@ port map(
   bitExtender_inst: bitExtender
     port map(
         data_in  => s_Inst,
-        ctrl => s_ImmType,
         data_out => s_extended_imm
     );
 

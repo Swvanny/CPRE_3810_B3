@@ -6,7 +6,6 @@ use work.RISCV_types.all;
 entity bitExtender is
   port (
     data_in  : in  std_logic_vector(31 downto 0);  
-    ctrl     : in  std_logic_vector(6 downto 0);   -- opcode from instruction
     data_out : out std_logic_vector(31 downto 0)
   );
 end entity;

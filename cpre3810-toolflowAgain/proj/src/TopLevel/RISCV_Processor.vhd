@@ -148,6 +148,7 @@ signal MEMWB_PC4orBranch_out : std_logic_vector(31 downto 0);
   signal s_slt_flag      : std_logic;
 
   --Register File SIGNALS
+
   --signal reg_data : reg_array;
   constant WRITE_MASK : std_logic_vector(31 downto 0) := (0 => '0', others => '1');
   signal s_decoder_out : std_logic_vector(31 downto 0);
@@ -210,6 +211,84 @@ component PipelineRegister is
        o_Q          : out std_logic_vector(N-1 downto 0)     -- Data 
        );
 
+end component;
+
+component IDEXRegister is 
+port(
+ i_CLK        : in std_logic;    
+ i_RST        : in std_logic;
+ 
+
+ IDEX_immGen  : in std_logic_vector(31 downto 0);
+  IDEX_rs1  : in std_logic_vector(31 downto 0);
+  IDEX_rs2  : in std_logic_vector(31 downto 0);
+  IDEX_Branch  : in std_logic;
+  IDEX_Jump  : in std_logic;
+  IDEX_FlagNFlag  : in  std_logic;
+  IDEX_AndLink   : in std_logic_vector(1 downto 0);
+  IDEX_MemWrite  : in std_logic;
+  IDEX_FlagMux  : in std_logic_vector(1 downto 0);
+  IDEX_MemToReg  : in std_logic;
+  IDEX_ALUSrc  : in std_logic;
+  IDEX_Shift  : in std_logic;
+  IDEX_ALUControl  : in std_logic_vector(3 downto 0);
+  IDEX_JumpWithReg  : in std_logic;
+  IDEX_PC  : in std_logic_vector(31 downto 0);
+  IDEX_PC4  : in std_logic_vector(31 downto 0);
+
+IDEX_immGen_out : out std_logic_vector(31 downto 0);
+   IDEX_rs1_out : out std_logic_vector(31 downto 0);
+   IDEX_rs2_out : out std_logic_vector(31 downto 0);
+   IDEX_Branch_out : out std_logic;
+   IDEX_Jump_out : out std_logic;
+   IDEX_FlagNFlag_out : out std_logic;
+   IDEX_AndLink_out  : out std_logic_vector(1 downto 0);
+   IDEX_MemWrite_out :  out std_logic;
+   IDEX_FlagMux_out : out std_logic_vector(1 downto 0);
+   IDEX_MemToReg_out :  out std_logic;
+   IDEX_ALUSrc_out : out std_logic;
+   IDEX_Shift_out :  out std_logic;
+   IDEX_ALUControl_out : out std_logic_vector(3 downto 0);
+   IDEX_JumpWithReg_out : out std_logic;
+   IDEX_PC_out : out std_logic_vector(31 downto 0);
+   IDEX_PC4_out : out std_logic_vector(31 downto 0)
+);
+
+end component;
+
+component EXMEMRegister is
+  port(
+    i_CLK  : in std_logic;
+    i_RST  : in std_logic;
+
+    -- Inputs
+    EXMEM_ALU_Flag        : in  std_logic;
+    EXMEM_ALUOut          : in  std_logic_vector(31 downto 0);
+    EXMEM_Shift           : in  std_logic;
+    EXMEM_PC4             : in  std_logic_vector(31 downto 0);
+    EXMEM_barrel          : in  std_logic_vector(31 downto 0);
+    EXMEM_PC_jump_adder   : in  std_logic;
+    EXMEM_Branch          : in  std_logic;
+    EXMEM_Jump            : in  std_logic;
+    EXMEM_FlagNFlag       : in  std_logic;
+    EXMEM_AndLink         : in  std_logic_vector(1 downto 0);
+    EXMEM_MemWrite        : in  std_logic;
+    EXMEM_MemToReg        : in  std_logic;
+
+    -- Outputs
+    EXMEM_ALU_Flag_out      : out std_logic;
+    EXMEM_ALUOut_out        : out std_logic_vector(31 downto 0);
+    EXMEM_Shift_out         : out std_logic;
+    EXMEM_PC4_out           : out std_logic_vector(31 downto 0);
+    EXMEM_barrel_out        : out std_logic_vector(31 downto 0);
+    EXMEM_PC_jump_adder_out : out std_logic;
+    EXMEM_Branch_out        : out std_logic;
+    EXMEM_Jump_out          : out std_logic;
+    EXMEM_FlagNFlag_out     : out std_logic;
+    EXMEM_AndLink_out       : out std_logic_vector(1 downto 0);
+    EXMEM_MemWrite_out      : out std_logic;
+    EXMEM_MemToReg_out      : out std_logic
+  );
 end component;
 
 
@@ -453,6 +532,8 @@ port map (
   
 );
 
+--IFID REGISTER
+
 IFID_S_Inst_Register: PipelineRegister
 generic map(N => 32)
 port map (
@@ -558,6 +639,51 @@ port map(
         data_out => s_extended_imm
     );
 
+
+    --IDEX REGISTER
+  IDEXRegister_inst: IDEXRegister
+  port map(
+i_CLK => iCLK,         
+ i_RST  => iRST,      
+ 
+
+ IDEX_immGen  => s_extended_imm,
+  IDEX_rs1 => s_rs1_out,
+  IDEX_rs2  => s_rs2_out,
+  IDEX_Branch => s_Branch,
+  IDEX_Jump  =>s_Jump,
+  IDEX_FlagNFlag => s_Flag_Or_Nflag,
+  IDEX_AndLink   => s_AndLink,
+  IDEX_MemWrite  => s_DMemWr,
+  IDEX_FlagMux => s_Flag_Mux,
+  IDEX_MemToReg => s_MemToReg,
+  IDEX_ALUSrc => s_ALUSrc,
+  IDEX_Shift  => s_Shift,
+  IDEX_ALUControl =>  s_ALUControl,
+  IDEX_JumpWithReg => s_Jump_With_Register,
+  IDEX_PC  => IFID_pc_out,
+  IDEX_PC4  => s_pc4_out,
+
+IDEX_immGen_out => IDEX_immGen_out,
+   IDEX_rs1_out => IDEX_rs1_out,
+   IDEX_rs2_out => IDEX_rs2_out,
+   IDEX_Branch_out => IDEX_Branch_out,
+   IDEX_Jump_out => IDEX_Jump_out,
+   IDEX_FlagNFlag_out => IDEX_FlagNFlag_out,
+   IDEX_AndLink_out  => IDEX_AndLink_out,
+   IDEX_MemWrite_out => IDEX_MemWrite_out,
+   IDEX_FlagMux_out => IDEX_FlagMux_out,
+   IDEX_MemToReg_out => IDEX_MemToReg_out,
+   IDEX_ALUSrc_out => IDEX_ALUSrc_out,
+   IDEX_Shift_out => IDEX_Shift_out,
+   IDEX_ALUControl_out => IDEX_ALUControl_out,
+   IDEX_JumpWithReg_out => IDEX_JumpWithReg_out,
+   IDEX_PC_out => IDEX_PC_out,
+   IDEX_PC4_out => IDEX_PC4_out
+
+  );
+
+
     
 
     rs2_or_imm_mux : mux2t1_N
@@ -599,32 +725,38 @@ s_DMemData <= s_out_rs2;
         o_Y  => s_flag_mux_out
     );
 
-    --slt_or_slti_mux : mux2t1_N
-    --generic map(N => 32)
-    --port map(
-       -- i_S => s_negative_flag,
-        --i_X0 => X"00000000",
-        --i_X1 => X"00000001",
-        --o_X => s_slt_mux_out
-   -- );
 
-    --sltiu_mux : mux2t1_N
-    --generic map(N => 32)
-   -- port map(
-       -- i_S => s_carry_flag,
-        --i_X0 => X"00000000",
-        --i_X1 => X"00000001",
-        --o_X => s_sltiu_mux_out
-    --);
+    EXMEMRegister_inst: EXMEMRegister
+  port map(
+    i_CLK => iCLK,
+    i_RST => iRST,
 
-    --slt_sltiu_mux : mux2t1_N
-    --generic map(N =>32)
-    --port map(
-        --i_S => s_negative_flag,
-        --i_X0 => s_sltiu_mux_out,
-        --i_X1 => s_slt_mux_out,
-        --o_X => s_slt_sltiu_mux_out
-    --);
+    EXMEM_ALU_Flag      => s_flag_mux_out,
+    EXMEM_ALUOut        => oALUOut,
+    EXMEM_Shift         => IDEX_Shift_out,
+    EXMEM_PC4           => IDEX_PC4_out,
+    EXMEM_barrel        => s_out_shifted_data,
+    EXMEM_PC_jump_adder => s_pc_target_masked,
+    EXMEM_Branch        => IDEX_Branch_out,
+    EXMEM_Jump          => IDEX_Jump_out,
+    EXMEM_FlagNFlag     => IDEX_FlagNFlag_out,
+    EXMEM_AndLink       => IDEX_AndLink_out,
+    EXMEM_MemWrite      => IDEX_MemWrite_out,
+    EXMEM_MemToReg      => IDEX_MemToReg_out,
+
+    EXMEM_ALU_Flag_out      => EXMEM_ALU_Flag_out,
+    EXMEM_ALUOut_out        => EXMEM_ALUOut_out,
+    EXMEM_Shift_out         => EXMEM_Shift_out,
+    EXMEM_PC4_out           => EXMEM_PC4_out,
+    EXMEM_barrel_out        => EXMEM_barrel_out,
+    EXMEM_PC_jump_adder_out => EXMEM_PC_jump_adder_out,
+    EXMEM_Branch_out        => EXMEM_Branch_out,
+    EXMEM_Jump_out          => EXMEM_Jump_out,
+    EXMEM_FlagNFlag_out     => EXMEM_FlagNFlag_out,
+    EXMEM_AndLink_out       => EXMEM_AndLink_out,
+    EXMEM_MemWrite_out      => EXMEM_MemWrite_out,
+    EXMEM_MemToReg_out      => EXMEM_MemToReg_out
+  );
 
     flag_negation_gate : invg
     port map(
@@ -729,6 +861,47 @@ s_DMemData <= s_out_rs2;
       addr => s_DMemAddr(1 downto 0),
       input => s_DMemOut,
       output => sMemSlice
+    );
+
+
+
+    MEMWB_MemToReg_Register : PipelineRegister
+    generic map(N => 1)
+    port map (
+       i_CLK => iCLK,       
+       i_RST => iRST,
+       i_WE =>  '1',    
+       i_D =>   EXMEM_MemToReg_out,  
+       o_Q =>   MEMWB_MemToReg_out     
+    );
+    MEMWB_DMEM_Register : PipelineRegister
+    generic map(N => 32)
+    port map (
+      i_CLK => iCLK,       
+       i_RST => iRST,
+       i_WE =>  '1',    
+       i_D =>   s_DMemOut,  
+       o_Q =>   MEMWB_DMEM_out  
+
+    );
+    MEMWB_4t1AndLink_Register : PipelineRegister
+    generic map(N => 32)
+    port map (
+      i_CLK => iCLK,       
+       i_RST => iRST,
+       i_WE =>  '1',    
+       i_D =>   s_4t1_and_link_out,  
+       o_Q =>   MEMWB_4t1AndLink_out  
+
+    );
+    MEMWB_PC4OrBranch_Register : PipelineRegister
+    generic map(N => 32)
+    port map (
+      i_CLK => iCLK,       
+       i_RST => iRST,
+       i_WE =>  '1',    
+       i_D =>   s_pc_data_in,  
+       o_Q =>   MEMWB_PC4orBranch_out  
     );
 
     mem_to_reg_mux : mux2t1_N

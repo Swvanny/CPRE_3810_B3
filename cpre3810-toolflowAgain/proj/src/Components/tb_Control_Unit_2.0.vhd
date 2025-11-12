@@ -78,7 +78,7 @@ architecture sim of tb_Control_Unit_2_no_asserts is
 
 begin
   -- DUT
-  dut: entity work.Control_Unit_2
+  dut:  Control_Unit_2
     port map (
       opcode   => opcode,
       funct3   => funct3,

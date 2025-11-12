@@ -40,7 +40,7 @@ architecture sim of tb_ALUUnit_no_asserts is
 
 begin
   -- DUT
-  dut: entity work.ALUUnit
+  dut:  ALUUnit
     generic map (WIDTH => 32)
     port map (
       Alucontrol    => Alucontrol,

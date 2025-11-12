@@ -674,7 +674,7 @@ i_CLK => iCLK,
   IDEX_ALU_or_IMM => s_ALU_Or_Imm_Jump,
   IDEX_funct3 => IFID_sInst_out(14 downto 12),
 
-  IDEX_funct3_out => IDEX_funct3_out
+  IDEX_funct3_out => IDEX_funct3_out,
 IDEX_immGen_out => IDEX_immGen_out,
    IDEX_rs1_out => IDEX_rs1_out,
    IDEX_rs2_out => IDEX_rs2_out,
@@ -757,7 +757,7 @@ s_DMemData <= IDEX_rs2_out;
     EXMEM_MemToReg      => IDEX_MemToReg_out,
     EXMEM_funct3        => IDEX_funct3_out,
 
-    EXMEM_funct3_out        => EXMEM_funct3_out
+    EXMEM_funct3_out        => EXMEM_funct3_out,
     EXMEM_ALU_Flag_out      => EXMEM_ALU_Flag_out,
     EXMEM_ALUOut_out        => EXMEM_ALUOut_out,
     EXMEM_Shift_out         => EXMEM_Shift_out,

@@ -11,43 +11,43 @@ port(
  i_RST        : in std_logic;
  
 
- IDEX_immGen  : in std_logic_vector(31 downto 0);
-  IDEX_rs1  : in std_logic_vector(31 downto 0);
-  IDEX_rs2  : in std_logic_vector(31 downto 0);
-  IDEX_Branch  : in std_logic;
-  IDEX_Jump  : in std_logic;
-  IDEX_FlagNFlag  : in  std_logic;
-  IDEX_AndLink   : in std_logic_vector(1 downto 0);
-  IDEX_MemWrite  : in std_logic;
-  IDEX_FlagMux  : in std_logic_vector(1 downto 0);
-  IDEX_MemToReg  : in std_logic;
-  IDEX_ALUSrc  : in std_logic;
-  IDEX_Shift  : in std_logic;
-  IDEX_ALUControl  : in std_logic_vector(3 downto 0);
+ IDEX_immGen        : in std_logic_vector(31 downto 0);
+  IDEX_rs1          : in std_logic_vector(31 downto 0);
+  IDEX_rs2          : in std_logic_vector(31 downto 0);
+  IDEX_Branch       : in std_logic;
+  IDEX_Jump         : in std_logic;
+  IDEX_FlagNFlag    : in  std_logic;
+  IDEX_AndLink      : in std_logic_vector(1 downto 0);
+  IDEX_MemWrite     : in std_logic;
+  IDEX_FlagMux      : in std_logic_vector(1 downto 0);
+  IDEX_MemToReg     : in std_logic;
+  IDEX_ALUSrc       : in std_logic;
+  IDEX_Shift        : in std_logic;
+  IDEX_ALUControl   : in std_logic_vector(3 downto 0);
   IDEX_JumpWithReg  : in std_logic;
-  IDEX_PC  : in std_logic_vector(31 downto 0);
-  IDEX_PC4  : in std_logic_vector(31 downto 0);
-  IDEX_ALU_or_IMM : in std_logic_vector(31 downto 0);
-  IDEX_funct3 : in std_logic_vector(31 downto 0);
+  IDEX_PC           : in std_logic_vector(31 downto 0);
+  IDEX_PC4          : in std_logic_vector(31 downto 0);
+  IDEX_ALU_or_IMM   : in std_logic;
+  IDEX_funct3       : in std_logic_vector(31 downto 0);
 
-  IDEX_funct3_out : out std_logic_vector(2 downto 0);
-  IDEX_ALU_or_IMM_out : out std_logic_vector(31 downto 0);
-IDEX_immGen_out : out std_logic_vector(31 downto 0);
-   IDEX_rs1_out : out std_logic_vector(31 downto 0);
-   IDEX_rs2_out : out std_logic_vector(31 downto 0);
-   IDEX_Branch_out : out std_logic;
-   IDEX_Jump_out : out std_logic;
-   IDEX_FlagNFlag_out : out std_logic;
-   IDEX_AndLink_out  : out std_logic_vector(1 downto 0);
-   IDEX_MemWrite_out :  out std_logic;
-   IDEX_FlagMux_out : out std_logic_vector(1 downto 0);
-   IDEX_MemToReg_out :  out std_logic;
-   IDEX_ALUSrc_out : out std_logic;
-   IDEX_Shift_out :  out std_logic;
-   IDEX_ALUControl_out : out std_logic_vector(3 downto 0);
+  IDEX_funct3_out       : out std_logic_vector(2 downto 0);
+  IDEX_ALU_or_IMM_out   : out std_logic;
+IDEX_immGen_out         : out std_logic_vector(31 downto 0);
+   IDEX_rs1_out         : out std_logic_vector(31 downto 0);
+   IDEX_rs2_out         : out std_logic_vector(31 downto 0);
+   IDEX_Branch_out      : out std_logic;
+   IDEX_Jump_out        : out std_logic;
+   IDEX_FlagNFlag_out   : out std_logic;
+   IDEX_AndLink_out     : out std_logic_vector(1 downto 0);
+   IDEX_MemWrite_out    :  out std_logic;
+   IDEX_FlagMux_out     : out std_logic_vector(1 downto 0);
+   IDEX_MemToReg_out    :  out std_logic;
+   IDEX_ALUSrc_out      : out std_logic;
+   IDEX_Shift_out       : out std_logic;
+   IDEX_ALUControl_out  : out std_logic_vector(3 downto 0);
    IDEX_JumpWithReg_out : out std_logic;
-   IDEX_PC_out : out std_logic_vector(31 downto 0);
-   IDEX_PC4_out : out std_logic_vector(31 downto 0)
+   IDEX_PC_out          : out std_logic_vector(31 downto 0);
+   IDEX_PC4_out         : out std_logic_vector(31 downto 0)
 );
 
 end IDEXRegister;
@@ -69,10 +69,20 @@ component PipelineRegister is
 
 end component;
 
+component PipelineRegister_logic is
+   port(i_CLK        : in std_logic;    
+       i_RST        : in std_logic;
+       i_WE         : in std_logic;     -- Write enable 
+       i_D         : in std_logic;
+       o_Q          : out std_logic     -- Data 
+       );
+
+end component;
+
 begin 
 
 IDEX_funct3_Register: PipelineRegister
-  generic map(N => 2)
+  generic map(N => 3)
   port map (
       i_CLK  => i_CLK,
        i_RST  => i_RST,
@@ -111,8 +121,7 @@ IDEX_immGen_Register: PipelineRegister
        o_Q   => IDEX_immGen_out
 );
 
-IDEX_Branch_Register: PipelineRegister
-  generic map(N => 1)
+IDEX_Branch_Register: PipelineRegister_logic
   port map (
       i_CLK  => i_CLK,
        i_RST  => i_RST,
@@ -121,8 +130,7 @@ IDEX_Branch_Register: PipelineRegister
        o_Q   => IDEX_Branch_out
 );
 
-IDEX_Jump_Register: PipelineRegister
-  generic map(N => 1)
+IDEX_Jump_Register: PipelineRegister_logic
   port map (
       i_CLK  => i_CLK,
        i_RST  => i_RST,
@@ -131,8 +139,7 @@ IDEX_Jump_Register: PipelineRegister
        o_Q   => IDEX_Jump_out
 );
 
-IDEX_FlagNFlag_Register: PipelineRegister
-  generic map(N => 1)
+IDEX_FlagNFlag_Register: PipelineRegister_logic
   port map (
       i_CLK  => i_CLK,
        i_RST  => i_RST,
@@ -152,8 +159,7 @@ IDEX_AndLink_Register: PipelineRegister
 );
 
 
-IDEX_MemWrite_Register: PipelineRegister
-  generic map(N => 1)
+IDEX_MemWrite_Register: PipelineRegister_logic
   port map (
       i_CLK  => i_CLK,
        i_RST  => i_RST,
@@ -172,8 +178,7 @@ IDEX_FlagMux_Register: PipelineRegister
        o_Q   => IDEX_FlagMux_out
 );
 
-IDEX_MemToReg_Register: PipelineRegister
-  generic map(N => 1)
+IDEX_MemToReg_Register: PipelineRegister_logic
   port map (
       i_CLK  => i_CLK,
        i_RST  => i_RST,
@@ -182,8 +187,7 @@ IDEX_MemToReg_Register: PipelineRegister
        o_Q   => IDEX_MemToReg_out
 );
 
-IDEX_ALUSrc_Register: PipelineRegister
-  generic map(N => 1)
+IDEX_ALUSrc_Register: PipelineRegister_logic
   port map (
       i_CLK  => i_CLK,
        i_RST  => i_RST,
@@ -192,8 +196,7 @@ IDEX_ALUSrc_Register: PipelineRegister
        o_Q   => IDEX_ALUSrc_out
 );
 
-IDEX_Shift_Register: PipelineRegister
-  generic map(N => 1)
+IDEX_Shift_Register: PipelineRegister_logic
   port map (
       i_CLK  => i_CLK,
        i_RST  => i_RST,
@@ -212,8 +215,7 @@ IDEX_ALUControl_Register: PipelineRegister
        o_Q   => IDEX_ALUControl_out
 );
 
-IDEX_JumpWithReg_Register: PipelineRegister
-  generic map(N => 1)
+IDEX_JumpWithReg_Register: PipelineRegister_logic
   port map (
       i_CLK  => i_CLK,
        i_RST  => i_RST,
@@ -242,8 +244,8 @@ IDEX_PC4_Register: PipelineRegister
        o_Q   => IDEX_PC4_out
 );
 
-IDEX_ALU_or_Imm_Register: PipelineRegister
-  generic map(N => 32)
+IDEX_ALU_or_Imm_Register: PipelineRegister_logic
+ 
   port map (
       i_CLK  => i_CLK,
        i_RST  => i_RST,

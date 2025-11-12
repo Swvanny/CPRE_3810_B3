@@ -14,7 +14,7 @@ entity EXMEMRegister is
     EXMEM_Shift           : in  std_logic;
     EXMEM_PC4             : in  std_logic_vector(31 downto 0);
     EXMEM_barrel          : in  std_logic_vector(31 downto 0);
-    EXMEM_PC_jump_adder   : in  std_logic;
+    EXMEM_PC_jump_adder   : in  std_logic_vector(31 downto 0);
     EXMEM_Branch          : in  std_logic;
     EXMEM_Jump            : in  std_logic;
     EXMEM_FlagNFlag       : in  std_logic;
@@ -23,13 +23,13 @@ entity EXMEMRegister is
     EXMEM_MemToReg        : in  std_logic;
     EXMEM_funct3          : in std_logic_vector(2 downto 0);
 
-    EXMEM_funct3_out      : out std_logic_vector(2 downto 0);
+    EXMEM_funct3_out        : out std_logic_vector(2 downto 0);
     EXMEM_ALU_Flag_out      : out std_logic;
     EXMEM_ALUOut_out        : out std_logic_vector(31 downto 0);
     EXMEM_Shift_out         : out std_logic;
     EXMEM_PC4_out           : out std_logic_vector(31 downto 0);
     EXMEM_barrel_out        : out std_logic_vector(31 downto 0);
-    EXMEM_PC_jump_adder_out : out std_logic;
+    EXMEM_PC_jump_adder_out : out std_logic_vector(31 downto 0);
     EXMEM_Branch_out        : out std_logic;
     EXMEM_Jump_out          : out std_logic;
     EXMEM_FlagNFlag_out     : out std_logic;
@@ -54,10 +54,20 @@ architecture Structural of EXMEMRegister is
     );
   end component;
 
+  component PipelineRegister_logic is
+   port(i_CLK        : in std_logic;    
+       i_RST        : in std_logic;
+       i_WE         : in std_logic;     -- Write enable 
+       i_D         : in std_logic;
+       o_Q          : out std_logic     -- Data 
+       );
+
+end component;
+
 begin
 
 EXMEM_funct3_Register: PipelineRegister
-    generic map (N => 2)
+    generic map (N => 3)
     port map (
       i_CLK => i_CLK,
       i_RST => i_RST,
@@ -96,8 +106,7 @@ EXMEM_funct3_Register: PipelineRegister
       o_Q   => EXMEM_barrel_out
     );
 
-  EXMEM_ALU_Flag_Register: PipelineRegister
-    generic map (N => 1)
+  EXMEM_ALU_Flag_Register: PipelineRegister_logic
     port map (
       i_CLK => i_CLK,
       i_RST => i_RST,
@@ -106,8 +115,7 @@ EXMEM_funct3_Register: PipelineRegister
       o_Q   => EXMEM_ALU_Flag_out
     );
 
-  EXMEM_Shift_Register: PipelineRegister
-    generic map (N => 1)
+  EXMEM_Shift_Register: PipelineRegister_logic
     port map (
       i_CLK => i_CLK,
       i_RST => i_RST,
@@ -117,7 +125,7 @@ EXMEM_funct3_Register: PipelineRegister
     );
 
   EXMEM_PC_jump_adder_Register: PipelineRegister
-    generic map (N => 1)
+    generic map( N => 32)
     port map (
       i_CLK => i_CLK,
       i_RST => i_RST,
@@ -126,8 +134,7 @@ EXMEM_funct3_Register: PipelineRegister
       o_Q   => EXMEM_PC_jump_adder_out
     );
 
-  EXMEM_Branch_Register: PipelineRegister
-    generic map (N => 1)
+  EXMEM_Branch_Register: PipelineRegister_logic
     port map (
       i_CLK => i_CLK,
       i_RST => i_RST,
@@ -136,8 +143,7 @@ EXMEM_funct3_Register: PipelineRegister
       o_Q   => EXMEM_Branch_out
     );
 
-  EXMEM_Jump_Register: PipelineRegister
-    generic map (N => 1)
+  EXMEM_Jump_Register: PipelineRegister_logic
     port map (
       i_CLK => i_CLK,
       i_RST => i_RST,
@@ -146,8 +152,7 @@ EXMEM_funct3_Register: PipelineRegister
       o_Q   => EXMEM_Jump_out
     );
 
-  EXMEM_FlagNFlag_Register: PipelineRegister
-    generic map (N => 1)
+  EXMEM_FlagNFlag_Register: PipelineRegister_logic
     port map (
       i_CLK => i_CLK,
       i_RST => i_RST,
@@ -166,8 +171,7 @@ EXMEM_funct3_Register: PipelineRegister
       o_Q   => EXMEM_AndLink_out
     );
 
-  EXMEM_MemWrite_Register: PipelineRegister
-    generic map (N => 1)
+  EXMEM_MemWrite_Register: PipelineRegister_logic
     port map (
       i_CLK => i_CLK,
       i_RST => i_RST,
@@ -176,8 +180,7 @@ EXMEM_funct3_Register: PipelineRegister
       o_Q   => EXMEM_MemWrite_out
     );
 
-  EXMEM_MemToReg_Register: PipelineRegister
-    generic map (N => 1)
+  EXMEM_MemToReg_Register: PipelineRegister_logic
     port map (
       i_CLK => i_CLK,
       i_RST => i_RST,

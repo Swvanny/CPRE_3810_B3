@@ -20,7 +20,7 @@ architecture sim of tb_goblinBarrel is
 
 begin
   -- DUT instance
-  dut: entity work.goblinBarrel
+  dut: goblinBarrel
     port map(
       data_in          => data_in,
       shift_left_right => shift_left_right,

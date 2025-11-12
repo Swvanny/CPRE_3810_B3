@@ -21,8 +21,9 @@ entity EXMEMRegister is
     EXMEM_AndLink         : in  std_logic_vector(1 downto 0);
     EXMEM_MemWrite        : in  std_logic;
     EXMEM_MemToReg        : in  std_logic;
+    EXMEM_funct3          : in std_logic_vector(2 downto 0);
 
-    -- Outputs
+    EXMEM_funct3_out      : out std_logic_vector(2 downto 0);
     EXMEM_ALU_Flag_out      : out std_logic;
     EXMEM_ALUOut_out        : out std_logic_vector(31 downto 0);
     EXMEM_Shift_out         : out std_logic;
@@ -54,6 +55,16 @@ architecture Structural of EXMEMRegister is
   end component;
 
 begin
+
+EXMEM_funct3_Register: PipelineRegister
+    generic map (N => 2)
+    port map (
+      i_CLK => i_CLK,
+      i_RST => i_RST,
+      i_WE  => '1',
+      i_D   => EXMEM_funct3,
+      o_Q   => EXMEM_funct3_out
+    );
 
   EXMEM_ALUOut_Register: PipelineRegister
     generic map (N => 32)

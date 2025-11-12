@@ -27,7 +27,11 @@ port(
   IDEX_JumpWithReg  : in std_logic;
   IDEX_PC  : in std_logic_vector(31 downto 0);
   IDEX_PC4  : in std_logic_vector(31 downto 0);
+  IDEX_ALU_or_IMM : in std_logic_vector(31 downto 0);
+  IDEX_funct3 : in std_logic_vector(31 downto 0);
 
+  IDEX_funct3_out : out std_logic_vector(2 downto 0);
+  IDEX_ALU_or_IMM_out : out std_logic_vector(31 downto 0);
 IDEX_immGen_out : out std_logic_vector(31 downto 0);
    IDEX_rs1_out : out std_logic_vector(31 downto 0);
    IDEX_rs2_out : out std_logic_vector(31 downto 0);
@@ -66,6 +70,16 @@ component PipelineRegister is
 end component;
 
 begin 
+
+IDEX_funct3_Register: PipelineRegister
+  generic map(N => 2)
+  port map (
+      i_CLK  => i_CLK,
+       i_RST  => i_RST,
+       i_WE => '1',
+       i_D =>  IDEX_funct3,     
+       o_Q   => IDEX_funct3_out
+);
 
   IDEX_rs1_Register: PipelineRegister
   generic map(N => 32)
@@ -228,6 +242,15 @@ IDEX_PC4_Register: PipelineRegister
        o_Q   => IDEX_PC4_out
 );
 
+IDEX_ALU_or_Imm_Register: PipelineRegister
+  generic map(N => 32)
+  port map (
+      i_CLK  => i_CLK,
+       i_RST  => i_RST,
+       i_WE => '1',
+       i_D =>  IDEX_ALU_or_IMM,     
+       o_Q   => IDEX_ALU_or_IMM_out
+);
 
 end Structural;
 

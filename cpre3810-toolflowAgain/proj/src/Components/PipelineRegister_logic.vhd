@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity PipelineRegister is
+entity PipelineRegister_logic is
 
   port(i_CLK        : in std_logic;    
        i_RST        : in std_logic;
@@ -10,9 +10,9 @@ entity PipelineRegister is
        o_Q          : out std_logic     -- Data 
        );
 
-end PipelineRegister;
+end PipelineRegister_logic;
 
-architecture Structural of PipelineRegister is
+architecture Structural of PipelineRegister_logic is
     component falling_dffg is
   port(i_CLK        : in std_logic;     -- Clock
        i_RST        : in std_logic;     -- Reset

@@ -902,7 +902,7 @@ s_DMemData <= IDEX_rs2_out;
 
     );
     MEMWB_funct3_Register : PipelineRegister
-    generic map(N => 32)
+    generic map(N => 3)
     port map (
       i_CLK => iCLK,       
        i_RST => iRST,
@@ -931,7 +931,7 @@ s_DMemData <= IDEX_rs2_out;
        o_Q =>   s_pc_data_in  
     );
     MEMWB_addr_Register : PipelineRegister
-    generic map(N => 32)
+    generic map(N => 2)
     port map (
       i_CLK => iCLK,       
        i_RST => iRST,

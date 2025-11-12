@@ -28,7 +28,7 @@ port(
   IDEX_PC           : in std_logic_vector(31 downto 0);
   IDEX_PC4          : in std_logic_vector(31 downto 0);
   IDEX_ALU_or_IMM   : in std_logic;
-  IDEX_funct3       : in std_logic_vector(31 downto 0);
+  IDEX_funct3       : in std_logic_vector(2 downto 0);
 
   IDEX_funct3_out       : out std_logic_vector(2 downto 0);
   IDEX_ALU_or_IMM_out   : out std_logic;
@@ -245,7 +245,6 @@ IDEX_PC4_Register: PipelineRegister
 );
 
 IDEX_ALU_or_Imm_Register: PipelineRegister_logic
- 
   port map (
       i_CLK  => i_CLK,
        i_RST  => i_RST,

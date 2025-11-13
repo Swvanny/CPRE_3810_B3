@@ -107,6 +107,7 @@ architecture structure of RISCV_Processor is
  signal IDEX_PC4_out : std_logic_vector(31 downto 0);
  signal IDEX_ALU_or_IMM_out : std_logic;
  signal IDEX_funct3_out : std_logic_vector(2 downto 0);
+ signal IDEX_WriteBack_out : std_logic_vector(4 downto 0);
 
  --EXMEM SIGNALS
  signal EXMEM_ALU_Flag_out : std_logic;
@@ -122,6 +123,7 @@ architecture structure of RISCV_Processor is
  signal EXMEM_MemWrite_out : std_logic;
 signal EXMEM_MemToReg_out : std_logic;
 signal EXMEM_funct3_out :  std_logic_vector(2 downto 0);
+signal EXMEM_WriteBack_out : std_logic_vector(4 downto 0);
 
  --MEMWB
 signal MEMWB_MemToReg_out : std_logic;
@@ -130,6 +132,7 @@ signal MEMWB_4t1AndLink_out : std_logic_vector(31 downto 0);
 signal pc_writeback_MEMWB_input : std_logic_vector(31 downto 0);
 signal MEMWB_funct3_out : std_logic_vector(2 downto 0);
 signal MEMWB_addr_out : std_logic_vector(1 downto 0);
+signal MEMWB_WriteBack_out : std_logic_vector(4 downto 0);
  
  --Control Unit SIGNALS
   signal s_ALUSrc             : std_logic;
@@ -251,7 +254,9 @@ port(
   IDEX_PC4  : in std_logic_vector(31 downto 0);
   IDEX_ALU_or_IMM : in std_logic;
   IDEX_funct3 : in std_logic_vector(2 downto 0);
+  IDEX_WriteBack    : in std_logic_vector(4 downto 0);
 
+  IDEX_WriteBack_out    : out std_logic_vector(4 downto 0);
   IDEX_funct3_out : out std_logic_vector(2 downto 0);
 IDEX_ALU_or_IMM_out : out std_logic;
 IDEX_immGen_out : out std_logic_vector(31 downto 0);
@@ -293,7 +298,9 @@ component EXMEMRegister is
     EXMEM_MemWrite        : in  std_logic;
     EXMEM_MemToReg        : in  std_logic;
     EXMEM_funct3          : in std_logic_vector(2 downto 0);
+    EXMEM_WriteBack       : in std_logic_vector(4 downto 0);
 
+    EXMEM_WriteBack_out       : out std_logic_vector(4 downto 0);
     EXMEM_funct3_out      : out std_logic_vector(2 downto 0);
     EXMEM_ALU_Flag_out      : out std_logic;
     EXMEM_ALUOut_out        : out std_logic_vector(31 downto 0);
@@ -683,7 +690,9 @@ i_CLK => iCLK,
   IDEX_PC4  => s_pc4_out,
   IDEX_ALU_or_IMM => s_ALU_Or_Imm_Jump,
   IDEX_funct3 => IFID_sInst_out(14 downto 12),
+  IDEX_WriteBack  => IFID_sInst_out(11 downto 7),
 
+  IDEX_WriteBack_out  => IDEX_WriteBack_out,
   IDEX_funct3_out => IDEX_funct3_out,
   IDEX_immGen_out => IDEX_immGen_out,
   IDEX_rs1_out => IDEX_rs1_out,
@@ -766,7 +775,9 @@ s_DMemData <= IDEX_rs2_out;
     EXMEM_MemWrite      => IDEX_MemWrite_out,
     EXMEM_MemToReg      => IDEX_MemToReg_out,
     EXMEM_funct3        => IDEX_funct3_out,
+    EXMEM_WriteBack     => IDEX_WriteBack_out,
 
+    EXMEM_WriteBack_out     => EXMEM_WriteBack_out,
     EXMEM_funct3_out        => EXMEM_funct3_out,
     EXMEM_ALU_Flag_out      => EXMEM_ALU_Flag_out,
     EXMEM_ALUOut_out        => EXMEM_ALUOut_out,
@@ -882,7 +893,7 @@ s_DMemData <= IDEX_rs2_out;
 
 
 
---MEMWB REGISTER x4
+--MEMWB REGISTER x7
     MEMWB_MemToReg_Register : PipelineRegister_logic
     port map (
        i_CLK => iCLK,       
@@ -940,6 +951,14 @@ s_DMemData <= IDEX_rs2_out;
        o_Q =>   MEMWB_addr_out  
 
     );
+     MEMWB_WriteBack_Register : PipelineRegister
+    port map (
+       i_CLK => iCLK,       
+       i_RST => iRST,
+       i_WE =>  '1',    
+       i_D =>   EXMEM_WriteBack_out,  
+       o_Q =>   MEMWB_WriteBack_out     
+    );
 
     mem_to_reg_mux : mux2t1_N
     generic map(N =>32)
@@ -955,6 +974,9 @@ s_DMemData <= IDEX_rs2_out;
     data_in  => s_final_flag_out,                  -- single input bit
     data_out => s_slt_sltiu_mux_out
   );
+
+  s_RegWrAddr <= MEMWB_WriteBack_out;
+  
     
 end structure;
 

@@ -23,7 +23,11 @@ entity EXMEMRegister is
     EXMEM_MemToReg        : in  std_logic;
     EXMEM_funct3          : in std_logic_vector(2 downto 0);
     EXMEM_WriteBack       : in std_logic_vector(4 downto 0);
+    EXMEM_WriteEnable     : in std_logic;
+    EXMEM_Halt            : in std_logic;
 
+    EXMEM_Halt_out          : out std_logic;
+    EXMEM_WriteEnable_out    : out std_logic;
     EXMEM_WriteBack_out     : out std_logic_vector(4 downto 0);
     EXMEM_funct3_out        : out std_logic_vector(2 downto 0);
     EXMEM_ALU_Flag_out      : out std_logic;
@@ -127,6 +131,15 @@ EXMEM_WriteBack_Register: PipelineRegister
       o_Q   => EXMEM_ALU_Flag_out
     );
 
+     EXMEM_WriteEnable_Register: PipelineRegister_logic
+    port map (
+      i_CLK => i_CLK,
+      i_RST => i_RST,
+      i_WE  => '1',
+      i_D   => EXMEM_WriteEnable,
+      o_Q   => EXMEM_WriteEnable_out
+    );
+
   EXMEM_Shift_Register: PipelineRegister_logic
     port map (
       i_CLK => i_CLK,
@@ -134,6 +147,15 @@ EXMEM_WriteBack_Register: PipelineRegister
       i_WE  => '1',
       i_D   => EXMEM_Shift,
       o_Q   => EXMEM_Shift_out
+    );
+
+  EXMEM_Halt_Register: PipelineRegister_logic
+    port map (
+      i_CLK => i_CLK,
+      i_RST => i_RST,
+      i_WE  => '1',
+      i_D   => EXMEM_Halt,
+      o_Q   => EXMEM_Halt_out
     );
 
   EXMEM_PC_jump_adder_Register: PipelineRegister

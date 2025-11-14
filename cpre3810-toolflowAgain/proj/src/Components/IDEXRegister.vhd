@@ -30,11 +30,15 @@ port(
   IDEX_ALU_or_IMM   : in std_logic;
   IDEX_funct3       : in std_logic_vector(2 downto 0);
   IDEX_WriteBack    : in std_logic_vector(4 downto 0);
+  IDEX_WriteEnable  : in std_logic;
+  IDEX_Halt         : in std_logic;
 
+  IDEX_Halt_out         : out std_logic;
+  IDEX_WriteEnable_out  : out std_logic;
   IDEX_WriteBack_out    : out std_logic_vector(4 downto 0);
   IDEX_funct3_out       : out std_logic_vector(2 downto 0);
   IDEX_ALU_or_IMM_out   : out std_logic;
-IDEX_immGen_out         : out std_logic_vector(31 downto 0);
+  IDEX_immGen_out         : out std_logic_vector(31 downto 0);
    IDEX_rs1_out         : out std_logic_vector(31 downto 0);
    IDEX_rs2_out         : out std_logic_vector(31 downto 0);
    IDEX_Branch_out      : out std_logic;
@@ -139,6 +143,22 @@ IDEX_Branch_Register: PipelineRegister_logic
        i_WE => '1',
        i_D =>  IDEX_Branch,     
        o_Q   => IDEX_Branch_out
+);
+IDEX_WriteEnable_Register: PipelineRegister_logic
+  port map (
+      i_CLK  => i_CLK,
+       i_RST  => i_RST,
+       i_WE => '1',
+       i_D =>  IDEX_WriteEnable,     
+       o_Q   => IDEX_WriteEnable_out
+);
+IDEX_Halt_Register: PipelineRegister_logic
+  port map (
+      i_CLK  => i_CLK,
+       i_RST  => i_RST,
+       i_WE => '1',
+       i_D =>  IDEX_Halt,     
+       o_Q   => IDEX_Halt_out
 );
 
 IDEX_Jump_Register: PipelineRegister_logic

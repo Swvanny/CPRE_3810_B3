@@ -73,7 +73,7 @@ architecture structure of RISCV_Processor is
   --       requires below this comment
 
 
-  --PC SIGNALS
+  --PC SIGNALS-------------------------------------------------------------------------------------
   signal s_pc_write : std_logic;
   signal s_pc_reset : std_logic;
   signal s_pc_data_in : std_logic_vector(31 downto 0);
@@ -84,11 +84,11 @@ architecture structure of RISCV_Processor is
   signal s_pc_target_masked : std_logic_vector(31 downto 0); -- also for jalr
 
 
- --IFID SIGNALS
+ --IFID SIGNALS-----------------------------------------------------------------------------------
  signal IFID_sInst_out : std_logic_vector(31 downto 0);
  signal IFID_pc_out : std_logic_vector(31 downto 0);
 
- --IDEX SIGNALS
+ --IDEX SIGNALS------------------------------------------------------------------------------------
  signal IDEX_immGen_out : std_logic_vector(31 downto 0);
  signal IDEX_rs1_out : std_logic_vector(31 downto 0);
  signal IDEX_rs2_out : std_logic_vector(31 downto 0);
@@ -108,8 +108,10 @@ architecture structure of RISCV_Processor is
  signal IDEX_ALU_or_IMM_out : std_logic;
  signal IDEX_funct3_out : std_logic_vector(2 downto 0);
  signal IDEX_WriteBack_out : std_logic_vector(4 downto 0);
+ signal IDEX_WriteEnable_out : std_logic;
+ signal IDEX_Halt_out : std_logic;
 
- --EXMEM SIGNALS
+ --EXMEM SIGNALS----------------------------------------------------------------------------------
  signal EXMEM_ALU_Flag_out : std_logic;
  signal EXMEM_ALUOut_out : std_logic_vector(31 downto 0);
  signal EXMEM_Shift_out : std_logic;
@@ -124,8 +126,10 @@ architecture structure of RISCV_Processor is
 signal EXMEM_MemToReg_out : std_logic;
 signal EXMEM_funct3_out :  std_logic_vector(2 downto 0);
 signal EXMEM_WriteBack_out : std_logic_vector(4 downto 0);
+signal EXMEM_WriteEnable_out : std_logic;
+ signal   EXMEM_Halt_out            :  std_logic;
 
- --MEMWB
+ --MEMWB-------------------------------------------------------------------------------------
 signal MEMWB_MemToReg_out : std_logic;
 signal MEMWB_DMEM_out : std_logic_vector(31 downto 0);
 signal MEMWB_4t1AndLink_out : std_logic_vector(31 downto 0);
@@ -133,8 +137,11 @@ signal pc_writeback_MEMWB_input : std_logic_vector(31 downto 0);
 signal MEMWB_funct3_out : std_logic_vector(2 downto 0);
 signal MEMWB_addr_out : std_logic_vector(1 downto 0);
 signal MEMWB_WriteBack_out : std_logic_vector(4 downto 0);
+signal MEMWB_WriteEnable_out : std_logic;
+signal MEMWB_Halt_out : std_logic;
+
  
- --Control Unit SIGNALS
+ --Control Unit SIGNALS----------------------------------------------------------------------------
   signal s_ALUSrc             : std_logic;
   signal s_ALUControl         : std_logic_vector(3 downto 0);
   signal s_AndLink            : std_logic_vector(1 downto 0);
@@ -153,17 +160,19 @@ signal MEMWB_WriteBack_out : std_logic_vector(4 downto 0);
   signal s_negative_flag : std_logic;
   signal s_carry_flag    : std_logic;
   signal s_slt_flag      : std_logic;
+  signal s_temp_halt     : std_logic;
 
-  --Register File SIGNALS
+  --Register File SIGNALS-------------------------------------------------------------------------------
 
   --signal reg_data : reg_array;
   constant WRITE_MASK : std_logic_vector(31 downto 0) := (0 => '0', others => '1');
   signal s_decoder_out : std_logic_vector(31 downto 0);
   signal s_we_masked : std_logic_vector(31 downto 0);
   signal s_out_rs1, s_out_rs2 : std_logic_vector(31 downto 0);
+  signal s_temp_write : std_logic;
 
 
-  --Extended Immediate SIGNALS
+  --Extended Immediate SIGNALS-------------------------------------------------------------
 
 signal s_bitext_in : std_logic_vector(19 downto 0);
   signal s_extended_imm : std_logic_vector(31 downto 0);
@@ -171,7 +180,7 @@ signal s_bitext_in : std_logic_vector(19 downto 0);
   
   signal sMemSlice : std_logic_vector(31 downto 0);
 
---ALU SIGNALS
+--ALU SIGNALS---------------------------------------------------------------------------
  signal s_rs2_or_imm_mux_out : std_logic_vector(31 downto 0);
  signal s_4t1_and_link_out : std_logic_vector(31 downto 0);
  signal s_flag_mux_out : std_logic;
@@ -185,14 +194,14 @@ signal s_sltiu_mux_out : std_logic_vector(31 downto 0);
 signal s_slt_sltiu_mux_out : std_logic_vector(31 downto 0);
 signal s_alu_out : std_logic_vector(31 downto 0);
 
---BARREL SHIFTER SIGNALS
+--BARREL SHIFTER SIGNALS------------------------------------------------------------------------
  signal s_out_shifted_data : std_logic_vector(31 downto 0);
 
  signal s_exec_result : std_logic_vector(31 downto 0);
 
 
 
---REGISTER IMPLEMENTATION    
+--REGISTER IMPLEMENTATION-------------------------------------------------------------------------
 
 component PCRegister is
     generic (
@@ -255,11 +264,15 @@ port(
   IDEX_ALU_or_IMM : in std_logic;
   IDEX_funct3 : in std_logic_vector(2 downto 0);
   IDEX_WriteBack    : in std_logic_vector(4 downto 0);
+  IDEX_WriteEnable : in std_logic;
+  IDEX_Halt : in std_logic;
 
+  IDEX_Halt_out : out std_logic;
+  IDEX_WriteEnable_out : out std_logic;
   IDEX_WriteBack_out    : out std_logic_vector(4 downto 0);
   IDEX_funct3_out : out std_logic_vector(2 downto 0);
-IDEX_ALU_or_IMM_out : out std_logic;
-IDEX_immGen_out : out std_logic_vector(31 downto 0);
+  IDEX_ALU_or_IMM_out : out std_logic;
+  IDEX_immGen_out : out std_logic_vector(31 downto 0);
    IDEX_rs1_out : out std_logic_vector(31 downto 0);
    IDEX_rs2_out : out std_logic_vector(31 downto 0);
    IDEX_Branch_out : out std_logic;
@@ -299,9 +312,13 @@ component EXMEMRegister is
     EXMEM_MemToReg        : in  std_logic;
     EXMEM_funct3          : in std_logic_vector(2 downto 0);
     EXMEM_WriteBack       : in std_logic_vector(4 downto 0);
+    EXMEM_WriteEnable     : in std_logic;
+    EXMEM_Halt            : in std_logic;
 
+    EXMEM_Halt_out            : out std_logic;
+    EXMEM_WriteEnable_out     : out std_logic;
     EXMEM_WriteBack_out       : out std_logic_vector(4 downto 0);
-    EXMEM_funct3_out      : out std_logic_vector(2 downto 0);
+    EXMEM_funct3_out        : out std_logic_vector(2 downto 0);
     EXMEM_ALU_Flag_out      : out std_logic;
     EXMEM_ALUOut_out        : out std_logic_vector(31 downto 0);
     EXMEM_Shift_out         : out std_logic;
@@ -340,7 +357,7 @@ end component;
     );
 end component;
 
--- MUX'S IMPLEMENTATIONS
+-- MUX'S IMPLEMENTATIONS-----------------------------------------------------------
 
   component mux_32by32 is
     port(sel: in std_logic_vector(4 downto 0);
@@ -387,8 +404,7 @@ component mux2t1 is
       end component;
 
   
-
-  --SIGNED BIT EXTENDER IMPLEMENTATION
+--SIGNED BIT EXTENDER IMPLEMENTATION-----------------------------------
 
   component bitExtender
 port (
@@ -397,7 +413,7 @@ port (
     );
  end component;
 
---CONTROL IMPLEMENTATION
+--CONTROL IMPLEMENTATION-----------------------------------------------------
 
 component Control_Unit_2 
   port (
@@ -423,7 +439,7 @@ component Control_Unit_2
   );
 end component;
 
---GOBLIN BARREL
+--GOBLIN BARREL------------------------------------------------------------------------
 
 component goblinBarrel 
     port (
@@ -434,7 +450,7 @@ component goblinBarrel
     );
 end component;
 
---ADDERS FOR FETCH
+--ADDERS FOR FETCH------------------------------------------------------------
 
 component adder
       generic(N : integer := 32);
@@ -458,7 +474,7 @@ component adder
   );
 end component;
 
---DECODER FOR REGISTER
+--DECODER FOR REGISTER-----------------------------------------------------------
 
 component decoder5to32 is
     port(i_sel: in std_logic_vector(4 downto 0);
@@ -466,7 +482,7 @@ component decoder5to32 is
          o_out: out std_logic_vector(31 downto 0));
   end component;
 
--- ALU
+-- ALU---------------------------------------------------------------------------
 component ALUUnit is
   generic (WIDTH : integer := DATA_WIDTH);
   port(
@@ -483,7 +499,7 @@ component ALUUnit is
 end component;
 
 
---GATES
+--GATES---------------------------------------------------------------------------
 
 component andg2 is
   port(i_A          : in std_logic;
@@ -603,7 +619,7 @@ Control_Unit_inst: Control_Unit_2
     ALUControl         => s_ALUControl,
     AndLink            => s_AndLink,
     MemWrite           => s_DMemWr,
-    RegWrite           => s_RegWr,
+    RegWrite           => s_temp_write,
     MemToReg           => s_MemToReg,
     Branch             => s_Branch,
     Jump               => s_Jump,
@@ -611,11 +627,11 @@ Control_Unit_inst: Control_Unit_2
     Flag_Mux           => s_Flag_Mux,
     Flag_Or_Nflag      => s_Flag_Or_Nflag,
     Jump_With_Register => s_Jump_With_Register,
-    Halt               => s_Halt,
+    Halt               => s_temp_halt,
     Shift              => s_Shift
   );
 
-  s_RegWrAddr <= IFID_sInst_out(11 downto 7);
+  --s_RegWrAddr <= IFID_sInst_out(11 downto 7);
   s_Ovfl <= '0';
 
 
@@ -669,10 +685,10 @@ port map(
     --IDEX REGISTER
   IDEXRegister_inst: IDEXRegister
   port map(
-i_CLK => iCLK,         
- i_RST  => iRST,      
+  i_CLK => iCLK,         
+  i_RST  => iRST,      
 
- IDEX_immGen  => s_extended_imm,
+  IDEX_immGen  => s_extended_imm,
   IDEX_rs1 => s_out_rs1,
   IDEX_rs2  => s_out_rs2,
   IDEX_Branch => s_Branch,
@@ -691,7 +707,11 @@ i_CLK => iCLK,
   IDEX_ALU_or_IMM => s_ALU_Or_Imm_Jump,
   IDEX_funct3 => IFID_sInst_out(14 downto 12),
   IDEX_WriteBack  => IFID_sInst_out(11 downto 7),
+  IDEX_WriteEnable     => s_temp_write,
+  IDEX_Halt          => s_temp_halt,
 
+  IDEX_Halt_out          => IDEX_Halt_out,
+  IDEX_WriteEnable_out     => IDEX_WriteEnable_out,
   IDEX_WriteBack_out  => IDEX_WriteBack_out,
   IDEX_funct3_out => IDEX_funct3_out,
   IDEX_immGen_out => IDEX_immGen_out,
@@ -776,7 +796,11 @@ s_DMemData <= IDEX_rs2_out;
     EXMEM_MemToReg      => IDEX_MemToReg_out,
     EXMEM_funct3        => IDEX_funct3_out,
     EXMEM_WriteBack     => IDEX_WriteBack_out,
+    EXMEM_WriteEnable   => IDEX_WriteEnable_out,
+    EXMEM_Halt          => IDEX_Halt_out,
 
+    EXMEM_Halt_out          => EXMEM_Halt_out,
+    EXMEM_WriteEnable_out   => EXMEM_WriteEnable_out,
     EXMEM_WriteBack_out     => EXMEM_WriteBack_out,
     EXMEM_funct3_out        => EXMEM_funct3_out,
     EXMEM_ALU_Flag_out      => EXMEM_ALU_Flag_out,
@@ -902,6 +926,22 @@ s_DMemData <= IDEX_rs2_out;
        i_D =>   EXMEM_MemToReg_out,  
        o_Q =>   MEMWB_MemToReg_out     
     );
+    MEMWB_WriteEnable_Register : PipelineRegister_logic
+    port map (
+       i_CLK => iCLK,       
+       i_RST => iRST,
+       i_WE =>  '1',    
+       i_D =>   EXMEM_WriteEnable_out,  
+       o_Q =>   MEMWB_WriteEnable_out     
+    );
+        MEMWB_Halt_Register : PipelineRegister_logic
+    port map (
+       i_CLK => iCLK,       
+       i_RST => iRST,
+       i_WE =>  '1',    
+       i_D =>   EXMEM_Halt_out,  
+       o_Q =>   MEMWB_Halt_out     
+    );
     MEMWB_DMEM_Register : PipelineRegister
     generic map(N => 32)
     port map (
@@ -952,6 +992,7 @@ s_DMemData <= IDEX_rs2_out;
 
     );
      MEMWB_WriteBack_Register : PipelineRegister
+    generic map(N => 5)
     port map (
        i_CLK => iCLK,       
        i_RST => iRST,
@@ -959,15 +1000,17 @@ s_DMemData <= IDEX_rs2_out;
        i_D =>   EXMEM_WriteBack_out,  
        o_Q =>   MEMWB_WriteBack_out     
     );
+    
 
     mem_to_reg_mux : mux2t1_N
     generic map(N =>32)
     port map(
-        i_S => EXMEM_MemToReg_out,
+        i_S => MEMWB_MemToReg_out,
         i_X0 => MEMWB_4t1AndLink_out,
         i_X1 => sMemSlice, --uhhhhhhhh
         o_X => s_RegWrData
     );
+    
 
   zeroExtension_Flags : zeroExtender_1to32
   port map(
@@ -976,6 +1019,8 @@ s_DMemData <= IDEX_rs2_out;
   );
 
   s_RegWrAddr <= MEMWB_WriteBack_out;
+  s_RegWr <= MEMWB_WriteEnable_out;
+  s_Halt <= MEMWB_Halt_out;
   
     
 end structure;

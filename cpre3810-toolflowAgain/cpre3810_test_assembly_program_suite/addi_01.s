@@ -9,7 +9,7 @@ main:
     nop
     nop
     addi x2, x0, 0      # x2=0
-nop
+    nop
     nop
     nop
     # Positive immediate max: +2047

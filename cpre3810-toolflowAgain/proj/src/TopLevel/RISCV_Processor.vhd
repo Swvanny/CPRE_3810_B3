@@ -554,9 +554,9 @@ begin
     generic map(ADDR_WIDTH => ADDR_WIDTH,
                 DATA_WIDTH => N)
     port map(clk  => iCLK,
-             addr => s_DMemAddr(11 downto 2),
-             data => s_DMemData,
-             we   => s_DMemWr,
+             addr => EXMEM_ALUOut_out(11 downto 2),
+             data => s_DMemData,  -- this may not work, we need whatever data signal that comes from rs2
+             we   => EXMEM_MemWrite_out,
              q    => s_DMemOut);
 
   -- TODO: Ensure that s_Halt is connected to an output control signal produced from decoding the Halt instruction (Opcode: 01 0100)

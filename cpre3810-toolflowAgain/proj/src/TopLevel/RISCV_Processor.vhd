@@ -129,6 +129,7 @@ signal EXMEM_funct3_out :  std_logic_vector(2 downto 0);
 signal EXMEM_WriteBack_out : std_logic_vector(4 downto 0);
 signal EXMEM_WriteEnable_out : std_logic;
  signal   EXMEM_Halt_out            :  std_logic;
+ signal EXMEM_RS2_out : std_logic_vector(31 downto 0);
 
  --MEMWB-------------------------------------------------------------------------------------
 signal MEMWB_MemToReg_out : std_logic;
@@ -315,7 +316,9 @@ component EXMEMRegister is
     EXMEM_WriteBack       : in std_logic_vector(4 downto 0);
     EXMEM_WriteEnable     : in std_logic;
     EXMEM_Halt            : in std_logic;
-
+    EXMEM_RS2             : in  std_logic_vector(31 downto 0);
+    
+    EXMEM_RS2_out             : out std_logic_vector(31 downto 0);
     EXMEM_Halt_out            : out std_logic;
     EXMEM_WriteEnable_out     : out std_logic;
     EXMEM_WriteBack_out       : out std_logic_vector(4 downto 0);
@@ -757,7 +760,7 @@ port map(
         o_X => s_rs2_or_imm_mux_out
     );
 
-s_DMemData <= IDEX_rs2_out;
+s_DMemData <= EXMEM_RS2_out;
 
     ALU_inst : ALUUnit
     generic map(WIDTH => 32)
@@ -775,7 +778,7 @@ s_DMemData <= IDEX_rs2_out;
 
     );
     --oALUOut <= s_alu_out;
-    s_DMemAddr <= s_exec_result;
+    s_DMemAddr <= EXMEM_ALUOut_out;
 
     alu_flag_mux_flag_out : mux4t1
     port map(
@@ -809,7 +812,9 @@ s_DMemData <= IDEX_rs2_out;
     EXMEM_WriteBack     => IDEX_WriteBack_out,
     EXMEM_WriteEnable   => IDEX_WriteEnable_out,
     EXMEM_Halt          => IDEX_Halt_out,
+    EXMEM_RS2           => IDEX_rs2_out,
 
+    EXMEM_RS2_out            => EXMEM_RS2_out,
     EXMEM_Halt_out          => EXMEM_Halt_out,
     EXMEM_WriteEnable_out   => EXMEM_WriteEnable_out,
     EXMEM_WriteBack_out     => EXMEM_WriteBack_out,
@@ -862,7 +867,7 @@ s_DMemData <= IDEX_rs2_out;
     generic map(N =>32)
     port map(
         i_S => IDEX_ALU_or_IMM_out,
-        i_X0 => s_alu_out, --sketchy code
+        i_X0 => s_exec_result, --sketchy code
         i_X1 => IDEX_immGen_out,
         o_X => s_ALU_or_imm_shift_in
     );

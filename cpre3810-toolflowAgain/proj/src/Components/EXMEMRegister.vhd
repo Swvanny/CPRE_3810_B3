@@ -25,6 +25,8 @@ entity EXMEMRegister is
     EXMEM_WriteBack       : in std_logic_vector(4 downto 0);
     EXMEM_WriteEnable     : in std_logic;
     EXMEM_Halt            : in std_logic;
+    EXMEM_RS2 : in std_logic_vector(31 downto 0);
+
 
     EXMEM_Halt_out          : out std_logic;
     EXMEM_WriteEnable_out    : out std_logic;
@@ -41,6 +43,8 @@ entity EXMEMRegister is
     EXMEM_FlagNFlag_out     : out std_logic;
     EXMEM_AndLink_out       : out std_logic_vector(1 downto 0);
     EXMEM_MemWrite_out      : out std_logic;
+    EXMEM_RS2_out :  out std_logic_vector(31 downto 0);
+
     EXMEM_MemToReg_out      : out std_logic
   );
 end EXMEMRegister;
@@ -92,7 +96,16 @@ EXMEM_WriteBack_Register: PipelineRegister
       o_Q   => EXMEM_WriteBack_out
     );
 
-  EXMEM_ALUOut_Register: PipelineRegister
+  EXMEM_RS2_Register: PipelineRegister
+    generic map (N => 32)
+    port map (
+      i_CLK => i_CLK,
+      i_RST => i_RST,
+      i_WE  => '1',
+      i_D   => EXMEM_RS2,
+      o_Q   => EXMEM_RS2_out
+    );
+    EXMEM_ALUOut_Register: PipelineRegister
     generic map (N => 32)
     port map (
       i_CLK => i_CLK,

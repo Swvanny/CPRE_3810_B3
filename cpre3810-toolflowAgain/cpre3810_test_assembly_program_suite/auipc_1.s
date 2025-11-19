@@ -11,17 +11,33 @@ main:
 # AUIPC adds (imm << 12) to the current PC.
 # With imm = 0, result should just be the PC of this instruction.
 test1:
+nop
+nop
+nop
+nop
     auipc x1, 0       # x1 = PC(test1) + 0
-
+nop
+nop
+nop
+nop
 # --- Test 2: imm = 1 ---
 # Should add 4096 (1 << 12) to PC.
 test2:
     auipc x2, 1       # x2 = PC(test2) + 4096
+    nop
+nop
+nop
+nop
+
 
 # --- Test 3: rd = x0 ---
 # Writing to x0 should have no effect.
 test3:
     auipc x0, 2       # x0 remains 0
+    nop
+nop
+nop
+nop
 
 # End program
 #end:

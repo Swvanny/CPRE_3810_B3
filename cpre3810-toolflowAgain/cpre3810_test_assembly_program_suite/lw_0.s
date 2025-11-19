@@ -10,11 +10,31 @@ main:
     # Start Test
     #using lui (and addi above lw) to initialize some addresses for memory loading
     lui   t0, %hi(test_word)
+    nop
+    nop
+    nop
+    nop
     addi  t0, t0, %lo(test_word)
+    nop
+    nop
+    nop
+    nop
     
     lw x1, 0(t0)     # verify that one can load into registers and memory is accessible through ALU
+    nop
+    nop
+    nop
+    nop
     lw x2, 0(t0)     # verify that one can load into registers and memory is accessible through ALU
+    nop
+    nop
+    nop
+    nop
     lw x3, 0(t0)     # verify that one can load into registers and memory is accessible through ALU
+    nop
+    nop
+    nop
+    nop
     lw x4, 0(t0)     # verify that one can load into registers and memory is accessible through ALU
     lw x6, 0(t0)     # verify that one can load into registers and memory is accessible through ALU
     lw x7, 0(t0)     # verify that one can load into registers and memory is accessible through ALU

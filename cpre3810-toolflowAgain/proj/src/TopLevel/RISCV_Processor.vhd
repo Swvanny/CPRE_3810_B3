@@ -87,6 +87,7 @@ architecture structure of RISCV_Processor is
  --IFID SIGNALS-----------------------------------------------------------------------------------
  signal IFID_sInst_out : std_logic_vector(31 downto 0);
  signal IFID_pc_out : std_logic_vector(31 downto 0);
+ signal IFID_pc4_out : std_logic_vector(31 downto 0);
 
  --IDEX SIGNALS------------------------------------------------------------------------------------
  signal IDEX_immGen_out : std_logic_vector(31 downto 0);
@@ -596,6 +597,16 @@ port map (
        o_Q   => IFID_pc_out
 );
 
+IFID_PC4_Register: PipelineRegister
+generic map(N => 32)
+port map (
+  i_CLK  => iCLK,
+       i_RST  => iRST,
+       i_WE => '1',
+       i_D =>  s_pc4_out,     
+       o_Q   => IFID_pc4_out
+);
+
 
 
 
@@ -703,7 +714,7 @@ port map(
   IDEX_ALUControl =>  s_ALUControl,
   IDEX_JumpWithReg => s_Jump_With_Register,
   IDEX_PC  => IFID_pc_out,
-  IDEX_PC4  => s_pc4_out,
+  IDEX_PC4  => IFID_pc4_out,
   IDEX_ALU_or_IMM => s_ALU_Or_Imm_Jump,
   IDEX_funct3 => IFID_sInst_out(14 downto 12),
   IDEX_WriteBack  => IFID_sInst_out(11 downto 7),
@@ -768,7 +779,7 @@ s_DMemData <= IDEX_rs2_out;
 
     alu_flag_mux_flag_out : mux4t1
     port map(
-        i_S  => s_Flag_Mux,
+        i_S  => IDEX_FlagMux_out,
         i_D0 => s_negative_flag,
         i_D1 => s_slt_flag,
         i_D2 => s_carry_flag,
@@ -863,7 +874,7 @@ s_DMemData <= IDEX_rs2_out;
         data_out => s_out_shifted_data
     );
 
-    s_exec_result <= s_out_shifted_data when s_Shift = '1' else s_alu_out;
+    s_exec_result <= s_out_shifted_data when IDEX_Shift_out = '1' else s_alu_out;
     oALUOut <= s_exec_result;
 
     pc_or_zero_mux : mux2t1_N

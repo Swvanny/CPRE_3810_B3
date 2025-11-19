@@ -2553,7 +2553,7 @@ Eadder
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R1
 R2
@@ -2563,9 +2563,9 @@ R231
 R232
 R233
 33
-Z342 !s110 1763508699
+Z342 !s110 1763512690
 !i10b 1
-Z343 !s108 1763508699.000000
+Z343 !s108 1763512690.000000
 Z344 !s90 -2008|-work|internal/ModelSimContainer/work|proj/src/RISCV_types.vhd|internal/testpy/tb.vhd|proj/src/reg_array.vhd|proj/src/RISCV_types.vhd|proj/src/Components/invg.vhd|proj/src/Components/PC-register.vhd|proj/src/Components/xor_32bit.vhd|proj/src/Components/mux2t1.vhd|proj/src/Components/andg2.vhd|proj/src/Components/ALUUnit.vhd|proj/src/Components/mux2t1_N.vhd|proj/src/Components/decoder5to32.vhd|proj/src/Components/norg2.vhd|proj/src/Components/goblinBarrel.vhd|proj/src/Components/onescomp.vhd|proj/src/Components/or_32bit.vhd|proj/src/Components/falling_dffg.vhd|proj/src/Components/ones_complementor.vhd|proj/src/Components/adder.vhd|proj/src/Components/mux2t1_dataflow.vhd|proj/src/Components/mux32x4t1.vhd|proj/src/Components/bitExtender.vhd|proj/src/Components/mux4t1 .vhd|proj/src/Components/pc_dffg.vhd|proj/src/Components/adder-subtractor.vhd|proj/src/Components/memSlicer.vhd|proj/src/Components/zeroExtender_1to32.vhd|proj/src/Components/IDEXRegister.vhd|proj/src/Components/PipelineRegister_logic.vhd|proj/src/Components/nbit-register.vhd|proj/src/Components/Control_Unit_2.0.vhd|proj/src/Components/EXMEMRegister.vhd|proj/src/Components/nBit_ALU.vhd|proj/src/Components/n-bit_adder.vhd|proj/src/Components/RISCV_types.vhd|proj/src/Components/org2.vhd|proj/src/Components/dffg.vhd|proj/src/Components/full_reg_file.vhd|proj/src/Components/mux_32by32.vhd|proj/src/Components/mux4by32.vhd|proj/src/Components/and_32bit.vhd|proj/src/Components/nor_32t1bit.vhd|proj/src/Components/PipelineRegister.vhd|proj/src/Components/xorg2.vhd|proj/src/TopLevel/mem.vhd|proj/src/TopLevel/RISCV_Processor.vhd|
 Z345 !s107 proj/src/TopLevel/RISCV_Processor.vhd|proj/src/TopLevel/mem.vhd|proj/src/Components/xorg2.vhd|proj/src/Components/PipelineRegister.vhd|proj/src/Components/nor_32t1bit.vhd|proj/src/Components/and_32bit.vhd|proj/src/Components/mux4by32.vhd|proj/src/Components/mux_32by32.vhd|proj/src/Components/full_reg_file.vhd|proj/src/Components/dffg.vhd|proj/src/Components/org2.vhd|proj/src/Components/RISCV_types.vhd|proj/src/Components/n-bit_adder.vhd|proj/src/Components/nBit_ALU.vhd|proj/src/Components/EXMEMRegister.vhd|proj/src/Components/Control_Unit_2.0.vhd|proj/src/Components/nbit-register.vhd|proj/src/Components/PipelineRegister_logic.vhd|proj/src/Components/IDEXRegister.vhd|proj/src/Components/zeroExtender_1to32.vhd|proj/src/Components/memSlicer.vhd|proj/src/Components/adder-subtractor.vhd|proj/src/Components/pc_dffg.vhd|proj/src/Components/mux4t1 .vhd|proj/src/Components/bitExtender.vhd|proj/src/Components/mux32x4t1.vhd|proj/src/Components/mux2t1_dataflow.vhd|proj/src/Components/adder.vhd|proj/src/Components/ones_complementor.vhd|proj/src/Components/falling_dffg.vhd|proj/src/Components/or_32bit.vhd|proj/src/Components/onescomp.vhd|proj/src/Components/goblinBarrel.vhd|proj/src/Components/norg2.vhd|proj/src/Components/decoder5to32.vhd|proj/src/Components/mux2t1_N.vhd|proj/src/Components/ALUUnit.vhd|proj/src/Components/andg2.vhd|proj/src/Components/mux2t1.vhd|proj/src/Components/xor_32bit.vhd|proj/src/Components/PC-register.vhd|proj/src/Components/invg.vhd|proj/src/reg_array.vhd|internal/testpy/tb.vhd|proj/src/RISCV_types.vhd|
 !i113 0
@@ -2575,7 +2575,7 @@ Astructural
 R36
 R35
 R234
-!i122 277
+!i122 299
 l66
 R235
 R236
@@ -2594,7 +2594,7 @@ Eadder_subtractor
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R10
 R11
@@ -2616,7 +2616,7 @@ Astructural
 R36
 R35
 R12
-!i122 277
+!i122 299
 l49
 R240
 R241
@@ -2637,7 +2637,7 @@ Z346 DPx4 work 11 riscv_types 0 22 jG@=HeIBQEMB2[>ZZ9JF23
 Z347 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 R36
 R35
-!i122 277
+!i122 299
 R4
 R13
 R14
@@ -2661,7 +2661,7 @@ R347
 R36
 R35
 R15
-!i122 277
+!i122 299
 l102
 R244
 R245
@@ -2680,7 +2680,7 @@ Eand_32bit
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R16
 R17
@@ -2702,7 +2702,7 @@ Astructural
 R36
 R35
 R18
-!i122 277
+!i122 299
 l21
 R163
 R249
@@ -2721,7 +2721,7 @@ Eandg2
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R19
 R20
@@ -2743,7 +2743,7 @@ Adataflow
 R36
 R35
 R21
-!i122 277
+!i122 299
 l32
 R170
 R253
@@ -2764,7 +2764,7 @@ R346
 R347
 R36
 R35
-!i122 277
+!i122 299
 R4
 R22
 R23
@@ -2788,7 +2788,7 @@ R347
 R36
 R35
 Z349 DEx4 work 11 bitextender 0 22 iG8h45ckX8Va>Y_TQ0RmS0
-!i122 277
+!i122 299
 l35
 Z350 L13 55
 Z351 VdC=CZga@h6kh>TL4m800z3
@@ -2808,7 +2808,7 @@ Z353 w1762205404
 R347
 R36
 R35
-!i122 277
+!i122 299
 R4
 R25
 R26
@@ -2831,7 +2831,7 @@ R347
 R36
 R35
 R27
-!i122 277
+!i122 299
 l72
 R257
 R258
@@ -2850,7 +2850,7 @@ Edecoder5to32
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R28
 R29
@@ -2872,7 +2872,7 @@ Abehavioral
 R36
 R35
 R30
-!i122 277
+!i122 299
 l13
 R262
 R263
@@ -2891,7 +2891,7 @@ Edffg
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R31
 R32
@@ -2913,7 +2913,7 @@ Amixed
 R36
 R35
 R33
-!i122 277
+!i122 299
 l37
 R267
 R268
@@ -2934,7 +2934,7 @@ R346
 R347
 R36
 R35
-!i122 277
+!i122 299
 R4
 Z355 8proj/src/Components/EXMEMRegister.vhd
 Z356 Fproj/src/Components/EXMEMRegister.vhd
@@ -2958,7 +2958,7 @@ R347
 R36
 R35
 Z357 DEx4 work 13 exmemregister 0 22 BGZh@]69]gZADUW1KaG_<0
-!i122 277
+!i122 299
 l73
 Z358 L48 179
 Z359 Vl=QTH>bRZ302dd:z3P=<o3
@@ -2977,7 +2977,7 @@ Efalling_dffg
 Z361 w1762968520
 R36
 R35
-!i122 277
+!i122 299
 R4
 Z362 8proj/src/Components/falling_dffg.vhd
 Z363 Fproj/src/Components/falling_dffg.vhd
@@ -2999,7 +2999,7 @@ Amixed
 R36
 R35
 Z364 DEx4 work 12 falling_dffg 0 22 YVD6b>1T@<M>b=fcJ:h:`0
-!i122 277
+!i122 299
 l37
 R267
 Z365 V2QoI^Fjd]<3U=6S;3HC973
@@ -3020,7 +3020,7 @@ R34
 R35
 R36
 R347
-!i122 277
+!i122 299
 R4
 R38
 R39
@@ -3044,7 +3044,7 @@ R35
 R36
 R347
 R44
-!i122 277
+!i122 299
 l52
 R45
 R46
@@ -3064,7 +3064,7 @@ R43
 R347
 R36
 R35
-!i122 277
+!i122 299
 R4
 R48
 R49
@@ -3087,7 +3087,7 @@ R347
 R36
 R35
 R50
-!i122 277
+!i122 299
 l38
 R51
 R52
@@ -3108,7 +3108,7 @@ R346
 R347
 R36
 R35
-!i122 277
+!i122 299
 R4
 Z369 8proj/src/Components/IDEXRegister.vhd
 Z370 Fproj/src/Components/IDEXRegister.vhd
@@ -3132,7 +3132,7 @@ R347
 R36
 R35
 Z371 DEx4 work 12 idexregister 0 22 ZPoLmH^2SZ_na:Kj2KUU61
-!i122 277
+!i122 299
 l88
 Z372 L61 227
 Z373 V:FA@NL378K>Do<I:2iP[M2
@@ -3151,7 +3151,7 @@ Einvg
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R54
 R55
@@ -3173,7 +3173,7 @@ Adataflow
 R36
 R35
 R56
-!i122 277
+!i122 299
 l31
 R57
 R58
@@ -3193,7 +3193,7 @@ R43
 R347
 R36
 R35
-!i122 277
+!i122 299
 R4
 R60
 R61
@@ -3216,7 +3216,7 @@ R347
 R36
 R35
 R62
-!i122 277
+!i122 299
 l37
 R63
 R64
@@ -3243,7 +3243,7 @@ Z375 w1761926945
 R347
 R36
 R35
-!i122 277
+!i122 299
 R4
 R66
 R67
@@ -3266,7 +3266,7 @@ R347
 R36
 R35
 R71
-!i122 277
+!i122 299
 l19
 R70
 R72
@@ -3285,7 +3285,7 @@ Emux2t1
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R74
 R75
@@ -3307,7 +3307,7 @@ Astructural
 R36
 R35
 R76
-!i122 277
+!i122 299
 l65
 R77
 R78
@@ -3326,7 +3326,7 @@ Emux2t1_dataflow
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R80
 R81
@@ -3348,7 +3348,7 @@ Adataflow
 R36
 R35
 R82
-!i122 277
+!i122 299
 l15
 R83
 R84
@@ -3367,7 +3367,7 @@ Emux2t1_n
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R86
 R87
@@ -3389,7 +3389,7 @@ Astructural
 R36
 R35
 R88
-!i122 277
+!i122 299
 l39
 R89
 R90
@@ -3408,7 +3408,7 @@ Emux4t1
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R92
 R93
@@ -3430,7 +3430,7 @@ Astructural
 R36
 R35
 R94
-!i122 277
+!i122 299
 l43
 R95
 R96
@@ -3449,7 +3449,7 @@ Emux4t1_32
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R98
 R99
@@ -3471,7 +3471,7 @@ Astructural
 R36
 R35
 R100
-!i122 277
+!i122 299
 l51
 R101
 R102
@@ -3492,7 +3492,7 @@ R346
 R347
 R36
 R35
-!i122 277
+!i122 299
 R4
 R104
 R105
@@ -3516,7 +3516,7 @@ R347
 R36
 R35
 R106
-!i122 277
+!i122 299
 l17
 R107
 R108
@@ -3537,7 +3537,7 @@ R34
 R35
 R36
 R347
-!i122 277
+!i122 299
 R4
 R110
 R111
@@ -3561,7 +3561,7 @@ R35
 R36
 R347
 R112
-!i122 277
+!i122 299
 l16
 R113
 R114
@@ -3580,7 +3580,7 @@ Enbit_adder
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R116
 R117
@@ -3602,7 +3602,7 @@ Astructural
 R36
 R35
 R118
-!i122 277
+!i122 299
 l50
 R119
 R120
@@ -3622,7 +3622,7 @@ R43
 R347
 R36
 R35
-!i122 277
+!i122 299
 R4
 R122
 R123
@@ -3645,7 +3645,7 @@ R347
 R36
 R35
 R124
-!i122 277
+!i122 299
 l33
 R125
 R126
@@ -3664,7 +3664,7 @@ Enbitregister
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R128
 R129
@@ -3686,7 +3686,7 @@ Astructural
 R36
 R35
 R130
-!i122 277
+!i122 299
 l27
 R131
 R132
@@ -3705,7 +3705,7 @@ Enor_32t1bit
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R134
 R135
@@ -3727,7 +3727,7 @@ Abehavioral
 R36
 R35
 R136
-!i122 277
+!i122 299
 l13
 R137
 R138
@@ -3746,7 +3746,7 @@ Enorg2
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R140
 R141
@@ -3768,7 +3768,7 @@ Adataflow
 R36
 R35
 R142
-!i122 277
+!i122 299
 l13
 R143
 R144
@@ -3787,7 +3787,7 @@ Eones_complementor
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R146
 R147
@@ -3809,7 +3809,7 @@ Astructural
 R36
 R35
 R148
-!i122 277
+!i122 299
 l27
 R149
 R150
@@ -3828,7 +3828,7 @@ Eonescomp
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R152
 R153
@@ -3850,7 +3850,7 @@ Astructural
 R36
 R35
 R154
-!i122 277
+!i122 299
 l20
 R155
 R156
@@ -3869,7 +3869,7 @@ Eor_32bit
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R158
 R159
@@ -3891,7 +3891,7 @@ Astructural
 R36
 R35
 R160
-!i122 277
+!i122 299
 l21
 R163
 R161
@@ -3910,7 +3910,7 @@ Eorg2
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R164
 R165
@@ -3932,7 +3932,7 @@ Adataflow
 R36
 R35
 R166
-!i122 277
+!i122 299
 l32
 R170
 R168
@@ -3951,7 +3951,7 @@ Epc_dffg
 Z376 w1761495047
 R36
 R35
-!i122 277
+!i122 299
 R4
 R171
 R172
@@ -3973,7 +3973,7 @@ Amixed
 R36
 R35
 R173
-!i122 277
+!i122 299
 l21
 R174
 R175
@@ -3992,7 +3992,7 @@ Epcregister
 Z377 w1761504791
 R36
 R35
-!i122 277
+!i122 299
 R4
 R177
 R178
@@ -4014,7 +4014,7 @@ Astructural
 R36
 R35
 R179
-!i122 277
+!i122 299
 l31
 R180
 R181
@@ -4033,7 +4033,7 @@ Epipelineregister
 Z378 w1762968573
 R36
 R35
-!i122 277
+!i122 299
 R4
 Z379 8proj/src/Components/PipelineRegister.vhd
 Z380 Fproj/src/Components/PipelineRegister.vhd
@@ -4055,7 +4055,7 @@ Astructural
 R36
 R35
 Z381 DEx4 work 16 pipelineregister 0 22 UgXW:Pi_]cFbDX8IMkLdA2
-!i122 277
+!i122 299
 l29
 Z382 L18 24
 Z383 V>d6S[i=8_DGd781Ci<0Pg1
@@ -4074,7 +4074,7 @@ Epipelineregister_logic
 Z385 w1762968570
 R36
 R35
-!i122 277
+!i122 299
 R4
 Z386 8proj/src/Components/PipelineRegister_logic.vhd
 Z387 Fproj/src/Components/PipelineRegister_logic.vhd
@@ -4096,7 +4096,7 @@ Astructural
 R36
 R35
 Z388 DEx4 work 22 pipelineregister_logic 0 22 ;GodTzN@[W8SG=@Ch9DPj0
-!i122 277
+!i122 299
 l26
 Z389 L15 21
 Z390 VjzkKTSHk7_CekYBWGKej41
@@ -4114,7 +4114,7 @@ R184
 Preg_array
 R36
 R35
-!i122 277
+!i122 299
 R43
 R4
 R315
@@ -4134,12 +4134,12 @@ R345
 R183
 R184
 Eriscv_processor
-Z392 w1763407578
+Z392 w1763512659
 R34
 R346
 R36
 R35
-!i122 277
+!i122 299
 R4
 R186
 R187
@@ -4163,11 +4163,11 @@ R346
 R36
 R35
 R188
-!i122 277
-l537
-Z393 L37 990
-Z394 VC3P@[_J_Gjdk01]?n>:JH1
-Z395 !s100 FkD?LK^NZR[8>S]>a82FO1
+!i122 299
+l538
+Z393 L37 1001
+Z394 V=o:iBX4FoMDB:FX5]_J_Y1
+Z395 !s100 9Ic2[7KVV]<2jKB]?^z3a2
 R233
 33
 R342
@@ -4181,7 +4181,7 @@ R184
 Priscv_types
 R36
 R35
-!i122 277
+!i122 299
 R191
 R4
 R189
@@ -4204,7 +4204,7 @@ Bbody
 R346
 R36
 R35
-!i122 277
+!i122 299
 l0
 R192
 R193
@@ -4225,7 +4225,7 @@ R195
 R196
 R36
 R35
-!i122 277
+!i122 299
 R4
 R197
 R198
@@ -4249,7 +4249,7 @@ R196
 R36
 R35
 R199
-!i122 277
+!i122 299
 l56
 R200
 R201
@@ -4300,7 +4300,7 @@ Exor_32bit
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R221
 R222
@@ -4322,7 +4322,7 @@ Astructural
 R36
 R35
 R223
-!i122 277
+!i122 299
 l21
 R163
 R224
@@ -4341,7 +4341,7 @@ Exorg2
 R43
 R36
 R35
-!i122 277
+!i122 299
 R4
 R226
 R227
@@ -4363,7 +4363,7 @@ Adataflow
 R36
 R35
 R228
-!i122 277
+!i122 299
 l32
 R170
 R229
@@ -4382,7 +4382,7 @@ Ezeroextender_1to32
 Z396 w1761705685
 R36
 R35
-!i122 277
+!i122 299
 R4
 R334
 R335
@@ -4404,7 +4404,7 @@ Abehavioral
 R36
 R35
 R338
-!i122 277
+!i122 299
 l12
 R339
 R340

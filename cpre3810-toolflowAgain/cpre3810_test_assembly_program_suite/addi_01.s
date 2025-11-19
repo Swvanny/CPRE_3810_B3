@@ -8,7 +8,9 @@ main:
     nop
     nop
     nop
+    nop
     addi x2, x0, 0      # x2=0
+    nop
     nop
     nop
     nop
@@ -17,14 +19,17 @@ main:
 nop
     nop
     nop
+    nop
     # Negative immediate min: -2048
     addi x4, x0, -2048  # x4=0xFFFFF800
 nop
     nop
     nop
+    nop
     # Crossing zero with negative addi
     addi x5, x3, -2047  # x5=0
 nop
+    nop
     nop
     nop
     # -1 by 0 + (-1)

@@ -5,7 +5,15 @@
 main:
 
 lui t0, 0x55555 #loads
+nop
+nop
+nop
+nop
 addi t1, t0, -0x1 #subtract 
+nop
+nop
+nop
+nop
 # if the above worked, then t1 should be 55554FFF
 #these are easy to check values
 # this tests the loading because we know addi works (given the

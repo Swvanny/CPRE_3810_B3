@@ -163,6 +163,7 @@ signal MEMWB_Halt_out : std_logic;
   signal s_carry_flag    : std_logic;
   signal s_slt_flag      : std_logic;
   signal s_temp_halt     : std_logic;
+  signal s_temp_dmemWr   : std_logic;
 
   --Register File SIGNALS-------------------------------------------------------------------------------
 
@@ -558,9 +559,9 @@ begin
     generic map(ADDR_WIDTH => ADDR_WIDTH,
                 DATA_WIDTH => N)
     port map(clk  => iCLK,
-             addr => EXMEM_ALUOut_out(11 downto 2),
+             addr => s_DMemAddr(11 downto 2),
              data => s_DMemData,  -- this may not work, we need whatever data signal that comes from rs2
-             we   => EXMEM_MemWrite_out,
+             we   => s_DMemWr,
              q    => s_DMemOut);
 
   -- TODO: Ensure that s_Halt is connected to an output control signal produced from decoding the Halt instruction (Opcode: 01 0100)
@@ -632,7 +633,7 @@ Control_Unit_inst: Control_Unit_2
     ALUSrc             => s_ALUSrc,
     ALUControl         => s_ALUControl,
     AndLink            => s_AndLink,
-    MemWrite           => s_DMemWr,
+    MemWrite           => s_temp_dmemWr,
     RegWrite           => s_temp_write,
     MemToReg           => s_MemToReg,
     Branch             => s_Branch,
@@ -709,7 +710,7 @@ port map(
   IDEX_Jump  =>s_Jump,
   IDEX_FlagNFlag => s_Flag_Or_Nflag,
   IDEX_AndLink   => s_AndLink,
-  IDEX_MemWrite  => s_DMemWr,
+  IDEX_MemWrite  => s_temp_dmemWr,
   IDEX_FlagMux => s_Flag_Mux,
   IDEX_MemToReg => s_MemToReg,
   IDEX_ALUSrc => s_ALUSrc,
@@ -832,6 +833,8 @@ s_DMemData <= EXMEM_RS2_out;
     EXMEM_MemWrite_out      => EXMEM_MemWrite_out,
     EXMEM_MemToReg_out      => EXMEM_MemToReg_out
   );
+
+  s_DMemWr <= EXMEM_MemWrite_out;
 
     flag_negation_gate : invg
     port map(

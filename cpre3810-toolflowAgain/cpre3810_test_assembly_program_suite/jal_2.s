@@ -7,18 +7,28 @@
 step1:
 addi t1, t1, 1
 jal ra, step2
+nop
+nop
+nop
+
 # This shouldn't run
 addi t0, t0, 1
 
 step3:
 addi t1, t1, 1
 jal ra, step4
+nop
+nop
+nop
 # This shouldn't run
 addi t0, t0, 1
 
 step2:
 addi t1, t1, 1
 jal ra, step3
+nop
+nop
+nop
 # This shouldn't run
 addi t0, t0, 1
 
@@ -29,6 +39,9 @@ main:
 addi t0, zero, 0
 addi t1, zero, 0
 jal ra, step1
+nop
+nop
+nop
 # This shouldn't run
 addi t0, t0, 1
 

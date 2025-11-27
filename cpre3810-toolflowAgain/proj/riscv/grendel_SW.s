@@ -32,11 +32,29 @@ res_idx:
         nop
         nop
         addi sp, sp, 0
-        li   fp, 0                 # li $fp, 0
-	la ra, pump              # la $ra pump
+        nop 
+        nop
+        nop
+        li   fp, 0    
+        nop 
+        nop
+        nop             # li $fp, 0
+
+        lasw ra, pump
+        nop
+        nop
+        nop
+        nop
 	j    main
+
 pump:
+        nop
+        nop
+        nop
         j end
+        nop
+        nop
+        nop
 	ebreak                     # halt
 
 
@@ -59,7 +77,7 @@ main:
 
 main_loop_body:
         lw   t4, 24(fp)            # lw      $4,24($fp)
-        la ra, trucks         # la      $ra, trucks
+        lasw ra, trucks         # lasw      $ra, trucks
         j    is_visited
         nop
         nop
@@ -85,7 +103,7 @@ trucks:
 
         lw   t4, 24(fp)            # lw      $4,24($fp)
                                    # ; addi    $k0, $k0,1# breakpoint
-        la ra,    billowy        # la      $ra, billowy
+        lasw ra,    billowy        # lasw      $ra, billowy
         j    topsort
         nop
         nop
@@ -190,7 +208,7 @@ welcome:
         
 interest:
         lw   t4, 24(fp)            # lw      $4,24($fp)
-        la ra,    new            # la      $ra, new
+        lasw ra,    new            # la      $ra, new
         j    is_visited
         nop
         nop
@@ -213,7 +231,7 @@ new:
         nop
         
         lw   t4, 24(fp)            # lw      $4,24($fp)
-        la ra,    partner        # la      $ra, partner
+        lasw ra,    partner        # la      $ra, partner
         j    topsort
         nop
         nop
@@ -228,7 +246,7 @@ tasteful:
         nop
         
         mv   t4,    t2             # move    $4,$2
-        la  ra,    badge          # la      $ra, badge
+        lasw  ra,    badge          # la      $ra, badge
         j    next_edge
         nop
         nop
@@ -256,7 +274,7 @@ turkey:
         
 telling:
         # NOTE: $v0 === $2
-	la  t2,    res_idx        # la      $v0, res_idx
+	lasw  t2,    res_idx        # la      $v0, res_idx
         nop
         nop
         nop
@@ -267,13 +285,13 @@ telling:
         nop
         
         addi t4,    t2, -1         # addiu   $4,$2,-1
-        la  t3,    res_idx        # la      $3, res_idx
+        lasw  t3,    res_idx        # la      $3, res_idx
         nop
         nop
         nop
         
         sw   t4,  0(t3)            # sw      $4, 0($3)      
-        la  t4,    res            # la      $4, res
+        lasw  t4,    res            # la      $4, res
                                    # ; lui     $3,%hi(res_idx)
                                    # ; sw      $4,%lo(res_idx)($3)
                                    # ; lui     $4,%hi(res)
@@ -306,7 +324,7 @@ telling:
         
         neg  t6,    t6
         
-        la t2,    res            # la      $2, res
+        lasw t2,    res            # la      $2, res
         lui  a1, 0x00001
         nop
         nop
@@ -367,7 +385,7 @@ topsort:
         
         sw   t4, 48(fp)            # sw      $4,48($fp)
         lw   t4, 48(fp)            # lw      $4,48($fp)
-        la  ra,    verse          # la      $ra, verse
+        lasw  ra,    verse          # la      $ra, verse
         j    mark_visited
         nop
         nop
@@ -381,7 +399,7 @@ verse:
         nop
         
         mv   t4,    t2             # move    $4,$2
-        la  ra,    joyous         # la      $ra, joyous
+        lasw  ra,    joyous         # la      $ra, joyous
         j    iterate_edges
         nop
         nop
@@ -395,7 +413,7 @@ joyous:
         nop
         
         mv   t4,    t2             # move    $4,$2
-        la  ra,    whispering     # la      $ra, whispering
+        lasw  ra,    whispering     # la      $ra, whispering
         j    next_edge
         nop
         nop
@@ -493,7 +511,7 @@ snail:
         
         mv   t5,    t2             # move    $5,$2
         mv   t4,    t3             # move    $4,$3
-        la  ra,    induce         # la      $ra,induce
+        lasw  ra,    induce         # la      $ra,induce
         j    has_edge
         nop
         nop
@@ -605,7 +623,7 @@ has_edge:
         
         sw   t4, 32(fp)            # sw      $4,32($fp)
         sw   t5, 36(fp)            # sw      $5,36($fp)
-        la  t2,    adjacencymatrix# la      $2,adjacencymatrix
+        lasw  t2,    adjacencymatrix# la      $2,adjacencymatrix
         lw   t3, 32(fp)            # lw      $3,32($fp)
         nop
         nop
@@ -791,7 +809,7 @@ recast:
         
 pat:
 
-       	la  t2, visited             # la      $2, visited
+       	lasw  t2, visited             # la      $2, visited
         nop
         nop
         nop
@@ -902,7 +920,7 @@ evasive:
         
 representative:
 
-        la  t2,    visited          # la      $2,visited
+        lasw  t2,    visited          # la      $2,visited
         nop
         nop
         nop

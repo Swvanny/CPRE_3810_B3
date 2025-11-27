@@ -12,15 +12,43 @@
 
 main:
     lui s0, 0x10010 # Base address (0x10010000)
+    nop
+    nop
+    nop
+    nop
     addi s0, s0, 0x1C
+    nop
+    nop
+    nop
+    nop
 
     addi t0, x0, 42  # Value to store (0x2A)
+    nop
+    nop
+    nop
+    nop
     
     # Test negative offset storing 8 bit value
     sw t0, 0(s0) # MEM[0x1001001C] = 0x2A
+    nop
+    nop
+    nop
+    nop
     sw t0, -4(s0) # MEM[0x10010018] = 0x2A
+        nop
+    nop
+    nop
+    nop
     sw t0, -8(s0) # MEM[0x10010014] = 0x2A
+        nop
+    nop
+    nop
+    nop
     sw t0, -12(s0) # MEM[0x10010010] = 0x2A
+        nop
+    nop
+    nop
+    nop
     sw t0, -16(s0) # MEM[0x1001000C] = 0x2A
     sw t0, -20(s0) # MEM[0x10010008] = 0x2A
     sw t0, -24(s0) # MEM[0x10010004] = 0x2A

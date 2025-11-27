@@ -1,15 +1,15 @@
 [inst #1] addi x6,x6,1
 Register Write to Reg: 0x06 Val: 0x00000001
-[inst #2] jal x1,20
+[inst #2] jal x1,44
 Register Write to Reg: 0x01 Val: 0x00400008
 [inst #3] addi x6,x6,1
 Register Write to Reg: 0x06 Val: 0x00000002
-[inst #4] jal x1,-16
-Register Write to Reg: 0x01 Val: 0x00400020
+[inst #4] jal x1,-28
+Register Write to Reg: 0x01 Val: 0x00400038
 [inst #5] addi x6,x6,1
 Register Write to Reg: 0x06 Val: 0x00000003
-[inst #6] jal x1,36
-Register Write to Reg: 0x01 Val: 0x00400014
+[inst #6] jal x1,72
+Register Write to Reg: 0x01 Val: 0x00400020
 [inst #7] addi x6,x6,1
 Register Write to Reg: 0x06 Val: 0x00000004
 [inst #8] wfi 

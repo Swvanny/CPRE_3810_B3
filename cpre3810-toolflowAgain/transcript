@@ -13,7 +13,3 @@
 # // and may not be used in any way not expressly authorized by SISW.
 # //
 add wave vsim:/tb/MyRiscv/*
-# ** Error: (vish-7) Failed to open info file "/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/containers/sim_container_0/work/_info" in read mode.
-# No such file or directory. (errno = ENOENT)
-add wave -position 45 vsim:/tb/MyRiscv/pc_or_branch_adder/*
-add wave vsim1:/tb/MyRiscv/*

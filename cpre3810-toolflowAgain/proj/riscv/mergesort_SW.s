@@ -41,7 +41,9 @@ mergeSort:
     sub  t0, a3, a2
     bge  a2, a3, mergeSortEnd
     nop
-    
+    nop 
+    nop 
+
     addi sp, sp, -16
     nop
     nop
@@ -130,6 +132,8 @@ merge:
     nop
     bge  s0, s3, copyRightInit
     nop
+    nop
+    nop
     
     lw   t3, 0(t1)
     addi s0, s0, 1
@@ -167,7 +171,11 @@ merge:
     nop
     nop
     bge  s1, s4, mergeArraysInit
-    
+    nop
+    nop
+    nop
+
+
     lw   t3, 0(t1)
     addi s1, s1, 1
     nop
@@ -197,8 +205,15 @@ merge:
     nop
     bge  s0, s3, copyRemainingLeft
     nop
+    nop
+    nop
+    nop
     bge  s1, s4, copyRemainingLeft
     nop
+    nop
+    nop
+    nop
+
     
     lw   t0, 0(t4)
     lw   t1, 0(t5)
@@ -207,6 +222,8 @@ merge:
     nop
     
     blt t1, t0, useRight
+    nop
+    nop
     nop
     
     useLeft:
@@ -233,6 +250,9 @@ merge:
     nop
     bge s0, s3, copyRemainingRight
     nop
+    nop
+    nop
+
     
     lw   t0, 0(t4)
     addi s0, s0, 1
@@ -249,6 +269,9 @@ merge:
     nop
     bge  s1, s4, mergeDone
     nop
+    nop
+    nop
+
     
     lw   t0, 0(t5)
     addi s1, s1, 1
@@ -272,6 +295,9 @@ merge:
     lw s1, 4(sp)
     lw s0, 0(sp)
     addi sp, sp, 40
+    nop
+    nop
+    nop
     ret    
     
     

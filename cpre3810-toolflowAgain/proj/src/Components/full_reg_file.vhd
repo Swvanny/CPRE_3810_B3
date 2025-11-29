@@ -60,6 +60,7 @@ begin
     -- x0 is hard-wired to 0
     reg_data(0) <= (others => '0');
 
+    
     -- x1..x31 are real registers
     gen_regs: for i in 1 to 31 generate
         reg_inst: nbitRegister

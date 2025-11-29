@@ -7,27 +7,33 @@ temp:       .space 64          # Temporary array for merging (16 * 4 bytes)
 .globl main
 
 main:
+    lui sp, 0x7FFFF       # Load upper 20 bits of stack address
+    nop
+    nop
+    nop
+    nop
+   addi sp, sp, -16      # Adjust to a valid alignment (creating 0x7FFFEFF0)
+    
+
     lui  a1, 0x10010
     lui  a0, 0x10010 
+    nop
     nop
     nop
     addi a1, a1, 0x040
     addi a0, a0, 0x000
     nop
-    
+    nop
+    nop
+
     addi a2, x0, 0
     lw   a3, 0(a1)
     nop
     nop
     nop
     addi a3, a3, -1 
-    
-    nop
-    nop
-    nop
     jal mergeSort
     nop
-    
     nop
     nop
     nop
@@ -35,16 +41,22 @@ main:
 
 
 mergeSort:
-    nop
-    nop
-    nop
+nop
+nop
+nop
+
     sub  t0, a3, a2
+    nop
+    nop
+    nop
     bge  a2, a3, mergeSortEnd
     nop
-    nop 
-    nop 
+    nop
+    nop
 
     addi sp, sp, -16
+    nop
+    nop
     nop
     nop
     nop

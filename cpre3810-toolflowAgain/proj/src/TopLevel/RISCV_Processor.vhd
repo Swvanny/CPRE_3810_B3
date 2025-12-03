@@ -165,6 +165,9 @@ signal MEMWB_Halt_out : std_logic;
   signal s_temp_halt     : std_logic;
   signal s_temp_dmemWr   : std_logic;
 
+  --HAZARD DETECTION SIGNALS---------------------------------------------------------------
+signal s_IFID_stall : std_logic;
+signal s_flush_IDEX : std_logic;
   --Register File SIGNALS-------------------------------------------------------------------------------
 
   --signal reg_data : reg_array;
@@ -201,6 +204,7 @@ signal s_alu_out : std_logic_vector(31 downto 0);
  signal s_out_shifted_data : std_logic_vector(31 downto 0);
 
  signal s_exec_result : std_logic_vector(31 downto 0);
+
 
 
 
@@ -444,6 +448,27 @@ component Control_Unit_2
   );
 end component;
 
+
+--HARDWARE UNIT-------------------------------------------------------------------------------
+component hazardDetectUnit 
+port(
+        rs1_IDEX, rs2_IDEX      : in std_logic_vector(4 downto 0);  -- Registers used in ID/EX stage (for register operands)
+        rd_EXMEM                : in std_logic_vector(4 downto 0);  -- Destination register from EX/MEM stage (to check if write-back happens)
+        rd_MEMWB                : in std_logic_vector(4 downto 0);  -- Destination register from MEM/WB stage (to check if write-back happens)
+        memRead_EXMEM           : in std_logic;                    -- EXMEM stage: signal indicating memory read (load)
+        memRead_MEMWB           : in std_logic;                    -- MEMWB stage: signal indicating memory read (load)
+
+         branch_taken   : in std_logic;
+
+        -- Outputs
+        --stall_Fwd                : out std_logic;  -- Stall signal to control forwarding logic
+        stall_IFID               : out std_logic;  -- Stall signal for IF/ID register (flush or hold) 0x00000013
+        flush_IDEX               : out std_logic   -- Flush the ID/EX register (e.g., on a control hazard)
+);
+end component;
+
+
+
 --GOBLIN BARREL------------------------------------------------------------------------
 
 component goblinBarrel 
@@ -645,6 +670,21 @@ Control_Unit_inst: Control_Unit_2
     Halt               => s_temp_halt,
     Shift              => s_Shift
   );
+
+  haz_detect_unit_inst: hazardDetectUnit
+port map(
+        rs1_IDEX => IDEX_rs1_out,
+         rs2_IDEX =>  IDEX_rs2_out, --not the right value
+       rd_EXMEM =>  EXMEM_WriteBack_out, --not the right value
+       rd_MEMWB  =>  MEMWB_WriteBack_out,        
+        memRead_EXMEM =>  EXMEM_MemToReg_out,      
+        memRead_MEMWB =>  MEMWB_MemToReg_out,      
+         branch_taken =>  open,
+        --stall_Fwd   =>       
+        stall_IFID    => s_IFID_stall,
+        flush_IDEX    => s_flush_IDEX
+);
+
 
   --s_RegWrAddr <= IFID_sInst_out(11 downto 7);
   s_Ovfl <= '0';

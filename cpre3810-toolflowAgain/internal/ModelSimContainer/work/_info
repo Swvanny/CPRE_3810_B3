@@ -2787,12 +2787,12 @@ R344
 R345
 R36
 R35
-Z347 DEx4 work 11 bitextender 0 22 iG8h45ckX8Va>Y_TQ0RmS0
+DEx4 work 11 bitextender 0 22 iG8h45ckX8Va>Y_TQ0RmS0
 !i122 435
 l35
-Z348 L13 55
-Z349 VdC=CZga@h6kh>TL4m800z3
-Z350 !s100 iQ>aPgLYSC7b[a<Jl5]VK0
+L13 55
+VdC=CZga@h6kh>TL4m800z3
+!s100 iQ>aPgLYSC7b[a<Jl5]VK0
 R230
 33
 R340
@@ -2804,7 +2804,7 @@ R343
 R180
 R181
 Econtrol_unit_2
-Z351 w1762206656
+Z347 w1762206656
 R345
 R36
 R35
@@ -2929,15 +2929,15 @@ R343
 R180
 R181
 Eexmemregister
-Z352 w1763572508
+Z348 w1763572508
 R344
 R345
 R36
 R35
 !i122 435
 R0
-Z353 8proj/src/Components/EXMEMRegister.vhd
-Z354 Fproj/src/Components/EXMEMRegister.vhd
+Z349 8proj/src/Components/EXMEMRegister.vhd
+Z350 Fproj/src/Components/EXMEMRegister.vhd
 l0
 L6 1
 VUM7WIAGaPh<CH<5<RXE@[1
@@ -2957,12 +2957,12 @@ R344
 R345
 R36
 R35
-Z355 DEx4 work 13 exmemregister 0 22 UM7WIAGaPh<CH<5<RXE@[1
+DEx4 work 13 exmemregister 0 22 UM7WIAGaPh<CH<5<RXE@[1
 !i122 435
 l77
-Z356 L52 188
-Z357 V]8E5Xj4;aLEW1@6UVhMWa3
-Z358 !s100 Adf2l^TV9WSI9TJBa5FH?1
+L52 188
+V]8E5Xj4;aLEW1@6UVhMWa3
+!s100 Adf2l^TV9WSI9TJBa5FH?1
 R230
 33
 R340
@@ -2974,13 +2974,13 @@ R343
 R180
 R181
 Efalling_dffg
-Z359 w1762969172
+Z351 w1762969172
 R36
 R35
 !i122 435
 R0
-Z360 8proj/src/Components/falling_dffg.vhd
-Z361 Fproj/src/Components/falling_dffg.vhd
+Z352 8proj/src/Components/falling_dffg.vhd
+Z353 Fproj/src/Components/falling_dffg.vhd
 l0
 R164
 VYVD6b>1T@<M>b=fcJ:h:`0
@@ -2998,12 +2998,12 @@ R181
 Amixed
 R36
 R35
-Z362 DEx4 work 12 falling_dffg 0 22 YVD6b>1T@<M>b=fcJ:h:`0
+DEx4 work 12 falling_dffg 0 22 YVD6b>1T@<M>b=fcJ:h:`0
 !i122 435
 l37
 R264
-Z363 V2QoI^Fjd]<3U=6S;3HC973
-Z364 !s100 E_0AZ:]C6NfhoEgl0FGE@2
+V2QoI^Fjd]<3U=6S;3HC973
+!s100 E_0AZ:]C6NfhoEgl0FGE@2
 R230
 33
 R340
@@ -3015,7 +3015,7 @@ R343
 R180
 R181
 Efull_reg_file
-Z365 w1764266819
+Z354 w1764266819
 R34
 R35
 R36
@@ -3046,9 +3046,9 @@ R345
 R44
 !i122 435
 l52
-Z366 L20 61
-Z367 V74fN0M8JSlNb[HJY0>XW^0
-Z368 !s100 zfl8[:n[X2k5Gl4a5?5GH0
+L20 61
+V74fN0M8JSlNb[HJY0>XW^0
+!s100 zfl8[:n[X2k5Gl4a5?5GH0
 R230
 33
 R340
@@ -3103,14 +3103,14 @@ R343
 R180
 R181
 Ehazarddetectunit
-Z369 w1764566462
+Z355 w1764566462
 R345
 R36
 R35
 !i122 435
 R0
-Z370 8proj/src/Components/hazardDetectionUnit.vhd
-Z371 Fproj/src/Components/hazardDetectionUnit.vhd
+Z356 8proj/src/Components/hazardDetectionUnit.vhd
+Z357 Fproj/src/Components/hazardDetectionUnit.vhd
 l0
 L5 1
 VNK9Od>4Um1DUC47IPTJI;3
@@ -3129,12 +3129,12 @@ Astructural
 R345
 R36
 R35
-Z372 DEx4 work 16 hazarddetectunit 0 22 NK9Od>4Um1DUC47IPTJI;3
+DEx4 work 16 hazarddetectunit 0 22 NK9Od>4Um1DUC47IPTJI;3
 !i122 435
 l54
-Z373 L23 95
-Z374 V<>FcHAa]X2_Qg6Go^NA_F1
-Z375 !s100 b<]P7iE5ikYhMkLWe^;Vf2
+L23 95
+V<>FcHAa]X2_Qg6Go^NA_F1
+!s100 b<]P7iE5ikYhMkLWe^;Vf2
 R230
 33
 R340
@@ -3146,15 +3146,15 @@ R343
 R180
 R181
 Eidexregister
-Z376 w1763508942
+Z358 w1763508942
 R344
 R345
 R36
 R35
 !i122 435
 R0
-Z377 8proj/src/Components/IDEXRegister.vhd
-Z378 Fproj/src/Components/IDEXRegister.vhd
+Z359 8proj/src/Components/IDEXRegister.vhd
+Z360 Fproj/src/Components/IDEXRegister.vhd
 l0
 L7 1
 VZPoLmH^2SZ_na:Kj2KUU61
@@ -3174,12 +3174,12 @@ R344
 R345
 R36
 R35
-Z379 DEx4 work 12 idexregister 0 22 ZPoLmH^2SZ_na:Kj2KUU61
+DEx4 work 12 idexregister 0 22 ZPoLmH^2SZ_na:Kj2KUU61
 !i122 435
 l88
-Z380 L61 227
-Z381 V:FA@NL378K>Do<I:2iP[M2
-Z382 !s100 9YD@FNlTGMe`kCHBg_ACX1
+L61 227
+V:FA@NL378K>Do<I:2iP[M2
+!s100 9YD@FNlTGMe`kCHBg_ACX1
 R230
 33
 R340
@@ -4078,8 +4078,8 @@ R36
 R35
 !i122 435
 R0
-Z383 8proj/src/Components/PipelineRegister.vhd
-Z384 Fproj/src/Components/PipelineRegister.vhd
+Z361 8proj/src/Components/PipelineRegister.vhd
+Z362 Fproj/src/Components/PipelineRegister.vhd
 l0
 L4 1
 VUgXW:Pi_]cFbDX8IMkLdA2
@@ -4097,12 +4097,12 @@ R181
 Astructural
 R36
 R35
-Z385 DEx4 work 16 pipelineregister 0 22 UgXW:Pi_]cFbDX8IMkLdA2
+DEx4 work 16 pipelineregister 0 22 UgXW:Pi_]cFbDX8IMkLdA2
 !i122 435
 l29
-Z386 L18 24
-Z387 V>d6S[i=8_DGd781Ci<0Pg1
-Z388 !s100 9ozPH=1S]^QhO2`<lmR^Z1
+L18 24
+V>d6S[i=8_DGd781Ci<0Pg1
+!s100 9ozPH=1S]^QhO2`<lmR^Z1
 R230
 33
 R340
@@ -4114,13 +4114,13 @@ R343
 R180
 R181
 Epipelineregister_logic
-R359
+R351
 R36
 R35
 !i122 435
 R0
-Z389 8proj/src/Components/PipelineRegister_logic.vhd
-Z390 Fproj/src/Components/PipelineRegister_logic.vhd
+Z363 8proj/src/Components/PipelineRegister_logic.vhd
+Z364 Fproj/src/Components/PipelineRegister_logic.vhd
 l0
 L4 1
 V;GodTzN@[W8SG=@Ch9DPj0
@@ -4138,12 +4138,12 @@ R181
 Astructural
 R36
 R35
-Z391 DEx4 work 22 pipelineregister_logic 0 22 ;GodTzN@[W8SG=@Ch9DPj0
+DEx4 work 22 pipelineregister_logic 0 22 ;GodTzN@[W8SG=@Ch9DPj0
 !i122 435
 l26
-Z392 L15 21
-Z393 VjzkKTSHk7_CekYBWGKej41
-Z394 !s100 ho0PnU]J_1ziWSTe3GJ9?2
+L15 21
+VjzkKTSHk7_CekYBWGKej41
+!s100 ho0PnU]J_1ziWSTe3GJ9?2
 R230
 33
 R340
@@ -4157,7 +4157,7 @@ R181
 Preg_array
 R36
 R35
-!i122 435
+!i122 439
 R339
 R0
 R312
@@ -4168,21 +4168,21 @@ R314
 R315
 R230
 33
-R340
+Z365 !s110 1764720646
 !i10b 1
-R341
+Z366 !s108 1764720646.000000
 R342
 R343
 !i113 0
 R180
 R181
 Eriscv_processor
-Z395 w1764262507
+Z367 w1764720645
 R34
 R344
 R36
 R35
-!i122 435
+!i122 439
 R0
 R183
 R184
@@ -4192,9 +4192,9 @@ R317
 R318
 R230
 33
-R340
+R365
 !i10b 1
-R341
+R366
 R342
 R343
 !i113 0
@@ -4208,9 +4208,9 @@ R35
 R185
 !i122 435
 l542
-Z396 L37 1009
-Z397 V9PUBfJmTjZolZ3@a?==n90
-Z398 !s100 IzlH5GaCf;RfKl=:lGeX>0
+L37 1009
+V9PUBfJmTjZolZ3@a?==n90
+!s100 IzlH5GaCf;RfKl=:lGeX>0
 R230
 33
 R340
@@ -4224,20 +4224,20 @@ R181
 Priscv_types
 R36
 R35
-!i122 435
+!i122 439
 R339
 R0
-R186
-R187
+Z368 8proj/src/RISCV_types.vhd
+Z369 Fproj/src/RISCV_types.vhd
 l0
 R319
 R320
 R321
 R230
 33
-R340
+R365
 !i10b 1
-R341
+R366
 R342
 R343
 !i113 0
@@ -4247,16 +4247,16 @@ Bbody
 R344
 R36
 R35
-!i122 435
+!i122 439
 l0
 R188
 R189
 R190
 R230
 33
-R340
+R365
 !i10b 1
-R341
+R366
 R342
 R343
 !i113 0
@@ -4268,7 +4268,7 @@ R192
 R193
 R36
 R35
-!i122 435
+!i122 439
 R0
 R194
 R195
@@ -4278,9 +4278,9 @@ R323
 R324
 R230
 33
-R340
+R365
 !i10b 1
-R341
+R366
 R342
 R343
 !i113 0
@@ -4292,16 +4292,16 @@ R193
 R36
 R35
 R196
-!i122 435
+!i122 439
 l56
 R197
 R198
 R199
 R230
 33
-R340
+R365
 !i10b 1
-R341
+R366
 R342
 R343
 !i113 0

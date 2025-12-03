@@ -13,8 +13,8 @@ port(
          branch_taken   : in std_logic;
 
         -- Outputs
-        stall_Fwd                : out std_logic;  -- Stall signal to control forwarding logic
-        stall_IFID               : out std_logic;  -- Stall signal for IF/ID register (flush or hold)
+      --  stall_Fwd                : out std_logic;  -- Stall signal to control forwarding logic
+        stall_IFID               : out std_logic;  -- Stall signal for IF/ID register (flush or hold) 0x00000013
         flush_IDEX               : out std_logic   -- Flush the ID/EX register (e.g., on a control hazard)
 );
 end entity;
@@ -105,13 +105,13 @@ begin
     flush_IDEX     <= flush_IDEX_int;
 
 
-    FWD_OR: org2
-        port map(
-            i_A => rs1_eq_EXMEM,
-            i_B => rs2_eq_EXMEM,
-            o_F => stall_Fwd_int
-        );
+  --  FWD_OR: org2
+   --     port map(
+    --        i_A => rs1_eq_EXMEM,
+    --        i_B => rs2_eq_EXMEM,
+    --        o_F => stall_Fwd_int
+    --    );
 
-    stall_Fwd <= stall_Fwd_int;
+   -- stall_Fwd <= stall_Fwd_int;
 
 end architecture Structural;

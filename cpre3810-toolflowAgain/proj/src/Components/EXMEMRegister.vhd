@@ -27,9 +27,6 @@ entity EXMEMRegister is
     EXMEM_Halt            : in std_logic;
     EXMEM_RS2 : in std_logic_vector(31 downto 0);
 
-    EXMEM_WriteAddress : in std_logic_vector(4 downto 0);
-
-    EXMEM_WriteAddress_out: out std_logic_vector(4 downto 0);
     EXMEM_Halt_out          : out std_logic;
     EXMEM_WriteEnable_out    : out std_logic;
     EXMEM_WriteBack_out     : out std_logic_vector(4 downto 0);
@@ -78,15 +75,6 @@ end component;
 
 begin
 
-EXMEM_WriteAddress_Register: PipelineRegister
-    generic map (N => 3)
-    port map (
-      i_CLK => i_CLK,
-      i_RST => i_RST,
-      i_WE  => '1',
-      i_D   => EXMEM_funct3,
-      o_Q   => EXMEM_funct3_out
-    );
 
 EXMEM_funct3_Register: PipelineRegister
     generic map (N => 3)

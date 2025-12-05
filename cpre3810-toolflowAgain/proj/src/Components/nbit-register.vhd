@@ -16,7 +16,7 @@ entity nbitRegister is
 end nbitRegister;
 
 architecture Structural of nbitRegister is
-    component dffg is
+    component falling_dffg is
   port(i_CLK        : in std_logic;     -- Clock
        i_RST        : in std_logic;     -- Reset
        i_WE         : in std_logic;     -- Write 
@@ -26,7 +26,7 @@ end component;
 
 begin
   G_nbit_reg: for i in 0 to N-1 generate
-    MUXI: dffg port map(
+    MUXI: falling_dffg port map(
               i_CLK      => i_CLK,     
               i_RST     => i_RST,  
               i_WE     => i_WE,  

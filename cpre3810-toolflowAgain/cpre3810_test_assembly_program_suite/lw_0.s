@@ -36,6 +36,9 @@ main:
     nop
     nop
     lw x4, 0(t0)     # verify that one can load into registers and memory is accessible through ALU
+
+    addi x28, x4, 0
+
     lw x6, 0(t0)     # verify that one can load into registers and memory is accessible through ALU
     lw x7, 0(t0)     # verify that one can load into registers and memory is accessible through ALU
     lw x8, 0(t0)     # verify that one can load into registers and memory is accessible through ALU

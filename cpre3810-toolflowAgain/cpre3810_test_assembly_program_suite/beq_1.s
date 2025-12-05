@@ -5,17 +5,14 @@ main:
 # Test 1: Equal small positive values
 # Tests basic beq functionality with common case values.
 addi x1, x0, 5
-nop
-    nop
-    nop
-    nop
+
 addi x2, x0, 5
 nop
     nop
     nop
     nop
 beq x1, x2, pass1
-nop
+
     nop
     nop
     nop
@@ -69,10 +66,7 @@ nop
 
 pass2:
     addi x9, x0, 1
-    nop
-    nop
-    nop
-    nop
+   
 
 end:
     wfi

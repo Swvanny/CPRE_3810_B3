@@ -111,6 +111,8 @@ architecture structure of RISCV_Processor is
  signal IDEX_WriteBack_out : std_logic_vector(4 downto 0);
  signal IDEX_WriteEnable_out : std_logic;
  signal IDEX_Halt_out : std_logic;
+ signal  IDEX_RS1_Address_out : std_logic_vector(4 downto 0);
+ signal  IDEX_RS2_Address_out : std_logic_vector(4 downto 0);
 
  --EXMEM SIGNALS----------------------------------------------------------------------------------
  signal EXMEM_ALU_Flag_out : std_logic;
@@ -205,7 +207,7 @@ signal s_alu_out : std_logic_vector(31 downto 0);
 
  signal s_exec_result : std_logic_vector(31 downto 0);
 
-
+signal s_negation_stall : std_logic;
 
 
 --REGISTER IMPLEMENTATION-------------------------------------------------------------------------
@@ -273,7 +275,11 @@ port(
   IDEX_WriteBack    : in std_logic_vector(4 downto 0);
   IDEX_WriteEnable : in std_logic;
   IDEX_Halt : in std_logic;
+    IDEX_RS1_Address  : in std_logic_vector(4 downto 0);
+ IDEX_RS2_Address : in std_logic_vector(4 downto 0);
 
+    IDEX_RS1_Address_out  : out std_logic_vector(4 downto 0);
+ IDEX_RS2_Address_out : out std_logic_vector(4 downto 0);
   IDEX_Halt_out : out std_logic;
   IDEX_WriteEnable_out : out std_logic;
   IDEX_WriteBack_out    : out std_logic_vector(4 downto 0);
@@ -598,7 +604,7 @@ generic map( N => 32)
 port map (
      i_CLK => iCLK,
      i_RST => iRST,
-     i_WE => '1',
+     i_WE => s_negation_stall,
      i_D => s_pc_data_in,
      o_Q => s_NextInstAddr
   
@@ -611,7 +617,7 @@ generic map(N => 32)
 port map (
   i_CLK  => iCLK,
        i_RST  => iRST,
-       i_WE => '1',
+       i_WE => s_negation_stall,
        i_D =>  s_Inst,     
        o_Q   => IFID_sInst_out
 );
@@ -621,7 +627,7 @@ generic map(N => 32)
 port map (
   i_CLK  => iCLK,
        i_RST  => iRST,
-       i_WE => '1',
+       i_WE => s_negation_stall,
        i_D =>  s_NextInstAddr,     
        o_Q   => IFID_pc_out
 );
@@ -631,7 +637,7 @@ generic map(N => 32)
 port map (
   i_CLK  => iCLK,
        i_RST  => iRST,
-       i_WE => '1',
+       i_WE => s_negation_stall,
        i_D =>  s_pc4_out,     
        o_Q   => IFID_pc4_out
 );
@@ -673,18 +679,24 @@ Control_Unit_inst: Control_Unit_2
 
   haz_detect_unit_inst: hazardDetectUnit
 port map(
-        rs1_IDEX => IDEX_rs1_out,
-         rs2_IDEX =>  IDEX_rs2_out, --not the right value
-       rd_EXMEM =>  EXMEM_WriteBack_out, --not the right value
+        rs1_IDEX => IDEX_RS1_Address_out, 
+         rs2_IDEX =>  IDEX_RS2_Address_out, 
+       rd_EXMEM =>  EXMEM_WriteBack_out, 
        rd_MEMWB  =>  MEMWB_WriteBack_out,        
         memRead_EXMEM =>  EXMEM_MemToReg_out,      
         memRead_MEMWB =>  MEMWB_MemToReg_out,      
-         branch_taken =>  open,
+         branch_taken =>  s_or_jump_out,
         --stall_Fwd   =>       
         stall_IFID    => s_IFID_stall,
         flush_IDEX    => s_flush_IDEX
 );
 
+
+    stall_negation_gate : invg
+    port map(
+        i_A => s_IFID_stall,
+        o_F => s_negation_stall
+    );
 
   --s_RegWrAddr <= IFID_sInst_out(11 downto 7);
   s_Ovfl <= '0';
@@ -764,7 +776,11 @@ port map(
   IDEX_WriteBack  => IFID_sInst_out(11 downto 7),
   IDEX_WriteEnable     => s_temp_write,
   IDEX_Halt          => s_temp_halt,
+  IDEX_RS1_Address => IFID_sInst_out(19 downto 15),
+  IDEX_RS2_Address => IFID_sInst_out(24 downto 20),
 
+  IDEX_RS1_Address_out => IDEX_RS1_Address_out,
+  IDEX_RS2_Address_out => IDEX_RS2_Address_out,
   IDEX_Halt_out          => IDEX_Halt_out,
   IDEX_WriteEnable_out     => IDEX_WriteEnable_out,
   IDEX_WriteBack_out  => IDEX_WriteBack_out,

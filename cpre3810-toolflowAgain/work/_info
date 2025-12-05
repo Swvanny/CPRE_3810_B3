@@ -14,10 +14,10 @@ R1
 cModel Technology
 Z2 d/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain
 Eadder
-Z3 w1761086085
+Z3 w1764952433
 Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 219
+!i122 254
 R2
 Z6 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder.vhd
 Z7 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder.vhd
@@ -27,9 +27,9 @@ VIiZKPaIX5Ll7EB^m8SLlc3
 !s100 KFZI:>O;hn`U`>0a7m`B13
 Z9 OL;C;2025.1_2;82
 32
-Z10 !s110 1761595504
+Z10 !s110 1764953325
 !i10b 1
-Z11 !s108 1761595504.000000
+Z11 !s108 1764953325.000000
 Z12 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder.vhd|
 Z13 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder.vhd|
 !i113 0
@@ -39,7 +39,7 @@ Astructural
 R4
 R5
 DEx4 work 5 adder 0 22 IiZKPaIX5Ll7EB^m8SLlc3
-!i122 219
+!i122 254
 l66
 L32 68
 Vb3Wbk<Yk:MMaLCUA[gYg30
@@ -58,7 +58,7 @@ Eadder_subtractor
 R3
 R4
 R5
-!i122 218
+!i122 253
 R2
 Z16 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder-subtractor.vhd
 Z17 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder-subtractor.vhd
@@ -70,9 +70,9 @@ R9
 32
 R10
 !i10b 1
-Z18 !s108 1761595503.000000
-Z19 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder-subtractor.vhd|
-Z20 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder-subtractor.vhd|
+R11
+Z18 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder-subtractor.vhd|
+Z19 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/adder-subtractor.vhd|
 !i113 0
 R14
 R15
@@ -80,7 +80,7 @@ Astructural
 R4
 R5
 DEx4 work 16 adder_subtractor 0 22 AKU5@i>Q]Qj[YWXHje<HV3
-!i122 218
+!i122 253
 l49
 L16 71
 Ve[cA6eJWzY_KX2fI57h7`1
@@ -89,65 +89,65 @@ R9
 32
 R10
 !i10b 1
+R11
 R18
 R19
-R20
 !i113 0
 R14
 R15
 Ealuunit
-Z21 w1761594794
-Z22 DPx4 work 11 riscv_types 0 22 @EBj`TV9k32W4`Wnab6nL1
-Z23 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R3
+Z20 DPx4 work 11 riscv_types 0 22 @EBj`TV9k32W4`Wnab6nL1
+Z21 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 R4
 R5
-!i122 220
+!i122 255
 R2
-Z24 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ALUUnit.vhd
-Z25 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ALUUnit.vhd
+Z22 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ALUUnit.vhd
+Z23 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ALUUnit.vhd
 l0
 L6 1
-VKJ]U8cZoKZh2m@d?k2fcJ0
-!s100 Km`bcUaN33GK4cD_lG7=j3
+VkQVz;Q^YUjKXU7GGf=7Me0
+!s100 Td3D2eP8]bR:9hUGP>JGe1
 R9
 32
 R10
 !i10b 1
 R11
-Z26 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ALUUnit.vhd|
-Z27 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ALUUnit.vhd|
+Z24 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ALUUnit.vhd|
+Z25 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ALUUnit.vhd|
 !i113 0
 R14
 R15
 Astructural
-R22
-R23
+R20
+R21
 R4
 R5
-DEx4 work 7 aluunit 0 22 KJ]U8cZoKZh2m@d?k2fcJ0
-!i122 220
+DEx4 work 7 aluunit 0 22 kQVz;Q^YUjKXU7GGf=7Me0
+!i122 255
 l102
 L21 160
-V`HlB?E:7]i?ELJo^Almo41
-!s100 QQLGhoPk^k1`d:GBX;LZ_1
+V7;=jT1[J4O1JFSG[W@^090
+!s100 dEX2LaRfT:fj3XHNG8iP=2
 R9
 32
 R10
 !i10b 1
 R11
-R26
-R27
+R24
+R25
 !i113 0
 R14
 R15
 Eand_32bit
-Z28 w1761085990
+R3
 R4
 R5
-!i122 221
+!i122 256
 R2
-Z29 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/and_32bit.vhd
-Z30 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/and_32bit.vhd
+Z26 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/and_32bit.vhd
+Z27 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/and_32bit.vhd
 l0
 L4 1
 VmXR^lB9Gld=8kmRob]nF`2
@@ -157,8 +157,8 @@ R9
 R10
 !i10b 1
 R11
-Z31 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/and_32bit.vhd|
-Z32 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/and_32bit.vhd|
+Z28 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/and_32bit.vhd|
+Z29 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/and_32bit.vhd|
 !i113 0
 R14
 R15
@@ -166,9 +166,9 @@ Astructural
 R4
 R5
 DEx4 work 9 and_32bit 0 22 mXR^lB9Gld=8kmRob]nF`2
-!i122 221
+!i122 256
 l21
-Z33 L14 17
+Z30 L14 17
 VeZmP0<DS0b;T:[5]>eX4Y1
 !s100 _:l;K6J038GmdEc:c4ajk2
 R9
@@ -176,8 +176,8 @@ R9
 R10
 !i10b 1
 R11
-R31
-R32
+R28
+R29
 !i113 0
 R14
 R15
@@ -185,12 +185,12 @@ Eandg2
 R3
 R4
 R5
-!i122 222
+!i122 257
 R2
-Z34 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/andg2.vhd
-Z35 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/andg2.vhd
+Z31 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/andg2.vhd
+Z32 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/andg2.vhd
 l0
-Z36 L23 1
+Z33 L23 1
 VQ@<<<@nlJ=eiIl4BJDFzW2
 !s100 YT?bGzEmcFo:DlnoC^B4_0
 R9
@@ -198,8 +198,8 @@ R9
 R10
 !i10b 1
 R11
-Z37 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/andg2.vhd|
-Z38 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/andg2.vhd|
+Z34 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/andg2.vhd|
+Z35 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/andg2.vhd|
 !i113 0
 R14
 R15
@@ -207,9 +207,9 @@ Adataflow
 R4
 R5
 DEx4 work 5 andg2 0 22 Q@<<<@nlJ=eiIl4BJDFzW2
-!i122 222
+!i122 257
 l32
-Z39 L31 6
+Z36 L31 6
 VJVOzCk?IH:iJ5bCRU`CK13
 !s100 I`@Z@UBObS]<7m8bPgKUS1
 R9
@@ -217,107 +217,107 @@ R9
 R10
 !i10b 1
 R11
-R37
-R38
+R34
+R35
 !i113 0
 R14
 R15
 Ebitextender
-Z40 w1761594812
-R22
-R23
+Z37 w1764952491
+R20
+R21
 R4
 R5
-!i122 223
+!i122 258
 R2
-Z41 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/bitExtender.vhd
-Z42 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/bitExtender.vhd
+Z38 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/bitExtender.vhd
+Z39 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/bitExtender.vhd
 l0
 L6 1
-VL2W[70k_8IWENiNVd4Fla0
-!s100 L]aD]iIVR1B7RfGhW0MIU0
+VXHCQ3h<XF;3;QLo3EaJA43
+!s100 URa]R3TRRYFoz:4<@U`Vn0
 R9
 32
 R10
 !i10b 1
 R11
-Z43 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/bitExtender.vhd|
-Z44 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/bitExtender.vhd|
+Z40 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/bitExtender.vhd|
+Z41 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/bitExtender.vhd|
 !i113 0
 R14
 R15
 Abehavioral
-R22
-R23
+R20
+R21
 R4
 R5
-DEx4 work 11 bitextender 0 22 L2W[70k_8IWENiNVd4Fla0
-!i122 223
-l36
-L14 54
-V9W2M53]XjZ@:EEY8TWgMg3
-!s100 ANdGG5BociW>KiLj9HIc02
+DEx4 work 11 bitextender 0 22 XHCQ3h<XF;3;QLo3EaJA43
+!i122 258
+l35
+L13 55
+VU?b>biTR=E1d]Kn^iE3]U2
+!s100 iQ>aPgLYSC7b[a<Jl5]VK0
 R9
 32
 R10
 !i10b 1
 R11
-R43
-R44
+R40
+R41
 !i113 0
 R14
 R15
 Econtrol_unit_2
+R3
 R21
-R23
 R4
 R5
-!i122 224
+!i122 259
 R2
-Z45 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/Control_Unit_2.0.vhd
-Z46 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/Control_Unit_2.0.vhd
+Z42 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/Control_Unit_2.0.vhd
+Z43 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/Control_Unit_2.0.vhd
 l0
 L5 1
-VNY4mVBO73`j]RQAWbQ_kQ3
-!s100 VS]Og]Q5U:YUN@jl52A?;0
+Vd=2KF8gEM_8DCAKIo[E591
+!s100 OLf]>[?8Fg1Foo5K0<HFO0
 R9
 32
 R10
 !i10b 1
 R11
-Z47 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/Control_Unit_2.0.vhd|
-Z48 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/Control_Unit_2.0.vhd|
+Z44 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/Control_Unit_2.0.vhd|
+Z45 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/Control_Unit_2.0.vhd|
 !i113 0
 R14
 R15
 Adataflow
-R23
+R21
 R4
 R5
-DEx4 work 14 control_unit_2 0 22 NY4mVBO73`j]RQAWbQ_kQ3
-!i122 224
+DEx4 work 14 control_unit_2 0 22 d=2KF8gEM_8DCAKIo[E591
+!i122 259
 l72
-L29 162
-V[f;SXle^FK`aEPBhI8cam2
-!s100 A>FR=0?`TXHCJ[KRj@0B>2
+L29 171
+VA`U9V2=k;Cg7C>mjhno6B2
+!s100 lH=RZb?<X^CP]8f<^Ki3c0
 R9
 32
 R10
 !i10b 1
 R11
-R47
-R48
+R44
+R45
 !i113 0
 R14
 R15
 Edecoder5to32
-Z49 w1761319679
+R3
 R4
 R5
-!i122 225
+!i122 260
 R2
-Z50 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/decoder5to32.vhd
-Z51 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/decoder5to32.vhd
+Z46 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/decoder5to32.vhd
+Z47 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/decoder5to32.vhd
 l0
 L4 1
 V[APhgGn7GogC9d:G@PCc[2
@@ -327,8 +327,8 @@ R9
 R10
 !i10b 1
 R11
-Z52 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/decoder5to32.vhd|
-Z53 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/decoder5to32.vhd|
+Z48 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/decoder5to32.vhd|
+Z49 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/decoder5to32.vhd|
 !i113 0
 R14
 R15
@@ -336,11 +336,52 @@ Abehavioral
 R4
 R5
 DEx4 work 12 decoder5to32 0 22 [APhgGn7GogC9d:G@PCc[2
-!i122 225
+!i122 260
 l13
 L11 43
 V]Fi9LG`5moRn9eeg[4R?K2
 !s100 A?@lgzPDQ3=VUfJ2M3`UY1
+R9
+32
+R10
+!i10b 1
+R11
+R48
+R49
+!i113 0
+R14
+R15
+Edffg
+R3
+R4
+R5
+!i122 261
+R2
+Z50 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/dffg.vhd
+Z51 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/dffg.vhd
+l0
+R33
+V<]b9Vm3e`GAN;Cnj:57L>2
+!s100 T4gcXQGMCgKJbn8XhBM;b0
+R9
+32
+R10
+!i10b 1
+R11
+Z52 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/dffg.vhd|
+Z53 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/dffg.vhd|
+!i113 0
+R14
+R15
+Amixed
+R4
+R5
+DEx4 work 4 dffg 0 22 <]b9Vm3e`GAN;Cnj:57L>2
+!i122 261
+l37
+Z54 L33 29
+V`CHXPZKVEek`3gFWL_zFm2
+!s100 iOdlTUid@@]UimFK_53^C1
 R9
 32
 R10
@@ -351,128 +392,130 @@ R53
 !i113 0
 R14
 R15
-Edffg
-Z54 w1761086098
+Eexmemregister
+Z55 w1764952609
+R20
+R21
 R4
 R5
-!i122 226
+!i122 262
 R2
-Z55 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/dffg.vhd
-Z56 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/dffg.vhd
+Z56 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/EXMEMRegister.vhd
+Z57 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/EXMEMRegister.vhd
 l0
-R36
-V<]b9Vm3e`GAN;Cnj:57L>2
-!s100 T4gcXQGMCgKJbn8XhBM;b0
+L6 1
+Vlb2UDWNQ^ZR300I>>`16`2
+!s100 bcmLH<XKM>CIIWFPkXcJH0
 R9
 32
 R10
 !i10b 1
 R11
-Z57 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/dffg.vhd|
-Z58 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/dffg.vhd|
+Z58 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/EXMEMRegister.vhd|
+Z59 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/EXMEMRegister.vhd|
+!i113 0
+R14
+R15
+Astructural
+R20
+R21
+R4
+R5
+DEx4 work 13 exmemregister 0 22 lb2UDWNQ^ZR300I>>`16`2
+!i122 262
+l79
+L54 198
+VhL6Ig:LIF^imIhSghHOB@0
+!s100 j6o=B45`V@cN=A2GaMmon3
+R9
+32
+R10
+!i10b 1
+R11
+R58
+R59
+!i113 0
+R14
+R15
+Efalling_dffg
+R37
+R4
+R5
+!i122 263
+R2
+Z60 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/falling_dffg.vhd
+Z61 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/falling_dffg.vhd
+l0
+R33
+V5>TUM:`P?4I^=7LKB<Wz42
+!s100 @>o2V@:a><BEjDT=_hQne3
+R9
+32
+R10
+!i10b 1
+R11
+Z62 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/falling_dffg.vhd|
+Z63 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/falling_dffg.vhd|
 !i113 0
 R14
 R15
 Amixed
 R4
 R5
-DEx4 work 4 dffg 0 22 <]b9Vm3e`GAN;Cnj:57L>2
-!i122 226
+DEx4 work 12 falling_dffg 0 22 5>TUM:`P?4I^=7LKB<Wz42
+!i122 263
 l37
-L33 29
-V`CHXPZKVEek`3gFWL_zFm2
-!s100 iOdlTUid@@]UimFK_53^C1
+R54
+VO6CnGTDDRGEz7L6800;4n2
+!s100 E_0AZ:]C6NfhoEgl0FGE@2
 R9
 32
 R10
 !i10b 1
 R11
-R57
-R58
+R62
+R63
 !i113 0
 R14
 R15
 Efull_reg_file
-Z59 w1761086052
-Z60 DPx4 work 9 reg_array 0 22 G=28lgzGVZBP>H_INoCHI3
+R37
+Z64 DPx4 work 9 reg_array 0 22 G=28lgzGVZBP>H_INoCHI3
 R5
 R4
-R23
-!i122 227
+R21
+!i122 264
 R2
-Z61 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/full_reg_file.vhd
-Z62 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/full_reg_file.vhd
+Z65 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/full_reg_file.vhd
+Z66 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/full_reg_file.vhd
 l0
-L7 1
-VzmP:H5d[W48VP6kRMgBZ>0
-!s100 bCQUfh_6=deXnf4aEGR:h1
+L6 1
+V@Xoh=?iJ7U>=>:m^@J5Rk3
+!s100 ^RVLiXaNhQkAIBP[m1W]d2
 R9
 32
-R10
+Z67 !s110 1764953326
 !i10b 1
 R11
-Z63 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/full_reg_file.vhd|
-Z64 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/full_reg_file.vhd|
+Z68 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/full_reg_file.vhd|
+Z69 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/full_reg_file.vhd|
 !i113 0
 R14
 R15
 Astructural
-R60
-R5
-R4
-R23
-DEx4 work 13 full_reg_file 0 22 zmP:H5d[W48VP6kRMgBZ>0
-!i122 227
-l53
-L21 68
-V2lgZdH`LeM1UJ>eCRk]MF1
-!s100 VKP>[a8fl=^i:Rd;gCgZA0
-R9
-32
-R10
-!i10b 1
-R11
-R63
 R64
-!i113 0
-R14
-R15
-Egoblinbarrel
-Z65 w1761148262
-R23
-R4
 R5
-!i122 228
-R2
-Z66 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/goblinBarrel.vhd
-Z67 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/goblinBarrel.vhd
-l0
-L5 1
-V^7EfT;4mkg=zFh`?=GYM40
-!s100 8?7k4J<6YTWdc43bSHaL23
+R4
+R21
+DEx4 work 13 full_reg_file 0 22 @Xoh=?iJ7U>=>:m^@J5Rk3
+!i122 264
+l52
+L20 61
+V3Y^;Xmz<<ARF7Y0V55iGU1
+!s100 zfl8[:n[X2k5Gl4a5?5GH0
 R9
 32
-R10
-!i10b 1
-R11
-Z68 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/goblinBarrel.vhd|
-Z69 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/goblinBarrel.vhd|
-!i113 0
-R14
-R15
-Abehavioral
-R23
-R4
-R5
-DEx4 work 12 goblinbarrel 0 22 ^7EfT;4mkg=zFh`?=GYM40
-!i122 228
-l38
-L15 98
-V8T<O^od;cndI63>97GaI[0
-!s100 h@8BMlka>PNI0=<SQ@N5H3
-R9
-32
-R10
+R67
 !i10b 1
 R11
 R68
@@ -480,25 +523,156 @@ R69
 !i113 0
 R14
 R15
+Egoblinbarrel
+R3
+R21
+R4
+R5
+!i122 265
+R2
+Z70 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/goblinBarrel.vhd
+Z71 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/goblinBarrel.vhd
+l0
+L5 1
+V^7EfT;4mkg=zFh`?=GYM40
+!s100 8?7k4J<6YTWdc43bSHaL23
+R9
+32
+R67
+!i10b 1
+Z72 !s108 1764953326.000000
+Z73 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/goblinBarrel.vhd|
+Z74 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/goblinBarrel.vhd|
+!i113 0
+R14
+R15
+Abehavioral
+R21
+R4
+R5
+DEx4 work 12 goblinbarrel 0 22 ^7EfT;4mkg=zFh`?=GYM40
+!i122 265
+l38
+L15 98
+V8T<O^od;cndI63>97GaI[0
+!s100 h@8BMlka>PNI0=<SQ@N5H3
+R9
+32
+R67
+!i10b 1
+R72
+R73
+R74
+!i113 0
+R14
+R15
+Ehazarddetectunit
+R55
+R21
+R4
+R5
+!i122 266
+R2
+Z75 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/hazardDetectionUnit.vhd
+Z76 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/hazardDetectionUnit.vhd
+l0
+L5 1
+VgS:a@9F7_MK4nz]i<F==:2
+!s100 7@?L:K;TfFLL`0K9aH]@?1
+R9
+32
+R67
+!i10b 1
+R72
+Z77 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/hazardDetectionUnit.vhd|
+Z78 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/hazardDetectionUnit.vhd|
+!i113 0
+R14
+R15
+Astructural
+R21
+R4
+R5
+DEx4 work 16 hazarddetectunit 0 22 gS:a@9F7_MK4nz]i<F==:2
+!i122 266
+l53
+L21 99
+VR3Dgc`4gf?EL8U=Q?dbG51
+!s100 o8VK7;E^;N68<9i_o=I361
+R9
+32
+R67
+!i10b 1
+R72
+R77
+R78
+!i113 0
+R14
+R15
+Eidexregister
+Z79 w1764952955
+R20
+R21
+R4
+R5
+!i122 267
+R2
+Z80 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/IDEXRegister.vhd
+Z81 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/IDEXRegister.vhd
+l0
+L7 1
+V^Zo_f8@ZNGFQoc[WkZ4^j2
+!s100 P>I];jK`oeo@bmj]ZZ34K1
+R9
+32
+R67
+!i10b 1
+R72
+Z82 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/IDEXRegister.vhd|
+Z83 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/IDEXRegister.vhd|
+!i113 0
+R14
+R15
+Astructural
+R20
+R21
+R4
+R5
+DEx4 work 12 idexregister 0 22 ^Zo_f8@ZNGFQoc[WkZ4^j2
+!i122 267
+l92
+L65 247
+V:HzO0nQKOfZZO2oR6oCT41
+!s100 coA=n6oc1UNEV=>0bK[Rz1
+R9
+32
+R67
+!i10b 1
+R72
+R82
+R83
+!i113 0
+R14
+R15
 Einvg
 R3
 R4
 R5
-!i122 229
+!i122 268
 R2
-Z70 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/invg.vhd
-Z71 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/invg.vhd
+Z84 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/invg.vhd
+Z85 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/invg.vhd
 l0
-R36
+R33
 VQ?6hb9ePk@>kZZ9k]hNSO3
 !s100 _XK?_^5z0Rm1<k12?;5R?2
 R9
 32
-R10
+R67
 !i10b 1
-R11
-Z72 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/invg.vhd|
-Z73 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/invg.vhd|
+R72
+Z86 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/invg.vhd|
+Z87 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/invg.vhd|
 !i113 0
 R14
 R15
@@ -506,61 +680,104 @@ Adataflow
 R4
 R5
 DEx4 work 4 invg 0 22 Q?6hb9ePk@>kZZ9k]hNSO3
-!i122 229
+!i122 268
 l31
 L30 6
 Vch>li:oKYZkCO5]GamViK1
 !s100 bk7I76o8e1LURdoZEQb8H0
 R9
 32
-R10
+R67
 !i10b 1
-R11
 R72
-R73
+R86
+R87
 !i113 0
 R14
 R15
 Emem
-Z74 w1761145770
-R23
+R3
+R21
 R4
 R5
-!i122 250
+!i122 294
 R2
-Z75 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/mem.vhd
-Z76 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/mem.vhd
+Z88 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/mem.vhd
+Z89 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/mem.vhd
 l0
 L8 1
 Vl8<PCiN;cU;BN3M[A<;IE3
 !s100 fRlcaiTJZJ1H;nZh;8=LI3
 R9
 32
-Z77 !s110 1761595670
+Z90 !s110 1764953331
 !i10b 1
-Z78 !s108 1761595670.000000
-Z79 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/mem.vhd|
-Z80 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/mem.vhd|
+Z91 !s108 1764953331.000000
+Z92 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/mem.vhd|
+Z93 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/mem.vhd|
 !i113 0
 R14
 R15
 Artl
-R23
+R21
 R4
 R5
 DEx4 work 3 mem 0 22 l8<PCiN;cU;BN3M[A<;IE3
-!i122 250
+!i122 294
 l37
 L27 24
 V`6^NbPhKNmSBg:`:Un8;g3
 !s100 OI8_3><BhDkT3l3n8`OXd3
 R9
 32
-R77
+R90
 !i10b 1
-R78
-R79
-R80
+R91
+R92
+R93
+!i113 0
+R14
+R15
+Ememslicer
+R3
+R21
+R4
+R5
+!i122 269
+R2
+Z94 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/memSlicer.vhd
+Z95 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/memSlicer.vhd
+l0
+L5 1
+V3NVOEQ1]C5d5OOGU7[W`l3
+!s100 @Z`ibWQk0WA0D<Ga9OhjZ0
+R9
+32
+R67
+!i10b 1
+R72
+Z96 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/memSlicer.vhd|
+Z97 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/memSlicer.vhd|
+!i113 0
+R14
+R15
+Abehavioral
+R21
+R4
+R5
+DEx4 work 9 memslicer 0 22 3NVOEQ1]C5d5OOGU7[W`l3
+!i122 269
+l19
+L14 33
+VC9=3K`1EobY?F_MGiDj013
+!s100 5XU45f?5EJGQRB<QAhc>^1
+R9
+32
+R67
+!i10b 1
+R72
+R96
+R97
 !i113 0
 R14
 R15
@@ -568,21 +785,21 @@ Emux2t1
 R3
 R4
 R5
-!i122 230
+!i122 270
 R2
-Z81 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1.vhd
-Z82 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1.vhd
+Z98 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1.vhd
+Z99 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1.vhd
 l0
 R8
 Vj2;;PIERaIig;APdXmT]R3
 !s100 R^Z9Pz_d<4`^fVfmj?Pm53
 R9
 32
-R10
+R67
 !i10b 1
-R11
-Z83 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1.vhd|
-Z84 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1.vhd|
+R72
+Z100 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1.vhd|
+Z101 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1.vhd|
 !i113 0
 R14
 R15
@@ -590,40 +807,40 @@ Astructural
 R4
 R5
 DEx4 work 6 mux2t1 0 22 j2;;PIERaIig;APdXmT]R3
-!i122 230
+!i122 270
 l65
 L31 60
 Vk?RkkBTjWhEf>g04@GBZ82
 !s100 n<Z_dk=KZY_G7m;d8ljoz3
 R9
 32
-R10
+R67
 !i10b 1
-R11
-R83
-R84
+R72
+R100
+R101
 !i113 0
 R14
 R15
 Emux2t1_dataflow
-R28
+R3
 R4
 R5
-!i122 231
+!i122 271
 R2
-Z85 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_dataflow.vhd
-Z86 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_dataflow.vhd
+Z102 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_dataflow.vhd
+Z103 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_dataflow.vhd
 l0
 L7 1
 VEe8KMU7Ld<m[nE5F_aahg0
 !s100 kM1QMKFgKKG5XXPNQ5A3T3
 R9
 32
-R10
+R67
 !i10b 1
-R11
-Z87 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_dataflow.vhd|
-Z88 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_dataflow.vhd|
+R72
+Z104 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_dataflow.vhd|
+Z105 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_dataflow.vhd|
 !i113 0
 R14
 R15
@@ -631,18 +848,18 @@ Adataflow
 R4
 R5
 DEx4 work 15 mux2t1_dataflow 0 22 Ee8KMU7Ld<m[nE5F_aahg0
-!i122 231
+!i122 271
 l15
 L14 7
 V^Kegl4IIg;nH]<YPY6kJU3
 !s100 mfDk9k50i81azL_oU_0;V1
 R9
 32
-R10
+R67
 !i10b 1
-R11
-R87
-R88
+R72
+R104
+R105
 !i113 0
 R14
 R15
@@ -650,21 +867,21 @@ Emux2t1_n
 R3
 R4
 R5
-!i122 232
+!i122 272
 R2
-Z89 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_N.vhd
-Z90 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_N.vhd
+Z106 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_N.vhd
+Z107 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_N.vhd
 l0
 L21 1
 Vm2TKY62Z?Lc4XUfT@idHk0
 !s100 Mc>8WUZOhCGV<zK42hTXl1
 R9
 32
-R10
+R67
 !i10b 1
-R11
-Z91 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_N.vhd|
-Z92 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_N.vhd|
+R72
+Z108 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_N.vhd|
+Z109 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux2t1_N.vhd|
 !i113 0
 R14
 R15
@@ -672,40 +889,40 @@ Astructural
 R4
 R5
 DEx4 work 8 mux2t1_n 0 22 m2TKY62Z?Lc4XUfT@idHk0
-!i122 232
+!i122 272
 l39
 L30 21
 Vka;>@_8aWglknXj8XN_<I3
 !s100 H=2;HajBd18F6SnmmojTm1
 R9
 32
-R10
+R67
 !i10b 1
-R11
-R91
-R92
+R72
+R108
+R109
 !i113 0
 R14
 R15
 Emux4t1
-R28
+R3
 R4
 R5
-!i122 234
+!i122 274
 R2
-Z93 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4t1 .vhd
-Z94 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4t1 .vhd
+Z110 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4t1 .vhd
+Z111 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4t1 .vhd
 l0
 L4 1
 VcbY<4dP:O;P3K1O[RcBnm2
 !s100 GoRU;DFdSNgPBQNkV:gI;2
 R9
 32
-Z95 !s110 1761595505
+R67
 !i10b 1
-Z96 !s108 1761595505.000000
-Z97 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4t1 .vhd|
-Z98 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4t1 .vhd|
+R72
+Z112 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4t1 .vhd|
+Z113 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4t1 .vhd|
 !i113 0
 R14
 R15
@@ -713,40 +930,40 @@ Astructural
 R4
 R5
 DEx4 work 6 mux4t1 0 22 cbY<4dP:O;P3K1O[RcBnm2
-!i122 234
+!i122 274
 l43
 L15 52
 VaW@7`gQ^VHWZ:SUMoBV4L0
 !s100 @VA2l2zbHg_Egj;Gb9>hT2
 R9
 32
-R95
+R67
 !i10b 1
-R96
-R97
-R98
+R72
+R112
+R113
 !i113 0
 R14
 R15
 Emux4t1_32
-Z99 w1761088073
+R3
 R4
 R5
-!i122 233
+!i122 273
 R2
-Z100 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4by32.vhd
-Z101 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4by32.vhd
+Z114 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4by32.vhd
+Z115 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4by32.vhd
 l0
 L4 1
 V5``[QDMOd]oO1G0iomi672
 !s100 A8JD6H@064TnH2Y]WAcEg0
 R9
 32
-R10
+R67
 !i10b 1
-R11
-Z102 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4by32.vhd|
-Z103 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4by32.vhd|
+R72
+Z116 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4by32.vhd|
+Z117 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux4by32.vhd|
 !i113 0
 R14
 R15
@@ -754,108 +971,108 @@ Astructural
 R4
 R5
 DEx4 work 9 mux4t1_32 0 22 5``[QDMOd]oO1G0iomi672
-!i122 233
+!i122 273
 l51
 L15 77
 Vfn<2:d?K`WSW>Z`R]nBWV3
 !s100 o4ICZQjXT1PSi2PBFoVD60
 R9
 32
-R10
+R67
 !i10b 1
-R11
-R102
-R103
+R72
+R116
+R117
 !i113 0
 R14
 R15
 Emux4x32t1
-R28
-R22
-R23
+R3
+R20
+R21
 R4
 R5
-!i122 235
+!i122 275
 R2
-Z104 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux32x4t1.vhd
-Z105 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux32x4t1.vhd
+Z118 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux32x4t1.vhd
+Z119 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux32x4t1.vhd
 l0
 L7 1
 VngGT@EWj<4KP?<7SgXdoE3
 !s100 kOO6@?0]ATDJGLgAPAFQ00
 R9
 32
-R95
+R67
 !i10b 1
-R96
-Z106 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux32x4t1.vhd|
-Z107 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux32x4t1.vhd|
+R72
+Z120 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux32x4t1.vhd|
+Z121 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux32x4t1.vhd|
 !i113 0
 R14
 R15
 Adataflow
-R22
-R23
+R20
+R21
 R4
 R5
 DEx4 work 9 mux4x32t1 0 22 ngGT@EWj<4KP?<7SgXdoE3
-!i122 235
+!i122 275
 l17
 L15 6
 VaUiFj=K842e60KkjclUKP3
 !s100 ^GGUMmc1bP?nH>LFWhNjK0
 R9
 32
-R95
+R67
 !i10b 1
-R96
-R106
-R107
+R72
+R120
+R121
 !i113 0
 R14
 R15
 Emux_32by32
-Z108 w1761086069
-R60
+R3
+R64
 R5
 R4
-R23
-!i122 236
+R21
+!i122 276
 R2
-Z109 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux_32by32.vhd
-Z110 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux_32by32.vhd
+Z122 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux_32by32.vhd
+Z123 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux_32by32.vhd
 l0
 L7 1
 V78gOKQSLEAI]Q0S9i>Q110
 !s100 NmlQg?f9`1d`zT5N]GnAm2
 R9
 32
-R95
+R67
 !i10b 1
-R96
-Z111 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux_32by32.vhd|
-Z112 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux_32by32.vhd|
+R72
+Z124 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux_32by32.vhd|
+Z125 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/mux_32by32.vhd|
 !i113 0
 R14
 R15
 Adataflow
-R60
+R64
 R5
 R4
-R23
+R21
 DEx4 work 10 mux_32by32 0 22 78gOKQSLEAI]Q0S9i>Q110
-!i122 236
+!i122 276
 l16
 L15 4
 VbfdTRaLJ<KkdbPMYQ;?5S3
 !s100 W[=5VH0[lA`C_<^>3[QO^3
 R9
 32
-R95
+R67
 !i10b 1
-R96
-R111
-R112
+R72
+R124
+R125
 !i113 0
 R14
 R15
@@ -863,21 +1080,21 @@ Enbit_adder
 R3
 R4
 R5
-!i122 237
+!i122 277
 R2
-Z113 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/n-bit_adder.vhd
-Z114 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/n-bit_adder.vhd
+Z126 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/n-bit_adder.vhd
+Z127 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/n-bit_adder.vhd
 l0
-R36
+R33
 V0C^meaa2X@LfmfZ^G;WCM2
 !s100 ?zM3FQzm:1c??oRS?lJdQ3
 R9
 32
-R95
+R67
 !i10b 1
-R96
-Z115 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/n-bit_adder.vhd|
-Z116 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/n-bit_adder.vhd|
+R72
+Z128 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/n-bit_adder.vhd|
+Z129 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/n-bit_adder.vhd|
 !i113 0
 R14
 R15
@@ -885,83 +1102,83 @@ Astructural
 R4
 R5
 DEx4 work 10 nbit_adder 0 22 0C^meaa2X@LfmfZ^G;WCM2
-!i122 237
+!i122 277
 l50
 L34 37
 VZYkW^l6B68XL:4d=oMJ8h0
 !s100 ^=XeDU`Tm`=lj7Z<90jFG0
 R9
 32
-R95
+R67
 !i10b 1
-R96
-R115
-R116
+R72
+R128
+R129
 !i113 0
 R14
 R15
 Enbit_alu
-Z117 w1761150393
-R23
+R3
+R21
 R4
 R5
-!i122 239
+!i122 279
 R2
-Z118 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nBit_ALU.vhd
-Z119 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nBit_ALU.vhd
+Z130 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nBit_ALU.vhd
+Z131 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nBit_ALU.vhd
 l0
 L5 1
 V<3NL[^82VA:zz^3jiI21g2
 !s100 9i4HN^[QC`kV?17[I[zj[2
 R9
 32
-R95
+R67
 !i10b 1
-R96
-Z120 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nBit_ALU.vhd|
-Z121 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nBit_ALU.vhd|
+R72
+Z132 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nBit_ALU.vhd|
+Z133 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nBit_ALU.vhd|
 !i113 0
 R14
 R15
 Artl
-R23
+R21
 R4
 R5
 DEx4 work 8 nbit_alu 0 22 <3NL[^82VA:zz^3jiI21g2
-!i122 239
+!i122 279
 l33
 L18 46
 VcCb2ciKNV^]nO`l_z3zfA3
 !s100 FT]3XZj[XN?URICGTcF`42
 R9
 32
-R95
+R67
 !i10b 1
-R96
-R120
-R121
+R72
+R132
+R133
 !i113 0
 R14
 R15
 Enbitregister
-R54
+R3
 R4
 R5
-!i122 238
+!i122 278
 R2
-Z122 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nbit-register.vhd
-Z123 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nbit-register.vhd
+Z134 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nbit-register.vhd
+Z135 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nbit-register.vhd
 l0
 L4 1
 VGM73ie90lnm?`bLZCQo0m3
 !s100 7VYS:_`Aof>?JL:@D>Zf[1
 R9
 32
-R95
+R67
 !i10b 1
-R96
-Z124 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nbit-register.vhd|
-Z125 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nbit-register.vhd|
+R72
+Z136 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nbit-register.vhd|
+Z137 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nbit-register.vhd|
 !i113 0
 R14
 R15
@@ -969,40 +1186,40 @@ Astructural
 R4
 R5
 DEx4 work 12 nbitregister 0 22 GM73ie90lnm?`bLZCQo0m3
-!i122 238
+!i122 278
 l27
 L18 22
 VeL@c@945LjeL<JIj9GF8a1
 !s100 H:jHC`S4d0a1OmK5KknSJ1
 R9
 32
-R95
+R67
 !i10b 1
-R96
-R124
-R125
+R72
+R136
+R137
 !i113 0
 R14
 R15
 Enor_32t1bit
-R28
+R3
 R4
 R5
-!i122 240
+!i122 280
 R2
-Z126 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nor_32t1bit.vhd
-Z127 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nor_32t1bit.vhd
+Z138 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nor_32t1bit.vhd
+Z139 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nor_32t1bit.vhd
 l0
 L4 1
 VG8:U?SIC`fK[F=bQ8IXSi2
 !s100 LFNooHZ54=d9BhCXR1^cI1
 R9
 32
-R95
+R67
 !i10b 1
-R96
-Z128 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nor_32t1bit.vhd|
-Z129 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nor_32t1bit.vhd|
+R72
+Z140 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nor_32t1bit.vhd|
+Z141 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/nor_32t1bit.vhd|
 !i113 0
 R14
 R15
@@ -1010,40 +1227,40 @@ Abehavioral
 R4
 R5
 DEx4 work 11 nor_32t1bit 0 22 G8:U?SIC`fK[F=bQ8IXSi2
-!i122 240
+!i122 280
 l13
 L12 14
 V5CQKgO6lffJ`389TWeG=i1
 !s100 L`>4<SRk0N=CJO^nXh2;91
 R9
 32
-R95
+R67
 !i10b 1
-R96
-R128
-R129
+R72
+R140
+R141
 !i113 0
 R14
 R15
 Enorg2
-R28
+R3
 R4
 R5
-!i122 241
+!i122 281
 R2
-Z130 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/norg2.vhd
-Z131 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/norg2.vhd
+Z142 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/norg2.vhd
+Z143 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/norg2.vhd
 l0
 L4 1
 VEgnOn<lZRY6FeKTSkE]4k1
 !s100 S[LHAcjc5Ro_C?>F]eTLU3
 R9
 32
-R95
+Z144 !s110 1764953327
 !i10b 1
-R96
-Z132 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/norg2.vhd|
-Z133 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/norg2.vhd|
+R72
+Z145 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/norg2.vhd|
+Z146 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/norg2.vhd|
 !i113 0
 R14
 R15
@@ -1051,40 +1268,40 @@ Adataflow
 R4
 R5
 DEx4 work 5 norg2 0 22 EgnOn<lZRY6FeKTSkE]4k1
-!i122 241
+!i122 281
 l13
 L12 6
 V7gG1TV23Y6JeT`E3@=ag>2
 !s100 XdWzo:goeGHS8:>jgS05H3
 R9
 32
-R95
+R144
 !i10b 1
-R96
-R132
-R133
+R72
+R145
+R146
 !i113 0
 R14
 R15
 Eones_complementor
-R28
+R3
 R4
 R5
-!i122 242
+!i122 282
 R2
-Z134 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ones_complementor.vhd
-Z135 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ones_complementor.vhd
+Z147 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ones_complementor.vhd
+Z148 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ones_complementor.vhd
 l0
 L9 1
 VI@bbYOk?]T9Xfn``bk[232
 !s100 K281lnL3XQ_dzNKoMed?b2
 R9
 32
-R95
+R144
 !i10b 1
-R96
-Z136 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ones_complementor.vhd|
-Z137 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ones_complementor.vhd|
+Z149 !s108 1764953327.000000
+Z150 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ones_complementor.vhd|
+Z151 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/ones_complementor.vhd|
 !i113 0
 R14
 R15
@@ -1092,18 +1309,18 @@ Astructural
 R4
 R5
 DEx4 work 17 ones_complementor 0 22 I@bbYOk?]T9Xfn``bk[232
-!i122 242
+!i122 282
 l27
 L19 18
 VO6cOVjV^dCTCoA8Lh0b[32
 !s100 [8aHQ0ab3o:2=0Z^VBG:?0
 R9
 32
-R95
+R144
 !i10b 1
-R96
-R136
-R137
+R149
+R150
+R151
 !i113 0
 R14
 R15
@@ -1111,21 +1328,21 @@ Eonescomp
 R3
 R4
 R5
-!i122 243
+!i122 283
 R2
-Z138 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/onescomp.vhd
-Z139 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/onescomp.vhd
+Z152 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/onescomp.vhd
+Z153 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/onescomp.vhd
 l0
 L4 1
 VThMEL2[E7d]<f5Gi8Je2L2
 !s100 OaRS>Ao8XIo66Fn7j6PnH3
 R9
 32
-R95
+R144
 !i10b 1
-R96
-Z140 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/onescomp.vhd|
-Z141 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/onescomp.vhd|
+R149
+Z154 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/onescomp.vhd|
+Z155 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/onescomp.vhd|
 !i113 0
 R14
 R15
@@ -1133,40 +1350,40 @@ Astructural
 R4
 R5
 DEx4 work 8 onescomp 0 22 ThMEL2[E7d]<f5Gi8Je2L2
-!i122 243
+!i122 283
 l20
 L12 17
 VKoZPX_>h;7:WTgeZ`K6MZ0
 !s100 hO6nfC0c@PSJ>RV;2bMEn2
 R9
 32
-R95
+R144
 !i10b 1
-R96
-R140
-R141
+R149
+R154
+R155
 !i113 0
 R14
 R15
 Eor_32bit
-R28
+R3
 R4
 R5
-!i122 244
+!i122 284
 R2
-Z142 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/or_32bit.vhd
-Z143 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/or_32bit.vhd
+Z156 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/or_32bit.vhd
+Z157 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/or_32bit.vhd
 l0
 L4 1
 V`jT<=k93;fkB@<5f4;Bmm0
 !s100 9ae8EDI4m^[AhgLVKj[>j2
 R9
 32
-R95
+R144
 !i10b 1
-R96
-Z144 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/or_32bit.vhd|
-Z145 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/or_32bit.vhd|
+R149
+Z158 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/or_32bit.vhd|
+Z159 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/or_32bit.vhd|
 !i113 0
 R14
 R15
@@ -1174,18 +1391,18 @@ Astructural
 R4
 R5
 DEx4 work 8 or_32bit 0 22 `jT<=k93;fkB@<5f4;Bmm0
-!i122 244
+!i122 284
 l21
-R33
+R30
 VO6FZ1[:fgc0Pk7T=8I=Pz0
 !s100 n_J=@e6iS7okMIz0NzH>M2
 R9
 32
-R95
-!i10b 1
-R96
 R144
-R145
+!i10b 1
+R149
+R158
+R159
 !i113 0
 R14
 R15
@@ -1193,21 +1410,21 @@ Eorg2
 R3
 R4
 R5
-!i122 245
+!i122 285
 R2
-Z146 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/org2.vhd
-Z147 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/org2.vhd
+Z160 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/org2.vhd
+Z161 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/org2.vhd
 l0
-R36
+R33
 V[C`FCj=kL0CTBYLlbjJzD3
 !s100 bGQ1F9eW^Q17OoL9h4g7z2
 R9
 32
-R95
+R144
 !i10b 1
-R96
-Z148 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/org2.vhd|
-Z149 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/org2.vhd|
+R149
+Z162 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/org2.vhd|
+Z163 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/org2.vhd|
 !i113 0
 R14
 R15
@@ -1215,40 +1432,40 @@ Adataflow
 R4
 R5
 DEx4 work 4 org2 0 22 [C`FCj=kL0CTBYLlbjJzD3
-!i122 245
+!i122 285
 l32
-R39
+R36
 VNHGn>Kh:]BEh4o]ImiG<d3
 !s100 h5_AzR3TdRA0a_K=dQ>mI2
 R9
 32
-R95
+R144
 !i10b 1
-R96
-R148
 R149
+R162
+R163
 !i113 0
 R14
 R15
 Epc_dffg
-Z150 w1761494900
+R3
 R4
 R5
-!i122 247
+!i122 287
 R2
-Z151 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/pc_dffg.vhd
-Z152 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/pc_dffg.vhd
+Z164 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/pc_dffg.vhd
+Z165 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/pc_dffg.vhd
 l0
 L6 1
 VJZN=DT[PfN3SReHD0>`<D3
 !s100 L[:3OlIXUhaVFF`^n6I<e2
 R9
 32
-R95
+R144
 !i10b 1
-R96
-Z153 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/pc_dffg.vhd|
-Z154 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/pc_dffg.vhd|
+R149
+Z166 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/pc_dffg.vhd|
+Z167 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/pc_dffg.vhd|
 !i113 0
 R14
 R15
@@ -1256,40 +1473,40 @@ Amixed
 R4
 R5
 DEx4 work 7 pc_dffg 0 22 JZN=DT[PfN3SReHD0>`<D3
-!i122 247
+!i122 287
 l21
 L17 29
 VKOJQ^6GH>:>dTUILLIWI32
 !s100 KkWIETAzA;UUXK3o?khT]2
 R9
 32
-R95
+R144
 !i10b 1
-R96
-R153
-R154
+R149
+R166
+R167
 !i113 0
 R14
 R15
 Epcregister
-Z155 w1761495198
+R3
 R4
 R5
-!i122 246
+!i122 286
 R2
-Z156 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PC-register.vhd
-Z157 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PC-register.vhd
+Z168 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PC-register.vhd
+Z169 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PC-register.vhd
 l0
 L4 1
 VijXI85Wa=N9BZA9X`lk@z0
 !s100 mNO<MJeYW6=SGBkiQIfIN0
 R9
 32
-R95
+R144
 !i10b 1
-R96
-Z158 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PC-register.vhd|
-Z159 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PC-register.vhd|
+R149
+Z170 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PC-register.vhd|
+Z171 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PC-register.vhd|
 !i113 0
 R14
 R15
@@ -1297,18 +1514,100 @@ Astructural
 R4
 R5
 DEx4 work 10 pcregister 0 22 ijXI85Wa=N9BZA9X`lk@z0
-!i122 246
+!i122 286
 l31
 L18 29
 V_:FKTM^J]mQF][j9>aXF50
 !s100 nQ5;UWhnULhjG[RbNI5D12
 R9
 32
-R95
+R144
 !i10b 1
-R96
-R158
-R159
+R149
+R170
+R171
+!i113 0
+R14
+R15
+Epipelineregister
+R37
+R4
+R5
+!i122 288
+R2
+Z172 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PipelineRegister.vhd
+Z173 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PipelineRegister.vhd
+l0
+L4 1
+V1j=jL?AkLg^lY=2oVg@7G0
+!s100 PVhKgTT`<R:0foka3H0:J1
+R9
+32
+R144
+!i10b 1
+R149
+Z174 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PipelineRegister.vhd|
+Z175 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PipelineRegister.vhd|
+!i113 0
+R14
+R15
+Astructural
+R4
+R5
+DEx4 work 16 pipelineregister 0 22 1j=jL?AkLg^lY=2oVg@7G0
+!i122 288
+l29
+L18 24
+VDeGZk@TQ?Vo;8P87YFQh=1
+!s100 9ozPH=1S]^QhO2`<lmR^Z1
+R9
+32
+R144
+!i10b 1
+R149
+R174
+R175
+!i113 0
+R14
+R15
+Epipelineregister_logic
+R37
+R4
+R5
+!i122 289
+R2
+Z176 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PipelineRegister_logic.vhd
+Z177 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PipelineRegister_logic.vhd
+l0
+L4 1
+VZi2G>4UdWOImQOi;OFLbQ0
+!s100 P9X9Q^n^0_U[Jb:ZniTO73
+R9
+32
+R144
+!i10b 1
+R149
+Z178 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PipelineRegister_logic.vhd|
+Z179 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/PipelineRegister_logic.vhd|
+!i113 0
+R14
+R15
+Astructural
+R4
+R5
+DEx4 work 22 pipelineregister_logic 0 22 Zi2G>4UdWOImQOi;OFLbQ0
+!i122 289
+l26
+L15 21
+VK=;6`4Ai5f9^GbI[AQZIJ3
+!s100 ho0PnU]J_1ziWSTe3GJ9?2
+R9
+32
+R144
+!i10b 1
+R149
+R178
+R179
 !i113 0
 R14
 R15
@@ -1335,110 +1634,110 @@ R9
 R14
 R15
 Eriscv_processor
-Z160 w1761595610
-R60
-R22
+Z180 w1764953184
+R64
+R20
 R4
 R5
-!i122 251
+!i122 295
 R2
-Z161 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd
-Z162 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd
+Z181 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd
+Z182 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd
 l0
 L25 1
 V;LWOA5ME?Onm0@D6FANGl1
 !s100 1fJGd^bZnPSO>PMAE:Qoi1
 R9
 32
-Z163 !s110 1761595671
+Z183 !s110 1764953332
 !i10b 1
-Z164 !s108 1761595671.000000
-Z165 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd|
-Z166 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd|
+Z184 !s108 1764953332.000000
+Z185 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd|
+Z186 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/TopLevel/RISCV_Processor.vhd|
 !i113 0
 R14
 R15
 Astructure
-R60
-R22
+R64
+R20
 R4
 R5
-Z167 DEx4 work 15 riscv_processor 0 22 ;LWOA5ME?Onm0@D6FANGl1
-!i122 251
-l325
-L37 577
-V]5ShKnoP^M5=i`^]`;6`M0
-!s100 ^jDm2[3;=mWHmi?_5l[9^3
+Z187 DEx4 work 15 riscv_processor 0 22 ;LWOA5ME?Onm0@D6FANGl1
+!i122 295
+l573
+L37 1059
+V??_YS3h3l[_]2zY_zLC:d2
+!s100 h]HcI1MAAW:4RJN0W1>2C0
 R9
 32
-R163
+R183
 !i10b 1
-R164
-R165
-R166
+R184
+R185
+R186
 !i113 0
 R14
 R15
 Priscv_types
 R4
 R5
-!i122 248
-R21
+!i122 290
+R3
 R2
-Z168 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/RISCV_types.vhd
-Z169 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/RISCV_types.vhd
+Z188 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/RISCV_types.vhd
+Z189 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/RISCV_types.vhd
 l0
 L15 17
 V@EBj`TV9k32W4`Wnab6nL1
 !s100 [3MOgHOHc;]eZiA6d[DKS0
 R9
 32
-R95
+R144
 !i10b 1
-R96
-Z170 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/RISCV_types.vhd|
-Z171 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/RISCV_types.vhd|
+R149
+Z190 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/RISCV_types.vhd|
+Z191 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/RISCV_types.vhd|
 !i113 0
 R14
 R15
 Bbody
-R22
+R20
 R4
 R5
-!i122 248
+!i122 290
 l0
 L33 3
 Vd1lAT84iznT:En5T7G@8?3
 !s100 bfKmhDbjG[5]5MF?^ZcBB3
 R9
 32
-R95
+R144
 !i10b 1
-R96
-R170
-R171
+R149
+R190
+R191
 !i113 0
 R14
 R15
 Exor_32bit
-R28
+R3
 R4
 R5
-!i122 249
+!i122 291
 R2
-Z172 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xor_32bit.vhd
-Z173 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xor_32bit.vhd
+Z192 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xor_32bit.vhd
+Z193 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xor_32bit.vhd
 l0
 L4 1
 VENcYHjXbnCG4NUn]8W3?a0
 !s100 42S<T5ZKaCYE[;e:EU6052
 R9
 32
-R95
+R144
 !i10b 1
-R96
-Z174 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xor_32bit.vhd|
-Z175 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xor_32bit.vhd|
+R149
+Z194 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xor_32bit.vhd|
+Z195 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xor_32bit.vhd|
 !i113 0
 R14
 R15
@@ -1446,40 +1745,40 @@ Astructural
 R4
 R5
 DEx4 work 9 xor_32bit 0 22 ENcYHjXbnCG4NUn]8W3?a0
-!i122 249
+!i122 291
 l21
-R33
+R30
 V;BX7SdcMF]Ho>Dc:ZhcWZ0
 !s100 [OcLN=L_;X@8c1nGWC:CQ1
 R9
 32
-R95
+R144
 !i10b 1
-R96
-R174
-R175
+R149
+R194
+R195
 !i113 0
 R14
 R15
 Exorg2
-R28
+R3
 R4
 R5
-!i122 211
+!i122 292
 R2
-Z176 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xorg2.vhd
-Z177 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xorg2.vhd
+Z196 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xorg2.vhd
+Z197 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xorg2.vhd
 l0
-R36
+R33
 V;hb`C0MKik;h36`3`SzM60
 !s100 [hI[mXFH4_j16U;>U1Lfn2
 R9
 32
-Z178 !s110 1761321335
+R144
 !i10b 1
-Z179 !s108 1761321335.000000
-Z180 !s90 -reportprogress|300|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xorg2.vhd|
-Z181 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xorg2.vhd|
+R149
+Z198 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xorg2.vhd|
+Z199 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/xorg2.vhd|
 !i113 0
 R14
 R15
@@ -1487,18 +1786,59 @@ Adataflow
 R4
 R5
 DEx4 work 5 xorg2 0 22 ;hb`C0MKik;h36`3`SzM60
-!i122 211
+!i122 292
 l32
-R39
+R36
 VbmLohbkYjJQ`?EHUY>LoL1
 !s100 Z6[FAPS4fBLB`F?OO<AY72
 R9
 32
-R178
+R144
 !i10b 1
-R179
-R180
-R181
+R149
+R198
+R199
+!i113 0
+R14
+R15
+Ezeroextender_1to32
+R3
+R4
+R5
+!i122 293
+R2
+Z200 8/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/zeroExtender_1to32.vhd
+Z201 F/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/zeroExtender_1to32.vhd
+l0
+L4 1
+VZ7FVk]59mK4Y_@nOPY3Bl1
+!s100 ^W9Lm;YmE86RI6gX^F^al3
+R9
+32
+R144
+!i10b 1
+R149
+Z202 !s90 -reportprogress|30|-work|work|/home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/zeroExtender_1to32.vhd|
+Z203 !s107 /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/proj/src/Components/zeroExtender_1to32.vhd|
+!i113 0
+R14
+R15
+Abehavioral
+R4
+R5
+DEx4 work 18 zeroextender_1to32 0 22 Z7FVk]59mK4Y_@nOPY3Bl1
+!i122 293
+l12
+L11 5
+VXPF<g?^H?L;]N59Ul7j4S1
+!s100 7f@QVTXh;D`A<ATLe3HDY1
+R9
+32
+R144
+!i10b 1
+R149
+R202
+R203
 !i113 0
 R14
 R15

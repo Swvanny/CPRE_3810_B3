@@ -32,7 +32,11 @@ port(
   IDEX_WriteBack    : in std_logic_vector(4 downto 0);
   IDEX_WriteEnable  : in std_logic;
   IDEX_Halt         : in std_logic;
-
+    IDEX_RS1_Address  : in std_logic_vector(4 downto 0);
+ IDEX_RS2_Address : in std_logic_vector(4 downto 0);
+ 
+    IDEX_RS1_Address_out  : out std_logic_vector(4 downto 0);
+ IDEX_RS2_Address_out : out std_logic_vector(4 downto 0);
   IDEX_Halt_out         : out std_logic;
   IDEX_WriteEnable_out  : out std_logic;
   IDEX_WriteBack_out    : out std_logic_vector(4 downto 0);
@@ -114,6 +118,26 @@ IDEX_WriteBack_Register: PipelineRegister
        i_WE => '1',
        i_D =>  IDEX_rs1,     
        o_Q   => IDEX_rs1_out
+);
+
+  IDEX_rs1_address_Register: PipelineRegister
+  generic map(N => 5)
+  port map (
+      i_CLK  => i_CLK,
+       i_RST  => i_RST,
+       i_WE => '1',
+       i_D =>  IDEX_RS1_Address,     
+       o_Q   => IDEX_RS1_Address_out
+);
+
+  IDEX_rs2_address_Register: PipelineRegister
+  generic map(N => 5)
+  port map (
+      i_CLK  => i_CLK,
+       i_RST  => i_RST,
+       i_WE => '1',
+       i_D =>  IDEX_RS2_Address,     
+       o_Q   => IDEX_RS2_Address_out
 );
 
 IDEX_rs2_Register: PipelineRegister

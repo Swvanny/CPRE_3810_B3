@@ -252,7 +252,7 @@ component IDEXRegister is
 port(
  i_CLK        : in std_logic;    
  i_RST        : in std_logic;
- 
+ i_flush_IDEX : in std_logic;
 
  IDEX_immGen  : in std_logic_vector(31 downto 0);
   IDEX_rs1  : in std_logic_vector(31 downto 0);
@@ -458,11 +458,11 @@ end component;
 --HARDWARE UNIT-------------------------------------------------------------------------------
 component hazardDetectUnit 
 port(
-        rs1_IDEX, rs2_IDEX      : in std_logic_vector(4 downto 0);  -- Registers used in ID/EX stage (for register operands)
-        rd_EXMEM                : in std_logic_vector(4 downto 0);  -- Destination register from EX/MEM stage (to check if write-back happens)
-        rd_MEMWB                : in std_logic_vector(4 downto 0);  -- Destination register from MEM/WB stage (to check if write-back happens)
-        memRead_EXMEM           : in std_logic;                    -- EXMEM stage: signal indicating memory read (load)
-        memRead_MEMWB           : in std_logic;                    -- MEMWB stage: signal indicating memory read (load)
+        rs1_IFID, rs2_IFID     : in std_logic_vector(4 downto 0);  -- Registers used in ID/EX stage (for register operands)
+        rd_IDEX                : in std_logic_vector(4 downto 0);  -- Destination register from EX/MEM stage (to check if write-back happens)
+        rd_EXMEM               : in std_logic_vector(4 downto 0);  -- Destination register from MEM/WB stage (to check if write-back happens)
+        memRead_IDEX           : in std_logic;                    -- EXMEM stage: signal indicating memory read (load)
+        memRead_EXMEM           : in std_logic;                    -- MEMWB stage: signal indicating memory read (load)
 
          branch_taken   : in std_logic;
 
@@ -679,12 +679,12 @@ Control_Unit_inst: Control_Unit_2
 
   haz_detect_unit_inst: hazardDetectUnit
 port map(
-        rs1_IDEX => IDEX_RS1_Address_out, 
-         rs2_IDEX =>  IDEX_RS2_Address_out, 
-       rd_EXMEM =>  EXMEM_WriteBack_out, 
-       rd_MEMWB  =>  MEMWB_WriteBack_out,        
-        memRead_EXMEM =>  EXMEM_MemToReg_out,      
-        memRead_MEMWB =>  MEMWB_MemToReg_out,      
+        rs1_IFID => IFID_sInst_out(19 downto 15), 
+         rs2_IFID =>  IFID_sInst_out(24 downto 20),
+       rd_IDEX =>  IDEX_WriteBack_out, 
+       rd_EXMEM  =>  EXMEM_WriteBack_out,        
+        memRead_IDEX =>  EXMEM_MemToReg_out,     -- fix these 
+        memRead_EXMEM =>  MEMWB_MemToReg_out,     --fix these 
          branch_taken =>  s_or_jump_out,
         --stall_Fwd   =>       
         stall_IFID    => s_IFID_stall,
@@ -754,7 +754,8 @@ port map(
   port map(
   i_CLK => iCLK,         
   i_RST  => iRST,      
-
+ i_flush_IDEX => s_flush_IDEX,
+ 
   IDEX_immGen  => s_extended_imm,
   IDEX_rs1 => s_out_rs1,
   IDEX_rs2  => s_out_rs2,

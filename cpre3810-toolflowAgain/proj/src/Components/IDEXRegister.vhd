@@ -9,6 +9,7 @@ entity IDEXRegister is
 port(
  i_CLK        : in std_logic;    
  i_RST        : in std_logic;
+ i_flush_IDEX  : in std_logic;
  
 
  IDEX_immGen        : in std_logic_vector(31 downto 0);

@@ -4,11 +4,11 @@ use ieee.numeric_std.all;
 
 entity hazardDetectUnit is 
     port(
-        rs1_IDEX, rs2_IDEX      : in std_logic_vector(4 downto 0);  -- source regs (typically IF/ID.rs1/rs2)
-        rd_EXMEM                : in std_logic_vector(4 downto 0);  -- dest reg in EX stage (ID/EX.rd)
-        rd_MEMWB                : in std_logic_vector(4 downto 0);  -- dest reg in MEM/WB
-        memRead_EXMEM           : in std_logic;                     -- MemRead for EX stage (ID/EX.MemRead)
-        memRead_MEMWB           : in std_logic;                     -- MemRead for MEM/WB (often unused)
+        rs1_IFID, rs2_IFID      : in std_logic_vector(4 downto 0);  -- source regs (typically IF/ID.rs1/rs2)
+        rd_IDEX               : in std_logic_vector(4 downto 0);  -- dest reg in EX stage (ID/EX.rd)
+        rd_EXMEM               : in std_logic_vector(4 downto 0);  -- dest reg in MEM/WB
+        memRead_IDEX           : in std_logic;                     -- MemRead for EX stage (ID/EX.MemRead)
+        memRead_EXMEM           : in std_logic;                     -- MemRead for MEM/WB (often unused)
 
         branch_taken            : in std_logic;                     -- asserted when branch/jump is taken
 
@@ -34,15 +34,15 @@ architecture Structural of hazardDetectUnit is
 
     -- Equality flags
     signal rs1_eq_EXMEM, rs2_eq_EXMEM : std_logic;
-    signal rs1_eq_MEMWB, rs2_eq_MEMWB : std_logic;
+    signal rs1_eq_IDEX, rs2_eq_IDEX : std_logic;
 
     -- Combined match flags
-    signal rs_match_EX  : std_logic;
-    signal rs_match_MEM : std_logic;
+    signal rs_match_ID : std_logic;
+    signal rs_match_EX : std_logic;
 
     -- Load-use hazard flags
-    signal load_use_EX  : std_logic;
-    signal load_use_MEM : std_logic;
+    signal load_use_ID  : std_logic;
+    signal load_use_EX : std_logic;
 
     -- Combined load hazard
     signal load_hazard  : std_logic;
@@ -55,26 +55,26 @@ begin
     --------------------------------------------------------------------
     -- Compare IF/ID source regs to EX dest (rd_EXMEM) and MEM/WB dest.
     --------------------------------------------------------------------
-    rs1_eq_EXMEM <= '1' when (rs1_IDEX = rd_EXMEM and rd_EXMEM /= "00000") else '0';
-    rs2_eq_EXMEM <= '1' when (rs2_IDEX = rd_EXMEM and rd_EXMEM /= "00000") else '0';
+    rs1_eq_IDEX <= '1' when (rs1_IFID = rd_IDEX and rd_IDEX /= "00000") else '0';
+    rs2_eq_IDEX <= '1' when (rs2_IFID = rd_IDEX and rd_IDEX /= "00000") else '0';
 
-    rs1_eq_MEMWB <= '1' when (rs1_IDEX = rd_MEMWB and rd_MEMWB /= "00000") else '0';
-    rs2_eq_MEMWB <= '1' when (rs2_IDEX = rd_MEMWB and rd_MEMWB /= "00000") else '0';
+    rs1_eq_EXMEM <= '1' when (rs1_IFID = rd_EXMEM and rd_EXMEM /= "00000") else '0';
+    rs2_eq_EXMEM <= '1' when (rs2_IFID = rd_EXMEM and rd_EXMEM /= "00000") else '0';
 
     -- OR matches in EX stage
     EX_MATCH_OR: org2
         port map(
-            i_A => rs1_eq_EXMEM,
-            i_B => rs2_eq_EXMEM,
-            o_F => rs_match_EX
+            i_A => rs1_eq_IDEX,
+            i_B => rs2_eq_IDEX,
+            o_F => rs_match_ID
         );
 
     -- OR matches in MEM/WB stage
     MEM_MATCH_OR: org2
         port map(
-            i_A => rs1_eq_MEMWB,
-            i_B => rs2_eq_MEMWB,
-            o_F => rs_match_MEM
+            i_A => rs1_eq_EXMEM,
+            i_B => rs2_eq_EXMEM,
+            o_F => rs_match_EX
         );
 
     --------------------------------------------------------------------
@@ -87,18 +87,18 @@ begin
             o_F => load_use_EX
         );
 
-    LOAD_MEM_AND: andg2
+    LOAD_ID_AND: andg2
         port map(
-            i_A => memRead_MEMWB,
-            i_B => rs_match_MEM,
-            o_F => load_use_MEM
+            i_A => memRead_IDEX,
+            i_B => rs_match_ID,
+            o_F => load_use_ID
         );
 
     -- Combine load hazards (EX or MEM/WB)
     LOAD_HAZARD_OR: org2
         port map(
             i_A => load_use_EX,
-            i_B => load_use_MEM,
+            i_B => load_use_ID,
             o_F => load_hazard
         );
 

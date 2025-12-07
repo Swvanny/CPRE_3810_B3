@@ -248,6 +248,31 @@ component PipelineRegister_logic is
 
 end component;
 
+component PipelineRegister_Flush is
+    generic (
+        N : integer := 32
+    );
+    port(
+        i_CLK   : in std_logic;
+        i_RST   : in std_logic;
+        i_WE    : in std_logic;
+        i_FLUSH : in std_logic;  
+        i_D     : in std_logic_vector(N-1 downto 0);
+        o_Q     : out std_logic_vector(N-1 downto 0)
+    );
+end component;
+
+component PipelineRegister_logic_Flush is
+  port(
+    i_CLK   : in std_logic;
+    i_RST   : in std_logic;
+    i_WE    : in std_logic;    -- write enable
+    i_FLUSH : in std_logic;    -- synchronous flush (bubble)
+    i_D     : in std_logic;    -- data in
+    o_Q     : out std_logic    -- data out
+  );
+end component;
+
 component IDEXRegister is 
 port(
  i_CLK        : in std_logic;    
@@ -683,8 +708,8 @@ port map(
          rs2_IFID =>  IFID_sInst_out(24 downto 20),
        rd_IDEX =>  IDEX_WriteBack_out, 
        rd_EXMEM  =>  EXMEM_WriteBack_out,        
-        memRead_IDEX =>  EXMEM_MemToReg_out,     -- fix these 
-        memRead_EXMEM =>  MEMWB_MemToReg_out,     --fix these 
+        memRead_IDEX =>  IDEX_MemToReg_out,      
+        memRead_EXMEM =>  EXMEM_MemToReg_out,      
          branch_taken =>  s_or_jump_out,
         --stall_Fwd   =>       
         stall_IFID    => s_IFID_stall,

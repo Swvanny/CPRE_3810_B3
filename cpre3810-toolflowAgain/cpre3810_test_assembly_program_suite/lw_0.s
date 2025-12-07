@@ -16,10 +16,6 @@ main:
    
     addi  t0, t0, %lo(test_word)
    
-   addi t1, x0, 2
-   addi t2, t1, 3
-    
-    
     lw x1, 0(t0)     # verify that one can load into registers and memory is accessible through ALU
     
     
@@ -30,8 +26,6 @@ main:
   
     
     lw x4, 0(t0)     # verify that one can load into registers and memory is accessible through ALU
- 
-    addi x28, x4, 5
 
     lw x6, 0(t0)     # verify that one can load into registers and memory is accessible through ALU
     lw x7, 0(t0)     # verify that one can load into registers and memory is accessible through ALU

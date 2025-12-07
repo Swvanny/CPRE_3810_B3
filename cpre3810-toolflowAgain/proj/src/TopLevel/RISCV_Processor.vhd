@@ -708,8 +708,8 @@ port map(
          rs2_IFID =>  IFID_sInst_out(24 downto 20),
        rd_IDEX =>  IDEX_WriteBack_out, 
        rd_EXMEM  =>  EXMEM_WriteBack_out,        
-        memRead_IDEX =>  IDEX_MemToReg_out,      
-        memRead_EXMEM =>  EXMEM_MemToReg_out,      
+        memRead_IDEX =>  IDEX_WriteEnable_out,      
+        memRead_EXMEM =>  EXMEM_WriteEnable_out,      
          branch_taken =>  s_or_jump_out,
         --stall_Fwd   =>       
         stall_IFID    => s_IFID_stall,

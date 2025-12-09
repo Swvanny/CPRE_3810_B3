@@ -1,4 +1,4 @@
-Warning in /home/dswanny/cpre381/CPRE_3810_B3/cpre3810-toolflowAgain/cpre3810_test_assembly_program_suite/addi_02.s line 1 column 5: RARS does not recognize the .option directive.  Ignored.
+Warning in /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/cpre3810_test_assembly_program_suite/addi_02.s line 1 column 5: RARS does not recognize the .option directive.  Ignored.
 
 [inst #1] addi x1,x0,123
 Register Write to Reg: 0x01 Val: 0x0000007B

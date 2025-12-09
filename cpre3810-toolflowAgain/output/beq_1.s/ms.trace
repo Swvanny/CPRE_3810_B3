@@ -10,12 +10,6 @@ In clock cycle: 7
 Register Write to Reg: 0x00 Val: 0x00000000
 In clock cycle: 8
 Register Write to Reg: 0x00 Val: 0x00000000
-In clock cycle: 10
-Register Write to Reg: 0x00 Val: 0x00000000
-In clock cycle: 11
-Register Write to Reg: 0x00 Val: 0x00000000
-In clock cycle: 12
-Register Write to Reg: 0x00 Val: 0x00000000
 In clock cycle: 13
 Register Write to Reg: 0x04 Val: 0x00000003
 In clock cycle: 14
@@ -63,12 +57,6 @@ Register Write to Reg: 0x00 Val: 0x00000000
 In clock cycle: 36
 Register Write to Reg: 0x00 Val: 0x00000000
 In clock cycle: 37
-Register Write to Reg: 0x00 Val: 0x00000000
-In clock cycle: 39
-Register Write to Reg: 0x00 Val: 0x00000000
-In clock cycle: 40
-Register Write to Reg: 0x00 Val: 0x00000000
-In clock cycle: 41
 Register Write to Reg: 0x00 Val: 0x00000000
 In clock cycle: 42
 Register Write to Reg: 0x09 Val: 0x00000001

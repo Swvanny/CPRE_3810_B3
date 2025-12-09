@@ -13,3 +13,4 @@
 # // and may not be used in any way not expressly authorized by SISW.
 # //
 add wave vsim:/tb/MyRiscv/*
+find drivers -source -time {2664 ns} -cause vsim:/tb/MyRiscv/IFID_sInst_out

@@ -5,6 +5,7 @@
 
 main:
     la x4, target           # load address of target
+
     jalr ra, 8(x4)          # jump to target; save next PC to ra
 
 target:

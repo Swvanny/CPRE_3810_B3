@@ -1,0 +1,75 @@
+In clock cycle: 3
+Register Write to Reg: 0x01 Val: 0x00000001
+In clock cycle: 6
+Register Write to Reg: 0x01 Val: 0x00000002
+In clock cycle: 9
+Register Write to Reg: 0x01 Val: 0x00000004
+In clock cycle: 12
+Register Write to Reg: 0x01 Val: 0x00000008
+In clock cycle: 15
+Register Write to Reg: 0x01 Val: 0x00000010
+In clock cycle: 18
+Register Write to Reg: 0x01 Val: 0x00000020
+In clock cycle: 21
+Register Write to Reg: 0x01 Val: 0x00000040
+In clock cycle: 24
+Register Write to Reg: 0x01 Val: 0x00000080
+In clock cycle: 27
+Register Write to Reg: 0x01 Val: 0x00000100
+In clock cycle: 30
+Register Write to Reg: 0x01 Val: 0x00000200
+In clock cycle: 33
+Register Write to Reg: 0x01 Val: 0x00000400
+In clock cycle: 36
+Register Write to Reg: 0x01 Val: 0x00000800
+In clock cycle: 39
+Register Write to Reg: 0x01 Val: 0x00001000
+In clock cycle: 42
+Register Write to Reg: 0x01 Val: 0x00002000
+In clock cycle: 45
+Register Write to Reg: 0x01 Val: 0x00004000
+In clock cycle: 48
+Register Write to Reg: 0x01 Val: 0x00008000
+In clock cycle: 51
+Register Write to Reg: 0x01 Val: 0x00010000
+In clock cycle: 54
+Register Write to Reg: 0x01 Val: 0x00020000
+In clock cycle: 57
+Register Write to Reg: 0x01 Val: 0x00040000
+In clock cycle: 60
+Register Write to Reg: 0x01 Val: 0x00080000
+In clock cycle: 63
+Register Write to Reg: 0x01 Val: 0x00100000
+In clock cycle: 66
+Register Write to Reg: 0x01 Val: 0x00200000
+In clock cycle: 69
+Register Write to Reg: 0x01 Val: 0x00400000
+In clock cycle: 72
+Register Write to Reg: 0x01 Val: 0x00800000
+In clock cycle: 75
+Register Write to Reg: 0x01 Val: 0x01000000
+In clock cycle: 78
+Register Write to Reg: 0x01 Val: 0x02000000
+In clock cycle: 81
+Register Write to Reg: 0x01 Val: 0x04000000
+In clock cycle: 84
+Register Write to Reg: 0x01 Val: 0x08000000
+In clock cycle: 87
+Register Write to Reg: 0x01 Val: 0x10000000
+In clock cycle: 90
+Register Write to Reg: 0x01 Val: 0x20000000
+In clock cycle: 93
+Register Write to Reg: 0x01 Val: 0x40000000
+In clock cycle: 96
+Register Write to Reg: 0x02 Val: 0x40000000
+In clock cycle: 99
+Register Write to Reg: 0x03 Val: 0x80000000
+In clock cycle: 102
+Register Write to Reg: 0x04 Val: 0x00000000
+In clock cycle: 105
+Register Write to Reg: 0x05 Val: 0x00000000
+In clock cycle: 106
+Register Write to Reg: 0x06 Val: 0x80000000
+In clock cycle: 107
+Register Write to Reg: 0x11 Val: 0x0000005D
+Execution is stopping! Clock Cycle: 108

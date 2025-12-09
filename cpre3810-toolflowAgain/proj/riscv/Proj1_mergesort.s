@@ -25,11 +25,13 @@ merge_sort:
     sw   s0, 16(sp)
     sw   ra, 20(sp)
     addi s0, sp, 0        
-
    
-    lw   t0, 4(s0)        
+    lw   t0, 4(s0)
+
+
     lw   t1, 8(s0)        
     bge  t0, t1, ms_ret
+    
 
     
     add  t2, t0, t1
@@ -101,13 +103,13 @@ merge:
     mv   s1, sp        
     slli t0, t2, 2
     add  s2, s1, t0       
-
     
     li   s3, 0
     lw   t0, 0(s0)        
     lw   t1, 4(s0)      
 copy_left_loop:
     bge  s3, t2, copy_left_done
+    
     add  t3, t1, s3
     slli t3, t3, 2
     add  t4, t0, t3
@@ -127,6 +129,7 @@ copy_left_done:
     lw   t4, 20(s0)
 copy_right_loop:
     bge  s3, t4, copy_right_done
+    
     add  t3, t1, s3
     slli t3, t3, 2
     add  t5, t0, t3
@@ -146,8 +149,9 @@ copy_right_done:
     lw   t2, 16(s0)      
     lw   t3, 20(s0)       
 merge_loop:
-    bge  t4, t2, merge_left_rem
+    bge  t4, t2, merge_left_rem 
     bge  t5, t3, merge_right_rem
+ 
 
     slli a4, t4, 2
     add  a4, s1, a4

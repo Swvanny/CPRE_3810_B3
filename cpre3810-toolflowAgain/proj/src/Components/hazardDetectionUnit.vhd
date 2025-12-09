@@ -14,7 +14,9 @@ entity hazardDetectUnit is
 
         -- Outputs
         stall_IFID              : out std_logic;  -- control for IF/ID (stall/flush)
-        flush_IDEX              : out std_logic   -- control for ID/EX (bubble)
+        flush_IDEX              : out std_logic;   -- control for ID/EX (bubble)
+        flush_EXMEM : out std_logic;
+        flush_IFID  : out std_logic 
     );
 end entity;
 
@@ -48,6 +50,8 @@ architecture Structural of hazardDetectUnit is
     signal load_hazard  : std_logic;
 
     -- Combined hazard / branch
+    signal branchHazard : std_logic;
+    signal dataHazard : std_logic;
     signal hazard_or_branch : std_logic;
 
 begin
@@ -94,7 +98,7 @@ begin
             o_F => load_use_ID
         );
 
-    -- Combine load hazards (EX or MEM/WB)
+
     LOAD_HAZARD_OR: org2
         port map(
             i_A => load_use_EX,
@@ -105,6 +109,9 @@ begin
     --------------------------------------------------------------------
     -- Combine load hazard with branch_taken
     --------------------------------------------------------------------
+dataHazard <= load_hazard;
+branchHazard <= branch_taken;
+
     HAZARD_BRANCH_OR: org2
         port map(
             i_A => load_hazard,
@@ -112,8 +119,13 @@ begin
             o_F => hazard_or_branch
         );
 
+    
+
     -- Drive outputs
-    stall_IFID <= hazard_or_branch;
+    stall_IFID <= dataHazard;
     flush_IDEX <= hazard_or_branch;
+    flush_EXMEM <= branchHazard;
+    flush_IFID <= branchHazard;
+
 
 end architecture Structural;

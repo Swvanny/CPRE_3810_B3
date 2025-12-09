@@ -170,6 +170,8 @@ signal MEMWB_Halt_out : std_logic;
   --HAZARD DETECTION SIGNALS---------------------------------------------------------------
 signal s_IFID_stall : std_logic;
 signal s_flush_IDEX : std_logic;
+signal s_flush_IFID : std_logic;
+signal s_flush_EXMEM : std_logic;
   --Register File SIGNALS-------------------------------------------------------------------------------
 
   --signal reg_data : reg_array;
@@ -334,7 +336,7 @@ component EXMEMRegister is
   port(
     i_CLK  : in std_logic;
     i_RST  : in std_logic;
-
+    i_flush_EXMEM : in std_logic; 
    
     EXMEM_ALU_Flag        : in  std_logic;
     EXMEM_ALUOut          : in  std_logic_vector(31 downto 0);
@@ -494,7 +496,9 @@ port(
         -- Outputs
         --stall_Fwd                : out std_logic;  -- Stall signal to control forwarding logic
         stall_IFID               : out std_logic;  -- Stall signal for IF/ID register (flush or hold) 0x00000013
-        flush_IDEX               : out std_logic   -- Flush the ID/EX register (e.g., on a control hazard)
+        flush_IDEX               : out std_logic;   -- Flush the ID/EX register (e.g., on a control hazard)
+        flush_EXMEM : out std_logic;
+        flush_IFID  : out std_logic 
 );
 end component;
 
@@ -637,35 +641,39 @@ port map (
 
 --IFID REGISTER
 
-IFID_S_Inst_Register: PipelineRegister
-generic map(N => 32)
-port map (
-  i_CLK  => iCLK,
-       i_RST  => iRST,
-       i_WE => s_negation_stall,
-       i_D =>  s_Inst,     
-       o_Q   => IFID_sInst_out
-);
+IFID_S_Inst_Register: PipelineRegister_Flush
+  generic map(N => 32)
+  port map (
+    i_CLK   => iCLK,
+    i_RST   => iRST,
+    i_WE    => s_negation_stall,
+    i_FLUSH => s_flush_IFID,
+    i_D     => s_Inst,
+    o_Q     => IFID_sInst_out
+  );
 
-IFID_PC_Register: PipelineRegister
-generic map(N => 32)
-port map (
-  i_CLK  => iCLK,
-       i_RST  => iRST,
-       i_WE => s_negation_stall,
-       i_D =>  s_NextInstAddr,     
-       o_Q   => IFID_pc_out
-);
+IFID_PC_Register: PipelineRegister_Flush
+  generic map(N => 32)
+  port map (
+    i_CLK   => iCLK,
+    i_RST   => iRST,
+    i_WE    => s_negation_stall,
+    i_FLUSH => s_flush_IFID,
+    i_D     => s_NextInstAddr,
+    o_Q     => IFID_pc_out
+  );
 
-IFID_PC4_Register: PipelineRegister
-generic map(N => 32)
-port map (
-  i_CLK  => iCLK,
-       i_RST  => iRST,
-       i_WE => s_negation_stall,
-       i_D =>  s_pc4_out,     
-       o_Q   => IFID_pc4_out
-);
+IFID_PC4_Register: PipelineRegister_Flush
+  generic map(N => 32)
+  port map (
+    i_CLK   => iCLK,
+    i_RST   => iRST,
+    i_WE    => s_negation_stall,
+    i_FLUSH => s_flush_IFID,
+    i_D     => s_pc4_out,
+    o_Q     => IFID_pc4_out
+  );
+
 
 
 
@@ -713,7 +721,9 @@ port map(
          branch_taken =>  s_or_jump_out,
         --stall_Fwd   =>       
         stall_IFID    => s_IFID_stall,
-        flush_IDEX    => s_flush_IDEX
+        flush_IDEX    => s_flush_IDEX,
+        flush_EXMEM   => s_flush_EXMEM,
+        flush_IFID    => s_flush_IFID
 );
 
 
@@ -878,6 +888,7 @@ s_DMemData <= EXMEM_RS2_out;
   port map(
     i_CLK => iCLK,
     i_RST => iRST,
+    i_flush_EXMEM => s_flush_EXMEM,
 
     EXMEM_ALU_Flag      => s_flag_mux_out,
     EXMEM_ALUOut        => s_exec_result,

@@ -25,4 +25,6 @@ base_label:
 after_return:
     li   t0, 3
     sw   t0, 0(x3)
+nop
+
     wfi

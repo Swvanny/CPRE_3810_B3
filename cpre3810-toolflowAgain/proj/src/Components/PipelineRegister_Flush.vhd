@@ -19,6 +19,7 @@ architecture Structural of PipelineRegister_Flush is
 
     signal s_zero    : std_logic_vector(N-1 downto 0);
     signal s_D_muxed : std_logic_vector(N-1 downto 0);
+      signal s_WE_eff  : std_logic;
 
     component PipelineRegister is
         generic (N : integer := 32);
@@ -54,13 +55,15 @@ begin
             o_X  => s_D_muxed
         );
 
+  s_WE_eff <= i_WE or i_FLUSH;
+
     -- Actual pipeline register storage (reuses your existing PipelineRegister)
     PIPE: PipelineRegister
         generic map(N => N)
         port map(
             i_CLK => i_CLK,
             i_RST => i_RST,
-            i_WE  => i_WE,
+            i_WE  => s_WE_eff,
             i_D   => s_D_muxed,
             o_Q   => o_Q
         );

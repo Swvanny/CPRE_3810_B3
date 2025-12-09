@@ -34,6 +34,7 @@ architecture Structural of PipelineRegister_logic_Flush is
   end component;
 
   signal s_D_muxed : std_logic;
+    signal s_WE_eff  : std_logic;
 
 begin
 
@@ -46,11 +47,13 @@ begin
       o_X  => s_D_muxed
     );
 
+  s_WE_eff <= i_WE or i_FLUSH;
+
   DFF: falling_dffg
     port map(
       i_CLK => i_CLK,
       i_RST => i_RST,
-      i_WE  => i_WE,
+      i_WE  => s_WE_eff,
       i_D   => s_D_muxed,
       o_Q   => o_Q
     );

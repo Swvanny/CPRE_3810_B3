@@ -3,7 +3,7 @@ Reading pref.tcl
 # 2025.1_2
 
 # vsim -postsimdataflow -debugdb -c -voptargs=""+acc"" tb -do "modelsim_framework.do" -gOUTPUT_TRACE=ms.trace 
-# Start time: 16:39:36 on Dec 08,2025
+# Start time: 17:33:01 on Dec 09,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
@@ -113,54 +113,70 @@ Reading pref.tcl
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 2040 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 14350 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+#    Time: 12670 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 14350 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+#    Time: 12670 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 14360 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+#    Time: 12680 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 14360 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+#    Time: 12680 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 35170 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+#    Time: 37390 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 35170 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+#    Time: 37390 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 35180 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+#    Time: 37400 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 35180 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+#    Time: 37400 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 57030 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+#    Time: 64570 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 57030 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+#    Time: 64570 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 57040 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+#    Time: 64580 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 57040 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+#    Time: 64580 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 66930 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+#    Time: 67510 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 66930 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+#    Time: 67510 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 66940 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+#    Time: 67520 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 66940 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+#    Time: 67520 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 73250 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+#    Time: 70970 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 73250 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+#    Time: 70970 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 73260 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+#    Time: 70980 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 73260 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+#    Time: 70980 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 85790 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+#    Time: 79830 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 85790 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+#    Time: 79830 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 79840 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 79840 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85630 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85630 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85640 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85640 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 98170 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs2_mux
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 98170 ns  Iteration: 3  Instance: /tb/MyRiscv/Register_inst/rs1_mux
 # ** Note: Data structure takes 70452568 bytes of memory
-#          Process time 0.96 seconds
+#          Process time 1.05 seconds
 #          stop
-#    Time: 85840 ns  Iteration: 1  Instance: /tb
+#    Time: 98220 ns  Iteration: 1  Instance: /tb
 # Break in Process P_DUMP_STATE at /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/internal/testpy/tb.vhd line 150
 # Stopped at /home/anthonw/Desktop/CPRE_3810_B3/cpre3810-toolflowAgain/internal/testpy/tb.vhd line 150
-# End time: 16:39:38 on Dec 08,2025, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 37
+# End time: 17:33:03 on Dec 09,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 45
